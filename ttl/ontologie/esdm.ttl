@@ -1,0 +1,145 @@
+# baseURI: http://ordina.nl/esdm
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
+# imports: http://topbraid.org/schema/schema-single-range
+# imports: http://www.w3.org/2003/01/geo/wgs84_pos
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: http://www.w3.org/ns/shacl#
+# prefix: esdm
+
+@prefix : <http://ordina.nl/esdm#> .
+@prefix bedrijven: <http://ordina.nl/esdm/im/bedrijven/id/> .
+@prefix begrippen: <http://ordina.nl/esdm/im/begrippen/id/> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix esdm: <http://ordina.nl/esdm#> .
+@prefix evnprojects: <http://evn.topbraidlive.org/evnprojects#> .
+@prefix medewerkers: <http://ordina.nl/esdm/im/medewerkers/id/> .
+@prefix ovrh: <http://ordina.nl/esdm/im/overheidsinstellingen/id/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+evnprojects:Taxonomy
+  a sh:NodeShape ;
+  sh:property esdm:Taxonomy-creator ;
+.
+<http://ordina.nl/esdm>
+  a owl:Ontology ;
+  rdfs:label "Ontologie ESDM Ordina"@nl ;
+  owl:imports dc: ;
+  owl:imports dcterms: ;
+  owl:imports <http://topbraid.org/schema/schema-single-range> ;
+  owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports sh: ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+esdm:Agentschap
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Agentschap"@nl ;
+  rdfs:subClassOf <http://schema.org/GovernmentOrganization> ;
+  skos:prefLabel "Agentschap"@nl ;
+.
+esdm:Bedrijf
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Bedrijf"@nl ;
+  rdfs:subClassOf <http://schema.org/Corporation> ;
+  skos:prefLabel "Bedrijf"@nl ;
+.
+esdm:Medewerker
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Medewerker"@nl ;
+  rdfs:subClassOf <http://schema.org/Person> ;
+  skos:prefLabel "Medewerker"@nl ;
+.
+esdm:Ministerie
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Ministerie"@nl ;
+  rdfs:subClassOf <http://schema.org/GovernmentOrganization> ;
+  skos:prefLabel "Ministerie"@nl ;
+.
+esdm:Stakeholder
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Stakeholder"@nl ;
+  rdfs:subClassOf <http://schema.org/Person> ;
+  skos:prefLabel "Stakeholder"@nl ;
+.
+esdm:Taxonomy-creator
+  a sh:PropertyShape ;
+  sh:path dc:creator ;
+  sh:datatype xsd:anyURI ;
+  sh:name "Auteur" ;
+.
+esdm:agentschap
+  a owl:ObjectProperty ;
+  rdfs:domain esdm:Ministerie ;
+  rdfs:label "agentschap"@nl ;
+  rdfs:range esdm:Agentschap ;
+  skos:prefLabel "agentschap"@nl ;
+.
+bedrijven:Ordina
+  a esdm:Bedrijf ;
+  rdfs:label "Ordina N.V."@nl ;
+  skos:prefLabel "Ordina N.V."@nl ;
+.
+ovrh:Ministerie_van_Infrastructuur_en_Waterstaat
+  a esdm:Ministerie ;
+  esdm:agentschap ovrh:Rijkswaterstaat ;
+  rdfs:label "Ministerie van Infrastructuur en Waterstaat"@nl ;
+  skos:prefLabel "Ministerie van Infrastructuur en Waterstaat"@nl ;
+.
+ovrh:Rijkswaterstaat
+  a esdm:Agentschap ;
+  rdfs:label "Rijkswaterstaat"@nl ;
+  skos:prefLabel "Rijkswaterstaat"@nl ;
+.
+<http://schema.org/Corporation>
+  a sh:NodeShape ;
+.
+<http://schema.org/GovernmentOrganization>
+  a sh:NodeShape ;
+.
+<http://schema.org/Organization>
+  a sh:NodeShape ;
+.
+owl:Thing
+  a sh:NodeShape ;
+  sh:property owl:Thing-subject ;
+.
+owl:Thing-subject
+  a sh:PropertyShape ;
+  sh:path dcterms:subject ;
+  sh:class skos:Concept ;
+  sh:name "Grondslag" ;
+  sh:nodeKind sh:IRI ;
+.
+skos:Concept
+  a sh:NodeShape ;
+  sh:property skos:Concept-related ;
+  sh:property skos:Concept-source ;
+.
+skos:Concept-related
+  a sh:PropertyShape ;
+  sh:path skos:related ;
+  sh:class skos:Concept ;
+  sh:name "Gerelateerd" ;
+.
+skos:Concept-source
+  a sh:PropertyShape ;
+  sh:path dc:source ;
+  sh:datatype xsd:anyURI ;
+  sh:name "Bron" ;
+.
+skos:ConceptScheme
+  a sh:NodeShape ;
+.

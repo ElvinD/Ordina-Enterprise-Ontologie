@@ -1,0 +1,668 @@
+# baseURI: http://bp4mc2.org/def/archimate
+# imports: http://datashapes.org/graphql
+# imports: http://www.w3.org/ns/shacl#
+# prefix: archimate
+
+@prefix : <http://bp4mc2.org/def/archimate#> .
+@prefix archimate: <http://bp4mc2.org/def/archimate#> .
+@prefix beg: <http://definities.politie.nl/id/begrip/> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix edg: <http://edg.topbraid.solutions/model/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix graphql: <http://datashapes.org/graphql#> .
+@prefix ma_ont: <http://www.w3.org/ns/ma-ont#> .
+@prefix metadata: <http://topbraid.org/metadata#> .
+@prefix ont: <http://ontologie.politie.nl/def#> .
+@prefix ore: <http://www.openarchives.org/ore/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skos-thes: <http://purl.org/iso25964/skos-thes#> .
+@prefix skoslex: <http://bp4mc2.org/def/skos-lex#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix teamwork: <http://topbraid.org/teamwork#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://bp4mc2.org/def/archimate>
+  a owl:Ontology ;
+  metadata:status metadata:UnderDevelopmentStatus ;
+  <http://topbraid.org/swa#defaultNamespace> "http://bp4mc2.org/def/archimate#" ;
+  rdfs:label "Ontologie Archimate (BP4MC2 versie)" ;
+  owl:imports <http://datashapes.org/graphql> ;
+  owl:imports sh: ;
+.
+archimate:ApplicationCollaboration
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "ApplicationCollaboration"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:ApplicationComponent
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "ApplicationComponent"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:ApplicationEvent
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "ApplicationEvent"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:ApplicationFunction
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "ApplicationFunction"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:ApplicationInteraction
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "ApplicationInteraction"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:ApplicationInterface
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "ApplicationInterface"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:ApplicationProcess
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "ApplicationProcess"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:ApplicationService
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "ApplicationService"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:ArchimateObject
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Archimate Object"@en ;
+  rdfs:subClassOf owl:Thing ;
+  sh:property archimate:ArchimateObject-access ;
+  sh:property archimate:ArchimateObject-aggregation ;
+  sh:property archimate:ArchimateObject-assignment ;
+  sh:property archimate:ArchimateObject-association ;
+  sh:property archimate:ArchimateObject-composition ;
+  sh:property archimate:ArchimateObject-flow ;
+  sh:property archimate:ArchimateObject-influence ;
+  sh:property archimate:ArchimateObject-property ;
+  sh:property archimate:ArchimateObject-readAccess ;
+  sh:property archimate:ArchimateObject-readWriteAccess ;
+  sh:property archimate:ArchimateObject-realization ;
+  sh:property archimate:ArchimateObject-serving ;
+  sh:property archimate:ArchimateObject-specialization ;
+  sh:property archimate:ArchimateObject-triggering ;
+  sh:property archimate:ArchimateObject-writeAccess ;
+.
+archimate:ArchimateObject-access
+  a sh:PropertyShape ;
+  sh:path archimate:access ;
+  sh:class archimate:ArchimateObject ;
+  sh:group archimate:ArchimatePropertiesPropertyGroup ;
+  sh:order "0"^^xsd:decimal ;
+.
+archimate:ArchimateObject-aggregation
+  a sh:PropertyShape ;
+  sh:path archimate:aggregation ;
+  sh:class archimate:ArchimateObject ;
+  sh:group archimate:ArchimatePropertiesPropertyGroup ;
+  sh:order "-1"^^xsd:decimal ;
+.
+archimate:ArchimateObject-assignment
+  a sh:PropertyShape ;
+  sh:path archimate:assignment ;
+  sh:class archimate:ArchimateObject ;
+  sh:group archimate:ArchimatePropertiesPropertyGroup ;
+  sh:order "-2"^^xsd:decimal ;
+.
+archimate:ArchimateObject-association
+  a sh:PropertyShape ;
+  sh:path archimate:association ;
+  sh:class archimate:ArchimateObject ;
+  sh:group archimate:ArchimatePropertiesPropertyGroup ;
+  sh:order "-3"^^xsd:decimal ;
+.
+archimate:ArchimateObject-composition
+  a sh:PropertyShape ;
+  sh:path archimate:composition ;
+  sh:class archimate:ArchimateObject ;
+  sh:group archimate:ArchimatePropertiesPropertyGroup ;
+  sh:order "-4"^^xsd:decimal ;
+.
+archimate:ArchimateObject-flow
+  a sh:PropertyShape ;
+  sh:path archimate:flow ;
+  sh:class archimate:ArchimateObject ;
+  sh:group archimate:ArchimatePropertiesPropertyGroup ;
+  sh:order "-5"^^xsd:decimal ;
+.
+archimate:ArchimateObject-influence
+  a sh:PropertyShape ;
+  sh:path archimate:influence ;
+  sh:class archimate:ArchimateObject ;
+  sh:group archimate:ArchimatePropertiesPropertyGroup ;
+  sh:order "-6"^^xsd:decimal ;
+.
+archimate:ArchimateObject-property
+  a sh:PropertyShape ;
+  sh:path archimate:property ;
+  sh:datatype rdfs:Literal ;
+  sh:group archimate:ArchimatePropertiesPropertyGroup ;
+  sh:order "-7"^^xsd:decimal ;
+.
+archimate:ArchimateObject-readAccess
+  a sh:PropertyShape ;
+  sh:path archimate:readAccess ;
+  sh:class archimate:ArchimateObject ;
+  sh:group archimate:ArchimatePropertiesPropertyGroup ;
+  sh:order "-8"^^xsd:decimal ;
+.
+archimate:ArchimateObject-readWriteAccess
+  a sh:PropertyShape ;
+  sh:path archimate:readWriteAccess ;
+  sh:class archimate:ArchimateObject ;
+  sh:group archimate:ArchimatePropertiesPropertyGroup ;
+  sh:order "-9"^^xsd:decimal ;
+.
+archimate:ArchimateObject-realization
+  a sh:PropertyShape ;
+  sh:path archimate:realization ;
+  sh:class archimate:ArchimateObject ;
+  sh:group archimate:ArchimatePropertiesPropertyGroup ;
+  sh:order "-10"^^xsd:decimal ;
+.
+archimate:ArchimateObject-serving
+  a sh:PropertyShape ;
+  sh:path archimate:serving ;
+  sh:class archimate:ArchimateObject ;
+  sh:group archimate:ArchimatePropertiesPropertyGroup ;
+  sh:order "-11"^^xsd:decimal ;
+.
+archimate:ArchimateObject-specialization
+  a sh:PropertyShape ;
+  sh:path archimate:specialization ;
+  sh:class archimate:ArchimateObject ;
+  sh:group archimate:ArchimatePropertiesPropertyGroup ;
+  sh:order "-12"^^xsd:decimal ;
+.
+archimate:ArchimateObject-triggering
+  a sh:PropertyShape ;
+  sh:path archimate:triggering ;
+  sh:class archimate:ArchimateObject ;
+  sh:group archimate:ArchimatePropertiesPropertyGroup ;
+  sh:order "-13"^^xsd:decimal ;
+.
+archimate:ArchimateObject-writeAccess
+  a sh:PropertyShape ;
+  sh:path archimate:writeAccess ;
+  sh:class archimate:ArchimateObject ;
+  sh:group archimate:ArchimatePropertiesPropertyGroup ;
+  sh:order "-14"^^xsd:decimal ;
+.
+archimate:ArchimatePropertiesPropertyGroup
+  a sh:PropertyGroup ;
+  rdfs:label "Archimate Properties"@en ;
+  sh:order "1"^^xsd:decimal ;
+.
+archimate:Artifact
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Artifact"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Assessment
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Assessment"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:BusinessActor
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "BusinessActor"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:BusinessCollaboration
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "BusinessCollaboration"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:BusinessEvent
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "BusinessEvent"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:BusinessFunction
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "BusinessFunction"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:BusinessInteraction
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "BusinessInteraction"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:BusinessInterface
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "BusinessInterface"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:BusinessObject
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "BusinessObject"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:BusinessProcess
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "BusinessProcess"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:BusinessRole
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "BusinessRole"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:BusinessService
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "BusinessService"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Capability
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Capability"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:CommunicationNetwork
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "CommunicationNetwork"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Constraint
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Constraint"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Contract
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Contract"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:CourseOfAction
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "CourseOfAction"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:DataObject
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "DataObject"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Deliverable
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Deliverable"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Device
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Device"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:DistributionNetwork
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "DistributionNetwork"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Driver
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Driver"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Equipment
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Equipment"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Facility
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Facility"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Gap
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Gap"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Goal
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Goal"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:ImplementationEvent
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "ImplementationEvent"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Material
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Material"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Meaning
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Meaning"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Node
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Node"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Outcome
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Outcome"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Path
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Path"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Plateau
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Plateau"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Principle
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Principle"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Product
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Product"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Representation
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Representation"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Requirement
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Requirement"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Resource
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Resource"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Stakeholder
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Stakeholder"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:SystemSoftware
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "SystemSoftware"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:TechnologyCollaboration
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "TechnologyCollaboration"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:TechnologyEvent
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "TechnologyEvent"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:TechnologyFunction
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "TechnologyFunction"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:TechnologyInteraction
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "TechnologyInteraction"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:TechnologyInterface
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "TechnologyInterface"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:TechnologyProcess
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "TechnologyProcess"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:TechnologyService
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "TechnologyService"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:Value
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Value"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:WorkPackage
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "WorkPackage"@en ;
+  rdfs:subClassOf archimate:ArchimateObject ;
+.
+archimate:access
+  a owl:ObjectProperty ;
+  rdfs:domain archimate:ArchimateObject ;
+  rdfs:label "Access"@en ;
+  rdfs:range archimate:ArchimateObject ;
+.
+archimate:aggregation
+  a owl:ObjectProperty ;
+  rdfs:domain archimate:ArchimateObject ;
+  rdfs:label "Agregation"@en ;
+  rdfs:range archimate:ArchimateObject ;
+.
+archimate:assignment
+  a owl:ObjectProperty ;
+  rdfs:domain archimate:ArchimateObject ;
+  rdfs:label "Asignment"@en ;
+  rdfs:range archimate:ArchimateObject ;
+.
+archimate:association
+  a owl:ObjectProperty ;
+  rdfs:domain archimate:ArchimateObject ;
+  rdfs:label "Asociation"@en ;
+  rdfs:range archimate:ArchimateObject ;
+.
+archimate:composition
+  a owl:ObjectProperty ;
+  rdfs:domain archimate:ArchimateObject ;
+  rdfs:label "Composition"@en ;
+  rdfs:range archimate:ArchimateObject ;
+.
+archimate:flow
+  a owl:ObjectProperty ;
+  rdfs:domain archimate:ArchimateObject ;
+  rdfs:label "Flow"@en ;
+  rdfs:range archimate:ArchimateObject ;
+.
+archimate:influence
+  a owl:ObjectProperty ;
+  rdfs:domain archimate:ArchimateObject ;
+  rdfs:label "Influence"@en ;
+  rdfs:range archimate:ArchimateObject ;
+.
+archimate:property
+  a owl:DatatypeProperty ;
+  rdfs:domain archimate:ArchimateObject ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Property" ;
+  rdfs:range rdfs:Literal ;
+.
+archimate:readAccess
+  a owl:ObjectProperty ;
+  rdfs:domain archimate:ArchimateObject ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Read access"@en ;
+  rdfs:range archimate:ArchimateObject ;
+  rdfs:subPropertyOf archimate:access ;
+.
+archimate:readWriteAccess
+  a owl:ObjectProperty ;
+  rdfs:domain archimate:ArchimateObject ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Read/write access"@en ;
+  rdfs:range archimate:ArchimateObject ;
+  rdfs:subPropertyOf archimate:access ;
+.
+archimate:realization
+  a owl:ObjectProperty ;
+  rdfs:domain archimate:ArchimateObject ;
+  rdfs:label "Realization"@en ;
+  rdfs:range archimate:ArchimateObject ;
+.
+archimate:serving
+  a owl:ObjectProperty ;
+  rdfs:domain archimate:ArchimateObject ;
+  rdfs:label "Serving"@en ;
+  rdfs:range archimate:ArchimateObject ;
+.
+archimate:specialization
+  a owl:ObjectProperty ;
+  rdfs:domain archimate:ArchimateObject ;
+  rdfs:label "Specialization"@en ;
+  rdfs:range archimate:ArchimateObject ;
+.
+archimate:triggering
+  a owl:ObjectProperty ;
+  rdfs:domain archimate:ArchimateObject ;
+  rdfs:label "Triggering"@en ;
+  rdfs:range archimate:ArchimateObject ;
+.
+archimate:writeAccess
+  a owl:ObjectProperty ;
+  rdfs:domain archimate:ArchimateObject ;
+  rdfs:isDefinedBy <http://bp4mc2.org/def/archimate> ;
+  rdfs:label "Write access"@en ;
+  rdfs:range archimate:ArchimateObject ;
+  rdfs:subPropertyOf archimate:access ;
+.
