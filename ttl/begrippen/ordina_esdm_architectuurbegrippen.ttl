@@ -12,6 +12,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix teamwork: <http://topbraid.org/teamwork#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 evnprojects:Taxonomy
   rdfs:subClassOf teamwork:Vocabulary ;
@@ -23,7 +24,7 @@ evnprojects:Taxonomy
 .
 esdm_begrip:AMQP
   a skos:Concept ;
-  dc:source "https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol"^^xsd:anyURI ;
   skos:altLabel "Advanced Message Queuing Protocol"@en ;
   skos:broader esdm_begrip:Communicatieprotocol ;
   skos:definition """<div lang=\"en\"><p>The&nbsp;<strong>Advanced Message Queuing Protocol</strong>&nbsp;(<strong>AMQP</strong>) is an&nbsp;<a title=\"Open standard\" href=\"https://en.wikipedia.org/wiki/Open_standard\">open standard</a>&nbsp;<a title=\"Application layer\" href=\"https://en.wikipedia.org/wiki/Application_layer\">application layer</a>&nbsp;protocol for&nbsp;<a title=\"Message-oriented middleware\" href=\"https://en.wikipedia.org/wiki/Message-oriented_middleware\">message-oriented middleware</a>. The defining features of AMQP are message orientation, queuing,&nbsp;<a title=\"Routing\" href=\"https://en.wikipedia.org/wiki/Routing\">routing</a>&nbsp;(including&nbsp;<a title=\"Point-to-point (telecommunications)\" href=\"https://en.wikipedia.org/wiki/Point-to-point_(telecommunications)\">point-to-point</a>&nbsp;and&nbsp;<a class=\"mw-redirect\" title=\"Publish&ndash;subscribe\" href=\"https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe\">publish-and-subscribe</a>), reliability and security.<sup id=\"cite_ref-acmqueue_1-0\" class=\"reference\"></sup></p>
@@ -34,7 +35,7 @@ esdm_begrip:AMQP
 .
 esdm_begrip:API
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Application_programming_interface"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Application_programming_interface"^^xsd:anyURI ;
   skos:altLabel "Application programming interface"@en ;
   skos:broader esdm_begrip:Middleware ;
   skos:definition "Een application programming interface (API) is een verzameling definities op basis waarvan een computerprogramma kan communiceren met een ander programma of onderdeel (meestal in de vorm van bibliotheken). Vaak vormen API's de scheiding tussen verschillende lagen van abstractie, zodat applicaties op een hoog niveau van abstractie kunnen werken en het minder abstracte werk uitbesteden aan andere programma's. Hierdoor hoeft bijvoorbeeld een tekenprogramma niet te weten hoe het de printer moet aansturen, maar roept het daarvoor een gespecialiseerd stuk software aan in een bibliotheek, via een afdruk-API."@nl ;
@@ -57,7 +58,7 @@ esdm_begrip:API_Management
 .
 esdm_begrip:AVG
   a skos:Concept ;
-  dc:source "https://autoriteitpersoonsgegevens.nl/nl/over-privacy/wetten/algemene-verordening-gegevensbescherming-avg"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://autoriteitpersoonsgegevens.nl/nl/over-privacy/wetten/algemene-verordening-gegevensbescherming-avg"^^xsd:anyURI ;
   skos:broader esdm_begrip:NederlandseWetgeving ;
   skos:definition """De AVG gaat over het rechtmatig omgaan met persoonsgegevens. De belangrijkste bepalingen uit de AVG zijn als volgt samen te vatten:
 
@@ -78,7 +79,7 @@ De gegevensverwerking moet op een passende manier worden beveiligd. Voor bijzond
 .
 esdm_begrip:AccessControlList
   a skos:Concept ;
-  dc:source "https://www.marqit.nl/access-control-list"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.marqit.nl/access-control-list"^^xsd:anyURI ;
   skos:broader esdm_begrip:SecurityAndAccess ;
   skos:definition "Een Access Control List (ACL) is een tabel met regels (ACEs - Access Control Entries) die de rechten (permissions) bepalen. Deze regels hebben betrekking op de toegang die gebruikers hebben tot bepaalde systeemobjecten of netwerkomgevingen. Access control lists worden doorgaans toegepast op bestandstructuren (bestanden/ mappen) of netwerkstructuren (poortnummers/ ip adressen)."@nl ;
   skos:note """<div lang=\"nl\"><p>Elke ACE in een ACL identificeert een trustee en specificeert de volgende toegangsrechten:</p>
@@ -96,13 +97,13 @@ esdm_begrip:AccessControlList
 .
 esdm_begrip:Accessibility
   a skos:Concept ;
-  dc:source "https://www.w3.org/standards/webdesign/accessibility"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.w3.org/standards/webdesign/accessibility"^^xsd:anyURI ;
   skos:broader esdm_begrip:WebDesignAndApplications ;
   skos:prefLabel "Accessibility (W3C)"@en ;
 .
 esdm_begrip:ActiveDirectory
   a skos:Concept ;
-  dc:source "https://www.varonis.com/blog/what-is-active-directory/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.varonis.com/blog/what-is-active-directory/"^^xsd:anyURI ;
   skos:broader esdm_begrip:SecurityAndAccess ;
   skos:definition """Active Directory (AD) is Microsoft’s directory service that stores data about objects on your local network. It records information on users, devices, applications, and groups. AD organizes this data in a hierarchical structure so that you can easily find details of how your network is operating from a central location.
 
@@ -159,7 +160,7 @@ esdm_begrip:AmazonNeptune
 .
 <http://ordina.nl/esdm/im/begrippen/id/AmazonWebServices–DataLake>
   a skos:Concept ;
-  dc:source "https://aws.amazon.com/big-data/datalakes-and-analytics/what-is-a-data-lake/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://aws.amazon.com/big-data/datalakes-and-analytics/what-is-a-data-lake/"^^xsd:anyURI ;
   skos:broader esdm_begrip:DataLake ;
   skos:definition "Amazon biedt, net zoals Google en Microsoft, de mogelijkheid om een Data Lake op AWS in te richten. "@nl ;
   skos:prefLabel "Amazon Web Services – Data Lake"@nl ;
@@ -182,7 +183,7 @@ esdm_begrip:Apache
 .
 esdm_begrip:ApacheHadoop
   a skos:Concept ;
-  dc:source "https://hadoop.apache.org/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://hadoop.apache.org/"^^xsd:anyURI ;
   skos:broader esdm_begrip:SoftwareBibliotheek ;
   skos:definition "The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models. It is designed to scale up from single servers to thousands of machines, each offering local computation and storage. Rather than rely on hardware to deliver high-availability, the library itself is designed to detect and handle failures at the application layer, so delivering a highly-available service on top of a cluster of computers, each of which may be prone to failures."@en ;
   skos:prefLabel "Apache Hadoop"@en ;
@@ -200,7 +201,7 @@ esdm_begrip:ApacheJames
 .
 esdm_begrip:ApacheKafka
   a skos:Concept ;
-  dc:source "https://www.redhat.com/en/topics/integration/what-is-apache-kafka"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.redhat.com/en/topics/integration/what-is-apache-kafka"^^xsd:anyURI ;
   skos:broader esdm_begrip:EventDrivenArchitecture ;
   skos:definition """<div lang=\"nl\"><p><span>Apache Kafka is een gedistribueerd platform voor gegevensstreaming dat in realtime gegevensstromen kan publiceren, erop abonneren, opslaan en verwerken.&nbsp;Het is ontworpen om gegevensstromen uit meerdere bronnen te verwerken en aan meerdere consumenten te leveren.&nbsp;Kortom, het verplaatst enorme hoeveelheden gegevens - niet alleen van punt A naar B, maar van punt A naar Z en overal waar u maar wilt, en dat allemaal tegelijk.</span></p>
 <p><span>Apache Kafka is een alternatief voor een traditioneel berichtensysteem voor ondernemingen.&nbsp;Het begon als een intern systeem dat door Linkedin is ontwikkeld om 1,4 biljoen berichten per dag te verwerken, maar nu is het een open source datastreaming-oplossing met toepassing voor verschillende zakelijke behoeften.</span></p>
@@ -238,7 +239,7 @@ esdm_begrip:ApacheKafka
 .
 esdm_begrip:ApacheOzone
   a skos:Concept ;
-  dc:source "https://hadoop.apache.org/ozone/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://hadoop.apache.org/ozone/"^^xsd:anyURI ;
   skos:broader esdm_begrip:ApacheHadoop ;
   skos:definition "Ozone is a scalable, redundant, and distributed object store for Hadoop. Apart from scaling to billions of objects of varying sizes, Ozone can function effectively in containerized environments such as Kubernetes and YARN."@en ;
   skos:prefLabel "Apache Ozone"@en ;
@@ -250,8 +251,8 @@ esdm_begrip:AppServer
 .
 esdm_begrip:AppendBlob
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/connect-an-app-to-azure-storage/2-explore-azure-storage"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/store-app-data-with-azure-blob-storage/3-design-organization-strategy"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/connect-an-app-to-azure-storage/2-explore-azure-storage"^^xsd:anyURI ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/store-app-data-with-azure-blob-storage/3-design-organization-strategy"^^xsd:anyURI ;
   skos:broader esdm_begrip:AzureBlob ;
   skos:definition "<div lang=\"en\"><strong>Append blobs</strong>&nbsp;are specialized block blobs that support only appending new data (not updating or deleting existing data), but they're very efficient at it. Append blobs are great for scenarios like storing logs or writing streamed data.</div>"^^rdf:HTML ;
   skos:definition "Append blobs are made up of blocks like block blobs, but they are optimized for append operations. These blobs are frequently used for logging information from one or more sources into the same blob. For example, you might write all of your trace logging to the same append blob for an application running on multiple VMs. A single append blob can be up to 195 GB."@en ;
@@ -259,7 +260,7 @@ esdm_begrip:AppendBlob
 .
 esdm_begrip:Applicatie
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Applicatie"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Applicatie"^^xsd:anyURI ;
   skos:broader esdm_begrip:Software ;
   skos:definition """Een applicatie (letterlijk: \"toepassing\"; vaak ook afgekort als app) is een computerprogramma dat bedoeld is voor eindgebruikers. Dit in tegenstelling tot een servertaak of andere taken die door een besturingssysteem op de achtergrond worden uitgevoerd. Een applicatie draait 'op' (of 'onder') een bepaald besturingssysteem. Sommige populaire toepassingen zijn beschikbaar voor meer dan één besturingssysteem, en daarmee multiplatform. De complexiteit van applicaties loopt uiteen van simpel (in geval van een spelletje, of een teksteditor zoals Notepad) tot extreem complex (in geval van de systemen die in realtime processen verzorgen zoals luchtverkeersleiding, elektronisch betalingsverkeer, mobiele telefonie of administratieve of industriële processen). Complexe toepassingen zijn vaak verdeeld over meerdere systemen.
 
@@ -271,7 +272,7 @@ Voor de allereerste computers moesten de applicaties vaak zelf door de gebruiker
 .
 esdm_begrip:Applicatieserver
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Applicatieserver"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Applicatieserver"^^xsd:anyURI ;
   skos:broader esdm_begrip:Server ;
   skos:definition """<div lang=\"nl\"><p>Een&nbsp;<strong>applicatieserver</strong>&nbsp;is&nbsp;<a title=\"Software\" href=\"https://nl.wikipedia.org/wiki/IT-infrastructuur\">infrastructurele</a>&nbsp;<a title=\"\" href=\"https://nl.wikipedia.org/wiki/Software\">software</a>&nbsp;die tot doel heeft&nbsp;<a title=\"Applicatie\" href=\"https://nl.wikipedia.org/wiki/Applicatie\">applicatiecomponenten</a>&nbsp;te herbergen en allerlei services aan die applicatiecomponenten aan te bieden.</p>
 <p>De gedachte achter het concept van de applicatieserver is dat allerlei zaken zoals&nbsp;<a title=\"Database\" href=\"https://nl.wikipedia.org/wiki/Database\">database</a>-access (toegang tot gegevensbestanden), interactie met&nbsp;<a class=\"mw-redirect\" title=\"Gebruikersinterface\" href=\"https://nl.wikipedia.org/wiki/Gebruikersinterface\">gebruikersinterface</a>, beveiliging en schaalbaarheid infrastructureel, dat wil zeggen buiten de applicatie zelf, opgelost worden, zodat de&nbsp;<a title=\"\" href=\"https://nl.wikipedia.org/wiki/Programmeren_(computer)\">programmeur</a>&nbsp;zich alleen nog maar bezig hoeft te houden met het programmeren van de 'business logica'. De applicatieserver zorgt ervoor dat de applicatie(s) die binnen de applicatieserver worden gedraaid gebruik kunnen maken van de diensten zoals die hiervoor beschreven zijn. Op deze manier hoeft niet elke applicatie zelf dit soort infrastructurele functionaliteit te implementeren, maar kan de functionaliteit van de applicatieserver worden hergebruikt.</p>
@@ -297,7 +298,7 @@ esdm_begrip:Atmail
 .
 esdm_begrip:AudioAndVideo
   a skos:Concept ;
-  dc:source "https://www.w3.org/standards/webdesign/audiovideo"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.w3.org/standards/webdesign/audiovideo"^^xsd:anyURI ;
   skos:broader esdm_begrip:WebDesignAndApplications ;
   skos:definition """The terms audio and video commonly refers to the time-based media storage format for sound/music and moving pictures information. Audio and video digital recording, also referred as audio and video codecs, can be uncompressed, lossless compressed, or lossy compressed depending on the desired quality and use cases.
 
@@ -326,7 +327,7 @@ esdm_begrip:AzCopy
 .
 esdm_begrip:AzureActiveDirectory
   a skos:Concept ;
-  dc:source "https://www.varonis.com/blog/azure-active-directory/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.varonis.com/blog/azure-active-directory/"^^xsd:anyURI ;
   skos:broader esdm_begrip:MicrosoftAzure ;
   skos:definition "<div lang=\"en\">Azure Active Directory (Azure AD) is Microsoft&rsquo;s enterprise cloud-based identity and access management (IAM) solution. Azure AD is the backbone of the Office 365 system, and it can sync with on-premise&nbsp;<a href=\"https://www.varonis.com/blog/what-is-active-directory/\" target=\"_blank\" rel=\"noopener noreferrer\">Active Directory</a>&nbsp;and provide authentication to other cloud-based systems via OAuth.</div>"^^rdf:HTML ;
   skos:prefLabel "Azure Active Directory"@en ;
@@ -341,7 +342,7 @@ esdm_begrip:AzureAnalysisServices
 .
 esdm_begrip:AzureBlob
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/store-app-data-with-azure-blob-storage/3-design-organization-strategy"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/store-app-data-with-azure-blob-storage/3-design-organization-strategy"^^xsd:anyURI ;
   skos:broader esdm_begrip:AzureStorage ;
   skos:definition "A scalable object store for text and binary data"@en ;
   skos:note "<div lang=\"en\">Block blobs are the best choice for most scenarios that don't specifically call for append or page blobs. Their block-based structure supports very fast uploads and downloads and efficient access to individual pieces of a blob. The process of managing and committing blocks is automatically handled by most client libraries, and some will also handle parallel uploads and downloads to maximize performance.</div>"^^rdf:HTML ;
@@ -362,14 +363,14 @@ esdm_begrip:AzureCognitiveSearch
 .
 esdm_begrip:AzureDataDrivenWorkflow
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/data-integration-azure-data-factory/4-explain-process"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/data-integration-azure-data-factory/4-explain-process"^^xsd:anyURI ;
   skos:broader esdm_begrip:AzureDataFactory ;
   skos:prefLabel "Azure Data-driven workflow"@en ;
 .
 esdm_begrip:AzureDataFactory
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/data-integration-azure-data-factory/2-understand"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/upload-data-to-azure-data-lake-storage/5-copy-data-from-gen1-to-gen2"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/data-integration-azure-data-factory/2-understand"^^xsd:anyURI ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/upload-data-to-azure-data-lake-storage/5-copy-data-from-gen1-to-gen2"^^xsd:anyURI ;
   skos:broader esdm_begrip:MicrosoftAzure ;
   skos:definition """<div lang=\"en\"><p>Azure Data Factory is a cloud-based data integration service that creates workflows in the cloud. These workflows orchestrate batch data movement and transformations. Use Data Factory to create and schedule workflows (called&nbsp;<em>pipelines</em>) to ingest data from various data stores. The data can then be processed and transformed with services like these:</p>
 <ul>
@@ -394,7 +395,7 @@ esdm_begrip:AzureDataFactory
 .
 esdm_begrip:AzureDataLakeStorage
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-data-lake-storage/2-azure-data-lake-gen2"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-data-lake-storage/2-azure-data-lake-gen2"^^xsd:anyURI ;
   skos:broader esdm_begrip:DataLake ;
   skos:broader esdm_begrip:MicrosoftAzure ;
   skos:definition """<div lang=\"en\"><p>Azure Data Lake Storage combines a file system with a storage platform to help you quickly identify insights into your data. Data Lake Storage Gen2 builds on Azure Blob storage capabilities to optimize it specifically for analytics workloads. This integration enables analytics performance, the tiering and data lifecycle management capabilities of Blob storage, and the high-availability, security, and durability capabilities of Azure Storage.</p>
@@ -431,7 +432,7 @@ esdm_begrip:AzureDatabricks
 .
 esdm_begrip:AzureDefenderForStorage
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/secure-azure-storage-account/6-advanced-threat-protection"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/secure-azure-storage-account/6-advanced-threat-protection"^^xsd:anyURI ;
   skos:broader esdm_begrip:AzureStorage ;
   skos:definition """Azure Defender for Storage provides an extra layer of security intelligence that detects unusual and potentially harmful attempts to access or exploit storage accounts. This layer of protection allows you to address threats without being a security expert or managing security monitoring systems.
 
@@ -442,8 +443,8 @@ Azure Defender for Storage is currently available for Blob storage, Azure Files,
 .
 esdm_begrip:AzureEventHub
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/enable-reliable-messaging-for-big-data-apps-using-event-hubs/2-create-an-event-hub-using-azure-cli"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/enable-reliable-messaging-for-big-data-apps-using-event-hubs/4-configure-applications-to-send-or-receive-messages-through-an-event-hub"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/enable-reliable-messaging-for-big-data-apps-using-event-hubs/2-create-an-event-hub-using-azure-cli"^^xsd:anyURI ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/enable-reliable-messaging-for-big-data-apps-using-event-hubs/4-configure-applications-to-send-or-receive-messages-through-an-event-hub"^^xsd:anyURI ;
   skos:broader esdm_begrip:MicrosoftAzure ;
   skos:definition """<div lang=\"en\"><p>Azure&nbsp;<a href=\"https://azure.microsoft.com/services/event-hubs/\" data-linktype=\"external\">Event Hubs</a>&nbsp;is a cloud-based, event-processing service that can receive and process millions of events per second. Event Hubs acts as a front door for an event pipeline, to receive incoming data and stores this data until processing resources are available.</p>
 <p>An entity that sends data to the Event Hubs is called a&nbsp;<em>publisher</em>, and an entity that reads data from the Event Hubs is called a&nbsp;<em>consumer</em>&nbsp;or a&nbsp;<em>subscriber</em>. Azure Event Hubs sits between these two entities to divide the production (from the publisher) and consumption (to a subscriber) of an event stream. This decoupling helps to manage scenarios where the rate of event production is much higher than the consumption. The following illustration shows the role of an Event Hub.</p></div>"""^^rdf:HTML ;
@@ -467,11 +468,12 @@ esdm_begrip:AzureEventHub
 </ul>
 <p>If you have a receiver application that stores messages in Azure Blob Storage, you'll also need to configure a storage account.</p></div>"""^^rdf:HTML ;
   skos:prefLabel "Azure Event Hub"@en ;
+  skos:related esdm_begrip:AzureStreamAnalytics ;
   skos:related esdm_begrip:Event ;
 .
 esdm_begrip:AzureFiles
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/connect-an-app-to-azure-storage/2-explore-azure-storage"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/connect-an-app-to-azure-storage/2-explore-azure-storage"^^xsd:anyURI ;
   skos:broader esdm_begrip:AzureStorage ;
   skos:definition """<div lang=\"en\"><p>Azure Files enables you to set up highly available network file shares that can be accessed using the standard Server Message Block (SMB) protocol. This means that multiple VMs can share the same files with both read and write access. You can also read the files using the REST interface or the storage client libraries. You can also associate a unique URL to any file to allow fine-grained access to a private file for a set period of time. File shares can be used for many common scenarios:</p>
 <ul>
@@ -486,7 +488,7 @@ esdm_begrip:AzureFiles
 .
 esdm_begrip:AzureGlobalRegion
   a skos:Concept ;
-  dc:source "https://azure.microsoft.com/en-us/global-infrastructure/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://azure.microsoft.com/en-us/global-infrastructure/"^^xsd:anyURI ;
   skos:broader esdm_begrip:MicrosoftAzure ;
   skos:definition "<div lang=\"en\">An Azure region is a set of datacenters, deployed within a latency-defined perimeter and connected through a dedicated regional low-latency network.</div>"^^rdf:HTML ;
   skos:example """<div lang=\"en\"><div class=\"column\">
@@ -514,7 +516,7 @@ esdm_begrip:AzureKeyVault
 .
 esdm_begrip:AzureQueue
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/connect-an-app-to-azure-storage/2-explore-azure-storage"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/connect-an-app-to-azure-storage/2-explore-azure-storage"^^xsd:anyURI ;
   skos:broader esdm_begrip:AzureStorage ;
   skos:definition """<div lang=\"en\"><p>The Azure Queue service is used to store and retrieve messages. Queue messages can be up to 64 KB in size, and a queue can contain millions of messages. Queues are used to store lists of messages to be processed asynchronously.</p>
 <p>You can use queues to loosely connect different parts of your application together. For example, we could perform image processing on the photos uploaded by our users. Perhaps we want to provide some sort of face detection or tagging capability, so people can search through all the images they have stored in our service. We could use queues to pass messages to our image-processing service to let it know that new images have been uploaded and are ready for processing. This sort of architecture would allow you to develop and update each part of the service independently.</p></div>"""^^rdf:HTML ;
@@ -529,7 +531,7 @@ esdm_begrip:AzureResource
 .
 esdm_begrip:AzureResourceGroup
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/nl-nl/azure/azure-resource-manager/management/overview#resource-groups"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/nl-nl/azure/azure-resource-manager/management/overview#resource-groups"^^xsd:anyURI ;
   skos:broader esdm_begrip:AzureResourceManager ;
   skos:definition "<div lang=\"en\">Resource groups enable you to manage all your resources in an application together. Resource groups are enabled by Azure Resource Manager. Resource Manager allows you to group multiple resources as a logical group which serves as the lifecycle boundary for every resource contained within it. Typically a group will contain resources related to a specific application. For example, a group may contain a Website resource that hosts your public website, a SQL Database that stores relational data used by the site, and a Storage Account that stores non-relational assets.</div>"^^rdf:HTML ;
   skos:prefLabel "Resource group"@en ;
@@ -550,7 +552,7 @@ esdm_begrip:AzureSQL
 .
 esdm_begrip:AzureStorage
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/survey-the-azure-data-platform/3-store-data-using-azure-store-account"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/survey-the-azure-data-platform/3-store-data-using-azure-store-account"^^xsd:anyURI ;
   skos:broader esdm_begrip:MicrosoftAzure ;
   skos:definition "Azure Storage offers a very scalable object store for data objects and file system services in the cloud. It can also provide a messaging store for reliable messaging, or it can act as a NoSQL store."@en ;
   skos:prefLabel "Azure Storage"@nl ;
@@ -559,7 +561,7 @@ esdm_begrip:AzureStorage
 .
 esdm_begrip:AzureStorageAccount
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/create-azure-storage-account/2-decide-how-many-storage-accounts-you-need"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/create-azure-storage-account/2-decide-how-many-storage-accounts-you-need"^^xsd:anyURI ;
   skos:broader esdm_begrip:AzureStorage ;
   skos:definition """<div lang=\"en\"><p>A storage account defines a policy that applies to all the storage services in the account. For example, you could specify that all the contained services will be stored in the West US datacenter, accessible only over https, and billed to the sales department's subscription.</p>
 <p>The settings that are defined by a storage account are:</p>
@@ -600,9 +602,11 @@ esdm_begrip:AzureStorageExplorer
 .
 esdm_begrip:AzureStreamAnalytics
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/azure/stream-analytics/stream-analytics-introduction"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/azure/stream-analytics/stream-analytics-introduction"^^xsd:anyURI ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/ingest-data-streams-with-azure-stream-analytics/3-process-streaming-data-azure-stream-analytics"^^xsd:anyURI ;
   skos:broader esdm_begrip:EventProcessor ;
   skos:broader esdm_begrip:MicrosoftAzure ;
+  skos:definition "<div lang=\"en\"><a href=\"https://docs.microsoft.com/en-us/azure/stream-analytics/stream-analytics-introduction\" data-linktype=\"absolute-path\">Azure Stream Analytics</a>&nbsp;is the recommended service for stream analytics on Azure. Stream Analytics provides you with the ability to ingest, process, and analyze streaming data from Azure Event Hubs (including&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview\" data-linktype=\"absolute-path\">Azure Event Hubs from Apache Kafka</a>) and Azure IoT Hub. You can also configure static data ingestion from Azure Blob Storage. This integration allows you to quickly create hot-path analytics pipelines to generate powerful insights to drive real-time actions.</div>"^^rdf:HTML ;
   skos:definition "Azure Stream Analytics is a real-time analytics and complex event-processing engine that is designed to analyze and process high volumes of fast streaming data from multiple sources simultaneously. Patterns and relationships can be identified in information extracted from a number of input sources including devices, sensors, clickstreams, social media feeds, and applications. These patterns can be used to trigger actions and initiate workflows such as creating alerts, feeding information to a reporting tool, or storing transformed data for later use. Also, Stream Analytics is available on Azure IoT Edge runtime, enabling to process data on IoT devices."@en ;
   skos:example """<div lang=\"en\">
 <p>The following scenarios are examples of when you can use Azure Stream Analytics:</p>
@@ -614,8 +618,18 @@ esdm_begrip:AzureStreamAnalytics
 <li>Real-time analytics on Point of Sale data for inventory control and anomaly detection</li>
 </ul>
 </div>"""^^rdf:HTML ;
+  skos:example """<div lang=\"en\"><p>&nbsp;Azure Stream Analytics is meant for a wide range of scenarios that include, but aren't limited to:</p>
+<ul>
+<li>Dashboards for data visualization</li>
+<li><a href=\"https://docs.microsoft.com/en-us/azure/stream-analytics/stream-analytics-set-up-alerts\" data-linktype=\"absolute-path\">Real-time alerts</a>&nbsp;from temporal and spatial patterns or anomalies</li>
+<li>Extract, Transform, Load (ETL)</li>
+<li><a href=\"https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing\" data-linktype=\"absolute-path\">Event Sourcing pattern</a></li>
+<li><a href=\"https://docs.microsoft.com/en-us/azure/stream-analytics/stream-analytics-edge\" data-linktype=\"absolute-path\">IoT Edge</a></li>
+</ul></div>"""^^rdf:HTML ;
   skos:prefLabel "Azure Stream Analytics"@en ;
+  skos:related esdm_begrip:AzureEventHub ;
   skos:related esdm_begrip:DataStream ;
+  skos:related esdm_begrip:PowerBI ;
   skos:related esdm_begrip:StreamAnalyticsQueryLanguage ;
 .
 esdm_begrip:AzureSubscription
@@ -639,7 +653,7 @@ esdm_begrip:AzureTable
 .
 esdm_begrip:AzureVirtualMachine
   a skos:Concept ;
-  dc:source "https://azure.microsoft.com/nl-nl/overview/what-is-a-virtual-machine/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://azure.microsoft.com/nl-nl/overview/what-is-a-virtual-machine/"^^xsd:anyURI ;
   skos:broader esdm_begrip:MicrosoftAzure ;
   skos:broader esdm_begrip:Virtualisatietechnologie ;
   skos:definition "Een virtuele machine, vaak kortweg een VM, is niet anders dan andere fysieke computers, zoals een laptop, een smartphone of een server. Het heeft een CPU, geheugen, schijven om uw bestanden op te slaan en kan indien nodig verbinding maken met internet. Hoewel de onderdelen waaruit uw computer bestaat (hardware) fysiek en tastbaar zijn, worden VM's vaak gezien als virtuele computers of door software gedefinieerde computers binnen fysieke servers, die alleen bestaan uit code."@nl ;
@@ -665,7 +679,7 @@ esdm_begrip:BerkeleyDB
 .
 esdm_begrip:Bestandsserver
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Bestandsserver"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Bestandsserver"^^xsd:anyURI ;
   skos:broader esdm_begrip:Server ;
   skos:definition """<div lang=\"nl\"><p>Een&nbsp;<strong>bestandsserver</strong>&nbsp;(of&nbsp;<strong>file server</strong>) is een&nbsp;<a title=\"Server\" href=\"https://nl.wikipedia.org/wiki/Server\">server</a>&nbsp;die&nbsp;<a class=\"mw-redirect\" title=\"Network Attached Storage\" href=\"https://nl.wikipedia.org/wiki/Network_Attached_Storage\">Network Attached Storage</a>&nbsp;ter beschikking stelt aan&nbsp;<a title=\"Client (applicatie)\" href=\"https://nl.wikipedia.org/wiki/Client_(applicatie)\">clients</a>. Veel gebruikte&nbsp;<a title=\"Protocol\" href=\"https://nl.wikipedia.org/wiki/Protocol\">protocollen</a>&nbsp;zijn&nbsp;<a class=\"mw-redirect\" title=\"File Transfer Protocol\" href=\"https://nl.wikipedia.org/wiki/File_Transfer_Protocol\">FTP</a>,&nbsp;<a title=\"Hypertext Transfer Protocol\" href=\"https://nl.wikipedia.org/wiki/Hypertext_Transfer_Protocol\">HTTP</a>,&nbsp;<a title=\"Network File System\" href=\"https://nl.wikipedia.org/wiki/Network_File_System\">NFS</a>&nbsp;en&nbsp;<a title=\"Server Message Block\" href=\"https://nl.wikipedia.org/wiki/Server_Message_Block\">SMB</a>. Bestandsservers kunnen&nbsp;<a class=\"mw-redirect\" title=\"Redundant Array of Independent Disks\" href=\"https://nl.wikipedia.org/wiki/Redundant_Array_of_Independent_Disks\">RAID</a>&nbsp;gebruiken om de snelheid en betrouwbaarheid van het lezen en schrijven te vergroten.</p>
 <p>Een bestandsserver dient ervoor te zorgen dat bestanden volledig en zonder een enkele fout worden overgebracht naar de client. Dit in tegenstelling tot een streaming server zoals die bij&nbsp;<a title=\"Streaming media\" href=\"https://nl.wikipedia.org/wiki/Streaming_media\">streaming media</a>&nbsp;wordt gebruikt. In dat geval is het minder belangrijk dat alle beelden foutloos overkomen maar staat het afleveren van een continu doorlopende stroom - een video zonder haperingen - centraal (zie ook&nbsp;<a title=\"\" href=\"https://nl.wikipedia.org/wiki/Downloaden_versus_streamen\">downloaden versus streamen</a>).</p></div>"""^^rdf:HTML ;
@@ -683,7 +697,7 @@ esdm_begrip:Besturingssysteem
 .
 esdm_begrip:BigData
   a skos:Concept ;
-  dc:source "https://en.wikipedia.org/wiki/Big_data"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://en.wikipedia.org/wiki/Big_data"^^xsd:anyURI ;
   skos:broader esdm_begrip:OngestructureerdeData ;
   skos:definition """Big data is een gebied dat manieren behandelt om gegevens te analyseren, systematisch informatie te extraheren of anderszins om te gaan met gegevenssets die te groot of te complex zijn om te worden verwerkt door traditionele software voor gegevensverwerking .
 
@@ -708,8 +722,8 @@ esdm_begrip:BigDataProcessen
 .
 esdm_begrip:BlockBlob
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/connect-an-app-to-azure-storage/2-explore-azure-storage"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/store-app-data-with-azure-blob-storage/3-design-organization-strategy"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/connect-an-app-to-azure-storage/2-explore-azure-storage"^^xsd:anyURI ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/store-app-data-with-azure-blob-storage/3-design-organization-strategy"^^xsd:anyURI ;
   skos:broader esdm_begrip:AzureBlob ;
   skos:definition "<div lang=\"en\"><strong>Block blobs</strong>&nbsp;are composed of blocks of different sizes that can be uploaded independently and in parallel. Writing to a block blob involves uploading data to blocks and committing them to the blob.</div>"^^rdf:HTML ;
   skos:definition "Block blobs are used to hold text or binary files up to ~5 TB (50,000 blocks of 100 MB) in size. The primary use case for block blobs is the storage of files that are read from beginning to end, such as media files or image files for websites. They are named block blobs because files larger than 100 MB must be uploaded as small blocks. These blocks are then consolidated (or committed) into the final blob."@en ;
@@ -717,7 +731,7 @@ esdm_begrip:BlockBlob
 .
 esdm_begrip:Boekhoudsoftware
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Boekhoudprogramma"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Boekhoudprogramma"^^xsd:anyURI ;
   skos:broader esdm_begrip:Bedrijfssoftware ;
   skos:definition """Een boekhoudprogramma is een softwarepakket waarmee de boekhouding is te automatiseren. Met een dergelijk programma zijn dus een inkoopfactuur, een bankafschrift of een memoriaalboeking vast te leggen. Tevens laat het min of meer automatisch een balans en een resultatenrekening vervaardigen en vervult zo alle basisfuncties van een boekhouding, namelijk die van de grootboekadministratie.
 
@@ -734,7 +748,7 @@ Analytics geeft u antwoord op vragen als: Waarom gebeurt dit? Welke kansen mis i
 .
 esdm_begrip:BusinessReporting
   a skos:Concept ;
-  dc:source "https://en.wikipedia.org/wiki/Business_reporting"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://en.wikipedia.org/wiki/Business_reporting"^^xsd:anyURI ;
   skos:broader esdm_begrip:Reporting ;
   skos:prefLabel "Business reporting"@en ;
 .
@@ -757,7 +771,7 @@ esdm_begrip:Clickstreams
 .
 esdm_begrip:ClosedSource
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Closed_source"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Closed_source"^^xsd:anyURI ;
   skos:broader esdm_begrip:Software ;
   skos:definition "Met de term closed source wordt software aangeduid waarvan de broncode (source) door de maker niet ter inzage wordt gegeven aan de consument. Closedsourcesoftware impliceert meestal propriëtaire software, maar ook auteursrechtvrije software kan closed source zijn als de broncode om andere redenen niet (meer) beschikbaar is. De meeste software, waaronder software van Apple en Microsoft, is 'closed source'. Soms wordt er aan grootgebruikers wel inzage in de broncode verleend."@nl ;
   skos:prefLabel "Closed Source"@nl ;
@@ -766,14 +780,14 @@ esdm_begrip:ClosedSource
 .
 <http://ordina.nl/esdm/im/begrippen/id/Cloudera–DataHub>
   a skos:Concept ;
-  dc:source "https://www.cloudera.com/products/enterprise-data-hub.html"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.cloudera.com/products/enterprise-data-hub.html"^^xsd:anyURI ;
   skos:broader esdm_begrip:DataHub ;
   skos:definition "Cloudera biedt een cloud-based Data Hub als service, van security & governance tot data analytics & AI.  "@nl ;
   skos:prefLabel "Cloudera – Data Hub"@nl ;
 .
 esdm_begrip:Cloudomgeving
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/nl-nl/learn/modules/evolving-world-of-data/3-systems-on-premise-vs-cloud"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/nl-nl/learn/modules/evolving-world-of-data/3-systems-on-premise-vs-cloud"^^xsd:anyURI ;
   skos:broader esdm_begrip:ComputingOmgeving ;
   skos:definition """<div lang=\"nl\"><p>Cloudomgevingen bieden de fysieke en logische infrastructuur om services, virtuele servers, slimme toepassingen en containers voor hun abonnees te hosten. Voor cloudomgevingen is, in tegenstelling tot fysieke on-premises servers, geen kapitaalinvestering nodig. In plaats daarvan richt een organisatie een service in de cloud in en betaalt alleen voor wat deze gebruikt. Wanneer u servers en services naar de cloud verplaatst, verlaagt u ook de operationele kosten.</p>
 <p>Binnen enkele minuten kan een organisatie met behulp van Azure-services bijvoorbeeld virtuele servers of clusters met apps in containers leveren. Azure maakt en beheert automatisch alle fysieke en logische infrastructuur op de achtergrond. Op deze manier worden door Azure de complexiteit van en de kosten voor het maken van de services verminderd.</p>
@@ -792,7 +806,7 @@ esdm_begrip:Coherence
 .
 esdm_begrip:ColumnDatabase
   a skos:Concept ;
-  dc:source "https://en.wikipedia.org/wiki/Column-oriented_DBMS"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://en.wikipedia.org/wiki/Column-oriented_DBMS"^^xsd:anyURI ;
   skos:broader esdm_begrip:NoSQL ;
   skos:definition "A column-oriented DBMS or columnar DBMS is a database management system (DBMS) that stores data tables by column rather than by row. Practical use of a column store versus a row store differs little in the relational DBMS world. Both columnar and row databases can use traditional database query languages like SQL to load data and perform queries. Both row and columnar databases can become the backbone in a system to serve data for common extract, transform, load (ETL) and data visualization tools. However, by storing data in columns rather than rows, the database can more precisely access the data it needs to answer a query rather than scanning and discarding unwanted data in rows."@en ;
   skos:note "<div lang=\"en\">Stores data based on columns rather than rows. Columns can be defined at the query's runtime, allowing flexibility in the data that's returned performantly.</div>"^^rdf:HTML ;
@@ -818,7 +832,7 @@ esdm_begrip:ComputingOmgeving
 .
 esdm_begrip:Conductor
   a skos:Concept ;
-  dc:source "https://www.softwarecatalogus.nl/pakket/conductor"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.softwarecatalogus.nl/pakket/conductor"^^xsd:anyURI ;
   skos:broader esdm_begrip:EnterpriseServiceBus ;
   skos:definition "De Conductor bevat naast een servicebus ook een RGBZ zakenmagazijn en functionaliteit voor MijnOverheid Berichtenbox. Hiermee is de Conductor het hart van uw midoffice en/of zaaksysteem. De Conductor helpt u bij het verbeteren van van uw digitale dienstverlening, waarbij 7 * 24 bereikbaarheid van uw gemeentelijk website invulling geeft aan kanaalonafhankelijke dienstverlening en kanaalsturing. De Conductor realiseert prefill van diverse gegevens die over uw burgers, bedrijven en instellingen bekend zijn en benut veilige hulpmiddelen zoals DigiD en eHerkenning. Anderzijds helpt onze oplossing u bij gemeentebreed zicht op alle producten en diensten (ofwel zaken) die u aanbiedt en om grip te houden op de voortgang hiervan. Verder sluit de Conductor aan op landelijke initiatieven zoals: Digikoppeling, e-factureren, LVWOZ, Corv en het Omgevingsloket Online. De Conductor ondersteunt volledig de meergemeente functionaliteit en is zowel lokaal te gebruiken en als SaaS oplossing leverbaar."@nl ;
   skos:prefLabel "Conductor"@nl ;
@@ -836,7 +850,7 @@ esdm_begrip:ContainerLinuxEtcd
 .
 esdm_begrip:CosmosDB
   a skos:Concept ;
-  dc:source "https://en.wikipedia.org/wiki/Cosmos_DB"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://en.wikipedia.org/wiki/Cosmos_DB"^^xsd:anyURI ;
   skos:broader esdm_begrip:MicrosoftAzure ;
   skos:broader esdm_begrip:MultiModelDatabase ;
   skos:definition "Azure Cosmos DB is Microsoft's proprietary globally-distributed, multi-model database service \"for managing data at planet-scale\" launched in May 2017. It is schema-agnostic, horizontally scalable, and generally classified as a NoSQL database."@en ;
@@ -864,7 +878,7 @@ esdm_begrip:CourierMailServer
 .
 esdm_begrip:CrossOriginResourceSharing
   a skos:Concept ;
-  dc:source "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS"^^xsd:anyURI ;
   skos:broader esdm_begrip:Webstandaard ;
   skos:definition """<div lang=\"en\"><p><span class=\"seoSummary\"><strong>Cross-Origin Resource Sharing</strong>&nbsp;(<a href=\"https://developer.mozilla.org/en-US/docs/Glossary/CORS\">CORS</a>) is an&nbsp;<a href=\"https://developer.mozilla.org/en-US/docs/Glossary/HTTP\">HTTP</a>-header based mechanism that allows a server to indicate any other&nbsp;<a href=\"https://developer.mozilla.org/en-US/docs/Glossary/Origin\">origin</a>s (domain, scheme, or port) than its own from which a browser should permit loading of resources.</span>&nbsp;CORS also relies on a mechanism by which browsers make a &ldquo;preflight&rdquo; request to the server hosting the cross-origin resource, in order to check that the server will permit the actual request. In that preflight, the browser sends headers that indicate the HTTP method and headers that will be used in the actual request.</p>
 <p>An example of a cross-origin request: the front-end JavaScript code served from&nbsp;<code>https://domain-a.com</code>&nbsp;uses&nbsp;<a href=\"https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest\"><code>XMLHttpRequest</code></a>&nbsp;to make a request for&nbsp;<code>https://domain-b.com/data.json</code>.</p>
@@ -873,8 +887,8 @@ esdm_begrip:CrossOriginResourceSharing
 .
 esdm_begrip:Curation
   a skos:Concept ;
-  dc:source "https://en.wikipedia.org/wiki/Data_curation"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
-  dc:source "https://www.alation.com/blog/what-is-data-curation/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://en.wikipedia.org/wiki/Data_curation"^^xsd:anyURI ;
+  dc:source "https://www.alation.com/blog/what-is-data-curation/"^^xsd:anyURI ;
   skos:definition "<div lang=\"en\"><strong>Data curation</strong>&nbsp;is the organization and integration of&nbsp;<a title=\"Data\" href=\"https://en.wikipedia.org/wiki/Data\">data</a>&nbsp;collected from various sources. It involves annotation, publication and presentation of the data such that the value of the data is maintained over time, and the data remains available for reuse and preservation.&nbsp;</div>"^^rdf:HTML ;
   skos:note """<div lang=\"en\"><h2 id=\"table-1\" class=\"scroll-anchor\">What Is Data Curation?</h2>
 <p>If curated describes collections of things that are selected and managed to meet the needs of a specific group, then curated data is a collection of datasets that is selected and managed to meet the needs and interests of a specific group of people. Note that the focus here is datasets &ndash; files, tables, etc. &ndash; that can be accessed and analyzed. The distinction between &ldquo;collections of data&rdquo; and &ldquo;collections of datasets&rdquo; is subtle but significant.</p>
@@ -888,7 +902,7 @@ esdm_begrip:Curation
 .
 <http://ordina.nl/esdm/im/begrippen/id/CustomerRelationshipManagement(CRM)>
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Customer_relationship_management"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Customer_relationship_management"^^xsd:anyURI ;
   skos:broader esdm_begrip:Bedrijfssoftware ;
   skos:definition """Customer relationship management oftewel crm is een Engelstalige benaming voor klantrelatiebeheer, soms ook relatiemarketing of verkoopbeheersysteem genoemd. Het is een werkwijze alsmede een technologie waarbij klantgegevens worden geanalyseerd om de zakelijke relatie met klanten te verbeteren, met als doel hen aan het bedrijf of de organisatie te binden en zo uiteindelijk de inkomsten te verhogen.
 
@@ -948,7 +962,7 @@ esdm_begrip:DataArchitectuurProcessen
 .
 esdm_begrip:DataCatalogus
   a skos:Concept ;
-  dc:source "https://www.alation.com/blog/what-is-a-data-catalog/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.alation.com/blog/what-is-a-data-catalog/"^^xsd:anyURI ;
   skos:broader esdm_begrip:DataManagementSysteem ;
   skos:definition """<div lang=\"en\"><h2 id=\"table-0\" class=\"scroll-anchor\">What Does a Data Catalog Do?</h2>
 <p>A&nbsp;<a href=\"https://www.alation.com/modern-data-catalog-features/\" target=\"_blank\" rel=\"noopener noreferrer\">modern data catalog</a>&nbsp;includes many features and functions that all depend on the core capability of cataloging data&mdash;collecting the metadata that identifies and describes the inventory of shareable data. It is impractical to attempt cataloging as a manual effort. Automated discovery of datasets, both for initial catalog build and ongoing discovery of new datasets is essential. Use of AI and machine learning for metadata collection, semantic inference, and tagging, is important to get maximum value from automation and minimize manual effort.</p>
@@ -1004,7 +1018,7 @@ esdm_begrip:DataHub
 .
 esdm_begrip:DataIngestion
   a skos:Concept ;
-  dc:source "https://www.xplenty.com/blog/data-ingestion-vs-etl/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.xplenty.com/blog/data-ingestion-vs-etl/"^^xsd:anyURI ;
   skos:broader esdm_begrip:Integratievoorziening ;
   skos:definition """The term “data ingestion” refers to any process that transports data from one location to another so that it can be taken up for further processing or analysis. In particular, the use of the word “ingestion” suggests that some or all of the data is located outside your internal systems. The two main types of data ingestion are:
 
@@ -1067,7 +1081,7 @@ esdm_begrip:DataLake
 .
 esdm_begrip:DataManagementSysteem
   a skos:Concept ;
-  dc:source "https://www.ictinformatiecentrum.nl/data-management/wat-is-data-management"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.ictinformatiecentrum.nl/data-management/wat-is-data-management"^^xsd:anyURI ;
   skos:broader esdm_begrip:Bedrijfssoftware ;
   skos:definition """Data management staat meer dan ooit in de belangstelling. Het feit dat u dit leest, geeft aan dat ook u interesse heeft in oplossingen die kunnen helpen bij het beheer van uw gegevens. Dat is verstandig, omdat de hoeveelheid data in en rond uw bedrijfsvoering alleen maar toeneemt. En daarmee waarschijnlijk ook de behoefte om daar op een effectieve en efficiënte wijze gebruik van te maken. Hoe beter u in staat bent om data op een goede manier te gebruiken, des te groter zijn de voordelen die u ermee kunt behalen. Het resultaat kan zich vertalen in lagere kosten, hogere winsten en concurrentievoordelen. Belangrijk dus om u te verdiepen in de toepassing en mogelijkheden van data management.
 
@@ -1084,7 +1098,7 @@ esdm_begrip:DataPropagation
 .
 esdm_begrip:DataReporting
   a skos:Concept ;
-  dc:source "https://en.wikipedia.org/wiki/Data_reporting"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://en.wikipedia.org/wiki/Data_reporting"^^xsd:anyURI ;
   skos:broader esdm_begrip:Reporting ;
   skos:definition """Data reporting is the process of collecting and submitting data which gives rise to accurate analyses of the facts on the ground; inaccurate data reporting can lead to vastly uninformed decision-making based on erroneous evidence. Different from data analysis that transforms data and information into insights, data reporting is the previous step that translates raw data into information. When data is not reported, the problem is known as underreporting; the opposite problem leads to false positives.
 
@@ -1093,7 +1107,7 @@ Data reporting can be an incredibly difficult endeavor. Census bureaus may hire 
 .
 esdm_begrip:DataRepository
   a skos:Concept ;
-  dc:source "https://digitalguardian.com/blog/what-data-repository"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://digitalguardian.com/blog/what-data-repository"^^xsd:anyURI ;
   skos:broader esdm_begrip:Bedrijfssoftware ;
   skos:definition """A data repository is also known as a data library or data archive. This is a general term to refer to a data set isolated to be mined for data reporting and analysis.
 
@@ -1102,7 +1116,7 @@ The data repository is a large database infrastructure —  several databases �
 .
 esdm_begrip:DataSecurity
   a skos:Concept ;
-  dc:source "https://www.ictinformatiecentrum.nl/data-management/data-security"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.ictinformatiecentrum.nl/data-management/data-security"^^xsd:anyURI ;
   skos:broader esdm_begrip:SecurityAndAccess ;
   skos:definition "Data security, databeveiliging of dataveiligheid is gericht op het beschermen van uw data tegen het verlies van gegevens door technische storingen, menselijk fouten of criminaliteit. Technische storingen kunnen zich voordoen door problemen met de dataopslag, datadoorgifte of noodzakelijke stroomvoorziening. Menselijke fouten kunnen worden gemaakt als bevoegde of onbevoegde medewerkers in uw organisatie toegang hebben tot data en deze ongewenst aanpassen of verwijderen. Veel aandacht gaat de laatste jaren uit naar criminaliteit, waarbij internet de toegang vormt tot uw data. De toenemende afhankelijkheid van bedrijven van computersystemen en data vergroot de waarde daarvan. Hierdoor wordt diefstal of gijzeling van uw data door criminele organisaties steeds lucratiever."@nl ;
   skos:prefLabel "Data security"@en ;
@@ -1110,7 +1124,7 @@ esdm_begrip:DataSecurity
 .
 esdm_begrip:DataSerializatie
   a skos:Concept ;
-  dc:source "https://en.wikipedia.org/wiki/Serialization"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://en.wikipedia.org/wiki/Serialization"^^xsd:anyURI ;
   skos:broader esdm_begrip:Programmeertaal ;
   skos:definition """<div lang=\"en\"><p>In computing,&nbsp;<strong>serialization</strong>&nbsp;(US spelling) or&nbsp;<strong>serialisation</strong>&nbsp;(UK spelling) is the process of translating a&nbsp;<a title=\"Computer network\" href=\"https://en.wikipedia.org/wiki/Data_structure\">data structure</a>&nbsp;or&nbsp;<a title=\"\" href=\"https://en.wikipedia.org/wiki/Object_(computer_science)\">object</a>&nbsp;state into a format that can be stored (for example, in a&nbsp;<a title=\"Computer file\" href=\"https://en.wikipedia.org/wiki/Computer_file\">file</a>&nbsp;or memory&nbsp;<a title=\"Data buffer\" href=\"https://en.wikipedia.org/wiki/Data_buffer\">data buffer</a>) or transmitted (for example, over a&nbsp;<a title=\"\" href=\"https://en.wikipedia.org/wiki/Computer_network\">computer network</a>) and reconstructed later (possibly in a different computer environment).<sup id=\"cite_ref-1\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Serialization#cite_note-1\">[1]</a></sup>&nbsp;When the resulting series of bits is reread according to the serialization format, it can be used to create a semantically identical clone of the original object. For many complex objects, such as those that make extensive use of&nbsp;<a title=\"Reference (computer science)\" href=\"https://en.wikipedia.org/wiki/Reference_(computer_science)\">references</a>, this process is not straightforward. Serialization of object-oriented&nbsp;<a title=\"Object (computer science)\" href=\"https://en.wikipedia.org/wiki/Object_(computer_science)\">objects</a>&nbsp;does not include any of their associated&nbsp;<a class=\"mw-redirect\" title=\"Method (computer science)\" href=\"https://en.wikipedia.org/wiki/Method_(computer_science)\">methods</a>&nbsp;with which they were previously linked.</p>
 <p>This process of serializing an object is also called&nbsp;<a title=\"Marshalling (computer science)\" href=\"https://en.wikipedia.org/wiki/Marshalling_(computer_science)\">marshalling</a>&nbsp;an object in some situations.<sup id=\"cite_ref-2\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Serialization#cite_note-2\">[2]</a></sup><sup id=\"cite_ref-3\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Serialization#cite_note-3\">[3]</a></sup><sup id=\"cite_ref-4\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Serialization#cite_note-4\">[4]</a></sup>&nbsp;The opposite operation, extracting a data structure from a series of bytes, is&nbsp;<strong>deserialization</strong>, (also called&nbsp;<strong>unserialization</strong>&nbsp;or&nbsp;<strong><a class=\"mw-redirect\" title=\"\" href=\"https://en.wikipedia.org/wiki/Unmarshalling\">unmarshalling</a></strong>).</p></div>"""^^rdf:HTML ;
@@ -1123,7 +1137,7 @@ esdm_begrip:DataStaxEnterpriseGraph
 .
 esdm_begrip:DataStream
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/introduction-to-data-streaming/2-understand-data-streams"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/introduction-to-data-streaming/2-understand-data-streams"^^xsd:anyURI ;
   skos:broader esdm_begrip:OngestructureerdeData ;
   skos:definition """In the context of analytics, data streams are the data pertaining to the occurrence of specific activities that are emitted by applications, IoT devices or sensors, or other sources known as data producers. These perpetually generated data streams typically contain temporal and additional information about the events. The proliferation of connected applications and devices has led to exponential growth in the number of streaming data sources in recent years.
 
@@ -1167,14 +1181,14 @@ esdm_begrip:Database
 .
 esdm_begrip:Databasemanagementsysteem
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Databasemanagementsysteem"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Databasemanagementsysteem"^^xsd:anyURI ;
   skos:broader esdm_begrip:Databaseserver ;
   skos:definition "Met een databasemanagementsysteem (dbms) wordt een systeem aangeduid dat als database opgeslagen gegevens ontsluit, bewaakt en beheert. Een database bestaat soms uit drie onderdelen: de opgeslagen gegevens (in één of meer bestanden), het programma waarmee de gegevens worden onderhouden (DBMS) en eventueel de gebruikersomgeving (client) die het gebruikers mogelijk maakt om de gegevens te behandelen. Meestal is er één DBMS actief voor meer dan een gebruiker. Bekende en veelgebruikte programma's zijn relationele dbms'en (afgekort tot rdbms) zoals MySQL, Microsoft SQL Server en Oracle Database."@nl ;
   skos:prefLabel "Databasemanagementsysteem"@nl ;
 .
 esdm_begrip:Databaseserver
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Databaseserver"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Databaseserver"^^xsd:anyURI ;
   skos:broader esdm_begrip:Server ;
   skos:definition """<div lang=\"nl\"><p>Een&nbsp;<strong>databaseserver</strong>&nbsp;bestaat meestal uit processen die&nbsp;<a title=\"Database\" href=\"https://nl.wikipedia.org/wiki/Database\">database</a>&nbsp;calls kunnen afhandelen. Zo kun je op een databaseserver bijvoorbeeld meerdere databases aanmaken. In het algemeen zullen er per database dan enkele processen lopen die bijvoorbeeld het aanmelden afhandelen,&nbsp;<a title=\"Query\" href=\"https://nl.wikipedia.org/wiki/Query\">query's</a>&nbsp;afhandelen (bijvoorbeeld met&nbsp;<a title=\"SQL\" href=\"https://nl.wikipedia.org/wiki/SQL\">SQL</a>), wijzigingen registreren,&nbsp;<a title=\"Back-up\" href=\"https://nl.wikipedia.org/wiki/Back-up\">back-ups</a>&nbsp;aanmaken en eventueel&nbsp;<a title=\"Replicatie (informatica)\" href=\"https://nl.wikipedia.org/wiki/Replicatie_(informatica)\">replicaties</a>&nbsp;uitvoeren.</p>
 <p>Het voordeel van het inrichten van een databaseserver is dat je de instellingen van diskaccess/caches en memory specifiek kunt configureren, zodat de&nbsp;<a title=\"Computer\" href=\"https://nl.wikipedia.org/wiki/Computer\">computer</a>&nbsp;optimaal als databaseserver werkt. Meestal zal een databaseserver dus ook hardwarematig een computer voor zichzelf hebben en vaak zelfs met meerdere processoren, echter soms doet &eacute;&eacute;n computer ook dienst als databaseserver en als&nbsp;<a title=\"Webserver\" href=\"https://nl.wikipedia.org/wiki/Webserver\">webserver</a>&nbsp;tegelijk. Een databaseserver is dus meer een softwarematige scheiding in de architectuur van een totale applicatie. Als men spreekt over een&nbsp;<a class=\"new\" title=\"Three-tier (de pagina bestaat niet)\" href=\"https://nl.wikipedia.org/w/index.php?title=Three-tier&amp;action=edit&amp;redlink=1\">three-tier</a>&nbsp;oplossing dan wordt daar meestal onder verstaan een&nbsp;<a class=\"new\" title=\"Displayserver (de pagina bestaat niet)\" href=\"https://nl.wikipedia.org/w/index.php?title=Displayserver&amp;action=edit&amp;redlink=1\">displayserver</a>, een&nbsp;<a title=\"Applicatieserver\" href=\"https://nl.wikipedia.org/wiki/Applicatieserver\">applicatieserver</a>&nbsp;en een databaseserver.</p></div>"""^^rdf:HTML ;
@@ -1183,7 +1197,7 @@ esdm_begrip:Databaseserver
 .
 esdm_begrip:Datagram
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Datagram"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Datagram"^^xsd:anyURI ;
   skos:broader esdm_begrip:Data ;
   skos:definition """<div lang=\"nl\">
 <p>Een&nbsp;<strong>datagram</strong>&nbsp;in&nbsp;<a title=\"Computernetwerk\" href=\"https://nl.wikipedia.org/wiki/Computernetwerk\">computernetwerken</a>&nbsp;is een datapakket dat voldoende informatie bevat om zelf zijn weg te vinden over het netwerk naar de bedoelde bestemming, zonder dat er eerst een specifieke verbinding gemaakt moet worden tussen zender en ontvanger.</p>
@@ -1195,8 +1209,8 @@ esdm_begrip:Datagram
 .
 esdm_begrip:Datamart
   a skos:Concept ;
-  dc:source "https://en.wikipedia.org/wiki/Data_mart"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
-  dc:source "https://nl.wikipedia.org/wiki/Datamart"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://en.wikipedia.org/wiki/Data_mart"^^xsd:anyURI ;
+  dc:source "https://nl.wikipedia.org/wiki/Datamart"^^xsd:anyURI ;
   skos:broader esdm_begrip:Datawarehouse ;
   skos:definition """<div lang=\"en\"><p>A&nbsp;<strong>data mart</strong>&nbsp;is a structure / access pattern specific to&nbsp;<em><a title=\"Data warehouse\" href=\"https://en.wikipedia.org/wiki/Data_warehouse\">data warehouse</a></em>&nbsp;environments, used to retrieve client-facing data. The data mart is a subset of the data warehouse and is usually oriented to a specific business line or team. Whereas data warehouses have an enterprise-wide depth, the information in data marts pertains to a single department. In some deployments, each department or business unit is considered the&nbsp;<em>owner</em>&nbsp;of its data mart including all the&nbsp;<em>hardware</em>,&nbsp;<em>software</em>&nbsp;and&nbsp;<em>data</em>.<sup id=\"cite_ref-1\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Data_mart#cite_note-1\">[1]</a></sup>&nbsp;This enables each department to isolate the use, manipulation and development of their data. In other deployments where conformed dimensions are used, this business unit ownership will not hold true for shared dimensions like customer, product, etc.</p>
 <p>Warehouses and data marts are built because the information in the database are not organized in a way that makes it readily accessible. This organization requires queries that are too complicated, difficult to access or resource intensive.</p>
@@ -1225,21 +1239,21 @@ Net als een datawarehouse wordt een datamart periodiek gevuld met gegevens uit o
 .
 esdm_begrip:Dataopslag
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/ICT-infrastructuur#Dataopslag"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/ICT-infrastructuur#Dataopslag"^^xsd:anyURI ;
   skos:broader esdm_begrip:ICTInfrastructuur ;
   skos:definition "Dataopslag vindt plaats op magnetische-, optische en elektronische dataopslagmedia."@nl ;
   skos:prefLabel "Dataopslag"@nl ;
 .
 esdm_begrip:Datatransport
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/ICT-infrastructuur#Datatransport"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/ICT-infrastructuur#Datatransport"^^xsd:anyURI ;
   skos:broader esdm_begrip:ICTInfrastructuur ;
   skos:definition "Datatransport vindt plaats over een IT-infrastructuur bestaande uit kabels en netwerkcomponenten."@nl ;
   skos:prefLabel "Datatransport"@nl ;
 .
 esdm_begrip:Datawarehouse
   a skos:Concept ;
-  dc:source "https://en.wikipedia.org/wiki/Data_warehouse"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://en.wikipedia.org/wiki/Data_warehouse"^^xsd:anyURI ;
   skos:altLabel "DWH"@nl ;
   skos:altLabel "Enterprise data warehouse (EDW)"@en ;
   skos:broader esdm_begrip:DataRepository ;
@@ -1262,14 +1276,14 @@ esdm_begrip:Dienstverlener
 .
 esdm_begrip:DigitaalArchiefsysteem
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Digitaal_archiefsysteem"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Digitaal_archiefsysteem"^^xsd:anyURI ;
   skos:broader esdm_begrip:DataRepository ;
   skos:definition "Een digitaal archiefsysteem (ook wel E-depot, elektronisch depot of digitaal depot) is een systeem voor het elektronisch verwerken en beheren van statische documenten. Het betreft daarbij alle soorten en formaten van elektronische documenten: gescande papieren documenten, office-documenten, zoals tekstverwerking, rekenschema's, presentaties, etc., foto's, tekeningen, multimedia, kortom alles wat als een digitaal object opgeslagen kan worden. Dit systeem is in feite een technische voorziening, bestaande uit hardware en software, voor de duurzame bewaring en beschikbaarstelling van onveranderlijke digitale informatie, zowel digitaal geboren als gedigitaliseerd. Het gaat dus niet alleen om geheugenruimte maar om het samenspel van speciaal voor archiefbeheer ontwikkelde software en speciaal voor archiefopslag ontwikkelde hardware."@nl ;
   skos:prefLabel "Digitaal archiefsysteem"@nl ;
 .
 esdm_begrip:DocumentStoreDatabase
   a skos:Concept ;
-  dc:source "https://en.wikipedia.org/wiki/Document-oriented_database"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://en.wikipedia.org/wiki/Document-oriented_database"^^xsd:anyURI ;
   skos:broader esdm_begrip:NoSQL ;
   skos:definition """<div lang=\"nl\">
 <p>A&nbsp;<strong>document-oriented database</strong>, or&nbsp;<strong>document store</strong>, is a&nbsp;<a title=\"Computer program\" href=\"https://en.wikipedia.org/wiki/Computer_program\">computer program</a>&nbsp;and data storage system designed for storing, retrieving and managing document-oriented information, also known as&nbsp;<a title=\"Semi-structured model\" href=\"https://en.wikipedia.org/wiki/Semi-structured_model\">semi-structured data</a>.<sup id=\"cite_ref-Drake,_DigitalOcean,_2019_1-0\" class=\"reference\"></sup></p>
@@ -1287,7 +1301,7 @@ esdm_begrip:Dynamo
 .
 esdm_begrip:ELT
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/nl-nl/learn/modules/evolving-world-of-data/4-understand-job-responsibility"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/nl-nl/learn/modules/evolving-world-of-data/4-understand-job-responsibility"^^xsd:anyURI ;
   skos:altLabel "Extract, load, transform"@en ;
   skos:broader esdm_begrip:Integratievoorziening ;
   skos:definition """Een andere methode is extraheren, laden en transformeren (extract, load, and transform, of ELT). Bij ELT worden de gegevens onmiddellijk opgehaald en in een opslagplaats voor grote hoeveelheden gegevens geladen, zoals Azure Cosmos DB of Azure Data Lake Storage. Bij deze wijziging in het proces worden de bronsysteemresources minder in beslag genomen. Data engineers kunnen de gegevens gaan transformeren zodra het laden is voltooid.
@@ -1347,7 +1361,7 @@ esdm_begrip:ESDM_Begrippen
 .
 esdm_begrip:ETL
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/nl-nl/learn/modules/evolving-world-of-data/4-understand-job-responsibility"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/nl-nl/learn/modules/evolving-world-of-data/4-understand-job-responsibility"^^xsd:anyURI ;
   skos:altLabel "Extract, transform, load"@en ;
   skos:broader esdm_begrip:Integratievoorziening ;
   skos:definition """Als data engineer moet u onbewerkte gegevens ophalen uit een verzameling gestructureerde of ongestructureerde gegevens en deze naar een tijdelijke gegevensopslagplaats migreren. Omdat de gegevensbron mogelijk een andere structuur heeft dan de doelbestemming, moet u de gegevens omzetten van het bronschema in het doelschema. Dit proces wordt transformatie genoemd. Vervolgens laadt u de getransformeerde gegevens in het datawarehouse. Gezamenlijk vormen deze stappen een proces dat extraheren, transformeren en laden (extract, transform, and load, ETL) wordt genoemd.
@@ -1371,13 +1385,13 @@ esdm_begrip:Elasticsearch
 .
 esdm_begrip:EnableU
   a skos:Concept ;
-  dc:source "https://www.enable-u.nl/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.enable-u.nl/"^^xsd:anyURI ;
   skos:broader esdm_begrip:EnterpriseServiceBus ;
   skos:prefLabel "Enable-u"@nl ;
 .
 esdm_begrip:Encryptie
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Encryptie"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Encryptie"^^xsd:anyURI ;
   skos:broader esdm_begrip:DataSecurity ;
   skos:definition """Binnen de cryptografie staat encryptie of versleuteling voor het coderen (versleutelen) van gegevens op basis van een bepaald algoritme. Deze versleutelde gegevens kunnen nadien weer gedecrypteerd (ontcijferd of gedecodeerd) worden zodat men de originele informatie weer terugkrijgt. Dit proces wordt decryptie genoemd.
 
@@ -1393,7 +1407,7 @@ esdm_begrip:EnterpriseArchitectuur
 .
 <http://ordina.nl/esdm/im/begrippen/id/EnterpriseResourcePlanning(ERP)>
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Enterprise_resource_planning"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Enterprise_resource_planning"^^xsd:anyURI ;
   skos:broader esdm_begrip:Bedrijfssoftware ;
   skos:definition """Enterprise resource planning (ERP) staat voor een computerprogramma (software) gebruikt binnen organisaties ter ondersteuning van alle processen binnen het bedrijf.
 
@@ -1405,7 +1419,7 @@ Waarbij voorheen veel bedrijven gebruikmaakten van verschillende programma’s o
 .
 esdm_begrip:EnterpriseServiceBus
   a skos:Concept ;
-  dc:source "https://www.ibm.com/cloud/learn/esb"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.ibm.com/cloud/learn/esb"^^xsd:anyURI ;
   skos:altLabel "ESB"@nl ;
   skos:definition """Een ESB, of enterprise service bus, is een architectonisch patroon waarbij een gecentraliseerde softwarecomponent integraties tussen applicaties uitvoert. Het voert transformaties van datamodellen uit, handelt connectiviteit af, voert berichtroutering uit, converteert communicatieprotocollen en beheert mogelijk de samenstelling van meerdere verzoeken. De ESB kan deze integraties en transformaties als service-interface beschikbaar stellen voor hergebruik door nieuwe applicaties. 
 
@@ -1446,7 +1460,7 @@ Dezelfde granulariteit die microservices bieden voor toepassingsontwerp, kan wor
 .
 <http://ordina.nl/esdm/im/begrippen/id/Equinix–DataHub>
   a skos:Concept ;
-  dc:source "https://www.equinix.nl/services/data-hub/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.equinix.nl/services/data-hub/"^^xsd:anyURI ;
   skos:broader esdm_begrip:DataHub ;
   skos:definition "Equinix biedt een Data Hub dat nadruk zet op real-time analytics op de cloud en Internet of Things data collection en protection. "@nl ;
   skos:prefLabel "Equinix – Data Hub"@nl ;
@@ -1476,7 +1490,7 @@ For visualizing and analyzing data, Power BI is the recommended event consumer. 
 .
 esdm_begrip:EventDrivenArchitecture
   a skos:Concept ;
-  dc:source "https://www.redhat.com/en/topics/integration/what-is-event-driven-architecture"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.redhat.com/en/topics/integration/what-is-event-driven-architecture"^^xsd:anyURI ;
   skos:altLabel "EDA" ;
   skos:definition """<div lang=\"nl\"><p><span>Event-driven architectuur is een&nbsp;</span><a href=\"https://www.redhat.com/en/topics/cloud-native-apps/what-is-an-application-architecture\"><span>software-architectuur</span></a><span>&nbsp;en model voor applicatie-ontwerp.&nbsp;Met een gebeurtenisgestuurd systeem vormen het vastleggen, communiceren, verwerken en vasthouden van gebeurtenissen de kernstructuur van de oplossing.&nbsp;Dit wijkt af van een traditioneel verzoekgestuurd model.</span></p>
 <p><span>Veel moderne applicatieontwerpen zijn gebeurtenisgestuurd, zoals&nbsp;</span><a href=\"https://www.redhat.com/en/solutions/customer-experience\"><span>raamwerken</span></a><span>&nbsp;voor klantbetrokkenheid die klantgegevens in realtime moeten gebruiken.&nbsp;Event-driven apps kunnen in elke programmeertaal worden gemaakt, omdat event-driven een programmeerbenadering is, geen taal.&nbsp;Gebeurtenisgestuurde architectuur maakt minimale koppeling mogelijk, waardoor het een goede optie is voor moderne, gedistribueerde applicatie-architecturen.</span></p>
@@ -1516,7 +1530,7 @@ esdm_begrip:EventDrivenArchitecture
 .
 esdm_begrip:EventHubsNamespace
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/enable-reliable-messaging-for-big-data-apps-using-event-hubs/2-create-an-event-hub-using-azure-cli"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/enable-reliable-messaging-for-big-data-apps-using-event-hubs/2-create-an-event-hub-using-azure-cli"^^xsd:anyURI ;
   skos:broader esdm_begrip:AzureEventHub ;
   skos:definition "<div lang=\"en\">An Event Hubs namespace is a containing entity for managing one or more Event Hubs.&nbsp;</div>"^^rdf:HTML ;
   skos:note """<div lang=\"en\"><p>Creating an Event Hubs namespace typically involves the following configuration:</p>
@@ -1549,7 +1563,7 @@ esdm_begrip:EventHubsNamespace
 .
 esdm_begrip:EventProcessing
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/introduction-to-data-streaming/3-understand-event-processing"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/introduction-to-data-streaming/3-understand-event-processing"^^xsd:anyURI ;
   skos:broader esdm_begrip:Integratievoorziening ;
   skos:definition """<div lang=\"en\"><p>Event processing refers to the consumption and analysis of a continuous data stream to extract latent knowledge and derive actionable insights from the events happening within that stream. Event processing pipelines provide an end-to-end solution for ingesting, transforming, and analyzing data streams and are made up of three distinct components:</p>
 <ul>
@@ -1560,6 +1574,7 @@ esdm_begrip:EventProcessing
   skos:prefLabel "Event processing"@en ;
   skos:related esdm_begrip:AMQP ;
   skos:related esdm_begrip:Event ;
+  skos:related esdm_begrip:StreamProcessing ;
 .
 esdm_begrip:EventProcessor
   a skos:Concept ;
@@ -1592,7 +1607,7 @@ esdm_begrip:Exim
 .
 esdm_begrip:Extract
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/data-integration-azure-data-factory/3-describe-data-integration-patterns"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/data-integration-azure-data-factory/3-describe-data-integration-patterns"^^xsd:anyURI ;
   skos:broader esdm_begrip:ELT ;
   skos:broader esdm_begrip:ETL ;
   skos:definition """<div lang=\"en\"><p>During the extraction process, data engineers define the data and its source:</p>
@@ -1608,7 +1623,7 @@ esdm_begrip:Extract
 .
 esdm_begrip:FME
   a skos:Concept ;
-  dc:source "https://www.safe.com/fme/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.safe.com/fme/"^^xsd:anyURI ;
   skos:altLabel "Feature Manipulation Engine"@nl ;
   skos:broader esdm_begrip:GeografischInformatieSysteem ;
   skos:definition "<div lang=\"nl\">FME (ook bekend als Feature Manipulation Engine) heeft ingebouwde ondersteuning voor honderden formaten en applicaties, evenals transformatietools, waardoor gebruikers aangepaste integratieworkflows kunnen bouwen en automatiseren zonder te hoeven coderen.</div>"^^rdf:HTML ;
@@ -1631,7 +1646,7 @@ esdm_begrip:Firebird
 .
 esdm_begrip:FlatNamespace
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-data-lake-storage/4-azure-data-lake-and-blob-storage"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-data-lake-storage/4-azure-data-lake-and-blob-storage"^^xsd:anyURI ;
   skos:broader esdm_begrip:AzureStorage ;
   skos:definition "In Azure Blob storage, you can store large amounts of unstructured (\"object\") data, in a single hierarchy, also known as a flat namespace. You can access this data by using HTTP or HTTPs. Azure Data Lake Storage Gen2 builds on blob storage and optimizes I/O of high-volume data by using hierarchical namespaces that you turned on in the previous exercise."@en ;
   skos:prefLabel "Flat namespace"@en ;
@@ -1659,7 +1674,7 @@ esdm_begrip:FysiekeServer
 .
 esdm_begrip:GDPR
   a skos:Concept ;
-  dc:source "https://ec.europa.eu/info/law/law-topic/data-protection/data-protection-eu_nl"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://ec.europa.eu/info/law/law-topic/data-protection/data-protection-eu_nl"^^xsd:anyURI ;
   skos:broader esdm_begrip:EuropeseWetgeving ;
   skos:definition "De AVG (ook bekend onder de Engelse afkorting GDPR) versterkt de grondrechten van de burgers in het digitale tijdperk en bevordert het handelsverkeer door de regels voor bedrijven in de digitale eengemaakte markt te verduidelijken. Dit gemeenschappelijke stel regels heeft een einde gemaakt aan de versnippering die het gevolg was van uiteenlopende nationale systemen, en voorkomt administratieve rompslomp."@nl ;
   skos:prefLabel "GDPR"@en ;
@@ -1672,7 +1687,7 @@ esdm_begrip:GDPR
 .
 esdm_begrip:GUID
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Globally_unique_identifier"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Globally_unique_identifier"^^xsd:anyURI ;
   skos:altLabel "Globally unique identifier"@en ;
   skos:broader esdm_begrip:Identifier ;
   skos:definition """Een globally unique identifier of GUID (spreek uit: goe-ied) is een pseudowillekeurig getal dat gebruikt wordt in softwaretoepassingen, en dat verondersteld wordt wereldwijd uniek te zijn. Hoewel elke GUID niet 100% gegarandeerd uniek is, is het totaal aantal unieke sleutels (2128 of 3,4028×1038) zo groot dat de kans op de creatie van twee keer dezelfde GUID erg klein is.
@@ -1701,14 +1716,14 @@ esdm_begrip:GeoData
 .
 esdm_begrip:GeoPortaal
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Geo-portaal"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Geo-portaal"^^xsd:anyURI ;
   skos:broader esdm_begrip:GeografischInformatieSysteem ;
   skos:definition "Een geo-portaal is een portaal, oftewel een toegangspagina voor het kunnen vinden, (eventueel) betalen en het combineren van geo-informatie. Een geo-portaal geeft toegang tot geo-informatie via webservices, of specifieker, geo-services. Veelal gaat het bij het combineren nog om het combineren van kaartlagen, maar ook analyses, al of niet op de achtergrond, kunnen geleverd worden door de webservices. Een webservice is dienstverlening via het internet aan een client. Een geo-portaal is een bijzonder soort GIS. In principe is deze techniek alléén bedoeld indien geo-informatie van verschillende organisaties gecombineerd dient te worden, en men de gegevenspakhuizen (geo-databases) niet onderling wil uitwisselen. Het gaat dus specifiek niet om het combineren van geo-informatie in een geo-service, maar om het combineren van meerdere geo-services in een bijzonder soort webservice: een geo-portaal."@nl ;
   skos:prefLabel "Geo-portaal"@nl ;
 .
 esdm_begrip:GeografischInformatieSysteem
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Geografisch_informatiesysteem"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Geografisch_informatiesysteem"^^xsd:anyURI ;
   skos:altLabel "GIS" ;
   skos:broader esdm_begrip:DataManagementSysteem ;
   skos:definition """Een geografisch informatiesysteem (meestal afgekort tot GIS) is een informatiesysteem waarmee (ruimtelijke) gegevens of informatie over geografische objecten, zogeheten geo-informatie kan worden opgeslagen, beheerd, bewerkt, geanalyseerd, geïntegreerd en gepresenteerd.
@@ -1720,8 +1735,8 @@ Een bijzonder soort op webservices gebaseerde GIS is een geo-portaal. Hierin wor
 .
 esdm_begrip:GestructureerdeData
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/2-classify-data"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
-  dc:source "https://www.eduvision.nl/big-data/kennisbank/gestructureerde-data"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/2-classify-data"^^xsd:anyURI ;
+  dc:source "https://www.eduvision.nl/big-data/kennisbank/gestructureerde-data"^^xsd:anyURI ;
   skos:broader esdm_begrip:Data ;
   skos:definition """<div lang=\"en\"><p>In relational database systems like Microsoft SQL Server, Azure SQL Database, and Azure SQL Data Warehouse, data structure is defined at design time. Data structure is designed in the form of tables. This means it's designed before any information is loaded into the system. The data structure includes the relational model, table structure, column width, and data types.</p>
 <p>Relational systems react slowly to changes in data requirements because the structural database needs to change every time a data requirement changes. When new columns are added, you might need to bulk-update all existing records to populate the new column throughout the table.</p>
@@ -1761,14 +1776,14 @@ esdm_begrip:GlassFish
 .
 <http://ordina.nl/esdm/im/begrippen/id/GoogleCloud–DataLake>
   a skos:Concept ;
-  dc:source "https://cloud.google.com/solutions/data-lake"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://cloud.google.com/solutions/data-lake"^^xsd:anyURI ;
   skos:broader esdm_begrip:DataLake ;
   skos:definition "Google biedt een Data Lake omgeving, welke migratie ondersteunt vanuit Apache Spark en Hadoop-gebaseerde Data Lakes. "@nl ;
   skos:prefLabel "Google Cloud – Data Lake"@nl ;
 .
 <http://ordina.nl/esdm/im/begrippen/id/Gorilla–DataHub>
   a skos:Concept ;
-  dc:source "https://gorilla.co/how-it-works/data-hub/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://gorilla.co/how-it-works/data-hub/"^^xsd:anyURI ;
   skos:broader esdm_begrip:DataHub ;
   skos:definition "Gorilla biedt een Data Hub waarmee data integratie goed kan plaatsvinden met PowerBI, Qlik en Quicksight. "@nl ;
   skos:prefLabel "Gorilla – Data Hub"@nl ;
@@ -1780,7 +1795,7 @@ esdm_begrip:GraknCore
 .
 esdm_begrip:GraphDatabase
   a skos:Concept ;
-  dc:source "https://en.wikipedia.org/wiki/Graph_database"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://en.wikipedia.org/wiki/Graph_database"^^xsd:anyURI ;
   skos:broader esdm_begrip:NoSQL ;
   skos:definition """<div lang=\"en\"><p>In&nbsp;<a title=\"Computing\" href=\"https://en.wikipedia.org/wiki/Computing\">computing</a>, a&nbsp;<strong>graph database</strong>&nbsp;(<strong>GDB</strong>) is a&nbsp;<a title=\"Database\" href=\"https://en.wikipedia.org/wiki/Database\">database</a>&nbsp;that uses&nbsp;<a class=\"mw-redirect\" title=\"Graph (data structure)\" href=\"https://en.wikipedia.org/wiki/Graph_(data_structure)\">graph structures</a>&nbsp;for&nbsp;<a title=\"Semantic query\" href=\"https://en.wikipedia.org/wiki/Semantic_query\">semantic queries</a>&nbsp;with&nbsp;<a class=\"mw-redirect\" title=\"Node (graph theory)\" href=\"https://en.wikipedia.org/wiki/Node_(graph_theory)\">nodes</a>,&nbsp;<a class=\"mw-redirect\" title=\"Edge (graph theory)\" href=\"https://en.wikipedia.org/wiki/Edge_(graph_theory)\">edges</a>, and properties to represent and store data.<sup id=\"cite_ref-1\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Graph_database#cite_note-1\">[1]</a></sup>&nbsp;A key concept of the system is the&nbsp;<em><a title=\"Graph (discrete mathematics)\" href=\"https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)\">graph</a></em>&nbsp;(or&nbsp;<em>edge</em>&nbsp;or&nbsp;<em>relationship</em>). The graph relates the data items in the store to a collection of nodes and edges, the edges representing the relationships between the nodes. The relationships allow data in the store to be linked together directly and, in many cases, retrieved with one operation. Graph databases hold the relationships between data as a priority. Querying relationships is fast because they are perpetually stored in the database. Relationships can be intuitively visualized using graph databases, making them useful for heavily inter-connected data.<sup id=\"cite_ref-:0_2-0\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Graph_database#cite_note-:0-2\">[2]</a></sup></p>
 <p>Graph databases are a type of&nbsp;<a title=\"NoSQL\" href=\"https://en.wikipedia.org/wiki/NoSQL\">NoSQL</a>&nbsp;database, created to address the limitations of&nbsp;<a title=\"Relational database\" href=\"https://en.wikipedia.org/wiki/Relational_database\">relational databases</a>. While the graph model explicitly lays out the dependencies between nodes of data, the relational model and other NoSQL database models link the data by implicit connections. In other words, relationships are a&nbsp;<a title=\"First-class citizen\" href=\"https://en.wikipedia.org/wiki/First-class_citizen\">first-class citizen</a>&nbsp;in a graph database and can be labelled, directed, and given properties. This is compared to relational approaches where these relationships are implied and must be reified at run-time. Graph databases are similar to 1970s&nbsp;<a title=\"Network model\" href=\"https://en.wikipedia.org/wiki/Network_model\">network model</a>&nbsp;databases in that both represent general graphs, but network-model databases operate at a lower level of&nbsp;<a title=\"Abstraction (computer science)\" href=\"https://en.wikipedia.org/wiki/Abstraction_(computer_science)\">abstraction</a><sup id=\"cite_ref-Gutierrez_3-0\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Graph_database#cite_note-Gutierrez-3\">[3]</a></sup>&nbsp;and lack easy&nbsp;<a title=\"Graph traversal\" href=\"https://en.wikipedia.org/wiki/Graph_traversal\">traversal</a>&nbsp;over a chain of edges.<sup id=\"cite_ref-4\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/Graph_database#cite_note-4\">[4]</a></sup></p>
@@ -1792,14 +1807,14 @@ esdm_begrip:GraphDatabase
 .
 esdm_begrip:GraphQL
   a skos:Concept ;
-  dc:source "https://graphql.org/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://graphql.org/"^^xsd:anyURI ;
   skos:broader esdm_begrip:Communicatieprotocol ;
   skos:definition "GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools."@en ;
   skos:prefLabel "GraphQL"@en ;
 .
 esdm_begrip:Graphics_W3C
   a skos:Concept ;
-  dc:source "https://www.w3.org/standards/webdesign/graphics"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.w3.org/standards/webdesign/graphics"^^xsd:anyURI ;
   skos:broader esdm_begrip:WebDesignAndApplications ;
   skos:prefLabel "Graphics (W3C)"@en ;
 .
@@ -1815,13 +1830,13 @@ esdm_begrip:HDInsight
 .
 esdm_begrip:HTML_CSS
   a skos:Concept ;
-  dc:source "https://www.w3.org/standards/webdesign/htmlcss"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.w3.org/standards/webdesign/htmlcss"^^xsd:anyURI ;
   skos:broader esdm_begrip:WebDesignAndApplications ;
   skos:prefLabel "HTML & CSS (W3C)"@en ;
 .
 esdm_begrip:HTTP
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Hypertext_Transfer_Protocol"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Hypertext_Transfer_Protocol"^^xsd:anyURI ;
   skos:broader esdm_begrip:Communicatieprotocol ;
   skos:definition """Hypertext Transfer Protocol (HTTP) is het protocol voor de communicatie tussen een webclient (meestal een webbrowser of een app) en een webserver. Dit protocol wordt niet alleen veel op het wereldwijde web gebruikt, maar ook op lokale netwerken (we spreken dan van een intranet).
 
@@ -1852,7 +1867,7 @@ In HTTP is vastgelegd welke vragen (de Engelse term hiervoor is requests) een cl
 .
 esdm_begrip:HTTPS
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/HyperText_Transfer_Protocol_Secure"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/HyperText_Transfer_Protocol_Secure"^^xsd:anyURI ;
   skos:altLabel "HyperText Transfer Protocol Secure"@en ;
   skos:broader esdm_begrip:HTTP ;
   skos:definition """<div lang=\"en\"><p><strong>HyperText Transfer Protocol Secure</strong>, afgekort&nbsp;<strong>HTTPS</strong>, is een uitbreiding op het&nbsp;<a title=\"Hypertext Transfer Protocol\" href=\"https://nl.wikipedia.org/wiki/Hypertext_Transfer_Protocol\">HTTP</a>-<a title=\"Protocol\" href=\"https://nl.wikipedia.org/wiki/Protocol\">protocol</a>&nbsp;met als doel een veilige uitwisseling van gegevens. Bij gebruik van HTTPS worden de gegevens versleuteld, waardoor het voor een buitenstaander, bijvoorbeeld iemand die afluistert, onmogelijk zou moeten zijn om te weten welke gegevens verstuurd worden.</p>
@@ -1900,7 +1915,7 @@ esdm_begrip:Hibari
 .
 esdm_begrip:HierarchicalNamespace
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-data-lake-storage/4-azure-data-lake-and-blob-storage"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-data-lake-storage/4-azure-data-lake-and-blob-storage"^^xsd:anyURI ;
   skos:broader esdm_begrip:AzureDataLakeStorage ;
   skos:definition "Hierarchical namespaces organize blob data into directories and stores metadata about each directory and the files within it. This structure allows operations, such as directory renames and deletes, to be performed in a single atomic operation. Flat namespaces, by contrast, require several operations proportionate to the number of objects in the structure. Hierarchical namespaces keep the data organized, which yields better storage and retrieval performance for an analytical use case and lowers the cost of analysis."@en ;
   skos:note "<div lang=\"en\">If you are performing analytics on the data, set up the storage account as an Azure Data Lake Storage Gen2 account by setting the&nbsp;<strong>Hierarchical Namespace</strong>&nbsp;option to&nbsp;<strong>Enabled</strong>. Because Azure Data Lake Storage Gen2 is integrated into the Azure Storage platform, applications can use either the Blob APIs or the Azure Data Lake Storage Gen2 file system APIs to access data.</div>"^^rdf:HTML ;
@@ -1925,7 +1940,7 @@ esdm_begrip:HypergraphDB
 .
 esdm_begrip:IBMDb2WarehouseOnCloud
   a skos:Concept ;
-  dc:source "https://www.ibm.com/nl-en/cloud/db2-warehouse-on-cloud"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.ibm.com/nl-en/cloud/db2-warehouse-on-cloud"^^xsd:anyURI ;
   skos:broader esdm_begrip:Datawarehouse ;
   skos:prefLabel "IBM Db2 Warehouse on Cloud"@nl ;
 .
@@ -1946,14 +1961,14 @@ esdm_begrip:IBMNotes
 .
 <http://ordina.nl/esdm/im/begrippen/id/IBM–IntegrationBus>
   a skos:Concept ;
-  dc:source "https://www.ibm.com/support/knowledgecenter/SSMKHH/mapfiles/product_welcome.html"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.ibm.com/support/knowledgecenter/SSMKHH/mapfiles/product_welcome.html"^^xsd:anyURI ;
   skos:broader esdm_begrip:EnterpriseServiceBus ;
   skos:definition "Als onderdeel van de IBM WebSphere Message Broker, biedt IBM een ESB oplossing voor universele integratie (o.a. SOAP, REST, DB, etc.)."@nl ;
   skos:prefLabel "IBM – Integration Bus"@nl ;
 .
 esdm_begrip:ICTInfrastructuur
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/ICT-infrastructuur"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/ICT-infrastructuur"^^xsd:anyURI ;
   skos:definition "ICT-Infrastructuur is het geheel van ICT-voorzieningen dat nodig is om een land, bedrijf of instelling, te ondersteunen bij een reeks van bedrijfskundige processen zoals financiën, logistiek, planning, verslaglegging, rapportages en communicatie. Dit wordt mogelijk gemaakt door het verwerken, opslaan, en transporteren van digitale data. Ook het beveiligen en beheren van data hoort hier bij, ondanks het feit dat deze laatste twee niet bijdragen aan de procesondersteuning zelf. Voor intercontinentale, landelijke, regionale en gemeentelijke ICT-infrastructuur zijn In veel gevallen private ondernemingen verantwoordelijk. Bij organisaties (zoals een bedrijf of een instelling) is dat de organisatie zelf."@nl ;
   skos:prefLabel "ICT-infrastructuur"@nl ;
   skos:related esdm_begrip:ComputingOmgeving ;
@@ -1970,7 +1985,7 @@ esdm_begrip:IRCServer
 .
 esdm_begrip:ITILProcessen
   a skos:Concept ;
-  dc:source "https://freshservice.com/nl/itil/itil-processen/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://freshservice.com/nl/itil/itil-processen/"^^xsd:anyURI ;
   skos:altLabel "Information Technology Infrastructure Library"@nl ;
   skos:definition """Information Technology Infrastructure Library, ofwel ITIL wordt gedefinieerd als een framework met een verzameling best practices voor het leveren van efficiënte IT-ondersteuningsdiensten. Hiermee kunnen organisaties en individuen kosteneffectief IT-Servicemanagement (ITSM), leveren, afgestemd op de bedrijfsvisie, -strategie en -groei, en het handelt als één aanspreekpunt tussen serviceprovider en eindgebruikers. Terwijl ITSM bedrijven helpt bij het behalen van de missie en de visie met behulp van de juiste balans aan processen, technologie en mensen, begeleidt ITIL de manier waarop IT-diensten beheerd en geleverd worden. Initiatieven voor digitale transformatie en technologie worden begeleid door de best practices van ITIL. Bedrijven gebruiken ITIL om bedrijfsvoordelen sneller te realiseren, met gedefinieerde processen en mogelijk gemaakt door de juiste technologie. ITIL streeft naar optimaal gebruik van middelen en beoordeelt ter verbetering continu de bestaande processen. Het doet tevens dienst als zakenpartner voor organisaties, waarmee organisaties alleen de praktijken kunnen inzetten die voor hen relevant zijn.
 
@@ -1979,7 +1994,7 @@ Het ITIL-framework bestaat uit vijf fasen als onderdeel van de servicelevenscycl
 .
 esdm_begrip:Identifier
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Identifier_(programmeren)"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Identifier_(programmeren)"^^xsd:anyURI ;
   skos:broader esdm_begrip:Data ;
   skos:definition """Een identifier is in een programmeertaal een door de programmeur gekozen woord waaraan gerefereerd kan worden.
 
@@ -2023,7 +2038,7 @@ esdm_begrip:InfoGrid
 .
 esdm_begrip:Informatica
   a skos:Concept ;
-  dc:source "https://www.informatica.com/solutions/move-to-the-cloud/accelerate-business-insights.html"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.informatica.com/solutions/move-to-the-cloud/accelerate-business-insights.html"^^xsd:anyURI ;
   skos:broader esdm_begrip:Datawarehouse ;
   skos:definition "<div lang=\"nl\">Informatica biedt een oplossing waarmee <em>Data Warehouses </em>en <em>Data Lakes </em>worden gemigreerd naar een cloud omgeving.</div>"^^rdf:HTML ;
   skos:prefLabel "Informatica"@nl ;
@@ -2035,7 +2050,7 @@ esdm_begrip:InformatieArchitectuur
 .
 esdm_begrip:Ingestion
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-data-lake-storage/5-stages-for-processing-big-data"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-data-lake-storage/5-stages-for-processing-big-data"^^xsd:anyURI ;
   skos:altLabel "Opname"@nl ;
   skos:broader esdm_begrip:BigDataProcessen ;
   skos:definition "The ingestion phase identifies the technology and processes that are used to acquire the source data. This data can come from files, logs, and other types of unstructured data that must be put into the Data Lake Store. The technology that is used will vary depending on the frequency that the data is transferred. For example, for batch movement of data, Azure Data Factory may be the most appropriate technology to use. For real-time ingestion of data, Apache Kafka for HDInsight or Stream Analytics may be an appropriate technology to use."@en ;
@@ -2057,7 +2072,7 @@ esdm_begrip:Integratievoorziening
 .
 esdm_begrip:Interface
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Interface"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Interface"^^xsd:anyURI ;
   skos:broader esdm_begrip:Middleware ;
   skos:definition """Een interface is een koppelvlak waarmee twee systemen met elkaar communiceren.
 
@@ -2072,7 +2087,7 @@ Een zogenaamde API definieert de interface tussen twee computerapplicaties (mees
 .
 esdm_begrip:IoT
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Internet_der_dingen"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Internet_der_dingen"^^xsd:anyURI ;
   skos:altLabel "Het internet der dingen"@nl ;
   skos:altLabel "Internet of Things"@en ;
   skos:broader esdm_begrip:EventProducer ;
@@ -2088,7 +2103,7 @@ esdm_begrip:JAMES
 .
 esdm_begrip:JSON
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/2-classify-data"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/2-classify-data"^^xsd:anyURI ;
   skos:broader esdm_begrip:DataSerializatie ;
   skos:definition "<div lang=\"en\"><strong>JSON</strong>&nbsp;&ndash; or&nbsp;<em>JavaScript Object Notation</em>, has a lightweight specification and relies on curly braces to indicate data structure. Compared to XML, it is less verbose and easier to read by humans. JSON is frequently used by web services to return data.</div>"^^rdf:HTML ;
   skos:example "<div>{<br /> \"firstName\": \"John\",<br /> \"lastName\": \"Doe\",<br /> \"age\": \"23\",<br /> \"hobbies\": [<br /> { \"type\": \"Sports\", \"value\": \"Golf\" },<br /> { \"type\": \"Leisure\", \"value\": \"Reading\" },<br /> { \"type\": \"Leisure\", \"value\": \"Guitar\" }<br /> ]<br />}</div>"^^rdf:HTML ;
@@ -2103,7 +2118,7 @@ esdm_begrip:JanusGraph
 .
 esdm_begrip:JavaScriptWebAPIs
   a skos:Concept ;
-  dc:source "https://www.w3.org/standards/webdesign/script"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.w3.org/standards/webdesign/script"^^xsd:anyURI ;
   skos:broader esdm_begrip:WebDesignAndApplications ;
   skos:prefLabel "JavaScript Web APIs (W3C)"@en ;
 .
@@ -2124,7 +2139,7 @@ esdm_begrip:KeyDB
 .
 esdm_begrip:KeyValueDatabase
   a skos:Concept ;
-  dc:source "https://en.wikipedia.org/wiki/Key-value_database"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://en.wikipedia.org/wiki/Key-value_database"^^xsd:anyURI ;
   skos:broader esdm_begrip:NoSQL ;
   skos:definition """A key–value database, or key–value store, is a data storage paradigm designed for storing, retrieving, and managing associative arrays, and a data structure more commonly known today as a dictionary or hash table. Dictionaries contain a collection of objects, or records, which in turn have many different fields within them, each containing data. These records are stored and retrieved using a key that uniquely identifies the record, and is used to find the data within the database.
 
@@ -2171,20 +2186,20 @@ esdm_begrip:Leverancier
 .
 esdm_begrip:Licentie
   a skos:Concept ;
-  dc:source "https://www.schenkeveldadvocaten.nl/woordenboek/licentie-licentiering/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.schenkeveldadvocaten.nl/woordenboek/licentie-licentiering/"^^xsd:anyURI ;
   skos:definition "Een licentie is kort gezegd een toestemming om iets te doen of te gebruiken. Bij een licentiëring verleent de rechthebbende van een recht van intellectuele eigendom (zoals bijvoorbeeld een merk, een model, auteursrecht of octrooi) een ander het recht zijn rechten te gebruiken."@nl ;
   skos:prefLabel "Licentie"@nl ;
 .
 esdm_begrip:Linux
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Linux"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Linux"^^xsd:anyURI ;
   skos:broader esdm_begrip:Besturingssysteem ;
   skos:definition "Linux is een familie van open-source-, Unix-achtige besturingssystemen gebaseerd op de Linuxkernel. De verschillende Linuxvarianten worden Linuxdistributies genoemd en zijn meestal gratis verkrijgbaar. De Linuxkernel wordt verspreid onder de GNU General Public License (GPL). Omdat Linuxdistributies in de regel gebruikmaken van het GNU-besturingssysteem, de standaard-C-bibliotheek en voldoen aan de POSIX-standaard, wordt het geheel ook wel GNU/Linux genoemd."@nl ;
   skos:prefLabel "Linux"@nl ;
 .
 esdm_begrip:Load
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/data-integration-azure-data-factory/3-describe-data-integration-patterns"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/data-integration-azure-data-factory/3-describe-data-integration-patterns"^^xsd:anyURI ;
   skos:broader esdm_begrip:ELT ;
   skos:broader esdm_begrip:ETL ;
   skos:definition """<ul lang=\"en\">
@@ -2203,7 +2218,7 @@ esdm_begrip:Load
 .
 esdm_begrip:LoadBalancing
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Load_balancing"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Load_balancing"^^xsd:anyURI ;
   skos:definition """Load balancing is een techniek bij computernetwerken om het werk te verdelen tussen verschillende computers. Men spreekt ook over load balancing bij het verdelen van het werk tussen processen, harde schijven en andere hulpbronnen. Op deze manier kunnen deze optimaal gebruikt worden en de benodigde verwerkingstijd verminderd.
 
 De techniek wordt vooral bij servers gebruikt om zo de betrouwbaarheid te verhogen, of een groter aanbod aan te kunnen. Men kan zonder problemen werk uitvoeren aan een machine of verder blijven werken bij uitval van één (of meerdere) machines. Een load balancer is hierbij een virtuele server verbonden met de fysieke servers, waarbij de verzoeken gelijkmatig over alle beschikbare servers worden verdeeld. De load balancer controleert continu de belasting van alle servers en regelt zo het aantal verzoeken per server.
@@ -2231,7 +2246,7 @@ esdm_begrip:MMDF
 .
 esdm_begrip:MacOS
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/MacOS"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/MacOS"^^xsd:anyURI ;
   skos:broader esdm_begrip:Besturingssysteem ;
   skos:definition """MacOS (vormgegeven als macOS), vroeger Mac OS X en later OS X,[1] is een lijn van besturingssystemen van Apple en wordt sinds 2002 meegeleverd op alle nieuwe Apple Macintosh-systemen. Het is de opvolger van Mac OS 9, het laatste \"Classic\" Mac OS dat Apple gebruikte sinds 1984. In 2016 werd dit besturingssysteem hernoemd van OS X naar macOS.
 
@@ -2254,7 +2269,7 @@ esdm_begrip:MailerQ
 .
 esdm_begrip:Mailserver
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Mailserver"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Mailserver"^^xsd:anyURI ;
   skos:broader esdm_begrip:Server ;
   skos:definition """<div lang=\"nl\"><p>Een&nbsp;<strong>mailserver</strong>&nbsp;is een&nbsp;<a title=\"Server\" href=\"https://nl.wikipedia.org/wiki/Server\">server</a>&nbsp;die verantwoordelijk is voor het verwerken van&nbsp;<a title=\"E-mail\" href=\"https://nl.wikipedia.org/wiki/E-mail\">e-mail</a>. Een andere, meer technische benaming voor een mailserver is&nbsp;<strong>Mail Transfer Agent</strong>&nbsp;(MTA). De term MTA wordt niet alleen voor internetmail (<a title=\"Request for Comments\" href=\"https://nl.wikipedia.org/wiki/Request_for_Comments\">RFC</a>'s 2821 en 2822) gebruikt maar ook voor andere mailprotocollen (bijvoorbeeld&nbsp;<a title=\"X.400\" href=\"https://nl.wikipedia.org/wiki/X.400\">X.400</a>).</p>
 <p>Een mailserver voert over het algemeen twee verschillende taken uit: e-mail uitwisselen met&nbsp;<a title=\"Client (applicatie)\" href=\"https://nl.wikipedia.org/wiki/Client_(applicatie)\">clients</a>&nbsp;en e-mail routeren naar andere mailservers. Voor deze twee taken worden over het algemeen verschillende&nbsp;<a title=\"Protocol\" href=\"https://nl.wikipedia.org/wiki/Protocol\">protocollen</a>&nbsp;gebruikt:&nbsp;<a class=\"mw-redirect\" title=\"Post Office Protocol\" href=\"https://nl.wikipedia.org/wiki/Post_Office_Protocol\">POP3</a>&nbsp;en&nbsp;<a title=\"\" href=\"https://nl.wikipedia.org/wiki/Internet_Message_Access_Protocol\">IMAP</a>&nbsp;voor het eerste,&nbsp;<a title=\"Simple Mail Transfer Protocol\" href=\"https://nl.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol\">SMTP</a>&nbsp;voor de laatste. Het uitwisselen van e-mail met een client is de taak die uitgevoerd wordt door een Mail Submission Agent (MSA) en Mail Delivery Agent (MDA). De meeste mailservers vervullen zowel de rol van MTA als MSA en MDA. Er is wel speciale&nbsp;<a title=\"Software\" href=\"https://nl.wikipedia.org/wiki/Software\">software</a>&nbsp;voor de rol van MDA beschikbaar, een voorbeeld hiervan is&nbsp;<a class=\"new\" title=\"Procmail (de pagina bestaat niet)\" href=\"https://nl.wikipedia.org/w/index.php?title=Procmail&amp;action=edit&amp;redlink=1\">procmail</a>.</p>
@@ -2283,7 +2298,7 @@ esdm_begrip:MarkLogicServer
 .
 <http://ordina.nl/esdm/im/begrippen/id/MarkLogic–DataHub>
   a skos:Concept ;
-  dc:source "https://www.marklogic.com/product/data-hub-platform/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.marklogic.com/product/data-hub-platform/"^^xsd:anyURI ;
   skos:broader esdm_begrip:DataHub ;
   skos:definition "Marklogic biedt een Data Hub dat alle data vanuit alle bronnen integreert voor transactie en analytische doeleinden. "@nl ;
   skos:prefLabel "MarkLogic – Data Hub"@nl ;
@@ -2336,7 +2351,7 @@ esdm_begrip:MessageSystems
 .
 esdm_begrip:Metadata
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Metadata"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Metadata"^^xsd:anyURI ;
   skos:broader esdm_begrip:GestructureerdeData ;
   skos:definition """<div lang=\"nl\"><p><strong>Metadata</strong>&nbsp;zijn&nbsp;<a title=\"Gegeven\" href=\"https://nl.wikipedia.org/wiki/Gegeven\">gegevens</a>&nbsp;die de karakteristieken van bepaalde gegevens beschrijven. Het zijn dus eigenlijk data over data. De metadata bij een bepaald document (de gegevens) kunnen bijvoorbeeld zijn: de auteur, de datum van schrijven, de uitgever, het aantal pagina's en de&nbsp;<a title=\"Taal\" href=\"https://nl.wikipedia.org/wiki/Taal\">taal</a>&nbsp;waarin de gegevens zijn opgesteld. Het vastleggen van metadata heet&nbsp;<em>metadateren.</em>&nbsp;Het bewaren bij of koppelen van metadata aan de data waarop ze betrekking hebben, heeft als voordeel dat de data makkelijker gevonden kunnen worden. Zo kan men in een&nbsp;<a title=\"Zoekmachine\" href=\"https://nl.wikipedia.org/wiki/Zoekmachine\">zoekmachine</a>&nbsp;die gebruik maakt van metadata bijvoorbeeld direct zoeken naar documenten geschreven door een bepaalde auteur. Met&nbsp;<a title=\"Full text-zoeken\" href=\"https://nl.wikipedia.org/wiki/Full_text-zoeken\">full text-zoeken</a>, dus zonder gebruik te maken van metadata, is dit moeilijker, omdat elk document waarin de naam van de auteur voorkomt wordt gevonden. Dit kunnen er veel meer zijn dan de documenten die daadwerkelijk door de persoon geschreven zijn.</p>
 <p>Het nadeel van werken met metadata is dat metadata moeten worden toegevoegd aan alle gegevens (documenten). Soms is dit eenvoudig automatisch te doen (zoals het bepalen van het aantal pagina's), maar vaak vereist dit werk dat nog niet goed zonder menselijke interventie uit te voeren is, zoals het extraheren van de naam van de auteur uit een tekstdocument, of het toewijzen van bepaalde trefwoorden.</p></div>"""^^rdf:HTML ;
@@ -2344,7 +2359,7 @@ esdm_begrip:Metadata
 .
 esdm_begrip:Microservices
   a skos:Concept ;
-  dc:source "https://www.ibm.com/cloud/learn/microservices"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.ibm.com/cloud/learn/microservices"^^xsd:anyURI ;
   skos:definition """Microservices-architectuur is een benadering waarin een enkele applicatie is samengesteld uit vele losjes gekoppelde en onafhankelijk inzetbare kleinere services.
 Wat zijn microservices?
 Microservices (of microservices-architectuur) zijn een cloud-native architectuurbenadering waarin een enkele applicatie is samengesteld uit vele losjes gekoppelde en onafhankelijk inzetbare kleinere componenten of services. Deze diensten zijn meestal:
@@ -2370,8 +2385,8 @@ esdm_begrip:MicrosoftAccess
 .
 esdm_begrip:MicrosoftAzure
   a skos:Concept ;
-  dc:source "https://azure.microsoft.com/nl-nl/overview/what-is-azure/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
-  dc:source "https://nl.wikipedia.org/wiki/Microsoft_Azure"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://azure.microsoft.com/nl-nl/overview/what-is-azure/"^^xsd:anyURI ;
+  dc:source "https://nl.wikipedia.org/wiki/Microsoft_Azure"^^xsd:anyURI ;
   skos:broader esdm_begrip:Cloudomgeving ;
   skos:definition "Microsoft Azure Platform (voorheen: Windows Azure Platform) is een cloud computing-platform van Microsoft waarmee een aantal internetdiensten aangeboden kan worden via het internet of binnen de omgeving van het eigen bedrijf. Microsoft wil hiermee de concurrentie aangaan met andere cloudsystemen die software as a service (SaaS) aanbieden, zoals Google Compute Engine van Google en EC2 van Amazon. Deze software hoeft niet geïnstalleerd te worden op de computer van de gebruiker, alles gebeurt via het web; aan de server-kant. Ook toegang tot bestanden en mappen gebeurt via een web-interface, er zijn APIs beschikbaar of er is toegang mogelijk middels andere protocollen, zoals: FTP, SFTP en SSH. Het Azure Services Platform gebruikt een aangepast besturingssysteem Microsoft Azure om een cluster van servers te beheren die in het datacenter van Microsoft staan."@nl ;
   skos:note "<div lang=\"nl\">Het Azure-cloudplatform bestaat uit meer dan 200 producten en cloudservices die zijn ontworpen om u te helpen bij de creatie van nieuwe oplossingen, zodat u de uitdagingen van vandaag het hoofd kunt bieden en u op de toekomst kunt voorbereiden. Bouw toepassingen, voer ze uit en beheer ze in meerdere clouds, on-premises en aan de rand, en gebruik daarvoor de hulpmiddelen en frameworks van uw keuze.</div>"^^rdf:HTML ;
@@ -2379,7 +2394,7 @@ esdm_begrip:MicrosoftAzure
 .
 <http://ordina.nl/esdm/im/begrippen/id/MicrosoftAzure–DataLake>
   a skos:Concept ;
-  dc:source "https://azure.microsoft.com/en-us/solutions/data-lake/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://azure.microsoft.com/en-us/solutions/data-lake/"^^xsd:anyURI ;
   skos:broader esdm_begrip:DataLake ;
   skos:definition "Microsoft biedt een Azure Data Lake aan, ondersteund door Apache Spark en Hadoop (net zoals Google Cloud). "@nl ;
   skos:exactMatch esdm_begrip:AzureDataLakeStorage ;
@@ -2403,7 +2418,7 @@ esdm_begrip:MicrosoftSQLServer2017
 .
 esdm_begrip:MicrosoftWindows
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Microsoft_Windows"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Microsoft_Windows"^^xsd:anyURI ;
   skos:broader esdm_begrip:Besturingssysteem ;
   skos:definition """<div lang=\"nl\"><p><strong>Microsoft Windows</strong>&nbsp;is een groep verschillende&nbsp;<a title=\"\" href=\"https://nl.wikipedia.org/wiki/Grafische_gebruikersomgeving\">grafische</a>&nbsp;<a title=\"Grafische gebruikersomgeving\" href=\"https://nl.wikipedia.org/wiki/Besturingssysteem\">besturingssysteemfamilies</a>, die allemaal zijn ontwikkeld, uitgebracht en verkocht door&nbsp;<a title=\"Microsoft\" href=\"https://nl.wikipedia.org/wiki/Microsoft\">Microsoft</a>. Elke familie is geschikt voor een bepaalde sector van de informatica-industrie. Actieve Windows-families zijn&nbsp;<a title=\"\" href=\"https://nl.wikipedia.org/wiki/Windows_NT\">Windows NT</a>&nbsp;en&nbsp;<a class=\"mw-redirect\" title=\"\" href=\"https://nl.wikipedia.org/wiki/Windows_Embedded\">Windows Embedded</a>. Deze kunnen subfamilies omvatten, bijvoorbeeld&nbsp;<a title=\"Windows Embedded Compact\" href=\"https://nl.wikipedia.org/wiki/Windows_Embedded_Compact\">Windows Embedded Compact</a>&nbsp;(Windows CE) of Windows Server. Opgeheven Windows-families zijn&nbsp;<a title=\"Windows 9x\" href=\"https://nl.wikipedia.org/wiki/Windows_9x\">Windows 9x</a>,&nbsp;<a title=\"\" href=\"https://nl.wikipedia.org/wiki/Windows_Mobile\">Windows Mobile</a>&nbsp;en&nbsp;<a title=\"Windows Embedded\" href=\"https://nl.wikipedia.org/wiki/Windows_Phone\">Windows Phone</a>.</p>
 <p>De recentste (stabiele) versie van Windows is&nbsp;<a title=\"Windows NT\" href=\"https://nl.wikipedia.org/wiki/Windows_10\">Windows 10</a>, versie 21H1.</p></div>"""^^rdf:HTML ;
@@ -2411,7 +2426,7 @@ esdm_begrip:MicrosoftWindows
 .
 esdm_begrip:Middleware
   a skos:Concept ;
-  dc:source "https://www.talend.com/resources/what-is-middleware/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.talend.com/resources/what-is-middleware/"^^xsd:anyURI ;
   skos:definition """<div lang=\"nl\">
 <p><strong>Middleware is software die lacunes overbrugt tussen andere applicaties, tools en databases om uniforme services aan gebruikers te bieden.&nbsp;</strong>Het wordt vaak gekarakteriseerd als de lijm die verschillende softwareplatforms en apparaten met elkaar verbindt.</p>
 <p>Hoewel er al sinds 1968 naar de term wordt verwezen, werd middleware in de jaren tachtig officieel ge&iuml;ntroduceerd als een manier om nieuwere applicaties te koppelen aan oudere legacy-systemen.&nbsp;Het gebruik van Middleware omvat webservers, applicatieservers, contentmanagementsystemen en andere tools die de ontwikkeling en levering van applicaties ondersteunen.&nbsp;Hoewel een normaal besturingssysteem een&nbsp;<a href=\"https://www.talend.com/resources/what-is-an-api/\">Application Programming Interface (API) biedt</a>&nbsp;waar programma's onderliggende hardwarefuncties gebruiken, biedt Middleware een API voor onderliggende functies van het besturingssysteem.</p>
@@ -2474,38 +2489,38 @@ esdm_begrip:Middleware
 .
 esdm_begrip:Ministerie_van_Algemene_Zaken
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Ministerie_van_Algemene_Zaken"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Ministerie_van_Algemene_Zaken"^^xsd:anyURI ;
   skos:broader esdm_begrip:NederlandseOverheid ;
   skos:prefLabel "Ministerie van Algemene Zaken"@nl ;
 .
 esdm_begrip:Ministerie_van_Binnenlandse_Zaken_en_Koninkrijksrelaties
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Ministerie_van_Binnenlandse_Zaken_en_Koninkrijksrelaties"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Ministerie_van_Binnenlandse_Zaken_en_Koninkrijksrelaties"^^xsd:anyURI ;
   skos:broader esdm_begrip:NederlandseOverheid ;
   skos:prefLabel "Ministerie van Binnenlandse Zaken en Koninkrijksrelaties"@nl ;
 .
 esdm_begrip:Ministerie_van_Buitenlandse_Zaken
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Ministerie_van_Buitenlandse_Zaken_(Nederland)"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Ministerie_van_Buitenlandse_Zaken_(Nederland)"^^xsd:anyURI ;
   skos:broader esdm_begrip:NederlandseOverheid ;
   skos:definition "Het ministerie van Buitenlandse Zaken (BZ of, verouderd, BuZa) is in Nederland het ministerie dat zich bezighoudt met de buitenlandse relaties van het Koninkrijk der Nederlanden, inclusief Europese Zaken en Ontwikkelingssamenwerking. Ook ondersteunt het ministerie Nederlanders en Nederlandse bedrijven in het buitenland."@nl ;
   skos:prefLabel "Ministerie van Buitenlandse Zaken"@nl ;
 .
 esdm_begrip:Ministerie_van_Infrastructuur_en_Waterstaat
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Ministerie_van_Infrastructuur_en_Waterstaat"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Ministerie_van_Infrastructuur_en_Waterstaat"^^xsd:anyURI ;
   skos:broader esdm_begrip:NederlandseOverheid ;
   skos:prefLabel "Ministerie van Infrastructuur en Waterstaat"@nl ;
 .
 esdm_begrip:MobileWeb
   a skos:Concept ;
-  dc:source "https://www.w3.org/standards/webdesign/mobilweb"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.w3.org/standards/webdesign/mobilweb"^^xsd:anyURI ;
   skos:broader esdm_begrip:WebDesignAndApplications ;
   skos:prefLabel "Mobile web (W3C)"@en ;
 .
 esdm_begrip:ModelAndServe
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-data-lake-storage/5-stages-for-processing-big-data"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-data-lake-storage/5-stages-for-processing-big-data"^^xsd:anyURI ;
   skos:altLabel "Modelleren en bedienen"@nl ;
   skos:broader esdm_begrip:BigDataProcessen ;
   skos:definition "The model and serve phase involves the technologies that will present the data to users. These can include visualization tools such as Power BI, or other data stores such as Azure Synapse Analytics, Azure Cosmos DB, Azure SQL Database, or Azure Analysis Services. Often, a combination of these technologies will be used depending on the business requirements."@en ;
@@ -2529,21 +2544,21 @@ esdm_begrip:Monitor
 .
 <http://ordina.nl/esdm/im/begrippen/id/MuleSoft–ESB>
   a skos:Concept ;
-  dc:source "https://www.mulesoft.com/resources/esb/what-mule-esb"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.mulesoft.com/resources/esb/what-mule-esb"^^xsd:anyURI ;
   skos:broader esdm_begrip:EnterpriseServiceBus ;
   skos:definition "MuleSoft biedt een lightweight Java-based ESB platform die applicaties onderling verbindt, onafhankelijk van de technologie (o.a. JMS, HTTP)."@nl ;
   skos:prefLabel "MuleSoft – ESB"@nl ;
 .
 esdm_begrip:MultiModelDatabase
   a skos:Concept ;
-  dc:source "https://en.wikipedia.org/wiki/Multi-model_database"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://en.wikipedia.org/wiki/Multi-model_database"^^xsd:anyURI ;
   skos:broader esdm_begrip:NoSQL ;
   skos:definition "In the field of database design, a multi-model database is a database management system designed to support multiple data models against a single, integrated backend. In contrast, most database management systems are organized around a single data model that determines how data can be organized, stored, and manipulated. Document, graph, relational, and key–value models are examples of data models that may be supported by a multi-model database."@en ;
   skos:prefLabel "Multi-model database"@nl ;
 .
 esdm_begrip:Multifactorauthenticatie
   a skos:Concept ;
-  dc:source "https://www.tools4ever.nl/wat-is-mfa/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.tools4ever.nl/wat-is-mfa/"^^xsd:anyURI ;
   skos:broader esdm_begrip:SecurityAndAccess ;
   skos:definition """Kort samengevat is Multi-Factor Authenticatie (MFA) een authenticatie methode waarbij de online gebruiker twee stappen succesvol moet doorlopen om ergens toegang tot te krijgen. Dit soort authenticatie wordt ook wel Two-Factor Authenticatie (2FA) genoemd. Hoewel ' two-factor authenticatie' een populaire term blijft, is MFA steeds meer de overkoepelende term geworden.
 
@@ -2568,7 +2583,7 @@ esdm_begrip:NebulaGraph
 .
 esdm_begrip:NederlandseOverheid
   a skos:Concept ;
-  dc:source "https://www.rijksoverheid.nl/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.rijksoverheid.nl/"^^xsd:anyURI ;
   skos:broader esdm_begrip:Actoren ;
   skos:prefLabel "Nederlandse Overheid"@nl ;
 .
@@ -2585,7 +2600,7 @@ esdm_begrip:Neo4J
 .
 esdm_begrip:Netwerkinfrastructuur
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/IT-infrastructuur"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/IT-infrastructuur"^^xsd:anyURI ;
   skos:altLabel "IT-infrastructuur"@nl ;
   skos:broader esdm_begrip:ComputingOmgeving ;
   skos:definition """<div lang=\"nl\"><span style=\"font-size: 10pt;\">De&nbsp;<strong>IT-infrastructuur</strong>&nbsp;is de fysieke&nbsp;<a title=\"\" href=\"https://nl.wikipedia.org/wiki/Verkeersinfrastructuur\">verkeersinfrastructuur</a>&nbsp;ten behoeve van het transport van digitale data, met als hoger doel informatie te delen of aan te bieden en te consumeren.</span><br />
@@ -2610,7 +2625,7 @@ esdm_begrip:Netwerkinfrastructuur
 .
 esdm_begrip:Netwerkprotocol
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Netwerkprotocol"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Netwerkprotocol"^^xsd:anyURI ;
   skos:broader esdm_begrip:Communicatieprotocol ;
   skos:definition """<div lang=\"nl\"><p>Een&nbsp;<strong>netwerkprotocol</strong>&nbsp;is een&nbsp;<a title=\"\" href=\"https://nl.wikipedia.org/wiki/Protocol\">protocol</a>, een afgesproken communicatiewijze, voor netwerkcomponenten. Door het toepassen van een standaard protocol, kunnen componenten van verschillende leveranciers met elkaar gegevens uitwisselen.<br /><br />Een netwerkprotocol bevat afspraken omtrent</p>
 <ul>
@@ -2623,8 +2638,8 @@ esdm_begrip:Netwerkprotocol
 .
 esdm_begrip:NoSQL
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/NoSQL"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
-  dc:source "https://www.bluefrog.nl/kennisbank/data-science/wat-zijn-nosql-databases/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/NoSQL"^^xsd:anyURI ;
+  dc:source "https://www.bluefrog.nl/kennisbank/data-science/wat-zijn-nosql-databases/"^^xsd:anyURI ;
   skos:broader esdm_begrip:Databasemanagementsysteem ;
   skos:definition "NoSQL is een breed gamma aan databasemanagementsystemen die op aanmerkelijke wijze verschillen van het klassieke relationele databasemanagementsysteem (RDBMS). De datasystemen behoeven niet altijd vaste databaseschema's, ze vermijden gewoonlijk de JOIN-operaties en sommige schalen horizontaal. Academici en publicaties verwijzen er meestal naar als gestructureerde storage waarvan de klassieke relationele databases een deelverzameling zouden zijn. Ook wordt er soms naar verwezen als niet-relationele databases."@nl ;
   skos:prefLabel "NoSQL"@nl ;
@@ -2643,7 +2658,7 @@ esdm_begrip:NovellGroupWise
 .
 esdm_begrip:OAuth20
   a skos:Concept ;
-  dc:source "https://oauth.net/2/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://oauth.net/2/"^^xsd:anyURI ;
   skos:broader esdm_begrip:SecurityAndAccess ;
   skos:definition "OAuth 2.0 is the industry-standard protocol for authorization. OAuth 2.0 focuses on client developer simplicity while providing specific authorization flows for web applications, desktop applications, mobile phones, and living room devices. This specification and its extensions are being developed within the IETF OAuth Working Group."@en ;
   skos:prefLabel "OAuth 2.0"@en ;
@@ -2656,7 +2671,7 @@ esdm_begrip:OC4J
 .
 esdm_begrip:OnPremiseOmgeving
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/nl-nl/learn/modules/evolving-world-of-data/3-systems-on-premise-vs-cloud"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/nl-nl/learn/modules/evolving-world-of-data/3-systems-on-premise-vs-cloud"^^xsd:anyURI ;
   skos:broader esdm_begrip:ComputingOmgeving ;
   skos:definition """Bij on-premises omgevingen is fysieke apparatuur vereist om toepassingen en services uit te voeren. Deze apparatuur bestaat bijvoorbeeld uit fysieke servers, netwerkinfrastructuur en opslag. De apparatuur moet zijn voorzien van voeding en koeling, en moet regelmatig worden onderhouden door gekwalificeerd personeel. Op een server moet ten minste één besturingssysteem (OS) zijn geïnstalleerd. Als de organisatie virtualisatietechnologie gebruikt, moeten er mogelijk meerdere besturingssystemen zijn geïnstalleerd.
 
@@ -2705,7 +2720,7 @@ In cloudoplossingen worden uitgaven elke maand in de financiële overzichten opg
 .
 esdm_begrip:OngestructureerdeData
   a skos:Concept ;
-  dc:source "https://www.eduvision.nl/big-data/kennisbank/ongestructureerde-data"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.eduvision.nl/big-data/kennisbank/ongestructureerde-data"^^xsd:anyURI ;
   skos:broader esdm_begrip:Data ;
   skos:definition """In het geval van Big Data is 20% van de data gestructureerd en 80% ongestructureerd. Ongestructureerde data is data die niet een gespecificeerd format volgen voor Big Data. Het is data die niet verblijven in een traditionele rij-kolom database. Ze zijn dus het tegenovergestelde van gestructureerde data die opgeslagen worden in velden in een database.
 
@@ -2736,7 +2751,7 @@ Het laatste voorbeeld van unstructured data is ‘The Internet of Things’ (IoT
 .
 esdm_begrip:OnlineAnalyticalProcessing
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Online_analytical_processing"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Online_analytical_processing"^^xsd:anyURI ;
   skos:broader esdm_begrip:Database ;
   skos:definition "<div lang=\"nl\"><strong>Online analytical processing</strong>&nbsp;of&nbsp;<strong>OLAP</strong>&nbsp;is een&nbsp;<a title=\"Applicatie-architectuur\" href=\"https://nl.wikipedia.org/wiki/Applicatie-architectuur\">applicatie-architectuur</a>&nbsp;die door een&nbsp;<a title=\"Bedrijf\" href=\"https://nl.wikipedia.org/wiki/Bedrijf\">bedrijf</a>&nbsp;wordt gebruikt ter ondersteuning van de analytische applicaties<sup id=\"cite_ref-1\" class=\"reference\"></sup><sup id=\"cite_ref-2\" class=\"reference\"></sup>. Het is geen&nbsp;<a title=\"Datawarehouse\" href=\"https://nl.wikipedia.org/wiki/Datawarehouse\">datawarehouse</a>&nbsp;of&nbsp;<a title=\"Databasemanagementsysteem\" href=\"https://nl.wikipedia.org/wiki/Databasemanagementsysteem\">databasemanagementsysteem</a>. De belangrijkste toepassingen van OLAP zijn bedrijfsmatige problemen waarbij&nbsp;<a class=\"new\" title=\"Record (databank) (de pagina bestaat niet)\" href=\"https://nl.wikipedia.org/w/index.php?title=Record_(databank)&amp;action=edit&amp;redlink=1\">records</a>&nbsp;uit gigantische&nbsp;<a class=\"mw-redirect\" title=\"Gegevensverzameling\" href=\"https://nl.wikipedia.org/wiki/Gegevensverzameling\">gegevensverzamelingen</a>&nbsp;gehaald moeten worden. Deze records moeten dan ook getotaliseerd worden. Om de problemen van een moderne onderneming te kunnen oplossen, heb je speciale databaseschema's nodig. Deze schema's zijn array-geori&euml;nteerd en bevatten&nbsp;<a title=\"Morfologisch overzicht\" href=\"https://nl.wikipedia.org/wiki/Morfologisch_overzicht\">multidimensionale</a>&nbsp;eigenschappen. Daarnaast staat de&nbsp;<a title=\"Query\" href=\"https://nl.wikipedia.org/wiki/Query\">query</a>&nbsp;in deze indeling centraal. Het resultaat lijkt vaak op een multidimensionale&nbsp;<a title=\"\" href=\"https://nl.wikipedia.org/wiki/Spreadsheet\">spreadsheet</a>.</div>"^^rdf:HTML ;
   skos:prefLabel "Online Analytical Processing"@en ;
@@ -2744,7 +2759,7 @@ esdm_begrip:OnlineAnalyticalProcessing
 .
 esdm_begrip:OnlineTransactionProcessing
   a skos:Concept ;
-  dc:source "https://en.wikipedia.org/wiki/Online_transaction_processing"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://en.wikipedia.org/wiki/Online_transaction_processing"^^xsd:anyURI ;
   skos:altLabel "OLTP"@en ;
   skos:broader esdm_begrip:Database ;
   skos:definition """In online transaction processing (OLTP), information systems typically facilitate and manage transaction-oriented applications.
@@ -2788,7 +2803,7 @@ esdm_begrip:OpenSMTPD
 .
 esdm_begrip:OpenSource
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Open_source"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Open_source"^^xsd:anyURI ;
   skos:broader esdm_begrip:Software ;
   skos:definition """Open source (letterlijk vertaald: open bron) beschrijft de praktijk die in productie en ontwikkeling vrije toegang geeft tot de bronmaterialen (de source) van het eindproduct.
 
@@ -2801,7 +2816,7 @@ Het opensourcemodel staat toe dat verschillende agenda's en productiebenaderinge
 .
 esdm_begrip:OpenTunnel
   a skos:Concept ;
-  dc:source "https://www.jnet.nl/nl/home"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.jnet.nl/nl/home"^^xsd:anyURI ;
   skos:broader esdm_begrip:EnterpriseServiceBus ;
   skos:definition """<div lang=\"nl\"><div class=\"teaser\">
 <p>OpenTunnel is een schaalbare enterprise servicebus voor de Nederlandse overheid. OpenTunnel is beschikbaar in een lokale variant en als beheerde dienst in de JNet Cloud Overheidsservicebus.com. Meer dan honderdenvijftig Nederlandse overheidsorganisaties maken reeds gebruik van de faciliteiten van OpenTunnel.</p>
@@ -2840,7 +2855,7 @@ esdm_begrip:Oracle
 .
 esdm_begrip:OracleDataWarehousing
   a skos:Concept ;
-  dc:source "https://www.oracle.com/database/technologies/datawarehouse-bigdata.html"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.oracle.com/database/technologies/datawarehouse-bigdata.html"^^xsd:anyURI ;
   skos:broader esdm_begrip:Datawarehouse ;
   skos:note "<div lang=\"nl\">Oracle biedt vier oplossingen aan, waarvan de <em>Autonomous Data Warehouse</em> oplossing alle DWH gerelateerde zorgen ontneemt.</div>"^^rdf:HTML ;
   skos:prefLabel "Oracle Data Warehousing"@nl ;
@@ -2862,7 +2877,7 @@ esdm_begrip:OracleRDFGraph
 .
 <http://ordina.nl/esdm/im/begrippen/id/Oracle–ServiceBus>
   a skos:Concept ;
-  dc:source "https://www.oracle.com/middleware/technologies/service-bus.html"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.oracle.com/middleware/technologies/service-bus.html"^^xsd:anyURI ;
   skos:broader esdm_begrip:EnterpriseServiceBus ;
   skos:definition "De Oracle Service Bus zorgt voor integratie in SOA landschappen en is te combineren met de Oracle SOA Suite en API Management."@nl ;
   skos:prefLabel "Oracle – Service Bus"@nl ;
@@ -2874,7 +2889,7 @@ esdm_begrip:OrientDB
 .
 esdm_begrip:PDOK
   a skos:Concept ;
-  dc:source "https://www.pdok.nl/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.pdok.nl/"^^xsd:anyURI ;
   skos:altLabel "Publieke Dienstverlening Op de Kaart"@nl ;
   skos:broader esdm_begrip:GeoPortaal ;
   skos:definition "<div lang=\"nl\">Nederland beschikt ook over een nationaal geo-portaal, Publieke Dienstverlening Op de Kaart (PDOK<sup id=\"cite_ref-1\" class=\"reference\"><a href=\"https://nl.wikipedia.org/wiki/Geo-portaal#cite_note-1\">[1]</a></sup>).&nbsp;<a title=\"Topografische kaart\" href=\"https://nl.wikipedia.org/wiki/Topografische_kaart\">Topografische kaarten</a>&nbsp;van Nederland kunnen bekeken worden met de PDOK-viewer<sup id=\"cite_ref-2\" class=\"reference\"><a href=\"https://nl.wikipedia.org/wiki/Geo-portaal#cite_note-2\">[2]</a></sup>, en allerhande digitale geo-informatieproducten kunnen worden gedownload in een open formaat, waaronder bijvoorbeeld de&nbsp;<a class=\"new\" title=\"TOP10NL (de pagina bestaat niet)\" href=\"https://nl.wikipedia.org/w/index.php?title=TOP10NL&amp;action=edit&amp;redlink=1\">TOP10NL</a>, een gedetailleerd topografisch bestand van Nederland.</div>"^^rdf:HTML ;
@@ -2882,7 +2897,7 @@ esdm_begrip:PDOK
 .
 esdm_begrip:POSIX
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/POSIX"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/POSIX"^^xsd:anyURI ;
   skos:altLabel "Portable Operating-System Interface"@en ;
   skos:broader esdm_begrip:Standaard ;
   skos:definition """<div lang=\"nl\"><p><strong>POSIX<sup>&reg;</sup></strong>, de afkorting van&nbsp;<strong>P</strong>ortable&nbsp;<strong>O</strong>perating-<strong>S</strong>ystem&nbsp;<strong>I</strong>nterface,<sup id=\"cite_ref-1\" class=\"reference\"></sup><sup id=\"cite_ref-2\" class=\"reference\"></sup>&nbsp;is een&nbsp;<a title=\"\" href=\"https://nl.wikipedia.org/wiki/Norm_(standaard)\">standaard</a>&nbsp;die voorziet in een basis voor&nbsp;<a title=\"Unix\" href=\"https://nl.wikipedia.org/wiki/Unix\">Unix</a>-<a title=\"Besturingssysteem\" href=\"https://nl.wikipedia.org/wiki/Besturingssysteem\">besturingssystemen</a>. De standaard specificeert op welke wijze de&nbsp;<a title=\"Shell (informatica)\" href=\"https://nl.wikipedia.org/wiki/Shell_(informatica)\">shell</a>&nbsp;dient te werken, wat verwacht kan worden van bepaalde shellcommando's en welke&nbsp;<a title=\"C (programmeertaal)\" href=\"https://nl.wikipedia.org/wiki/C_(programmeertaal)\">C</a>-<a title=\"Bibliotheek (informatica)\" href=\"https://nl.wikipedia.org/wiki/Bibliotheek_(informatica)\">bibliotheekfuncties</a>&nbsp;aanwezig behoren te zijn.<sup id=\"cite_ref-3\" class=\"reference\"></sup>&nbsp;Onder deze standaard vallen de&nbsp;<a title=\"Institute of Electrical and Electronics Engineers\" href=\"https://nl.wikipedia.org/wiki/Institute_of_Electrical_and_Electronics_Engineers\">IEEE</a>-1003 standaarden en delen van&nbsp;<a title=\"Internationale Organisatie voor Standaardisatie\" href=\"https://nl.wikipedia.org/wiki/Internationale_Organisatie_voor_Standaardisatie\">ISO</a>/<a title=\"International Electrotechnical Commission\" href=\"https://nl.wikipedia.org/wiki/International_Electrotechnical_Commission\">IEC</a>&nbsp;<a class=\"mw-redirect\" title=\"Lijst van ISO-standaarden\" href=\"https://nl.wikipedia.org/wiki/Lijst_van_ISO-standaarden#ISO_9000_-_ISO_9999\">9945</a>.<sup id=\"cite_ref-std2001_4-0\" class=\"reference\"></sup><sup id=\"cite_ref-std2008_5-0\" class=\"reference\"></sup>&nbsp;POSIX is een&nbsp;<a class=\"mw-redirect\" title=\"Handelsmerk\" href=\"https://nl.wikipedia.org/wiki/Handelsmerk\">handelsmerk</a>&nbsp;van de IEEE en&nbsp;<a title=\"The Open Group\" href=\"https://nl.wikipedia.org/wiki/The_Open_Group\">The Open Group</a>.<sup id=\"cite_ref-6\" class=\"reference\"></sup></p>
@@ -2893,8 +2908,8 @@ esdm_begrip:POSIX
 .
 esdm_begrip:PageBlob
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/connect-an-app-to-azure-storage/2-explore-azure-storage"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/store-app-data-with-azure-blob-storage/3-design-organization-strategy"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/connect-an-app-to-azure-storage/2-explore-azure-storage"^^xsd:anyURI ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/store-app-data-with-azure-blob-storage/3-design-organization-strategy"^^xsd:anyURI ;
   skos:broader esdm_begrip:AzureBlob ;
   skos:definition "<div lang=\"en\"><strong>Page blobs</strong>&nbsp;are designed for scenarios that involve random-access reads and writes. Page blobs are used to store the virtual hard disk (VHD) files used by Azure Virtual Machines, but they're great for any scenario that involves random access.</div>"^^rdf:HTML ;
   skos:definition "Page blobs are used to hold random-access files up to 8 TB in size. Page blobs are used primarily as the backing storage for the VHDs used to provide durable disks for Azure Virtual Machines (Azure VMs). They are named page blobs because they provide random read/write access to 512-byte pages."@en ;
@@ -2909,7 +2924,7 @@ esdm_begrip:Paradox
 .
 esdm_begrip:Personeelsinformatiesysteem
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Personeelsinformatiesysteem"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Personeelsinformatiesysteem"^^xsd:anyURI ;
   skos:broader esdm_begrip:DataManagementSysteem ;
   skos:definition """Een personeelsinformatiesysteem (afhankelijk van de ideeën rond personeelsmanagement ook wel humanresourcemanagement-informatiesysteem of hrm-systeem genoemd) is een systeem waarmee gegevens over personeel worden beheerd. In veel gevallen is een dergelijk systeem geautomatiseerd en omvat het computerprogrammatuur voor personeelsgegevens, vaak met het oog op personeelsmanagement.
 
@@ -2926,7 +2941,7 @@ esdm_begrip:PlatformAsAService
 .
 esdm_begrip:PointOfSaleSysteem
   a skos:Concept ;
-  dc:source "https://www.lightspeedhq.nl/wat-is-een-pos/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.lightspeedhq.nl/wat-is-een-pos/"^^xsd:anyURI ;
   skos:broader esdm_begrip:Boekhoudsoftware ;
   skos:definition "<div lang=\"nl\">POS systeem - of Point Of Sale systeem - wordt gebruikt om een systeem of software te omschrijven dat winkeliers en restaurants ondersteuning biedt bij hun verkoop, voorraadbeheer, analyses, rapportage, en het managen van hun werknemers.<br /><br />Meestal bestaat een POS systeem uit een computer met daarop POS software, een bonnenprinter, een barcodescanner, een pinapparaat en - in het geval van een verouderd Point Of Sale systeem - een lokale server.<br /><br />Mobiele POS systemen zijn vaak cloudgebaseerd, en draaien op iPads of andere draagbare apparaten (tablets, iPod, iPhone). Deze moderne systemen hebben geen server ter plaatse nodig. Alles is online toegankelijk en wordt opgeslagen en gesynchroniseerd in de cloud.</div>"^^rdf:HTML ;
   skos:prefLabel "Point Of Sale systeem"@nl ;
@@ -2946,6 +2961,7 @@ esdm_begrip:PowerBI
   skos:broader esdm_begrip:EventConsumer ;
   skos:broader esdm_begrip:MicrosoftAzure ;
   skos:prefLabel "Power BI"@en ;
+  skos:related esdm_begrip:AzureStreamAnalytics ;
   skos:related esdm_begrip:ModelAndServe ;
 .
 esdm_begrip:PowerShell
@@ -2956,7 +2972,7 @@ esdm_begrip:PowerShell
 .
 esdm_begrip:Praktijkmanagementsysteem
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Praktijkmanagementsysteem"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Praktijkmanagementsysteem"^^xsd:anyURI ;
   skos:broader esdm_begrip:Bedrijfssoftware ;
   skos:definition "Een praktijkmanagementsysteem is een software-applicatie waarin een zorgverlener die een praktijk voert (bijvoorbeeld een huisarts, of apotheker) de patiëntgegevens vastlegt."@nl ;
   skos:prefLabel "Praktijkmanagementsysteem"@nl ;
@@ -2967,7 +2983,7 @@ esdm_begrip:Prediction
 .
 esdm_begrip:PrepAndTrain
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-data-lake-storage/5-stages-for-processing-big-data"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-data-lake-storage/5-stages-for-processing-big-data"^^xsd:anyURI ;
   skos:altLabel "Voorbereiding en training"@nl ;
   skos:broader esdm_begrip:BigDataProcessen ;
   skos:definition "The prep and train phase identifies the technologies that are used to perform data preparation and model training and scoring for data science solutions. The common technologies that are used in this phase are Azure Databricks, Azure HDInsight or Azure Machine Learning Services."@en ;
@@ -2981,7 +2997,7 @@ esdm_begrip:Printerserver
 .
 esdm_begrip:Privacy_W3C
   a skos:Concept ;
-  dc:source "https://www.w3.org/standards/webdesign/privacy"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.w3.org/standards/webdesign/privacy"^^xsd:anyURI ;
   skos:broader esdm_begrip:WebDesignAndApplications ;
   skos:prefLabel "Privacy (W3C)"@en ;
 .
@@ -2998,7 +3014,7 @@ esdm_begrip:Probleembeheer
 .
 <http://ordina.nl/esdm/im/begrippen/id/ProductDataManagement(PDM)>
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Product_data_management"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Product_data_management"^^xsd:anyURI ;
   skos:broader esdm_begrip:DataManagementSysteem ;
   skos:definition "Product data management wordt ook wel afgekort tot PDM, een drieletterige afkorting in de stijl van ERP (enterprise resource planning), CRM (customer relationship management), en hrm (humanresourcesmanagement). Deze term wordt in bedrijfssoftware gebezigd waar het beheer van artikelgegevens centraal staat."@nl ;
   skos:prefLabel "Product data management (PDM)"@nl ;
@@ -3021,7 +3037,7 @@ esdm_begrip:ProjectVoldemort
 .
 esdm_begrip:ProprietaireSoftware
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Propri%C3%ABtaire_software"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Propri%C3%ABtaire_software"^^xsd:anyURI ;
   skos:altLabel "Eigendomsmatige software"@nl ;
   skos:altLabel "Maatwerk"@nl ;
   skos:broader esdm_begrip:Bedrijfssoftware ;
@@ -3032,7 +3048,7 @@ esdm_begrip:ProprietaireSoftware
 .
 esdm_begrip:Protocol
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Protocol"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Protocol"^^xsd:anyURI ;
   skos:definition "<div lang=\"nl\">Een&nbsp;<strong>protocol</strong>&nbsp;is een&nbsp;<a title=\"\" href=\"https://nl.wikipedia.org/wiki/Overeenkomst_(contract)\">gedragsovereenkomst</a>, meestal in de vorm van een aantal uit te voeren stappen. Er bestaan verschillende typen protocollen, zoals communicatieprotocollen, computerprotocollen, wetenschappelijke protocollen, medische protocollen, ceremoni&euml;le protocollen, ethische protocollen en verdragsprotocollen.</div>"^^rdf:HTML ;
   skos:prefLabel "Protocol"@nl ;
   skos:related esdm_begrip:API ;
@@ -3040,7 +3056,7 @@ esdm_begrip:Protocol
 .
 esdm_begrip:Proxyserver
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Proxyserver"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Proxyserver"^^xsd:anyURI ;
   skos:broader esdm_begrip:Server ;
   skos:definition "<div lang=\"nl\">Een&nbsp;<strong>proxyserver</strong>&nbsp;is een&nbsp;<a title=\"Server\" href=\"https://nl.wikipedia.org/wiki/Server\">server</a>&nbsp;die zich bevindt tussen de&nbsp;<a title=\"\" href=\"https://nl.wikipedia.org/wiki/Computer\">computer</a>&nbsp;van een gebruiker en de computer waarop de door de gebruiker gewenste informatie staat (het&nbsp;<a class=\"\" title=\"Engels\" href=\"https://nl.wikipedia.org/wiki/Engels\">Engelse</a>&nbsp;woord &ldquo;proxy&rdquo; betekent&nbsp;<em>gevolmachtigd tussenpersoon</em>). Wil iemand op een computer waarop een proxyserver is ingesteld een andere computer bereiken, dan gebeurt dit niet rechtstreeks, maar via deze proxyserver. Het doel van deze tussenstap is afhankelijk van het type proxyserver.</div>"^^rdf:HTML ;
   skos:prefLabel "Proxyserver"@nl ;
@@ -3056,7 +3072,7 @@ esdm_begrip:Publish
 .
 <http://ordina.nl/esdm/im/begrippen/id/PureStorage–DataHub>
   a skos:Concept ;
-  dc:source "https://www.purestorage.com/why-pure/data-hub.html"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.purestorage.com/why-pure/data-hub.html"^^xsd:anyURI ;
   skos:broader esdm_begrip:DataHub ;
   skos:definition "Pure Storage biedt een Data Hub dat verbonden is met een Data Warehouse, Data Lake, Streaming Analytics en AI Clusters. "@nl ;
   skos:prefLabel "Pure Storage – Data Hub"@nl ;
@@ -3110,7 +3126,7 @@ esdm_begrip:RedisGraph
 .
 esdm_begrip:RelationeleDatabase
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Relationele_database"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Relationele_database"^^xsd:anyURI ;
   skos:broader esdm_begrip:Databasemanagementsysteem ;
   skos:definition """<div lang=\"nl\"><p>Een&nbsp;<strong>relationele database</strong>&nbsp;is een&nbsp;<a title=\"Database\" href=\"https://nl.wikipedia.org/wiki/Database\">database</a>&nbsp;die is opgebouwd volgens een&nbsp;<a title=\"Relationeel model\" href=\"https://nl.wikipedia.org/wiki/Relationeel_model\">relationeel model</a>.</p>
 <p>De gegevens worden opgeslagen in&nbsp;<a title=\"\" href=\"https://nl.wikipedia.org/wiki/Tabel_(database)\">tabellen</a>&nbsp;waarin de rijen de soortgelijke groepen informatie, de&nbsp;<em>records</em>&nbsp;vormen, en de kolommen de informatie die voor elk&nbsp;<em>record</em>&nbsp;moet worden opgeslagen. Verschillende tabellen kunnen met elkaar worden verbonden door een kolom toe te voegen waarin een verwijzing naar een record in een andere tabel wordt opgenomen.</p>
@@ -3122,7 +3138,7 @@ esdm_begrip:RelationeleDatabase
 .
 esdm_begrip:Reporting
   a skos:Concept ;
-  dc:source "https://www.exact.com/nl/blog/handel/wat-is-het-verschil-tussen-business-reporting-en-analytics"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.exact.com/nl/blog/handel/wat-is-het-verschil-tussen-business-reporting-en-analytics"^^xsd:anyURI ;
   skos:definition """<div lang=\"nl\"><p>Reporting is het structureren van informatie op zo&rsquo;n manier dat het gebruikt kan worden voor het meten en monitoren van de bedrijfsprestaties.&nbsp;<em>Het is het omzetten van gegevens naar informatie.</em></p>
 <p>Reporting geeft u antwoord op vragen als: Wat is er gebeurd en wanneer? Hoe vaak en hoeveel? Waar zit het probleem precies? Hoe kan ik antwoorden vinden? Gebaseerd op een vooraf vastgestelde zoekopdracht (hoeveel hebben we van artikel Y verkocht in Q1?), kan het u specifieke antwoorden geven. Dit gebeurt door het analyseren en naar boven halen van de noodzakelijke informatie vanuit de transactiedatabase. Het gaat dus om specifieke antwoorden op specifieke vragen.</p></div>"""^^rdf:HTML ;
   skos:prefLabel "Reporting"@nl ;
@@ -3149,7 +3165,7 @@ esdm_begrip:Riak
 .
 esdm_begrip:Rijkswaterstaat
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Rijkswaterstaat"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Rijkswaterstaat"^^xsd:anyURI ;
   skos:broader esdm_begrip:Ministerie_van_Infrastructuur_en_Waterstaat ;
   skos:definition """Rijkswaterstaat (RWS) is het uitvoerende agentschap van het Ministerie van Infrastructuur en Waterstaat in Nederland, tot 2010 Verkeer en Waterstaat geheten. Het werd opgericht in 1848 en is de opvolger van het Bureau voor den Waterstaat, dat sinds 1798 bestond. De organisatie beheert en ontwikkelt in opdracht van het ministerie de hoofdwegen, hoofdvaarwegen en hoofdwatersystemen. De dienst heeft als hoofdtaken om te werken aan de vlotte en veilige doorstroming van het verkeer (\"droge waterstaat\"), het onderhoud en de verbetering van het systeem van vaarwegen (\"natte waterstaat\") en de bescherming tegen overstromingen. De directeur-generaal (DG) is MichÃ¨le Blom sinds 15 mei 2017, waarmee ze de opvolger is van Jan Hendrik Dronkers.
 
@@ -3169,7 +3185,7 @@ esdm_begrip:RoleBasedAccessControl
 .
 esdm_begrip:SAPDataWarehouseCloud
   a skos:Concept ;
-  dc:source "https://www.sap.com/netherlands/products/data-warehouse-cloud/features.html"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.sap.com/netherlands/products/data-warehouse-cloud/features.html"^^xsd:anyURI ;
   skos:broader esdm_begrip:Datawarehouse ;
   skos:note "<div lang=\"nl\">SAP biedt drie oplossingen waarmee een organisatie haar Data Warehouse kan inrichten: SAP HANA, DWH Cloud en BW/4HANA</div>"^^rdf:HTML ;
   skos:prefLabel "SAP Data Warehouse Cloud"@nl ;
@@ -3181,7 +3197,7 @@ esdm_begrip:SAPHANA
 .
 esdm_begrip:SOAP
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/SOAP_(protocol)"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/SOAP_(protocol)"^^xsd:anyURI ;
   skos:altLabel "Simple Object Access Protocol"@en ;
   skos:broader esdm_begrip:Communicatieprotocol ;
   skos:definition "SOAP (aanvankelijk een afkorting voor Simple Object Access Protocol) is een computerprotocol dat wordt gebruikt voor communicatie tussen verschillende componenten. SOAP wordt ondersteund door een groot aantal bedrijven en organisaties waaronder IBM, Novell, Microsoft, Oracle, Apache Software Foundation en het vroegere BEA Systems en Sun (nu Oracle). SOAP is een protocol dat XML-berichten stuurt, meestal over HTTP, maar ook over SMTP, HTTPS, JMS of FTP."@nl ;
@@ -3194,7 +3210,7 @@ esdm_begrip:SQLite
 .
 esdm_begrip:Schaalbaarheid
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Schaalbaarheid"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Schaalbaarheid"^^xsd:anyURI ;
   skos:definition "Schaalbaar of schaalbaarheid is de mogelijkheid om een configuratie eenvoudig groter te maken. Schaalbaar kan betrekking hebben op een lokaal systeem, maar wordt tegenwoordig ook vaak in een globale bedoeling gebruikt. Het begrip wordt veelgebruikt in de IT-wereld, maar ook in de transportwereld."@nl ;
   skos:prefLabel "Schaalbaarheid"@nl ;
 .
@@ -3204,7 +3220,7 @@ esdm_begrip:Search
 .
 esdm_begrip:SecureSocketsLayer
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Transport_Layer_Security"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Transport_Layer_Security"^^xsd:anyURI ;
   skos:altLabel "SSL"@en ;
   skos:broader esdm_begrip:Communicatieprotocol ;
   skos:definition "<div lang=\"nl\"><strong>Transport Layer Security</strong>&nbsp;(<strong>TLS</strong>) en diens voorganger&nbsp;<strong>Secure Sockets Layer</strong>&nbsp;(<strong>SSL</strong>), zijn&nbsp;<a title=\"\" href=\"https://nl.wikipedia.org/wiki/Encryptie\">encryptie</a>-<a title=\"Protocol\" href=\"https://nl.wikipedia.org/wiki/Protocol\">protocollen</a>&nbsp;die de communicatie tussen&nbsp;<a title=\"Computer\" href=\"https://nl.wikipedia.org/wiki/Computer\">computers</a>&nbsp;(bijvoorbeeld op het&nbsp;<a title=\"Internet\" href=\"https://nl.wikipedia.org/wiki/Internet\">internet</a>) beveiligen.</div>"^^rdf:HTML ;
@@ -3247,7 +3263,7 @@ esdm_begrip:SensorData
 .
 esdm_begrip:Server
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Server"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Server"^^xsd:anyURI ;
   skos:broader esdm_begrip:ComputingOmgeving ;
   skos:definition """<div lang=\"nl\"><p>Een&nbsp;<strong>server</strong>&nbsp;is een&nbsp;<a title=\"Computer\" href=\"https://nl.wikipedia.org/wiki/Computer\">computer</a>&nbsp;of een&nbsp;<a title=\"Computerprogramma\" href=\"https://nl.wikipedia.org/wiki/Computerprogramma\">programma</a>&nbsp;dat diensten verleent aan&nbsp;<a title=\"Client (applicatie)\" href=\"https://nl.wikipedia.org/wiki/Client_(applicatie)\">clients</a>. In de eerste betekenis wordt met server de fysieke computer aangeduid waarop een programma draait dat deze diensten verleent.</p>
 <p>In de praktijk komen er verschillende combinaties van&nbsp;<a title=\"Hardware\" href=\"https://nl.wikipedia.org/wiki/Hardware\">hardware</a>&nbsp;en serverprogramma's voor:</p>
@@ -3276,7 +3292,7 @@ esdm_begrip:ServerLogbestanden
 .
 esdm_begrip:ServerMessageBlock
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Server_Message_Block"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Server_Message_Block"^^xsd:anyURI ;
   skos:altLabel "CIFS"@en ;
   skos:altLabel "Common Internet File System"@en ;
   skos:altLabel "SMB"@en ;
@@ -3288,7 +3304,7 @@ esdm_begrip:ServerMessageBlock
 .
 esdm_begrip:ServiceLevelAgreement
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Service_level_agreement"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Service_level_agreement"^^xsd:anyURI ;
   skos:definition """Een service-level agreement (SLA) (serviceniveau-overeenkomst) - dienstenniveau-overeenkomst (DNO) of product-level agreement (PLA),[1] is een type overeenkomst waarin afspraken staan tussen aanbieder en afnemer van een dienst of product.
 
 Een SLA is een, meestal schriftelijke, overeenkomst tussen een aanbieder en een afnemer van bepaalde diensten en/of producten (zie figuur 1). In een SLA staan, naast de beschrijving van de te leveren diensten, ook de rechten en de plichten van zowel de aanbieder als de afnemer ten aanzien van het overeengekomen kwaliteitsniveau (service level) van de te leveren diensten en/of producten (services).[3]
@@ -3353,7 +3369,7 @@ esdm_begrip:Servicestrategie
 .
 esdm_begrip:SharedAccessSignature
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/secure-azure-storage-account/4-shared-access-signatures"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/secure-azure-storage-account/4-shared-access-signatures"^^xsd:anyURI ;
   skos:broader esdm_begrip:SecurityAndAccess ;
   skos:definition """Access keys are the easiest approach to authenticating access to a storage account. However they provide full access to anything in the storage account, similar to a root password on a computer.
 
@@ -3374,7 +3390,7 @@ esdm_begrip:SmarterTools
 .
 <http://ordina.nl/esdm/im/begrippen/id/Snowflake–DataLake>
   a skos:Concept ;
-  dc:source "https://www.snowflake.com/trending/data-lake-architecture"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.snowflake.com/trending/data-lake-architecture"^^xsd:anyURI ;
   skos:broader esdm_begrip:DataLake ;
   skos:definition "Snowflake biedt de mogelijkheid om een Data Lake op AWS, Azure en op Google Cloud in te richten. "@nl ;
   skos:prefLabel "Snowflake – Data Lake"@nl ;
@@ -3386,7 +3402,7 @@ esdm_begrip:SocialMediaFeeds
 .
 esdm_begrip:Software
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Software"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Software"^^xsd:anyURI ;
   skos:definition """Software of programmatuur is een geheel van computerprogramma's met bijbehorende data, die bewerkingen en taken uitvoeren. Naast toepassingen voor mainframes, personal computers, tablets, smartphones en spelcomputers, bevatten ook televisies, telefoons, telefooncentrales, auto's en machines sinds de jaren zeventig steeds vaker embedded software.
 
 Software kan worden ingedeeld naar toepassingsgebied of gebruikersgroep.
@@ -3399,7 +3415,7 @@ Het begrip \"software\" komt uit het Engels en is de tegenhanger van hardware (a
 .
 esdm_begrip:SoftwareAGWebMethodsIntegrationServer
   a skos:Concept ;
-  dc:source "https://www.softwareag.com/en_corporate/platform/integration-apis/webmethods-integration.html"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.softwareag.com/en_corporate/platform/integration-apis/webmethods-integration.html"^^xsd:anyURI ;
   skos:broader esdm_begrip:EnterpriseServiceBus ;
   skos:definition "Software AG biedt ook een Java-based ESB platform, welke beheerd en geconfigureerd kan worden via een HTML web interface. "@nl ;
   skos:prefLabel "Software AG - webMethods Integration Server"@nl ;
@@ -3420,7 +3436,7 @@ esdm_begrip:SoftwareSoorten
 .
 esdm_begrip:Softwarelicentie
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Softwarelicentie"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Softwarelicentie"^^xsd:anyURI ;
   skos:broader esdm_begrip:Licentie ;
   skos:definition """Een softwarelicentie is een vergunning om een computerprogramma van iemand anders te gebruiken.
 
@@ -3445,7 +3461,7 @@ esdm_begrip:SqrrlEnterprise
 .
 esdm_begrip:Standaard
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Norm_(standaard)"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Norm_(standaard)"^^xsd:anyURI ;
   skos:altLabel "Norm"@nl ;
   skos:definition "Een norm of standaard is een document met erkende afspraken, specificaties of criteria over een product, een dienst of een methode. Standaarden kunnen vastgelegd worden binnen een bedrijf of organisatie, binnen een consortium van organisaties of door erkende standaardisatieorganisaties. Erkende standaardisatieorganisaties (zowel nationale als internationale) werken volgens een bepaald proces en volgens bepaalde regels voor vertegenwoordiging."@nl ;
   skos:prefLabel "Standaard"@nl ;
@@ -3453,8 +3469,8 @@ esdm_begrip:Standaard
 .
 esdm_begrip:StandardBusinessReporting
   a skos:Concept ;
-  dc:source "https://sbr-nl.nl/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
-  dc:source "https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/standaardisatie/sbr/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://sbr-nl.nl/"^^xsd:anyURI ;
+  dc:source "https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/standaardisatie/sbr/"^^xsd:anyURI ;
   skos:broader esdm_begrip:BusinessReporting ;
   skos:definition """Bedrijven in Nederland leveren jaarlijks miljoenen (verplichte) rapportages aan verschillende partijen. Dat kost tijd, geld en energie. Het eenmalig inrichten van de bedrijfsadministratie volgens Standard Business Reporting (SBR) zorgt voor efficiënt hergebruik van gegevens. Met SBR wordt rapporteren beter, sneller en eenvoudiger.
 SBR is de nationale standaard voor de digitale uitwisseling van alle bedrijfsmatige rapportages. Samen met organisaties uit de markt, zoals accountants, boekhouders, softwareleveranciers en banken heeft de Nederlandse overheid SBR ontwikkeld. Met SBR worden de gegevens in de bedrijfsadministratie eenmalig op een standaard manier vastgelegd. De gegevens zijn eenvoudig te hergebruiken voor verschillende rapportages aan uiteenlopende partijen."""@nl ;
@@ -3462,7 +3478,7 @@ SBR is de nationale standaard voor de digitale uitwisseling van alle bedrijfsmat
 .
 esdm_begrip:StorageAccountSettings
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/create-azure-storage-account/3-choose-your-account-settings"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/create-azure-storage-account/3-choose-your-account-settings"^^xsd:anyURI ;
   skos:broader esdm_begrip:AzureStorageAccount ;
   skos:definition """<div lang=\"en\"><h2 id=\"name\">Name</h2>
 <p>Each storage account has a name. The name must be globally unique within Azure, use only lowercase letters and digits and be between 3 and 24 characters.</p>
@@ -3495,7 +3511,7 @@ esdm_begrip:StorageExplorer
 .
 esdm_begrip:StorageServiceEncryption
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/nl-nl/learn/modules/secure-azure-storage-account/2-storage-security-features"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/nl-nl/learn/modules/secure-azure-storage-account/2-storage-security-features"^^xsd:anyURI ;
   skos:altLabel "SSE"@en ;
   skos:broader esdm_begrip:Encryptie ;
   skos:definition """<div lang=\"nl\"><p>Alle gegevens die worden geschreven naar Azure Storage worden automatisch versleuteld via SSE (Storage Service Encryption) met 256-bits AES-versleuteling (Advanced Encryption Standard), en zijn conform FIPS 140-2. Bij het schrijven naar Azure Storage worden gegevens via SSE automatisch versleuteld. Wanneer u gegevens van Azure Storage leest, worden de gegevens eerst ontsleuteld voordat ze worden geretourneerd. Voor dit proces worden geen extra kosten in rekening gebracht. Het proces heeft geen nadelige gevolgen voor de prestaties. De functie kan niet worden uitgeschakeld.</p>
@@ -3507,7 +3523,7 @@ esdm_begrip:StorageServiceEncryption
 .
 esdm_begrip:Store
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-data-lake-storage/5-stages-for-processing-big-data"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-data-lake-storage/5-stages-for-processing-big-data"^^xsd:anyURI ;
   skos:broader esdm_begrip:BigDataProcessen ;
   skos:definition "The store phase identifies where the ingested data should be placed"@en ;
   skos:prefLabel "Store"@en ;
@@ -3521,9 +3537,50 @@ esdm_begrip:StreamAnalyticsQueryLanguage
   skos:prefLabel "Stream Analytics query language"@en ;
   skos:related esdm_begrip:AzureStreamAnalytics ;
 .
+esdm_begrip:StreamProcessing
+  a skos:Concept ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/ingest-data-streams-with-azure-stream-analytics/2-understand-stream-processing"^^xsd:anyURI ;
+  dc:source "https://www.ibm.com/cloud/blog/event-driven-architecture-vs-event-streaming"^^xsd:anyURI ;
+  skos:broader esdm_begrip:AzureStreamAnalytics ;
+  skos:broader esdm_begrip:Integratievoorziening ;
+  skos:definition "Stream processing refers to the continuous ingestion, transformation, and analysis of data streams generated by applications, IoT devices and sensors, and other sources to derive actionable insights in near-real-time. Data stream analysis frequently involves using temporal operations, such as windowed aggregates, temporal joins, and temporal analytic functions to measure changes or differences over time."@en ;
+  skos:editorialNote """<div lang=\"en\">
+<h1 class=\"ibm-type-i ibm-type-semibold ibm-textcolor-white-core ibm-mb-2\">Event-Driven Architecture vs. Event Streaming<br /><br />What&rsquo;s the difference, how can they benefit you and which is the right choice for your business?</h1>
+<p><a title=\"event-driven-architecture\" href=\"https://www.ibm.com/cloud/learn/event-driven-architecture\" target=\"_blank\" rel=\"noopener\" data-entity-substitution=\"canonical\" data-entity-type=\"node\" data-entity-uuid=\"7f2ad3f7-b52a-49b9-bcb3-adf30a2eff72\">Event-driven architecture</a>&nbsp;and&nbsp;<a href=\"https://www.ibm.com/blogs/cloud-computing/2019/03/20/what-is-event-streaming-the-next-step-for-business/\" target=\"_blank\" rel=\"noopener\">event streaming</a>&nbsp;are valuable to your business in many ways and can largely resemble each other &mdash; but what are the differences, and why do they matter?</p>
+<h2 class=\"ibm-h2\">Event-driven architecture vs. event streaming</h2>
+<p>Both event-driven architecture and event streaming center around&nbsp;<em>events</em>. Events are records of something that occurred, such as a mouse click, keystroke or loading a program. The difference in the platforms is in how the events are received.</p>
+<ul>
+<li><strong>Event-driven architecture</strong>&nbsp;<a href=\"https://developer.ibm.com/technologies/messaging/articles/advantages-of-an-event-driven-architecture\" target=\"_blank\" rel=\"noopener\">publishes a single-purpose event</a>&nbsp;that another application or service can use to perform one or more actions in turn.</li>
+<li><strong>Event-streaming</strong>&nbsp;services like&nbsp;<a title=\"apache-kafka\" href=\"https://www.ibm.com/cloud/learn/apache-kafka\" target=\"_blank\" rel=\"noopener\" data-entity-substitution=\"canonical\" data-entity-type=\"node\" data-entity-uuid=\"9b758363-9989-47ba-913d-a6e254b1e46a\">Apache Kafka</a>&nbsp;and Confluent publish&nbsp;<em>streams&nbsp;</em>of events to a broker. Consumers of event-streaming platforms can access each stream and consume their preferred events, and those events are then retained by the broker.</li>
+</ul>
+<p>It&rsquo;s important to note that event-streaming platforms offer certain characteristics a broker does not &mdash; event-streaming platform records are persistent, allowing applications to process historical data as well as real-time data without the threat of deletion by a broker. And event-streaming platforms can be used for both simple and complex event processing, allowing event consumers to process and perform actions based on the result immediately.</p>
+<h2 class=\"ibm-h2\">How event-driven architecture and event streaming interconnect</h2>
+<p>However, you don&rsquo;t have to choose one or the other. Event-driven architectures and event streams can work in conjunction to give your business better ability to react to events in real time and accelerate your path to&nbsp;<a title=\"machine-learning\" href=\"https://www.ibm.com/cloud/learn/machine-learning\" target=\"_blank\" rel=\"noopener\" data-entity-substitution=\"canonical\" data-entity-type=\"node\" data-entity-uuid=\"f4fa9efc-ddfc-4284-a783-31012d1b6ab8\">machine learning</a>. The in-stream processing provided by event-driven architectures with event-streaming capabilities enable your business to respond to data in motion and eventually make rapid decisions based on all available current and historical data.</p>
+</div>"""^^rdf:HTML ;
+  skos:example """<div lang=\"en\">
+<p>The exponential propagation of connected applications, devices, and sensors has fueled the necessity for organizations to analyze streaming data as it arrives and use the latent knowledge contained within the data to make business decisions in near-real-time. Some example use cases of streaming data analysis include:</p>
+<ul>
+<li>Anomaly detection to identify potentially fraudulent transactions in finance industries</li>
+<li>Making product recommendations to online customers in real-time</li>
+<li>Monitoring pipelines and distribution systems by oil companies</li>
+<li>Generating predictive maintenance schedules for industrial and manufacturing equipment</li>
+<li>Sentiment analysis of social media posts</li>
+</ul>
+</div>"""^^rdf:HTML ;
+  skos:note """<div lang=\"en\">The intent being to:<br />
+<ul lang=\"en\">
+<li>Continuously monitor data using time-boxes windows to understand better how specific areas of interest change or fluctuate over time</li>
+<li>Identify and react to anomalies or irregularities within data in real-time</li>
+<li>Perpetually analyze new data to identify and respond to issues in real-time</li>
+<li>Trigger specific actions when certain thresholds are identified</li>
+</ul>
+</div>"""^^rdf:HTML ;
+  skos:prefLabel "Stream processing"@en ;
+  skos:related esdm_begrip:EventProcessing ;
+.
 esdm_begrip:StreamingData
   a skos:Concept ;
-  dc:source "https://en.wikipedia.org/wiki/Streaming_data"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://en.wikipedia.org/wiki/Streaming_data"^^xsd:anyURI ;
   skos:altLabel "Real-time data"@nl ;
   skos:broader esdm_begrip:OngestructureerdeData ;
   skos:definition """Streaminggegevens zijn gegevens die continu door verschillende bronnen worden gegenereerd. Dergelijke gegevens moeten stapsgewijs worden verwerkt met behulp van stroomverwerkingstechnieken zonder toegang tot alle gegevens. Bovendien moet er rekening mee worden gehouden dat conceptdrift kan optreden in de gegevens, wat betekent dat de eigenschappen van de stream in de loop van de tijd kunnen veranderen.
@@ -3539,7 +3596,7 @@ Datastreaming kan ook worden uitgelegd als een technologie die wordt gebruikt om
 .
 esdm_begrip:StreamingUnit
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/azure/stream-analytics/stream-analytics-streaming-unit-consumption"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/azure/stream-analytics/stream-analytics-streaming-unit-consumption"^^xsd:anyURI ;
   skos:broader esdm_begrip:AzureStreamAnalytics ;
   skos:definition """<div lang=\"en\"><p>Streaming Units (SUs) represents the computing resources that are allocated to execute a Stream Analytics job. The higher the number of SUs, the more CPU and memory resources are allocated for your job. This capacity lets you focus on the query logic and abstracts the need to manage the hardware to run your Stream Analytics job in a timely manner.</p>
 <p>To achieve low latency stream processing, Azure Stream Analytics jobs perform all processing in memory. When running out of memory, the streaming job fails. As a result, for a production job, it&rsquo;s important to monitor a streaming job&rsquo;s resource usage, and make sure there is enough resource allocated to keep the jobs running 24/7.</p>
@@ -3548,7 +3605,7 @@ esdm_begrip:StreamingUnit
 .
 <http://ordina.nl/esdm/im/begrippen/id/SupplyChainManagement(SCM)>
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Supply_chain_management"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Supply_chain_management"^^xsd:anyURI ;
   skos:broader esdm_begrip:Bedrijfssoftware ;
   skos:definition """Supply chain management (SCM), ook wel integraal ketenbeheer genoemd, is een principe waarbij door middel van het verbeteren van processen en samenwerking met leveranciers en afnemers een betere functionaliteit van het deelnemende bedrijf in de keten ontstaat. In bijvoorbeeld de horeca en de toeleverende bedrijven kan dit ervoor zorgen dat er minder afval ontstaat door meer accurate inkopen.
 
@@ -3573,21 +3630,21 @@ esdm_begrip:Systeemsoftware
 .
 esdm_begrip:TCP_IP
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/TCP/IP"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/TCP/IP"^^xsd:anyURI ;
   skos:broader esdm_begrip:Netwerkprotocol ;
   skos:definition "TCP/IP is een verzamelnaam voor een reeks netwerkprotocollen die gebruikt worden voor het grootste deel van de netwerkcommunicatie tussen computers. Het internet is het grootste en bekendste TCP/IP-netwerk. De naam TCP/IP is een samentrekking van de twee bekendste protocollen die deel uitmaken van de TCP/IP-protocolstack (= protocolstapel): het Transmission Control Protocol (TCP) en het internetprotocol (IP). De afkorting TCP/IP wordt veelal engels uitgesproken."@nl ;
   skos:prefLabel "TCP/IP"@nl ;
 .
 <http://ordina.nl/esdm/im/begrippen/id/TIBCO–ActiveMatrixServiceBus>
   a skos:Concept ;
-  dc:source "https://docs.tibco.com/products/tibco-activematrix-service-bus-3-4-0"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.tibco.com/products/tibco-activematrix-service-bus-3-4-0"^^xsd:anyURI ;
   skos:broader esdm_begrip:EnterpriseServiceBus ;
   skos:definition "TIBCO biedt als onderdeel van haar ActiveMatrix software architectuur een ESB die geschikt is voor SOA landschappen. "@nl ;
   skos:prefLabel "TIBCO – ActiveMatrix Service Bus"@nl ;
 .
 <http://ordina.nl/esdm/im/begrippen/id/Talend–Collect%26Transform>
   a skos:Concept ;
-  dc:source "https://www.talend.com/products/integrate-data/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.talend.com/products/integrate-data/"^^xsd:anyURI ;
   skos:broader esdm_begrip:Datawarehouse ;
   skos:note "<div lang=\"nl\">Talend biedt een end-to-end oplossing waarmee data uit alle bronnen, in elke format, op de cloud en/of on-premise worden ge&iuml;ntegreerd.</div>"^^rdf:HTML ;
   skos:prefLabel "Talend – Collect & Transform"@nl ;
@@ -3609,7 +3666,7 @@ esdm_begrip:TeradataAster
 .
 <http://ordina.nl/esdm/im/begrippen/id/Teradata–DataLake>
   a skos:Concept ;
-  dc:source "https://www.teradata.com/Cloud/Data-Lake"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.teradata.com/Cloud/Data-Lake"^^xsd:anyURI ;
   skos:broader esdm_begrip:DataLake ;
   skos:definition "Teradata is een van de marktleiders op het gebied van data integratie en biedt ook Data Lakes als onderdeel van Teradata Vantage."@nl ;
   skos:prefLabel "Teradata – Data Lake"@nl ;
@@ -3642,7 +3699,7 @@ esdm_begrip:Tkrzw
 .
 esdm_begrip:Transactie
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Transactie_(dataopslag)"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Transactie_(dataopslag)"^^xsd:anyURI ;
   skos:broader esdm_begrip:Database ;
   skos:definition "Een transactie bestaat uit een aantal samenhangende acties in een database, waarbij ervoor gezorgd wordt dat deze acties ofwel allemaal plaatsvinden, ofwel geen van alle."@nl ;
   skos:note """<div lang=\"nl\"><p>Veelal zijn er meerdere gebruikers of processen actief op een enkele database. Hierdoor kan de integriteit van de gegevens in gevaar komen. Een voorbeeld daarvan is een bankoverschrijving. Stel dat het debiteren van de rekening eerst gebeurt en daarna het crediteren van de andere rekening. Als ertussenin iets mis gaat (de verbinding wordt verbroken of de database gaat down) dan is het bedrag wel van de eerste rekening gehaald maar niet toegevoegd aan de tweede. Bij transacties zal ervoor gezorgd worden dat dit nooit kan gebeuren: ofwel gebeuren beide acties ofwel geen van beide.</p>
@@ -3659,7 +3716,7 @@ esdm_begrip:Transactie
 .
 esdm_begrip:Transform
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/data-integration-azure-data-factory/3-describe-data-integration-patterns"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/data-integration-azure-data-factory/3-describe-data-integration-patterns"^^xsd:anyURI ;
   skos:broader esdm_begrip:ELT ;
   skos:broader esdm_begrip:ETL ;
   skos:definition """<ul lang=\"en\">
@@ -3706,7 +3763,7 @@ esdm_begrip:Trinity
 .
 esdm_begrip:Unix
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Unix"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Unix"^^xsd:anyURI ;
   skos:broader esdm_begrip:Besturingssysteem ;
   skos:definition """<div lang=\"nl\"><p><strong>Unix</strong>&nbsp;(of&nbsp;<strong>UNIX</strong>) is een familie van&nbsp;<a title=\"\" href=\"https://nl.wikipedia.org/wiki/Besturingssysteem\">besturingssystemen</a>&nbsp;met&nbsp;<em><a title=\"Multitasking (computer)\" href=\"https://nl.wikipedia.org/wiki/Multitasking_(computer)\">multitasking</a></em>- en&nbsp;<em><a class=\"new\" title=\"Multiuser (de pagina bestaat niet)\" href=\"https://nl.wikipedia.org/w/index.php?title=Multiuser&amp;action=edit&amp;redlink=1\">multiuser</a></em>-mogelijkheden voor zeer uiteenlopende typen&nbsp;<a title=\"Computer\" href=\"https://nl.wikipedia.org/wiki/Computer\">computers</a>, ontwikkeld door verscheidene fabrikanten en groepen. De eerste versie van Unix werd ontworpen bij&nbsp;<a title=\"Bell Labs\" href=\"https://nl.wikipedia.org/wiki/Bell_Labs\">Bell Labs</a>&nbsp;in&nbsp;<a title=\"1969\" href=\"https://nl.wikipedia.org/wiki/1969\">1969</a>, door (onder anderen)&nbsp;<a title=\"Ken Thompson\" href=\"https://nl.wikipedia.org/wiki/Ken_Thompson\">Ken Thompson</a>&nbsp;en&nbsp;<a title=\"Dennis Ritchie\" href=\"https://nl.wikipedia.org/wiki/Dennis_Ritchie\">Dennis Ritchie</a>.</p>
 <p>Unix wordt gekenmerkt door de centrale rol van het&nbsp;<a title=\"Bestandssysteem\" href=\"https://nl.wikipedia.org/wiki/Bestandssysteem\">bestandssysteem</a>, dat niet alleen gebruikt wordt om bestanden op&nbsp;<a title=\"Harde schijf\" href=\"https://nl.wikipedia.org/wiki/Harde_schijf\">schijven</a>&nbsp;en andere fysieke media aan te spreken, maar ook randapparatuur en in sommige varianten ook&nbsp;<a title=\"Computernetwerk\" href=\"https://nl.wikipedia.org/wiki/Computernetwerk\">netwerkverbindingen</a>.</p>
@@ -3722,7 +3779,7 @@ esdm_begrip:Venti
 .
 esdm_begrip:VersionControlSoftware
   a skos:Concept ;
-  dc:source "https://www.atlassian.com/git/tutorials/what-is-version-control"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.atlassian.com/git/tutorials/what-is-version-control"^^xsd:anyURI ;
   skos:broader esdm_begrip:Ontwikkelsoftware ;
   skos:definition """<div lang=\"en\"><p>Version control, also known as source control, is the practice of tracking and managing changes to software code. Version control systems are software tools that help software teams manage changes to source code over time. As development environments have accelerated, version control systems help software teams work faster and smarter. They are especially useful for&nbsp;<a href=\"https://www.atlassian.com/devops/what-is-devops\" data-event=\"clicked\" data-uuid=\"9add58dd-17\" data-event-component=\"linkButton\" data-event-container=\"richText\" data-schema-version=\"1\" data-product-key=\"bitbucket\">DevOps</a>&nbsp;teams since they help them to reduce development time and increase successful deployments.</p>
 <p>Version control software keeps track of every modification to the code in a special kind of database. If a mistake is made, developers can turn back the clock and compare earlier versions of the code to help fix the mistake while minimizing disruption to all team members.</p></div>"""^^rdf:HTML ;
@@ -3735,7 +3792,7 @@ esdm_begrip:VirtualPrivateServer
 .
 esdm_begrip:Virtualisatie
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Virtualisatie"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Virtualisatie"^^xsd:anyURI ;
   skos:definition """<div lang=\"nl\"><strong>Virtualisatie</strong>&nbsp;verwijst naar het cre&euml;ren van een virtuele versie van iets. Dit wordt het meest gebruikt om gelijktijdig een besturingssysteem op&nbsp;<a title=\"Computer\" href=\"https://nl.wikipedia.org/wiki/Computer\">computers</a>&nbsp;te laten draaien die reeds een&nbsp;<a title=\"Besturingssysteem\" href=\"https://nl.wikipedia.org/wiki/Besturingssysteem\">besturingssysteem</a>&nbsp;hebben.<br />
 <p>Normaal is er op een computer slechts &eacute;&eacute;n besturingssysteem aanwezig, zoals&nbsp;<a title=\"Microsoft Windows\" href=\"https://nl.wikipedia.org/wiki/Microsoft_Windows\">Windows</a>,&nbsp;<a title=\"Linux\" href=\"https://nl.wikipedia.org/wiki/Linux\">Linux</a>&nbsp;of&nbsp;<a class=\"mw-redirect\" title=\"Mac OS X\" href=\"https://nl.wikipedia.org/wiki/Mac_OS_X\">Mac OS X</a>. Er kunnen meerdere besturingssystemen op een computer ge&iuml;nstalleerd worden, maar dan kan er maar &eacute;&eacute;n besturingssysteem tegelijkertijd opgestart worden.</p>
 <p>Er zijn echter verschillende softwareoplossingen beschikbaar waarbinnen een tweede besturingssysteem opgestart kan worden. Het besturingssysteem dat binnen zo'n programma draait kan niet zomaar gebruikmaken van bijvoorbeeld de&nbsp;<a title=\"Harde schijf\" href=\"https://nl.wikipedia.org/wiki/Harde_schijf\">harde schijf</a>&nbsp;of het&nbsp;<a title=\"Toetsenbord (computer)\" href=\"https://nl.wikipedia.org/wiki/Toetsenbord_(computer)\">toetsenbord</a>, want dat is al in gebruik door het hoofdbesturingssysteem. Maar het programma spiegelt als het ware een denkbeeldige (virtuele) computer voor, met een virtuele harde schijf en een virtueel toetsenbord etc.</p>
@@ -3756,7 +3813,7 @@ esdm_begrip:Virtualisatietechnologie
 .
 esdm_begrip:VirtueelGeheugen
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Virtueel_geheugen"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Virtueel_geheugen"^^xsd:anyURI ;
   skos:broader esdm_begrip:Virtualisatietechnologie ;
   skos:definition """<div lang=\"nl\"><p>Met&nbsp;<strong>virtueel geheugen</strong>&nbsp;wordt een mechanisme bedoeld waarmee een&nbsp;<a title=\"Besturingssysteem\" href=\"https://nl.wikipedia.org/wiki/Besturingssysteem\">besturingssysteem</a>&nbsp;een deel van de&nbsp;<a title=\"Harde schijf\" href=\"https://nl.wikipedia.org/wiki/Harde_schijf\">harde schijf</a>&nbsp;gebruikt om tijdelijk niet gebruikte gegevens te bewaren om zo meer werkgeheugen (<a title=\"Random-access memory\" href=\"https://nl.wikipedia.org/wiki/Random-access_memory\">RAM</a>) vrij te houden voor belangrijkere zaken. Dit wordt het&nbsp;<strong>wisselbestand</strong>&nbsp;(swapfile) of&nbsp;<strong>swap-ruimte</strong>&nbsp;genoemd.</p>
 <p>Tijdens de uitvoering bewaart een programma gegevens in zijn geheugenruimte. Op elk moment heeft het programma meestal slechts een klein deel van de bewaarde gegevens nodig. Daarom probeert het besturingssysteem alleen die blokken in het RAM te houden die het meest gebruikt worden. De overige geheugenblokken worden dan weggeschreven naar de swap. Als een programma een geheugenblok nodig heeft wat op de swap staat, moet dat blok eerst van de schijf gelezen worden voordat het programma verder kan gaan. Om voor dit blok ruimte te maken in het RAM, moet het besturingssysteem bovendien een ander blok naar de swap verplaatsen. Het benaderen van een&nbsp;<em>uitgeswapt</em>&nbsp;geheugenblok duurt dus langer dan het benaderen van een blok dat reeds in het RAM aanwezig is.</p>
@@ -3793,7 +3850,7 @@ esdm_begrip:VoortdurendeServiceverbetering
 .
 esdm_begrip:W3C
   a skos:Concept ;
-  dc:source "https://www.w3.org/Consortium/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.w3.org/Consortium/"^^xsd:anyURI ;
   skos:altLabel "The World Wide Web Consortium"@en ;
   skos:broader esdm_begrip:Actoren ;
   skos:definition "<div lang=\"en\">The World Wide Web Consortium (W3C) is an international community where&nbsp;<a href=\"https://www.w3.org/Consortium/Member/List\">Member organizations</a>, a full-time&nbsp;<a href=\"https://www.w3.org/People/\">staff</a>, and the public work together to develop&nbsp;<a href=\"https://www.w3.org/standards/\">Web standards</a>. Led by Web inventor and Director&nbsp;<a href=\"https://www.w3.org/People/Berners-Lee/\">Tim Berners-Lee</a>&nbsp;and CEO&nbsp;<a href=\"https://www.w3.org/People/Jeff/\">Jeffrey Jaffe</a>, W3C's mission is to lead the Web to its full potential.&nbsp;<a href=\"https://www.w3.org/Consortium/contact\">Contact W3C</a>&nbsp;for more information.</div>"^^rdf:HTML ;
@@ -3802,7 +3859,7 @@ esdm_begrip:W3C
 .
 esdm_begrip:WebDesignAndApplications
   a skos:Concept ;
-  dc:source "https://www.w3.org/standards/webdesign/"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://www.w3.org/standards/webdesign/"^^xsd:anyURI ;
   skos:broader esdm_begrip:Webstandaard ;
   skos:definition "<div lang=\"en\">Web Design and Applications involve the standards for building and Rendering Web pages, including HTML, CSS, SVG, device APIs, and other technologies for Web Applications (&ldquo;WebApps&rdquo;). This section also includes information on how to make pages accessible to people with disabilities (WCAG), to internationalize them, and make them work on mobile devices.</div>"^^rdf:HTML ;
   skos:prefLabel "Web Design and Applications (W3C)"@en ;
@@ -3825,7 +3882,7 @@ esdm_begrip:Webproxy
 .
 esdm_begrip:Webserver
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Webserver"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Webserver"^^xsd:anyURI ;
   skos:broader esdm_begrip:Server ;
   skos:definition """<div lang=\"nl\"><p>Een&nbsp;<strong>webserver</strong>&nbsp;is een&nbsp;<a title=\"Computerprogramma\" href=\"https://nl.wikipedia.org/wiki/Computerprogramma\">programma</a>&nbsp;dat via een&nbsp;<a title=\"Computernetwerk\" href=\"https://nl.wikipedia.org/wiki/Computernetwerk\">netwerk</a>&nbsp;<a title=\"Hypertext Transfer Protocol\" href=\"https://nl.wikipedia.org/wiki/Hypertext_Transfer_Protocol\">HTTP</a>-verzoeken ontvangt en documenten naar de&nbsp;<a title=\"Client (applicatie)\" href=\"https://nl.wikipedia.org/wiki/Client_(applicatie)\">client</a>&nbsp;stuurt. Als&nbsp;<a class=\"mw-redirect\" title=\"Totum pro parte\" href=\"https://nl.wikipedia.org/wiki/Totum_pro_parte\">totum pro parte</a>&nbsp;wordt in het dagelijks spraakgebruik ook wel&nbsp;<a title=\"Server\" href=\"https://nl.wikipedia.org/wiki/Server\">de hele computer die de betreffende software uitvoert</a>&nbsp;als webserver aangeduid.</p>
 <p>Het Engelse begrip&nbsp;<a title=\"Server\" href=\"https://nl.wikipedia.org/wiki/Server\">server</a>&nbsp;betekent zoveel als \"dienstverlener\". De dienst, het leveren van documenten of gegevens, wordt doorgaans verleend aan&nbsp;<a title=\"Webbrowser\" href=\"https://nl.wikipedia.org/wiki/Webbrowser\">webbrowsers</a>&nbsp;en&nbsp;<a title=\"Computerprogramma\" href=\"https://nl.wikipedia.org/wiki/Computerprogramma\">computerprogramma</a>'s. De verzoeken aan een webserver moeten niet noodzakelijkerwijs via een fysiek netwerk gesteld worden, een dergelijke communicatie kan ook binnen &eacute;&eacute;n en dezelfde computer plaatsvinden.</p>
@@ -3836,7 +3893,7 @@ esdm_begrip:Webserver
 .
 esdm_begrip:Webservice
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Webservice"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Webservice"^^xsd:anyURI ;
   skos:broader esdm_begrip:Interface ;
   skos:definition """Een webservice kan omschreven worden als een interface van een applicatiecomponent die toegankelijk is via standaard webprotocollen waarbij zonder menselijke tussenkomst wordt gecommuniceerd, vaak met behulp van XML of JSON voor wat betreft de gegevens en via SOAP voor wat betreft de uitwisseling. Een webservice maakt het mogelijk om op afstand (meestal over het Internet) vanaf een client (een (web)applicatie of component) een dienst op te vragen aan een server, bijvoorbeeld het maken van een berekening, het leveren van gegevens of het uitvoeren van een taak. Webservices spelen een groeiende rol in het denken over component-based systems.
 
@@ -3850,7 +3907,7 @@ SOAP is echter niet het enige protocol om webservices aan te bieden."""@nl ;
 .
 esdm_begrip:Webstandaard
   a skos:Concept ;
-  dc:source "https://nl.wikipedia.org/wiki/Webstandaarden"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://nl.wikipedia.org/wiki/Webstandaarden"^^xsd:anyURI ;
   skos:broader esdm_begrip:Standaard ;
   skos:definition """Webstandaarden zijn standaarden en technische specificaties die (normerings)aspecten van het wereldwijde web beschrijven. Webstandaarden worden veelal geassocieerd met de normering door het World Wide Web Consortium (W3C) maar er zijn meer organisaties die normen publiceren en vaststellen. Zoals de Internet Engineering Task Force (IETF) en de International Organization for Standardization (ISO).
 
@@ -3884,7 +3941,7 @@ esdm_begrip:WildFly
 .
 esdm_begrip:XML
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/2-classify-data"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/2-classify-data"^^xsd:anyURI ;
   skos:broader esdm_begrip:DataSerializatie ;
   skos:definition "<div lang=\"en\"><strong>XML</strong>, or&nbsp;<em>extensible markup language</em>, was one of the first data languages to receive widespread support. It's text-based, which makes it easily human and machine-readable. In addition, parsers for it can be found for almost all popular development platforms. XML allows you to express relationships and has standards for schema, transformation, and even displaying on the web.</div>"^^rdf:HTML ;
   skos:example "<div>&lt;Person Age=\"23\"&gt;<br /> &lt;FirstName&gt;John&lt;/FirstName&gt;<br /> &lt;LastName&gt;Smith&lt;/LastName&gt;<br /> &lt;Hobbies&gt;<br /> &lt;Hobby Type=\"Sports\"&gt;Golf&lt;/Hobby&gt;<br /> &lt;Hobby Type=\"Leisure\"&gt;Reading&lt;/Hobby&gt;<br /> &lt;Hobby Type=\"Leisure\"&gt;Guitar&lt;/Hobby&gt;<br /> &lt;/Hobbies&gt;<br />&lt;/Person&gt;</div>"^^rdf:HTML ;
@@ -3895,7 +3952,7 @@ esdm_begrip:XML
 .
 esdm_begrip:YAML
   a skos:Concept ;
-  dc:source "https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/2-classify-data"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/2-classify-data"^^xsd:anyURI ;
   skos:altLabel "YAML Ain’t Markup Language"@en ;
   skos:broader esdm_begrip:DataSerializatie ;
   skos:definition "<div lang=\"en\"><strong>YAML</strong>&nbsp;&ndash; or&nbsp;<em>YAML Ain&rsquo;t Markup Language</em>, is a relatively new data language that&rsquo;s growing quickly in popularity in part due to its human-friendliness. The data structure is defined by line separation and indentation, and reduces the dependency on structural characters like parentheses, commas and brackets.</div>"^^rdf:HTML ;
@@ -3940,8 +3997,8 @@ teamwork:Vocabulary
   a evnprojects:Taxonomy ;
   a teamwork:Vocabulary ;
   a owl:Ontology ;
-  dc:creator "Elvin Dechesne"^^<http://www.w3.org/2001/XMLSchema#anyURI> ;
-  metadata:dateGenerated "2021-07-05T13:51:15+02:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+  dc:creator "Elvin Dechesne"^^xsd:anyURI ;
+  metadata:dateGenerated "2021-07-05T13:51:15+02:00"^^xsd:dateTime ;
   metadata:status metadata:UnderDevelopmentStatus ;
   <http://topbraid.org/swa#defaultNamespace> "http://ordina.nl/esdm/im/begrippen/id/" ;
   rdfs:label "Ordina ESDM Architectuurbegrippen" ;

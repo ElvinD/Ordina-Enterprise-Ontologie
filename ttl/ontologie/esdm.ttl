@@ -104,12 +104,15 @@ ovrh:Rijkswaterstaat
   skos:prefLabel "Rijkswaterstaat"@nl ;
 .
 <http://schema.org/Corporation>
+a owl:Class ;
   a sh:NodeShape ;
 .
 <http://schema.org/GovernmentOrganization>
+a owl:Class ;
   a sh:NodeShape ;
 .
 <http://schema.org/Organization>
+a owl:Class ;
   a sh:NodeShape ;
 .
 owl:Thing
@@ -141,5 +144,6 @@ skos:Concept-source
   sh:name "Bron" ;
 .
 skos:ConceptScheme
+a owl:Class ;
   a sh:NodeShape ;
 .
