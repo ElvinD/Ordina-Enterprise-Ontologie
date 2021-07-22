@@ -261,7 +261,10 @@ esdm_begrip:AppendBlob
 esdm_begrip:Applicatie
   a skos:Concept ;
   dc:source "https://nl.wikipedia.org/wiki/Applicatie"^^xsd:anyURI ;
+  dc:source "https://nl.wikipedia.org/wiki/Computerprogramma"^^xsd:anyURI ;
+  skos:altLabel "Computerprogramma"@nl ;
   skos:broader esdm_begrip:Software ;
+  skos:definition "<div lang=\"nl\">Een&nbsp;<strong>computerprogramma</strong>&nbsp;is een opeenvolging van&nbsp;<a title=\"Instructieset\" href=\"https://nl.wikipedia.org/wiki/Instructieset\">instructies</a>&nbsp;met als doel om een specifieke taak met een&nbsp;<a title=\"Computer\" href=\"https://nl.wikipedia.org/wiki/Computer\">computer</a>&nbsp;uit te voeren. Een programma is in een&nbsp;<a title=\"\" href=\"https://nl.wikipedia.org/wiki/Executable\">uitvoerbare</a>&nbsp;(executable) vorm, die de computer direct kan gebruiken om de programma-instructies met de&nbsp;<a title=\"Processor (computer)\" href=\"https://nl.wikipedia.org/wiki/Processor_(computer)\">processor</a>&nbsp;(CPU) uit te voeren</div>"^^rdf:HTML ;
   skos:definition """Een applicatie (letterlijk: \"toepassing\"; vaak ook afgekort als app) is een computerprogramma dat bedoeld is voor eindgebruikers. Dit in tegenstelling tot een servertaak of andere taken die door een besturingssysteem op de achtergrond worden uitgevoerd. Een applicatie draait 'op' (of 'onder') een bepaald besturingssysteem. Sommige populaire toepassingen zijn beschikbaar voor meer dan één besturingssysteem, en daarmee multiplatform. De complexiteit van applicaties loopt uiteen van simpel (in geval van een spelletje, of een teksteditor zoals Notepad) tot extreem complex (in geval van de systemen die in realtime processen verzorgen zoals luchtverkeersleiding, elektronisch betalingsverkeer, mobiele telefonie of administratieve of industriële processen). Complexe toepassingen zijn vaak verdeeld over meerdere systemen.
 
 Voor de allereerste computers moesten de applicaties vaak zelf door de gebruiker geschreven worden. Tegenwoordig is echter voor de meeste toepassingen kant-en-klare software verkrijgbaar."""@nl ;
@@ -355,6 +358,26 @@ esdm_begrip:AzureBlobFileSystem
   skos:broader esdm_begrip:AzureDataLakeStorage ;
   skos:prefLabel "Azure Blob File System"@en ;
   skos:related esdm_begrip:AzureBlob ;
+.
+esdm_begrip:AzureCLI
+  a skos:Concept ;
+  dc:source "https://docs.microsoft.com/en-us/cli/azure/what-is-azure-cli"^^xsd:anyURI ;
+  skos:broader esdm_begrip:CommandLineInterface ;
+  skos:broader esdm_begrip:MicrosoftAzure ;
+  skos:definition """<div lang=\"en\"><p>The Azure CLI is a cross-platform command-line tool to connect to Azure and execute administrative commands on Azure resources. It allows the execution of commands through a terminal using interactive command-line prompts or a script.</p>
+<p>For interactive use, you first launch a shell such as cmd.exe on Windows, or Bash on Linux or macOS, and then issue a command at the shell prompt. To automate repetitive tasks, you assemble the CLI commands into a shell script using the script syntax of your chosen shell, and then you execute the script.</p>
+<p>You can install the Azure CLI locally on Linux, Mac, or Windows computers. It can also be used from a browser through the Azure Cloud Shell or run from inside a Docker container.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Azure CLI"@en ;
+  skos:related esdm_begrip:AzureCloudShell ;
+.
+esdm_begrip:AzureCloudShell
+  a skos:Concept ;
+  dc:source "https://www.sqlshack.com/an-overview-of-azure-cloud-shell/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:MicrosoftAzure ;
+  skos:broader esdm_begrip:Shell ;
+  skos:definition "<div lang=\"en\">The Azure Cloud Shell is an integrated, interactive, browser-based shell for creating, and managing Azure infrastructure. You can directly access the cloud shell from Azure Web Portal or browse to URL&nbsp;<a href=\"https://shell.azure.com/\" target=\"_blank\" rel=\"nofollow noopener\">https://shell.azure.com</a>. You can choose to use the PowerShell or Bash experience using it.</div>"^^rdf:HTML ;
+  skos:prefLabel "Azure Cloud Shell"@en ;
+  skos:related esdm_begrip:AzureCLI ;
 .
 esdm_begrip:AzureCognitiveSearch
   a skos:Concept ;
@@ -513,6 +536,15 @@ esdm_begrip:AzureKeyVault
   skos:broader esdm_begrip:MicrosoftAzure ;
   skos:prefLabel "Azure Key Vault"@en ;
   skos:related esdm_begrip:StorageServiceEncryption ;
+.
+esdm_begrip:AzurePowerShell
+  a skos:Concept ;
+  dc:source "https://docs.microsoft.com/en-us/powershell/azure/?view=azps-6.2.1"^^xsd:anyURI ;
+  dc:source "https://docs.microsoft.com/en-us/powershell/azure/get-started-azureps?view=azps-6.2.1"^^xsd:anyURI ;
+  skos:broader esdm_begrip:MicrosoftAzure ;
+  skos:broader esdm_begrip:Shell ;
+  skos:definition "<div lang=\"en\">Azure PowerShell is a set of cmdlets for managing Azure resources directly from the PowerShell command line. Azure PowerShell is designed to make it easy to learn and get started with, but provides powerful features for automation. Written in .NET Standard, Azure PowerShell works with PowerShell 5.1 on Windows, PowerShell 7.0.6 LTS and PowerShell 7.1.3 or higher on all platforms.</div>"^^rdf:HTML ;
+  skos:prefLabel "Azure PowerShell"@en ;
 .
 esdm_begrip:AzureQueue
   a skos:Concept ;
@@ -811,6 +843,16 @@ esdm_begrip:ColumnDatabase
   skos:definition "A column-oriented DBMS or columnar DBMS is a database management system (DBMS) that stores data tables by column rather than by row. Practical use of a column store versus a row store differs little in the relational DBMS world. Both columnar and row databases can use traditional database query languages like SQL to load data and perform queries. Both row and columnar databases can become the backbone in a system to serve data for common extract, transform, load (ETL) and data visualization tools. However, by storing data in columns rather than rows, the database can more precisely access the data it needs to answer a query rather than scanning and discarding unwanted data in rows."@en ;
   skos:note "<div lang=\"en\">Stores data based on columns rather than rows. Columns can be defined at the query's runtime, allowing flexibility in the data that's returned performantly.</div>"^^rdf:HTML ;
   skos:prefLabel "Column database"@en ;
+.
+esdm_begrip:CommandLineInterface
+  a skos:Concept ;
+  dc:source "https://nl.wikipedia.org/wiki/Command-line-interface"^^xsd:anyURI ;
+  skos:altLabel "CLI"@en ;
+  skos:broader esdm_begrip:Interface ;
+  skos:definition """<div lang=\"nl\"><p>Wanneer een&nbsp;<a title=\"Shell (informatica)\" href=\"https://nl.wikipedia.org/wiki/Shell_(informatica)\">shell</a>&nbsp;of&nbsp;<a title=\"Computerprogramma\" href=\"https://nl.wikipedia.org/wiki/Computerprogramma\">computerprogramma</a>&nbsp;de&nbsp;<strong>command-line-interface</strong>&nbsp;(afgekort&nbsp;<strong>CLI</strong>&nbsp;en ook wel&nbsp;<strong>opdrachtregelinterface</strong>,&nbsp;<strong>commandoregel</strong>&nbsp;of&nbsp;<strong>terminal</strong>) aanbiedt, wil dat zeggen dat de gebruiker regels met tekst die een of meerdere&nbsp;<a title=\"\" href=\"https://nl.wikipedia.org/wiki/Commando_(informatica)\">opdrachten</a>&nbsp;bevatten moet invoeren. Nadat de opdracht is uitgevoerd krijgt de gebruiker weer de gelegenheid om de shell of het programma aan te spreken door op de opdrachtregel een nieuwe opdracht in te geven. De CLI geldt als tegenhanger van de bekendere&nbsp;<a title=\"Grafische gebruikersomgeving\" href=\"https://nl.wikipedia.org/wiki/Grafische_gebruikersomgeving\">grafische gebruikersomgeving</a>&nbsp;(ofwel de GUI,&nbsp;<u>G</u>raphical&nbsp;<u>U</u>ser&nbsp;<u>I</u>nterface).</p>
+<p>Een opdracht of commando wordt doorgaans afgesloten met de 'Enter'-toets. Een opdracht kan bijvoorbeeld een opdracht voor de shell of voor het programma zelf zijn of de naam van een programma dat uitgevoerd moet worden. Bij de meeste opdrachten kunnen allerlei opties meegegeven worden.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Command-line-interface"@en ;
+  skos:related esdm_begrip:Shell ;
 .
 esdm_begrip:CommuniGatePro
   a skos:Concept ;
@@ -2785,6 +2827,15 @@ esdm_begrip:Ontwikkelsoftware
   skos:broader esdm_begrip:SoftwareSoorten ;
   skos:prefLabel "Ontwikkelsoftware"@nl ;
 .
+esdm_begrip:Opdrachtprompt
+  a skos:Concept ;
+  dc:source "https://en.wikipedia.org/wiki/Cmd.exe"^^xsd:anyURI ;
+  dc:source "https://nl.wikipedia.org/wiki/Opdrachtprompt"^^xsd:anyURI ;
+  skos:altLabel "CMD"@en ;
+  skos:broader esdm_begrip:CommandLineInterface ;
+  skos:definition "<div lang=\"nl\">De&nbsp;<strong>opdrachtprompt</strong>&nbsp;is de&nbsp;<a title=\"Command-line-interface\" href=\"https://nl.wikipedia.org/wiki/Command-line-interface\">command-line-interface</a>&nbsp;van&nbsp;<a title=\"Microsoft Windows\" href=\"https://nl.wikipedia.org/wiki/Microsoft_Windows\">Microsoft Windows</a>. De opdrachtprompt maakt het mogelijk het&nbsp;<a title=\"\" href=\"https://nl.wikipedia.org/wiki/Besturingssysteem\">besturingssysteem</a>&nbsp;aan te spreken met tekst.</div>"^^rdf:HTML ;
+  skos:prefLabel "Opdrachtprompt"@nl ;
+.
 esdm_begrip:OpenLinkVirtuoso
   a skos:Concept ;
   skos:broader esdm_begrip:KeyValueDatabase ;
@@ -2966,7 +3017,7 @@ esdm_begrip:PowerBI
 .
 esdm_begrip:PowerShell
   a skos:Concept ;
-  skos:broader esdm_begrip:MicrosoftAzure ;
+  skos:broader esdm_begrip:Shell ;
   skos:prefLabel "PowerShell"@en ;
   skos:related esdm_begrip:DataIngestion ;
 .
@@ -3377,6 +3428,14 @@ Storage accounts offer a separate authentication mechanism called shared access 
   skos:note """<div lang=\"en\"><p>For untrusted clients, use a&nbsp;<em>shared access signature</em>&nbsp;(SAS). A SAS is a string that contains a security token that can be attached to a URI. Use a SAS to delegate access to storage objects and specify constraints, such as the permissions and the time range of access.</p>
 <p>You can give a customer a SAS token, for example, so they can upload pictures to a file system in Blob storage. Separately, you can give a web app permission to read those pictures. In both cases, you allow only the access that the application needs to do the task.</p></div>"""^^rdf:HTML ;
   skos:prefLabel "Shared access signature (SAS)"@en ;
+.
+esdm_begrip:Shell
+  a skos:Concept ;
+  dc:source "https://nl.wikipedia.org/wiki/Shell_(informatica)"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Applicatie ;
+  skos:definition "Een shell is een interactief computerprogramma waarmee een gebruiker met een command-line-interface opdrachten kan geven aan het besturingssysteem van een computer."@nl ;
+  skos:prefLabel "Shell"@nl ;
+  skos:related esdm_begrip:CommandLineInterface ;
 .
 esdm_begrip:Smail
   a skos:Concept ;
