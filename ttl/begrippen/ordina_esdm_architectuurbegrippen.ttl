@@ -132,6 +132,8 @@ Essentially, AD acts as a phone book in which you can look up data about your ne
 .
 esdm_begrip:Actoren
   a skos:Concept ;
+  dc:source "https://www.ensie.nl/redactie-ensie/actor"^^xsd:anyURI ;
+  skos:definition "<div lang=\"nl\">Een actor is iemand die door zijn&nbsp;<a href=\"https://www.ensie.nl/redactie-ensie/functie\">functie</a>&nbsp;betrokken is bij een sociaal of politiek&nbsp;<a href=\"https://www.ensie.nl/redactie-ensie/proces\">proces</a>.<br /><br />Eigenlijk is een actor een van de vele spelers in een specifieke werksituatie, een&nbsp;<a href=\"https://www.ensie.nl/betekenis/beroepsgroep\">beroepsgroep</a>. Bij actoren spreken wordt over het algemeen gesproken over ambtenaren en politici. Iedereen die voor de overheid werkt is in principe een actor, dus ook mensen die werken in het onderwijs, bij de&nbsp;<a href=\"https://www.ensie.nl/redactie-ensie/politie\">politie</a>&nbsp;of voor de gemeente. Maar onder actoren worden ook mensen gerekend die invloed hebben op het proces. Dit kunnen journalisten, lobbyisten of georganiseerde groepen zijn die om wat voor reden dan ook invloed hebben op bijvoorbeeld de beslissingen die worden gemaakt door de politiek.</div>"^^rdf:HTML ;
   skos:prefLabel "Actoren"@nl ;
 .
 esdm_begrip:Aerospike
@@ -772,6 +774,7 @@ In de praktijk bieden de meeste pakketten meer functionaliteit doordat ook funct
 .
 esdm_begrip:BusinessAnalytics
   a skos:Concept ;
+  dc:source "https://www.exact.com/nl/blog/handel/wat-is-het-verschil-tussen-business-reporting-en-analytics"^^xsd:anyURI ;
   skos:broader esdm_begrip:Analytics ;
   skos:definition """Business analytics helpen u bedrijfsdata te gebruiken om daarmee kansen in de markt te ontdekken en de risico’s te beheersen die samenhangen met uw bedrijfsactiviteiten. Het is het omzetten van informatie naar kennis.
 
@@ -869,6 +872,8 @@ Een communicatieprotocol voor netwerkcomponenten wordt een netwerkprotocol genoe
 .
 esdm_begrip:ComputingOmgeving
   a skos:Concept ;
+  dc:source "https://en.wikipedia.org/wiki/Computing"^^xsd:anyURI ;
+  skos:definition "<div lang=\"nl\">In het algemeen kunnen we computergebruik defini&euml;ren als elke doelgerichte activiteit die computers vereist, profiteert van of maakt. Computergebruik omvat dus het ontwerpen en bouwen van hardware- en softwaresystemen voor een breed scala aan doeleinden; verwerken, structureren en beheren verschillende soorten informatie; wetenschappelijke studies doen met computers; computersystemen intelligent laten gedragen; communicatie- en amusementsmedia maken en gebruiken; informatie vinden en verzamelen die relevant is voor een bepaald doel, enz. De lijst is vrijwel eindeloos en de mogelijkheden zijn enorm.</div>"^^rdf:HTML ;
   skos:prefLabel "Computing omgeving"@nl ;
   skos:related esdm_begrip:ICTInfrastructuur ;
 .
@@ -1031,6 +1036,7 @@ Data catalogs have become the standard for metadata management in the age of big
   skos:prefLabel "Data catalogus"@nl ;
   skos:related esdm_begrip:Analytics ;
   skos:related esdm_begrip:Curation ;
+  skos:related esdm_begrip:DataFabric ;
 .
 esdm_begrip:DataConsolidation
   a skos:Concept ;
@@ -1040,10 +1046,14 @@ esdm_begrip:DataConsolidation
 .
 esdm_begrip:DataFabric
   a skos:Concept ;
-  skos:broader esdm_begrip:DataManagementSysteem ;
+  skos:broader esdm_begrip:DataArchitectuur ;
   skos:definition "A data fabric is a design concept for attaining reusable and augmented data integration services, data pipelines and semantics for flexible and integrated data delivery. It is an optimized combination of data management and integration technology, architecture design and services delivered across multiple deployment and orchestration platforms. This results in faster, informed and, in some cases, completely automated data access and sharing."@en ;
   skos:prefLabel "Data fabric"@nl ;
+  skos:related esdm_begrip:DataCatalogus ;
+  skos:related esdm_begrip:KnowledgeGraph ;
+  skos:related esdm_begrip:Metadata ;
   skos:related esdm_begrip:SemantischDataIntegratieplatform ;
+  skos:related esdm_begrip:Standaard ;
 .
 esdm_begrip:DataFederation
   a skos:Concept ;
@@ -1355,6 +1365,7 @@ ELT biedt ook meer flexibiliteit qua architectuur, zodat meerdere transformaties
 .
 esdm_begrip:ESDM_Begrippen
   a skos:ConceptScheme ;
+  rdfs:comment "<div lang=\"nl\">Begrippen (kennis) over data en data gerelateerde architectuur. De begrippen vormen een 'knowledge graph' (kennisgraaf) die de kennis van Ordina Data Driven borgt. We noemen een dergelijke knowledge graph ook wel een begrippenkader. Iedereen is welkom om begrippen aan te dragen of bestaande begrippen aan te scherpen, sterker nog - het is noodzakelijk om onze kennis op een gestructureerde wijze op te slaan en te delen.<br /><br />Elk begrip heeft een uniek ID; een platform overstijgend URI waardoor het begrip deelbaar is en kan worden hergebruikt door andere applicaties of (keten-) partners.&nbsp;</div>"^^rdf:HTML ;
   rdfs:label "ESDM Begrippen Ordina"@nl ;
   skos:hasTopConcept esdm_begrip:Actoren ;
   skos:hasTopConcept esdm_begrip:Afnemer ;
@@ -2202,6 +2213,7 @@ esdm_begrip:KnowledgeGraph
   a skos:Concept ;
   skos:broader esdm_begrip:DataManagementSysteem ;
   skos:prefLabel "Knowledge Graph"@nl ;
+  skos:related esdm_begrip:DataFabric ;
   skos:related esdm_begrip:SemantischDataIntegratieplatform ;
 .
 esdm_begrip:Kvrocks
@@ -2398,6 +2410,7 @@ esdm_begrip:Metadata
   skos:definition """<div lang=\"nl\"><p><strong>Metadata</strong>&nbsp;zijn&nbsp;<a title=\"Gegeven\" href=\"https://nl.wikipedia.org/wiki/Gegeven\">gegevens</a>&nbsp;die de karakteristieken van bepaalde gegevens beschrijven. Het zijn dus eigenlijk data over data. De metadata bij een bepaald document (de gegevens) kunnen bijvoorbeeld zijn: de auteur, de datum van schrijven, de uitgever, het aantal pagina's en de&nbsp;<a title=\"Taal\" href=\"https://nl.wikipedia.org/wiki/Taal\">taal</a>&nbsp;waarin de gegevens zijn opgesteld. Het vastleggen van metadata heet&nbsp;<em>metadateren.</em>&nbsp;Het bewaren bij of koppelen van metadata aan de data waarop ze betrekking hebben, heeft als voordeel dat de data makkelijker gevonden kunnen worden. Zo kan men in een&nbsp;<a title=\"Zoekmachine\" href=\"https://nl.wikipedia.org/wiki/Zoekmachine\">zoekmachine</a>&nbsp;die gebruik maakt van metadata bijvoorbeeld direct zoeken naar documenten geschreven door een bepaalde auteur. Met&nbsp;<a title=\"Full text-zoeken\" href=\"https://nl.wikipedia.org/wiki/Full_text-zoeken\">full text-zoeken</a>, dus zonder gebruik te maken van metadata, is dit moeilijker, omdat elk document waarin de naam van de auteur voorkomt wordt gevonden. Dit kunnen er veel meer zijn dan de documenten die daadwerkelijk door de persoon geschreven zijn.</p>
 <p>Het nadeel van werken met metadata is dat metadata moeten worden toegevoegd aan alle gegevens (documenten). Soms is dit eenvoudig automatisch te doen (zoals het bepalen van het aantal pagina's), maar vaak vereist dit werk dat nog niet goed zonder menselijke interventie uit te voeren is, zoals het extraheren van de naam van de auteur uit een tekstdocument, of het toewijzen van bepaalde trefwoorden.</p></div>"""^^rdf:HTML ;
   skos:prefLabel "Metadata"@nl ;
+  skos:related esdm_begrip:DataFabric ;
 .
 esdm_begrip:Microservices
   a skos:Concept ;
@@ -3524,6 +3537,7 @@ esdm_begrip:Standaard
   skos:altLabel "Norm"@nl ;
   skos:definition "Een norm of standaard is een document met erkende afspraken, specificaties of criteria over een product, een dienst of een methode. Standaarden kunnen vastgelegd worden binnen een bedrijf of organisatie, binnen een consortium van organisaties of door erkende standaardisatieorganisaties. Erkende standaardisatieorganisaties (zowel nationale als internationale) werken volgens een bepaald proces en volgens bepaalde regels voor vertegenwoordiging."@nl ;
   skos:prefLabel "Standaard"@nl ;
+  skos:related esdm_begrip:DataFabric ;
   skos:related esdm_begrip:Protocol ;
 .
 esdm_begrip:StandardBusinessReporting
