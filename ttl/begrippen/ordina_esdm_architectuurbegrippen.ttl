@@ -701,6 +701,19 @@ esdm_begrip:Base
   skos:broader esdm_begrip:RelationeleDatabase ;
   skos:prefLabel "Base"@nl ;
 .
+esdm_begrip:BatchLayer
+  a skos:Concept ;
+  dc:source "https://levelup.gitconnected.com/big-data-lambda-architecture-in-a-nutshell-fd5e04b12acc"^^xsd:anyURI ;
+  skos:broader esdm_begrip:LambdaArchitecture ;
+  skos:definition """<div lang=\"en\">This layer is responsible for managing the master data set. Data in the master dataset must hold three properties as follows. <br />
+<ul>
+<li>Data is raw</li>
+<li>Data is immutable</li>
+<li>Data is eternally true</li>
+</ul>
+The master dataset is the source of truth. Even if you were to lose all your serving layer datasets and speed layer datasets, you could re-construct your application from the master dataset. The batch layer also pre-computes the master dataset into batch views so that queries can be resolved with low-latency. <br />Because our master dataset is continually growing, we must have a strategy for managing our batch views when new data becomes available. Re-computation algorithms: throwing away the old batch views and re-computing functions over the entire master dataset. Incremental algorithms: updating the views directly when new data arrives.</div>"""^^rdf:HTML ;
+  skos:prefLabel "Batch layer"@en ;
+.
 esdm_begrip:Bedrijfssoftware
   a skos:Concept ;
   skos:broader esdm_begrip:SoftwareSoorten ;
@@ -753,6 +766,8 @@ esdm_begrip:BigDataProcessen
   skos:broader esdm_begrip:DataArchitectuurProcessen ;
   skos:prefLabel "Big data processen"@nl ;
   skos:related esdm_begrip:AzureDataLakeStorage ;
+  skos:related esdm_begrip:KappaArchitecture ;
+  skos:related esdm_begrip:LambdaArchitecture ;
 .
 esdm_begrip:BlockBlob
   a skos:Concept ;
@@ -1001,6 +1016,11 @@ esdm_begrip:DataArchitectuur
   a skos:Concept ;
   skos:broader esdm_begrip:Architectuur ;
   skos:prefLabel "Data Architectuur"@nl ;
+.
+esdm_begrip:DataArchitectuurDesignPrincipes
+  a skos:Concept ;
+  skos:broader esdm_begrip:DataArchitectuur ;
+  skos:prefLabel "Data Architectuur Design Principes"@nl ;
 .
 esdm_begrip:DataArchitectuurProcessen
   a skos:Concept ;
@@ -1380,7 +1400,6 @@ esdm_begrip:ESDM_Begrippen
   skos:hasTopConcept esdm_begrip:Database ;
   skos:hasTopConcept esdm_begrip:Dienstverlener ;
   skos:hasTopConcept esdm_begrip:EnterpriseServiceBus ;
-  skos:hasTopConcept esdm_begrip:EventDrivenArchitecture ;
   skos:hasTopConcept esdm_begrip:ICTInfrastructuur ;
   skos:hasTopConcept esdm_begrip:ITILProcessen ;
   skos:hasTopConcept esdm_begrip:Integratievoorziening ;
@@ -1545,6 +1564,7 @@ esdm_begrip:EventDrivenArchitecture
   a skos:Concept ;
   dc:source "https://www.redhat.com/en/topics/integration/what-is-event-driven-architecture"^^xsd:anyURI ;
   skos:altLabel "EDA" ;
+  skos:broader esdm_begrip:Architectuur ;
   skos:definition """<div lang=\"nl\"><p><span>Event-driven architectuur is een&nbsp;</span><a href=\"https://www.redhat.com/en/topics/cloud-native-apps/what-is-an-application-architecture\"><span>software-architectuur</span></a><span>&nbsp;en model voor applicatie-ontwerp.&nbsp;Met een gebeurtenisgestuurd systeem vormen het vastleggen, communiceren, verwerken en vasthouden van gebeurtenissen de kernstructuur van de oplossing.&nbsp;Dit wijkt af van een traditioneel verzoekgestuurd model.</span></p>
 <p><span>Veel moderne applicatieontwerpen zijn gebeurtenisgestuurd, zoals&nbsp;</span><a href=\"https://www.redhat.com/en/solutions/customer-experience\"><span>raamwerken</span></a><span>&nbsp;voor klantbetrokkenheid die klantgegevens in realtime moeten gebruiken.&nbsp;Event-driven apps kunnen in elke programmeertaal worden gemaakt, omdat event-driven een programmeerbenadering is, geen taal.&nbsp;Gebeurtenisgestuurde architectuur maakt minimale koppeling mogelijk, waardoor het een goede optie is voor moderne, gedistribueerde applicatie-architecturen.</span></p>
 <p><span>Een gebeurtenisgestuurde architectuur is losjes gekoppeld omdat gebeurtenisproducenten niet weten welke gebeurtenisconsumenten naar een gebeurtenis luisteren en de gebeurtenis niet weet wat de gevolgen zijn van het optreden ervan.</span></p>
@@ -1580,6 +1600,7 @@ esdm_begrip:EventDrivenArchitecture
 <p><span>Organisaties kunnen gebeurtenisgestuurde architectuur aan hun systemen en applicaties toevoegen om de schaalbaarheid en het reactievermogen van applicaties en toegang tot de gegevens en context die nodig zijn voor betere zakelijke beslissingen te verbeteren.</span></p></div>"""^^rdf:HTML ;
   skos:definition "Integratie van streaming data"@nl ;
   skos:prefLabel "Event driven architecture"@nl ;
+  skos:related esdm_begrip:LambdaArchitecture ;
 .
 esdm_begrip:EventHubsNamespace
   a skos:Concept ;
@@ -1720,6 +1741,13 @@ esdm_begrip:FrontBase
   skos:broader esdm_begrip:RelationeleDatabase ;
   skos:prefLabel "FrontBase"@nl ;
 .
+esdm_begrip:FunctionelePartitionering
+  a skos:Concept ;
+  dc:source "https://docs.microsoft.com/nl-nl/azure/architecture/best-practices/data-partitioning"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Gegevenspartionering ;
+  skos:definition "In deze strategie worden gegevens samengevoegd op basis van hoe deze worden gebruikt door elke begrensde context in het systeem. Een e-commercesysteem kan bijvoorbeeld factuurgegevens opslaan in de ene partitie en de productinventarisgegevens in een andere."@nl ;
+  skos:prefLabel "Functionele partitionering"@nl ;
+.
 esdm_begrip:FysiekeServer
   a skos:Concept ;
   skos:broader esdm_begrip:Server ;
@@ -1761,6 +1789,34 @@ esdm_begrip:Gameserver
   a skos:Concept ;
   skos:broader esdm_begrip:Server ;
   skos:prefLabel "Gameserver"@nl ;
+.
+esdm_begrip:Gegevenspartionering
+  a skos:Concept ;
+  dc:source "https://docs.microsoft.com/nl-nl/azure/architecture/best-practices/data-partitioning"^^xsd:anyURI ;
+  skos:broader esdm_begrip:DataArchitectuurDesignPrincipes ;
+  skos:definition "In veel grootschalige oplossingen worden gegevens onderverdeeld in partities die afzonderlijk kunnen worden beheerd en gebruikt. Partitioneren kan de schaalbaarheid verbeteren, conflicten verminderen en de prestaties optimaliseren. Het kan ook een mechanisme bieden voor het delen van gegevens met behulp van een gebruikspatroon. U kunt bijvoorbeeld oudere gegevens archiveren in goedkopere gegevensopslag."@nl ;
+  skos:example """<div lang=\"nl\"><h2 id=\"why-partition-data\" class=\"heading-anchor\">Waarom gegevens partitioneren?</h2>
+<ul>
+<li>
+<p><strong>Schaalbaarheid te verbeteren</strong>. Wanneer u een individueel databasesysteem opschaalt, zal dit uiteindelijk een fysieke hardwarelimiet bereiken. Als u gegevens over meerdere partities verdeelt, elk gehost op een afzonderlijke server, kunt u het systeem bijna voor onbepaalde tijd uitschalen.</p>
+</li>
+<li>
+<p><strong>Prestaties verbeteren.</strong>&nbsp;Bewerkingen voor gegevenstoegang op elke partitie vinden plaats over een kleinere hoeveelheid gegevens. Juist gedaan, partitionering kan uw systeem effici&euml;nter maken. Bewerkingen die invloed hebben op meer dan &eacute;&eacute;n partitie kunnen parallel worden uitgevoerd.</p>
+</li>
+<li>
+<p><strong>Beveiliging te verbeteren</strong>. In sommige gevallen kunt u gevoelige en niet-gevoelige gegevens in verschillende partities scheiden en verschillende beveiligingscontroles toepassen op de gevoelige gegevens.</p>
+</li>
+<li>
+<p><strong>Operationele flexibiliteit te bieden</strong>. Partitionering biedt veel mogelijkheden voor het afstemmen van bewerkingen, het maximaliseren van administratieve effici&euml;ntie en het minimaliseren van kosten. U kunt bijvoorbeeld verschillende strategie&euml;n voor beheer, bewaking, back-up en herstel en andere beheertaken defini&euml;ren op basis van het belang van de gegevens in elke partitie.</p>
+</li>
+<li>
+<p><strong>Het gegevensarchief aanpassen aan het gebruikspatroon</strong>. Partitioneren zorgt ervoor dat elke partitie wordt ge&iuml;mplementeerd op een ander type gegevensarchief, op basis van de kosten en de ingebouwde functies die het gegevensarchief biedt. Grote binaire gegevens kunnen bijvoorbeeld worden opgeslagen in blobopslag, terwijl meer gestructureerde gegevens kunnen worden opgeslagen in een documentdatabase. Zie&nbsp;<a href=\"https://docs.microsoft.com/nl-nl/azure/architecture/guide/technology-choices/data-store-overview\" data-linktype=\"relative-path\">Het juiste gegevensarchief kiezen</a>.</p>
+</li>
+<li>
+<p><strong>Beschikbaarheid te verbeteren</strong>. Het scheiden van gegevens over meerdere servers voorkomt een Single Point of Failure. Als er &eacute;&eacute;n exemplaar uitvalt, zijn alleen de gegevens in die partitie niet beschikbaar. Bewerkingen op andere partities kunnen worden voortgezet. Voor beheerde PaaS-gegevensopslag is deze overweging minder relevant, omdat deze services zijn ontworpen met ingebouwde redundantie.</p>
+</li>
+</ul></div>"""^^rdf:HTML ;
+  skos:prefLabel "Gegevenspartionering"@nl ;
 .
 esdm_begrip:GeoData
   a skos:Concept ;
@@ -1980,6 +2036,14 @@ esdm_begrip:HorizontaalSchalen
   skos:broader esdm_begrip:Schaalbaarheid ;
   skos:prefLabel "Horizontaal schalen"@nl ;
 .
+esdm_begrip:HorizontalePartitionering
+  a skos:Concept ;
+  dc:source "https://docs.microsoft.com/nl-nl/azure/architecture/best-practices/data-partitioning"^^xsd:anyURI ;
+  skos:altLabel "Sharding"@en ;
+  skos:broader esdm_begrip:Gegevenspartionering ;
+  skos:definition "In deze strategie is elke partitie een afzonderlijk gegevensopslag, maar alle partities hebben hetzelfde schema. Elke partitie wordt een shard genoemd en bevat een specifieke subset van de gegevens, zoals alle orders voor een specifieke set klanten."@nl ;
+  skos:prefLabel "Horizontale partitionering"@nl ;
+.
 esdm_begrip:HyperSQL
   a skos:Concept ;
   skos:broader esdm_begrip:RelationeleDatabase ;
@@ -2180,6 +2244,30 @@ esdm_begrip:Kantoorsoftware
   skos:broader esdm_begrip:SoftwareSoorten ;
   skos:prefLabel "Kantoorsoftware"@nl ;
 .
+esdm_begrip:KappaArchitecture
+  a skos:Concept ;
+  dc:source "https://blogs.informatica.com/2020/05/13/adopt-a-kappa-architecture-for-streaming-and-ingesting-data/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:DataArchitectuurDesignPrincipes ;
+  skos:definition "Kappa architecture is a streaming-first architecture deployment pattern – where data coming from streaming, IoT, batch or near-real time (such as change data capture), is ingested into a messaging system like Apache Kafka. A stream processing engine (like Apache Spark, Apache Flink, etc.) reads data from the messaging system, transforms it, and publishes the enriched data back to the messaging system, making it available for real-time analytics. Additionally, the data is distributed to the serving layer such as a cloud data lake, cloud data warehouse, operational intelligence or alerting systems for self-service analytics and machine learning (ML), reporting, dashboarding, predictive and preventive maintenance as well as alerting use cases."@en ;
+  skos:example """<div lang=\"en\"><h2>Use cases for adopting Kappa architecture</h2>
+<p>Here are the typical use cases for adopting Kappa architecture within the organization. Most of the use cases have the need for very low latency data access within the deployment.</p>
+<ol type=\"1\">
+<li><strong>Real-time reporting and dashboarding</strong>: This use case is mainly seen in manufacturing and the oil and gas industry where there is a need to update the aggregated status of the machines in the assembly line for real-time reporting and dashboarding.</li>
+<li><strong>Real-time rules processing and alerting</strong>: This use case is seen in the retail and telecommunications industry where there is a need to operationalize complex event processing rules on the streaming data from point of sale or e-commerce websites. The result is an alert that is consumed by downstream business applications for triggering real-time campaigns or offer alerts.</li>
+<li><strong>Real-time machine learning model operationalization</strong>: This is seen in the financial services industry where pre-created fraud detection ML models are executed on the near real-time data from transactional systems to identify potentially fraudulent transactions and alert the customer so remedial actions can be taken.</li>
+<li><strong>Real time operational Intelligence:&nbsp;</strong>This is seen in asset heavy industries where there is a need to perform edge processing on the data before the enriched data is loaded into the cloud data lake or data warehouse. This helps reducing network traffic, operationalize predictive and preventive maintenance techniques as well as enabling IT/OT data integration for holistic analytics.</li>
+</ol>
+<p>&nbsp;For the use cases described, data needs to be enriched with customer master data or other sources of information that are critical for downstream analytics use cases.</p></div>"""^^rdf:HTML ;
+  skos:note """<div lang=\"en\"><h2>How is Kappa different from Lambda architecture?</h2>
+<p><a href=\"http://lambda-architecture.net/\" target=\"_blank\" rel=\"noreferrer noopener\">Lambda architecture</a>&nbsp;is a software architecture deployment pattern where incoming data is fed both to batch and streaming (speed) layers in parallel. The batch layer feeds the data into the data lake and data warehouse, applies the compute logic, and delivers it to the serving layer for consumption. The streaming layer makes use of the previous insights that are derived in the batch layer for processing new incoming data. It is important to note that Lambda architecture requires a separate batch layer along with a streaming layer (or fast layer) before the data is being delivered to the serving layer.</p>
+<p>Kappa architecture is not a substitute for Lambda architecture. It is, in fact, an alternative approach for data management within the organization. It can be used in architectures where the batch layer is not needed for meeting the quality of service needs of the organization as well as in the scenarios where complex transformations including data quality techniques can be applied in streaming layer. As mentioned above, Kappa architecture is being used in streaming-first deployment patterns where data sources are both batch and real time and where end-to-end latency requirements are very stringent.</p>
+<h2>Benefits of Kappa architecture</h2>
+<p>Kappa architecture implementation is loosely coupled between the source and serving layer using messaging systems like Apache Kafka. This allows organizations to evolve or develop both source and target systems independently over time with better resilience to change and downtime.</p>
+<p>Secondly, Kappa architecture lets organizations store raw historical&nbsp;<em>streaming</em>&nbsp;data in messaging systems for longer duration for reprocessing, thereby guaranteeing end-to-end delivery of the information to the serving layer.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Kappa architecture"@en ;
+  skos:related esdm_begrip:BigDataProcessen ;
+  skos:related esdm_begrip:LambdaArchitecture ;
+.
 esdm_begrip:KerioConnect
   a skos:Concept ;
   skos:broader esdm_begrip:Mailserver ;
@@ -2225,6 +2313,30 @@ esdm_begrip:LMDB
   a skos:Concept ;
   skos:broader esdm_begrip:KeyValueDatabase ;
   skos:prefLabel "LMDB" ;
+.
+esdm_begrip:LambdaArchitecture
+  a skos:Concept ;
+  dc:source "http://lambda-architecture.net/"^^xsd:anyURI ;
+  dc:source "https://hazelcast.com/glossary/lambda-architecture/"^^xsd:anyURI ;
+  dc:source "https://levelup.gitconnected.com/big-data-lambda-architecture-in-a-nutshell-fd5e04b12acc"^^xsd:anyURI ;
+  skos:broader esdm_begrip:DataArchitectuurDesignPrincipes ;
+  skos:definition """<div lang=\"en\"><p><a href=\"https://twitter.com/nathanmarz\">Nathan Marz</a>&nbsp;came up with the term Lambda Architecture (LA) for a generic, scalable and fault-tolerant data processing architecture, based on his experience working on distributed data processing systems at Backtype and Twitter.</p>
+<p>The LA aims to satisfy the needs for a robust system that is fault-tolerant, both against hardware failures and human mistakes, being able to serve a wide range of workloads and use cases, and in which low-latency reads and updates are required. The resulting system should be linearly scalable, and it should scale out rather than up.</p></div>"""^^rdf:HTML ;
+  skos:definition """The Lambda Architecture is a deployment model for data processing that organizations use to combine a traditional batch pipeline with a fast real-time stream pipeline for data access. It is a common architecture model in IT and development organizations’ toolkits as businesses strive to become more data-driven and event-driven in the face of massive volumes of rapidly generated data, often referred to as “big data.”
+
+Data Sources. Data can be obtained from a variety of sources, which can then be included in the Lambda Architecture for analysis. This component is oftentimes a streaming source like Apache Kafka, which is not the original data source per se, but is an intermediary store that can hold data in order to serve both the batch layer and the speed layer of the Lambda Architecture. The data is delivered simultaneously to both the batch layer and the speed layer to enable a parallel indexing effort."""@en ;
+  skos:note "<div lang=\"en\"><strong>How it works?</strong><br />Let&rsquo;s take a closer look at the Lambda architecture. There are three layers in the Lambda architecture: batch layer, speed layer, and serving layer.<br />It combines real-time and batches processing of the same data.<br />Firstly, an incoming real-time data stream is stored in the master dataset at the batch layer as well as being kept in a memory cache at a speed layer. Data in the batch layer is then indexed and made available through batch views. While real-time data in the speed layer is exposed through real-time views. Finally, both batch and real-time views can be queried either independently or together to answer any historical or realtime questions.</div>"^^rdf:HTML ;
+  skos:note """<ol lang=\"en\">
+<li>All&nbsp;<strong>data</strong>&nbsp;entering the system is dispatched to both the batch layer and the speed layer for processing.</li>
+<li>The&nbsp;<strong>batch layer</strong>&nbsp;has two functions: (i) managing the master dataset (an immutable, append-only set of raw data), and (ii) to pre-compute the batch views.</li>
+<li>The&nbsp;<strong>serving layer</strong>&nbsp;indexes the batch views so that they can be queried in low-latency, ad-hoc way.</li>
+<li>The&nbsp;<strong>speed layer</strong>&nbsp;compensates for the high latency of updates to the serving layer and deals with recent data only.</li>
+<li>Any incoming&nbsp;<strong>query</strong>&nbsp;can be answered by merging results from batch views and real-time views.</li>
+</ol>"""^^rdf:HTML ;
+  skos:prefLabel "Lambda Architecture"@en ;
+  skos:related esdm_begrip:BigDataProcessen ;
+  skos:related esdm_begrip:EventDrivenArchitecture ;
+  skos:related esdm_begrip:KappaArchitecture ;
 .
 esdm_begrip:LevelDB
   a skos:Concept ;
@@ -3431,6 +3543,13 @@ esdm_begrip:Servicestrategie
   skos:definition "Faciliteert organisaties om zakelijke doelen te stellen en een strategie te ontwikkelen om te voldoen aan de eisen en prioriteiten van de klant."@nl ;
   skos:prefLabel "Servicestrategie"@nl ;
 .
+esdm_begrip:ServingLayer
+  a skos:Concept ;
+  dc:source "https://levelup.gitconnected.com/big-data-lambda-architecture-in-a-nutshell-fd5e04b12acc"^^xsd:anyURI ;
+  skos:broader esdm_begrip:LambdaArchitecture ;
+  skos:definition "This layer provides low-latency access to the results of calculations performed on the master dataset. This process can be facilitated by additional indexing of the data in order to speed up the reads. Similar to the speed layer, this layer must meet the following requirements such as random reads, batch writes, scalability, and fault tolerance."@en ;
+  skos:prefLabel "Serving layer"@en ;
+.
 esdm_begrip:SharedAccessSignature
   a skos:Concept ;
   dc:source "https://docs.microsoft.com/en-us/learn/modules/secure-azure-storage-account/4-shared-access-signatures"^^xsd:anyURI ;
@@ -3525,6 +3644,19 @@ esdm_begrip:Sparksee
   a skos:Concept ;
   skos:broader esdm_begrip:GraphDatabase ;
   skos:prefLabel "Sparksee"@nl ;
+.
+esdm_begrip:SpeedLayer
+  a skos:Concept ;
+  dc:source "https://levelup.gitconnected.com/big-data-lambda-architecture-in-a-nutshell-fd5e04b12acc"^^xsd:anyURI ;
+  skos:broader esdm_begrip:LambdaArchitecture ;
+  skos:definition """<div lang=\"en\">The speed layer indexes the batch views for fast ad hoc queries. It stores the realtime-views and processing the incoming data stream so as to update these views. The underlying storage layer must meet the following conditions.<br />
+<ul>
+<li>Random reads: supporting fast random reads to answer queries quickly.</li>
+<li>Random writes: to support incremental algorithms, it must also be possible to modify a real-time view with low latency.</li>
+<li>Scalability: the real-time views should scale with the amount of data they store and the read/write rates required by the application.</li>
+<li>Fault tolenrance: if a machine crashes, a real-time view should continue to function normally.</li>
+</ul></div>"""^^rdf:HTML ;
+  skos:prefLabel "Speed layer"@en ;
 .
 esdm_begrip:SqrrlEnterprise
   a skos:Concept ;
@@ -3857,6 +3989,13 @@ esdm_begrip:VersionControlSoftware
   skos:definition """<div lang=\"en\"><p>Version control, also known as source control, is the practice of tracking and managing changes to software code. Version control systems are software tools that help software teams manage changes to source code over time. As development environments have accelerated, version control systems help software teams work faster and smarter. They are especially useful for&nbsp;<a href=\"https://www.atlassian.com/devops/what-is-devops\" data-event=\"clicked\" data-uuid=\"9add58dd-17\" data-event-component=\"linkButton\" data-event-container=\"richText\" data-schema-version=\"1\" data-product-key=\"bitbucket\">DevOps</a>&nbsp;teams since they help them to reduce development time and increase successful deployments.</p>
 <p>Version control software keeps track of every modification to the code in a special kind of database. If a mistake is made, developers can turn back the clock and compare earlier versions of the code to help fix the mistake while minimizing disruption to all team members.</p></div>"""^^rdf:HTML ;
   skos:prefLabel "Version control software"@en ;
+.
+esdm_begrip:VerticalePartitionering
+  a skos:Concept ;
+  dc:source "https://docs.microsoft.com/nl-nl/azure/architecture/best-practices/data-partitioning"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Gegevenspartionering ;
+  skos:definition "In deze strategie bevat elke partitie een subset van de velden voor items in het gegevensarchief. De velden worden onderverdeeld volgens hun gebruikspatroon. Veelgebruikte velden kunnen bijvoorbeeld in een verticale partitie worden geplaatst, en minder vaak gebruikte velden in een andere."@nl ;
+  skos:prefLabel "Verticale partitionering"@nl ;
 .
 esdm_begrip:VirtualPrivateServer
   a skos:Concept ;
