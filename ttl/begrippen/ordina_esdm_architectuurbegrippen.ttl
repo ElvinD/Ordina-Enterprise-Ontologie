@@ -246,6 +246,11 @@ esdm_begrip:ApacheOzone
   skos:definition "Ozone is a scalable, redundant, and distributed object store for Hadoop. Apart from scaling to billions of objects of varying sizes, Ozone can function effectively in containerized environments such as Kubernetes and YARN."@en ;
   skos:prefLabel "Apache Ozone"@en ;
 .
+esdm_begrip:ApacheSolr
+  a skos:Concept ;
+  skos:prefLabel "Apache Solr"@en ;
+  skos:related esdm_begrip:PoolPartyGraphSearchServer ;
+.
 esdm_begrip:AppServer
   a skos:Concept ;
   skos:broader esdm_begrip:Applicatieserver ;
@@ -1371,6 +1376,196 @@ esdm_begrip:Dynamo
   skos:broader esdm_begrip:KeyValueDatabase ;
   skos:prefLabel "Dynamo" ;
 .
+esdm_begrip:EDGAssetCollections
+  a skos:Concept ;
+  dc:source "https://doc.topquadrant.com/7.0/asset-collection-overview/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:TopBraidEDG ;
+  skos:prefLabel "EDG Asset Collections"@en ;
+.
+esdm_begrip:EDGBigDataAssets
+  a skos:Concept ;
+  skos:broader esdm_begrip:EDGAssetCollections ;
+  skos:definition "Big Data Assets specify the data structures, jobs, nodes and other software and hardware components that make up a big data ecosystem."@en ;
+  skos:prefLabel "EDG Big Data Assets"@en ;
+.
+esdm_begrip:EDGCaseStudy1EngineeringAndDesign
+  a skos:Concept ;
+  skos:broader esdm_begrip:EDGUsecases ;
+  skos:definition "<div lang=\"en\"><strong>Background</strong><br />A national transport infrastructure agency needed to improve the management of organization-wide data, describing:<br />&bull; Engineering assets in use<br />&bull; The asset&rsquo;s relevant characteristics<br />&bull; Applications that managed operational metadata<br /><br />Challenge<br />The client had developed an internal data model covering the data to be managed and wanted that to be the basis of the solution.<br />At the time, the client had been managing engineering asset metadata using spreadsheets. This method had become challenging because the client had several thousand asset types, with tens of thousands of characteristics and hundreds of thousands of assets linked to the characteristics.<br />In addition to an asset information management application to be used by data stewards, the client needed a simpler view-only application to be available to a very large user community of more than 2000 users.<br />Solution<br />The client selected TopQuadrant&rsquo;s TopBraid EDG because of the solution&rsquo;s<br />robust data management features,<br />flexibility, and model-driven design.<br />The TopQuadrant Professional Services<br />team began by defining a specialized<br />EDG asset collection type to manage<br />information about the client&rsquo;s&nbsp; engineering assets. Additionally, a view-only application for published data was to be created and available on an agency-wide basis. The internal data model developed by the agency was transformed into a semantic knowledge model and used as the basis of both applications. The solution created a knowledge graph of&nbsp; transportation infrastructure assets.<br />The main application for the data<br />stewards took advantage of the&nbsp; standard TopBraid EDG asset collection types functionality.&nbsp;</div>"^^rdf:HTML ;
+  skos:prefLabel "EDG Case study 1 Engineering and Design"@en ;
+.
+esdm_begrip:EDGContentTagSets
+  a skos:Concept ;
+  skos:broader esdm_begrip:EDGAssetCollections ;
+  skos:definition "Content Tag Sets are used for tagging content using vocabularies managed in EDG. Users can tag (assign metadata to) content through a visual user interface that displays the context for both the content and the vocabulary. They can also run Tagger’s auto-classification capability to automatically assign relevant tags to content and review the results."@en ;
+  skos:prefLabel "EDG Content Tag Sets"@en ;
+.
+esdm_begrip:EDGCorpora
+  a skos:Concept ;
+  skos:broader esdm_begrip:EDGAssetCollections ;
+  skos:definition "<div lang=\"en\">A Corpus is a collection of read-only textual items, such as documents, excerpts, websites, etc.&mdash;along with their associated metadata. The original items are always imported from external sources, such as content management systems or web sites and are&nbsp;<strong>never originally created nor edited</strong>&nbsp;within EDG. Thus, a version of the Tagger interface allows viewing of Corpus content, without editing. The textual content of Corpus items provides the foundation for manual or automated tagging and annotation with Content Tag Sets (serving as the content graph).</div>"^^rdf:HTML ;
+  skos:prefLabel "EDG Corpora"@en ;
+.
+esdm_begrip:EDGCrosswalks
+  a skos:Concept ;
+  skos:broader esdm_begrip:EDGAssetCollections ;
+  skos:definition "Crosswalks let you create connections between the terms in two different vocabularies. This is especially useful for defining connections between two different standard vocabularies or between a standard one and a specialized local one. Applications can use saved crosswalk connection data to enhance the use of either vocabulary by taking advantage of the connected data and metadata for search, classification, and other operations."@en ;
+  skos:prefLabel "EDG Crosswalks"@en ;
+.
+esdm_begrip:EDGDataAssets
+  a skos:Concept ;
+  skos:broader esdm_begrip:EDGAssetCollections ;
+  skos:definition "Data Assets support the specification of data objects that make up a data ecosystem. Data assets include databases, database columns and tables, data elements, datasets and their dataset type specifications, and logical and physical models."@en ;
+  skos:prefLabel "EDG Data Assets"@en ;
+.
+esdm_begrip:EDGDataGraphs
+  a skos:Concept ;
+  skos:broader esdm_begrip:EDGAssetCollections ;
+  skos:definition "Data Graphs are general collections, used for instances of classes defined in user-determined ontologies."@en ;
+  skos:prefLabel "EDG Data Graphs"@en ;
+.
+esdm_begrip:EDGDatatypes
+  a skos:Concept ;
+  skos:broader esdm_begrip:EDGAssetCollections ;
+  skos:definition "Datatypes support the specification of scalar data types, structured datatypes, scales and code lists. Scalar datatypes include all of the ORACLE data types. Structured data types provide for the definition of arrays, lists and other composite data types. Code lists are used to specify enumerated values that need not be governed as reference data, such as status values."@en ;
+  skos:prefLabel "EDG Datatypes"@en ;
+.
+esdm_begrip:EDGEnterpriseAssets
+  a skos:Concept ;
+  skos:broader esdm_begrip:EDGAssetCollections ;
+  skos:definition "Enterprise Assets enable specification of the metadata associated with an enterprise’s business areas, activities, functions, roles, capabilities, processes, and information assets such as documents and reports."@en ;
+  skos:prefLabel "EDG Enterprise Assets"@en ;
+.
+esdm_begrip:EDGEnumerations
+  a skos:Concept ;
+  dc:source "https://doc.topquadrant.com/7.0/enumerations/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:EDGAssetCollections ;
+  skos:definition """<div lang=\"en\"><p>TopBraid EDG offers two types of asset collections for storing reference data or codes &ndash; Reference Datasets and Enumerations.</p>
+<p>Enumerations are suitable for storing multiple, relatively small and simple codesets in a single asset collection. An example may be gender codes or age group codes. For larger and richer sets of codes, use reference datasets.</p>
+<p>With enumerations, you do not need to define an entity type in a separate ontology. You can simply:</p>
+<ul>
+<li>Create an Enumeration asset collection</li>
+<li>Define Codesets e.g., Gender, Age Group, etc., as Enumeration classes</li>
+<li>Create enumerated values or codes for each Codeset</li>
+</ul></div>"""^^rdf:HTML ;
+  skos:prefLabel "EDG Enumerations"@en ;
+.
+esdm_begrip:EDGFiles
+  a skos:Concept ;
+  skos:broader esdm_begrip:EDGAssetCollections ;
+  skos:definition """<div lang=\"en\"><h3>How to Edit RDF Files with TopBraid</h3>
+<p>The explorer below shows the files and folders from your workspace. The files in&nbsp;<strong>bold</strong>&nbsp;are&nbsp;<em>editable</em>. You can edit any file by selecting it and clicking on the Edit button or picking Edit from the right click menu.</p>
+<p>When you edit a file for the first time, TopBraid will create a so-called File Asset Collection backed by the system's database. It will then copy the file's content into this database. You can view, query and make changes to the database content and either&nbsp;<em>save</em>&nbsp;them back into its original file or discard them by&nbsp;<em>finishing</em>&nbsp;without save. The Change History panel will show all changes made in the current edit session. Once a file is finished, the graph stored in the EDG database will be deleted and the change history is cleared.</p>
+<p>If you finish without saving, unsaved changes would be lost. Refreshing the database from file will re-copy the file's content into the database. All unsaved changes will be lost. Only the saved changes will be visible to other graphs that include (owl:import) the file's graph.</p></div>"""^^rdf:HTML ;
+  skos:note """<div lang=\"en\">
+<h3>Technical Details</h3>
+<p>The editor for Files has the following differences compared to (other) EDG asset collection types:</p>
+<ul>
+<li>There are no limits on the type of resources that can be edited, i.e. classes, shapes, and instances</li>
+<li>There is a&nbsp;<strong>File</strong>&nbsp;drop down menu in the top, with features to move data between file and database</li>
+<li>The&nbsp;<strong>Source Code</strong>&nbsp;panel has an option to view and edit the Whole Graph</li>
+<li>The&nbsp;<strong>Home</strong>&nbsp;button takes you to the owl:Ontology of the file, not the URN resource of the asset collection</li>
+<li>Files cannot owl:import EDG asset collections - only their file representations</li>
+<li>New Explore action&nbsp;<strong>Find Usages in Other Files</strong></li>
+<li>New Modify action&nbsp;<strong>Replace URI across Graphs</strong></li>
+<li>New Batch action&nbsp;<strong>Replace Namespace (across Graphs)</strong></li>
+</ul>
+<p>As editing files is only available for the administrator (of which there should only be one), there is no tab to edit users. Also, most settings from the Settings and Manage tabs as well as Comments and Tasks would be lost when editing is finished, so some of those features are intentionally hidden. Tasks remain available in case you want to locally track your progress.</p>
+<p>When a file-based graph is copied into the database, the owl:imports of the file will be copied into the URN resource of the asset collection. Use the Edit Includes link from the Settings tab to edit them. There will also be an additional owl:import to a graph called 'filesimport' that owl:imports some further sub-graphs that are needed to drive the user interface. This temporary owl:import will be removed when the database is saved back into the original file. All other triples associated with the temporary URN resource will also be deleted on save. While you will see those extra triples in the Source Code panel - please leave them unchanged.</p>
+<p>The database graph that is used to edit files is a distinct graph from the file itself. For example it would have a graph URI such as urn:x-evn-master:myfile_ttl, while the original file would have the URI http://example.org/myfile. Other graphs that owl:import the file will not use the URN-based database graph, but only the file-based graph.</p>
+</div>"""^^rdf:HTML ;
+  skos:prefLabel "EDG Files"@en ;
+.
+esdm_begrip:EDGGlossaries
+  a skos:Concept ;
+  dc:source "https://doc.topquadrant.com/7.0/getting-started-edg-business-glossaries/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:EDGAssetCollections ;
+  skos:definition """<div lang=\"en\"><p>A glossary is a collection of terms in a particular domain (i.e., field or subject) of knowledge with the test definitions for those terms. Unlike&nbsp;dictionaries, which are more general collections of words,&nbsp;glossaries&nbsp;only concern themselves with terms that will enhance one&rsquo;s comprehension of a certain topic. Glossary terms are often highly specific to a particular business subject or area of operation. They could be thought of as a &lsquo;jargon&rsquo;. Just about any business activity and organization you can think of has its own jargon to go with it &ndash; from professional disciplines to operational activities.</p>
+<p>A business glossary goes beyond just a list of terms. Linking terms to IT assets establishes a connection between business and IT and enhances organizational collaboration. Glossary lets you create and manage a common vocabulary of terms important to your organization to ensure clear communication and improve productivity. These terms can be categorized in a way that is relevant to your organization. Multiple glossaries can be developed, interlinked, searched and explored. Valid definitions of values and business rules can then be managed and made available across the organization.</p>
+<p>Glossary terms can be a &lsquo;flat&rsquo; alphabetical list or they can be organized into hierarchies. In TopBraid EDG, the primary user interface (UI) for viewing and editing glossary terms looks like a spreadsheet. TopBraid EDG also supports a category of vocabularies that are called&nbsp;<em>Taxonomies</em>. Depending on your licensing, you may see this category of asset collections in your installation of EDG and, as a result, may wonder about the difference between&nbsp;<em>Glossaries</em>&nbsp;and&nbsp;<em>Taxonomies</em>&nbsp;and when to use each &ndash; especially, if your terms are organized hierarchically:</p>
+<ul>
+<li>Unlike&nbsp;<em>Glossaries</em>,&nbsp;<em>Taxonomies</em>&nbsp;always assume that terms are organized and presented as hierarchies and that the hierarchical relationship between them is &ldquo;broader concept&rdquo; which is defined by the&nbsp;<a class=\"external-link\" href=\"http://www.w3.org/2004/02/skos/\" rel=\"nofollow\">SKOS</a>&nbsp;standard. SKOS doesn&rsquo;t use the word &ldquo;term&rdquo; that is common to business glossaries. Instead, it uses the word &ldquo;concept&rdquo;.&nbsp;Further, each&nbsp;<em>Taxonomy</em>&nbsp;defines at least one&nbsp;<em>concept scheme</em>. A concept scheme points to its top concepts. The primary user interface for viewing taxonomies is hierarchical.</li>
+<li>Even more importantly,&nbsp;<em>Glossaries</em>&nbsp;are designed to improve understanding of data&rsquo;s context and usage. Glossary terms not only have descriptions of their meaning, but they also define business context of use and can be linked to the underlying technical metadata to provide a direct association between business terms and data sources and data elements. The underlying model or ontology for taxonomy concepts is SKOS. The underlying model for glossary terms is EDG-provided glossary model. It re-uses some of SKOS properties as appropriate. For example, a property for alternative labels of synonyms and properties for various notes.</li>
+</ul>
+<p>In TopBraid EDG, glossary terms include description of business rules and permissible values &ndash; both, in plain English as well as in structured, executable rules that are used to automate connections between data elements and business terms. They may also connect to reference datasets and enumerations that hold lists of values specific to a given term such as &ldquo;customer status&rdquo;. Taxonomies, on the other hand, describe some domain of knowledge in general. They are often focused on providing a rich set of synonyms that are used in search, text mining and document classification.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "EDG Glossaries"@en ;
+.
+esdm_begrip:EDGLineageModels
+  a skos:Concept ;
+  skos:broader esdm_begrip:EDGAssetCollections ;
+  skos:definition """<div lang=\"en\">
+<p>Data lineage describes what happens to&nbsp;data&nbsp;as it goes through diverse processes.&nbsp;</p>
+<p>If assets you are governing are connected using relationships that describe data lineage, you will be able to click on a given asset and see its lineage or impact across enterprise by selecting the corresponding option from the visualization menu.&nbsp;Lineage will show specifics of how data flows between data sources and applications to users, in support of business activities and functions, and the enablement of enterprise capabilities. Information is presented using an interactive diagram called LineageGram.</p>
+</div>"""^^rdf:HTML ;
+  skos:example """<div lang=\"en\"><p>It is fairly common in an enterprise to have many different connections between individual assets where connections belong to different contexts serving different purposes. For example:</p>
+<ul>
+<li>CRM system is fed with customer information not only as a result of product registration, but also as a result of other CRM processes and activities such as marketing or customer support</li>
+<li>Similarly, employee information, for example, may flow between HR related applications in the context of HR processes and it may also flow between applications that are used for customer support or customer acquisition in the context of CRM processes.</li>
+</ul></div>"""^^rdf:HTML ;
+  skos:prefLabel "EDG Lineage Models"@en ;
+.
+esdm_begrip:EDGOntologies
+  a skos:Concept ;
+  skos:broader esdm_begrip:EDGAssetCollections ;
+  skos:definition """Ontologies are general data models that define classes and their properties–attributes, which store literal values and relationships that capture associations between classes.
+
+Ontologies are special asset collections in EDG because all other asset collections are based on ontologies. In other words, ontologies define schema for data that is contained in other collections.These are either ontologies that are pre-packaged with EDG or, in case of Reference Datasets and Data Graphs, ontologies defined by users of EDG. Even for collections that are based on pre-packaged ontologies, users of EDG will commonly want to do some additional modeling – to extend and modify these ontologies.
+
+ 
+
+Although an ontology can also contain instances of its classes, it is typically best to keep an ontology’s instances in a separate model, such as in a Reference Dataset or a Data Graph. However, because ontologies could contain class instances, this section also includes descriptions of how to create, edit, and delete ontology instances.
+
+TopBraid EDG supports a modular approach to defining ontologies. You can create a large single ontology model or you can create more granular ontology modules. These modules can include each other as needed. Using modules allows more granular access control. It also allows you to differentiate between entities used across the enterprise and entities used in particular parts of the business and govern them accordingly."""@en ;
+  skos:prefLabel "EDG Ontologies"@en ;
+.
+esdm_begrip:EDGReferenceDatasets
+  a skos:Concept ;
+  skos:broader esdm_begrip:EDGAssetCollections ;
+  skos:definition """<div lang=\"en\"><p>Reference datasets contain standardized data or codes, which typically are used by various applications as lists or tables. In fact, they are often called &ldquo;code tables.&rdquo; An individual code table may seem like a simple thing, but a well-managed collection of code tables and related reference data spread across an enterprise is a resource that can bring great value to that enterprise&mdash;or cause great problems if it is not well maintained. EDG lets you control your reference data so that you can put it to work for you as efficiently as possible.</p>
+<p>EDG datasets are much more than just flat code tables. Reference data in different datasets can have relationships. For example, as currencies are associated with countries, currency codes have a relationship (connection) to country codes. Reference datasets can also model structural relationships in data, such as hierarchies of industrial categories, locations, or product types. Finally, you can capture any additional information you need to have about each code. And reference datasets themselves provide a lot of rich information or metadata such as the source of a dataset, how it is managed, where it is being used, and the meaning of each data field.</p>
+<p>The tabular-editors of EDG collections (for searching, viewing, and editing assets) requires the underlying schema to be backed by SHACL. To migrate a collection&rsquo;s included ontologies to a SHACL basis, see: Ontology Utilities &gt; Convert OWL Axioms to SHACL Constraints.</p>
+<p>Reference datasets no longer allow classes without a primary key property to be used as their main entity.</p>
+<div class=\"admon\">
+<p>&nbsp;</p>
+<p>For additional perspectives and details on&nbsp;<em>reference data management</em>&nbsp;and related topics, see these&nbsp;<a class=\"external-link\" href=\"https://www.topquadrant.com/knowledge-assets/whitepapers/\" rel=\"nofollow\">TopQuadrant whitepapers</a>.</p>
+</div>
+<p>Reference datasets are used with ontologies,&nbsp;which define the data schema (classes, properties, relationships, constraints) of the reference dataset items. For example, you might define a class (or entity) called&nbsp;<em>Gender</em>&nbsp;in an ontology and then, in a reference dataset that uses this ontology, enter the values&nbsp;<em>Male</em>&nbsp;and&nbsp;<em>Female</em>&nbsp;as instances of this list. Ontologies thus define the data attributes for each entity and the relationships between entities.</p>
+<p>TopBraid EDG makes it possible for you to:</p>
+<ul>
+<li><strong>Reduce independent maintenance of code tables</strong>: If different departments use the same code table, they may be maintaining individual copies of it on spreadsheets being emailed around to each other. When they all use the same copy, changes are coordinated, and they can be confident that they&rsquo;re using the right codes.</li>
+<li><strong>Reduce data quality problems due to coding errors</strong>: Workers who don&rsquo;t have access to recent, correct codes can&rsquo;t always enter the proper values, and improper values can lead to lost revenue.</li>
+<li><strong>Reduce the cost of designing code tables for databases</strong>: When new code tables have similarities or other relationships to other tables, these relationships can be leveraged in the design of the new tables. Well-organized, searchable metadata about which applications use which code tables also makes it easier to coordinate new and legacy tables.</li>
+<li><strong>Reduce data integration issues due to inconsistent codes</strong>: The inconsistencies caused by maintaining multiple copies of the same code tables, or by using copies that were updated at different times, can lead to problems when combining datasets that reference these tables. Consistent tables mean easier data integration.</li>
+<li><strong>Make informed decisions based on code table data</strong>: Code table entries are often cryptic abbreviations, leaving people to guess about their meaning and appropriateness for which ones to use when. Metadata such as definitions and provenance information ensure that people will use the right codes in the right places.</li>
+</ul></div>"""^^rdf:HTML ;
+  skos:prefLabel "EDG Reference Datasets"@en ;
+.
+esdm_begrip:EDGRequirementsAssets
+  a skos:Concept ;
+  skos:broader esdm_begrip:EDGAssetCollections ;
+  skos:definition "Requirements contain specifications such as data requirements, regulatory requirements and security requirements and support traceability for other EDG-managed assets."@en ;
+  skos:prefLabel "EDG Requirements Assets"@en ;
+.
+esdm_begrip:EDGTaxonomies
+  a skos:Concept ;
+  skos:broader esdm_begrip:EDGAssetCollections ;
+  skos:definition """<div lang=\"en\"><p>A taxonomy is a&nbsp;<em>vocabulary</em>&nbsp;collection based on SKOS, the W3C standard ontology designed for representing taxonomies, thesauruses, and subject heading schemes.</p>
+<p>In EDG, Taxonomies are SKOS-based datasets, whereas other datasets typically do not include SKOS, although they may. When a new taxonomy is created, EDG will automatically include SKOS ontology. SKOS provides description of concepts and their properties e.g., fields like preferred and alternative labels, various notes and relationships.</p>
+<p>Edit application for taxonomies is designed to offer SKOS-based features, such as displaying a SKOS model&rsquo;s&nbsp;<em>Concept Hierarchy</em>&nbsp;(where concepts are connected by SKOS &ldquo;broader&rdquo; statements) starting with the defined Concept Schemes as hierarchical roots. Every taxonomy must have at least one concept scheme that identifies &ldquo;top concepts&rdquo; in a scheme.&nbsp; A taxonomy can have multiple concept schemes; however, a better practice can be to use a single concept scheme per individual taxonomy. Since taxonomies can, as all asset collections, be included into each other, a taxonomy with multiple concept schemes can be assembled through inclusion of several single concept scheme taxonomies.</p>
+<p>Use of the pre-defined SKOS fields can be configured locally for a given taxonomy, globally for the entire EDG or for a subset of taxonomies e.g., all taxonomies associated with some business area. You can disable fields for all or a group of taxonomies by taking advantage of the Ontology modeling functionality in EDG. Ontologies are also used to define custom, non-SKOS properties for taxonomy concepts and to define specializations (sub classes of concepts). If you customize SKOS, you need to make sure that the ontology with your customizations is included in the taxonomies these customizations apply to. There is a system-wide setting your&nbsp;EDG administrator can use to ensure that the customized model is included in every new taxonomy. If customization only applies to a subset of taxonomies, creator of a taxonomy can use the Includes dialog to include the desired customized model.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "EDG Taxonomies"@en ;
+.
+esdm_begrip:EDGTechnicalAssets
+  a skos:Concept ;
+  skos:broader esdm_begrip:EDGAssetCollections ;
+  skos:definition "Technical Assets support the specification of systems, applications and technical hardware like servers and networks."@en ;
+  skos:prefLabel "EDG Technical Assets"@en ;
+.
+esdm_begrip:EDGUsecases
+  a skos:Concept ;
+  skos:broader esdm_begrip:TopBraidEDG ;
+  skos:prefLabel "EDG Usecases"@nl ;
+.
 esdm_begrip:ELT
   a skos:Concept ;
   dc:source "https://docs.microsoft.com/nl-nl/learn/modules/evolving-world-of-data/4-understand-job-responsibility"^^xsd:anyURI ;
@@ -1382,6 +1577,18 @@ ELT biedt ook meer flexibiliteit qua architectuur, zodat meerdere transformaties
   skos:prefLabel "ELT"@nl ;
   skos:related esdm_begrip:Datawarehouse ;
   skos:related esdm_begrip:ETL ;
+.
+esdm_begrip:ESDMArchitectuurSolutions
+  a skos:ConceptScheme ;
+  rdfs:label "ESDM Architectuur Solutions"@nl ;
+  skos:hasTopConcept esdm_begrip:ApacheSolr ;
+  skos:hasTopConcept esdm_begrip:Elasticsearch ;
+  skos:hasTopConcept esdm_begrip:GraphDB ;
+  skos:hasTopConcept esdm_begrip:MarkLogic ;
+  skos:hasTopConcept esdm_begrip:PoolPartySemanticSuite ;
+  skos:hasTopConcept esdm_begrip:Stardog ;
+  skos:hasTopConcept esdm_begrip:TopBraidEDG ;
+  skos:hasTopConcept esdm_begrip:Virtuoso ;
 .
 esdm_begrip:ESDM_Begrippen
   a skos:ConceptScheme ;
@@ -1443,6 +1650,7 @@ Een nadeel van de ETL-methode is dat de transformatiefase veel tijd in beslag ka
   skos:related esdm_begrip:DataIngestion ;
   skos:related esdm_begrip:Datawarehouse ;
   skos:related esdm_begrip:ELT ;
+  skos:related esdm_begrip:PoolPartyUnifiedViews ;
 .
 esdm_begrip:EVOMailServer
   a skos:Concept ;
@@ -1453,7 +1661,8 @@ esdm_begrip:Elasticsearch
   a skos:Concept ;
   skos:broader esdm_begrip:DocumentStoreDatabase ;
   skos:definition "Elasticsearch is een zoekserver gebaseerd op Lucene. Het biedt een gedistribueerde, multitenant-compatibele full-text zoekmachine met een RESTful webinterface en schemavrije JSON-documenten. Elasticsearch is ontwikkeld in Java en wordt vrijgegeven als open source onder de voorwaarden van de Apache-licentie."@nl ;
-  skos:prefLabel "Elasticsearch"@nl ;
+  skos:prefLabel "ElasticSearch"@nl ;
+  skos:related esdm_begrip:PoolPartyGraphSearchServer ;
 .
 esdm_begrip:EnableU
   a skos:Concept ;
@@ -1902,6 +2111,29 @@ esdm_begrip:GraknCore
   skos:broader esdm_begrip:GraphDatabase ;
   skos:prefLabel "Grakn Core"@nl ;
 .
+esdm_begrip:GraphDB
+  a skos:Concept ;
+  dc:source "http://ontotext.com/products/graphdb/"^^xsd:anyURI ;
+  dc:source "https://graphdb.ontotext.com/documentation/free/about-graphdb.html"^^xsd:anyURI ;
+  skos:broader esdm_begrip:GraphDatabase ;
+  skos:definition """<div lang=\"en\"><p>GraphDB is a family of highly efficient, robust, and scalable&nbsp;<a class=\"reference internal\" href=\"https://graphdb.ontotext.com/documentation/free/introduction-to-semantic-web.html#introduction-to-semantic-web-rdf\"><span class=\"std std-ref\">RDF</span></a>&nbsp;databases. It streamlines the load and use of&nbsp;<a class=\"reference external\" href=\"https://lod-cloud.net/\">linked data cloud</a>&nbsp;datasets, as well as your own resources. For easy use and compatibility with the industry standards, GraphDB implements the&nbsp;<a class=\"reference external\" href=\"http://rdf4j.org/about/\">RDF4J</a>&nbsp;framework interfaces, the&nbsp;<a class=\"reference external\" href=\"https://www.w3.org/TR/sparql11-overview/\">W3C SPARQL Protocol specification</a>, and supports all RDF serialization formats. The database is the preferred choice of both small independent developers and big enterprise organizations because of its community and commercial support, as well as excellent enterprise features such as cluster support and integration with external high-performance search applications - Lucene, Solr, and Elasticsearch.</p>
+<p>GraphDB is one of the few triplestores that can perform&nbsp;<a class=\"reference internal\" href=\"https://graphdb.ontotext.com/documentation/free/introduction-to-semantic-web.html#introduction-to-semantic-web-reasoning-strategies\"><span class=\"std std-ref\">semantic inferencing</span></a>&nbsp;at scale, allowing users to derive new semantic facts from existing facts. It handles massive loads, queries, and inferencing in real time.</p>
+<p>Ontotext offers three editions of GraphDB: Free, Standard, and Enterprise.</p>
+<ul class=\"simple\">
+<li>
+<p><a class=\"reference external\" href=\"https://www.ontotext.com/products/graphdb/graphdb-free/\">GraphDB Free</a>&nbsp;- commercial, file-based, sameAs &amp; query optimizations, scales to tens of billions of RDF statements on a single server with a limit of two concurrent queries.</p>
+</li>
+<li>
+<p><a class=\"reference external\" href=\"https://www.ontotext.com/products/graphdb/graphdb-standard/\">GraphDB Standard Edition (SE)</a>&nbsp;- commercial, file-based, sameAs &amp; query optimizations, scales to tens of billions of RDF statements on a single server and an unlimited number of concurrent queries.</p>
+</li>
+<li>
+<p><a class=\"reference external\" href=\"https://www.ontotext.com/products/graphdb/graphdb-enterprise/\">GraphDB Enterprise Edition (EE)</a>&nbsp;- high-availability cluster with worker and master database implementation for resilience and high-performance parallel query answering.</p>
+</li>
+</ul>
+<p>To find out more about the differences between the editions, see the&nbsp;<a class=\"reference internal\" href=\"https://graphdb.ontotext.com/documentation/free/graphdb-feature-comparison.html\"><span class=\"doc\">GraphDB Feature Comparison</span></a>&nbsp;section.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "GraphDB"@en ;
+  skos:related esdm_begrip:PoolPartyGraphSearchServer ;
+.
 esdm_begrip:GraphDatabase
   a skos:Concept ;
   dc:source "https://en.wikipedia.org/wiki/Graph_database"^^xsd:anyURI ;
@@ -2302,6 +2534,7 @@ esdm_begrip:KnowledgeGraph
   skos:broader esdm_begrip:DataManagementSysteem ;
   skos:prefLabel "Knowledge Graph"@nl ;
   skos:related esdm_begrip:DataFabric ;
+  skos:related esdm_begrip:PoolPartyEnterpriseKnowledgeGraphManagement ;
   skos:related esdm_begrip:SemantischDataIntegratieplatform ;
 .
 esdm_begrip:Kvrocks
@@ -2454,6 +2687,7 @@ esdm_begrip:MarkLogic
   skos:prefLabel "MarkLogic"@nl ;
   skos:related esdm_begrip:MarkLogicServer ;
   skos:related <http://ordina.nl/esdm/im/begrippen/id/MarkLogic–DataHub> ;
+  skos:related esdm_begrip:PoolPartyGraphSearchServer ;
 .
 esdm_begrip:MarkLogicServer
   a skos:Concept ;
@@ -3122,6 +3356,265 @@ esdm_begrip:PointOfSaleSysteem
   skos:definition "<div lang=\"nl\">POS systeem - of Point Of Sale systeem - wordt gebruikt om een systeem of software te omschrijven dat winkeliers en restaurants ondersteuning biedt bij hun verkoop, voorraadbeheer, analyses, rapportage, en het managen van hun werknemers.<br /><br />Meestal bestaat een POS systeem uit een computer met daarop POS software, een bonnenprinter, een barcodescanner, een pinapparaat en - in het geval van een verouderd Point Of Sale systeem - een lokale server.<br /><br />Mobiele POS systemen zijn vaak cloudgebaseerd, en draaien op iPads of andere draagbare apparaten (tablets, iPod, iPhone). Deze moderne systemen hebben geen server ter plaatse nodig. Alles is online toegankelijk en wordt opgeslagen en gesynchroniseerd in de cloud.</div>"^^rdf:HTML ;
   skos:prefLabel "Point Of Sale systeem"@nl ;
 .
+esdm_begrip:PoolPartyCorpusAnalysis
+  a skos:Concept ;
+  skos:broader esdm_begrip:PoolPartyTextMiningNaturalLanguageProcessing ;
+  skos:definition """PoolParty Semantic Suite offers powerful corpus analysis capabilities based on a combination of semantic and statistical models, which semi-automatically create and maintain Enterprise Knowledge Graphs on a large scale.
+As a result, PoolParty Semantic Suite supports taxonomists and subject matter experts in collaborating more efficiently, while keeping their Knowledge Graph up-to-date."""@en ;
+  skos:prefLabel "PoolParty Corpus Analysis"@en ;
+.
+esdm_begrip:PoolPartyEnterpriseKnowledgeGraphManagement
+  a skos:Concept ;
+  dc:source "https://www.poolparty.biz/what-is-a-knowledge-graph/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:PoolPartySemanticSuite ;
+  skos:definition "<div lang=\"en\">A Knowledge Graph is a model of a knowledge domain created by subject-matter experts with the help of&nbsp;<a href=\"https://www.poolparty.biz/semantic-classifier/\">intelligent machine learning algorithms</a>. It provides a structure and common interface for all of your data and enables the creation of smart multilateral relations throughout your databases. Structured as an additional virtual data layer, the Knowledge Graph lies on top of your existing databases or data sets to link all your data together at scale &ndash; be it structured or unstructured.</div>"^^rdf:HTML ;
+  skos:example """<div lang=\"en\">
+<div class=\"et_pb_row et_pb_row_7\">
+<div class=\"et_pb_column et_pb_column_4_4 et_pb_column_9  et_pb_css_mix_blend_mode_passthrough et-last-child\">
+<div class=\"et_pb_module et_pb_text et_pb_text_13  et_pb_text_align_left et_pb_bg_layout_light\">
+<div class=\"et_pb_text_inner\">
+<h2>Four reasons an Enterprise Knowledge Graph can Help You</h2>
+</div>
+</div>
+</div>
+</div>
+<div class=\"et_pb_row et_pb_row_8\">
+<div class=\"et_pb_column et_pb_column_4_4 et_pb_column_10  et_pb_css_mix_blend_mode_passthrough et-last-child\">
+<div class=\"et_pb_module et_pb_blurb et_pb_blurb_0  et_pb_text_align_left  et_pb_blurb_position_top et_pb_bg_layout_light\">
+<div class=\"et_pb_blurb_content\">
+<div class=\"et_pb_blurb_container\">
+<h3 class=\"et_pb_module_header\">1. Combine Disparate Data Silos</h3>
+<div class=\"et_pb_blurb_description\">
+<p>Ever wonder how there could be&nbsp;a complete&nbsp;overlap of work from two separate departments and neither one bothered to communicate with one another? This often happens more often than not and requires companies to reassess what they are spending their money&nbsp;on:&nbsp;wasted effort on the knowledge they already have, or having employees re-learn things on a continual basis.&nbsp;<a href=\"https://www.poolparty.biz/news-events/knowledge-graphs-connecting-dots-increasingly-complex-world/\">Knowledge Graphs help to combine disparate silos of data</a>, giving you an overview of all of your knowledge &ndash; not only departmentally but also across departments and global organizations.</p>
+</div>
+</div>
+</div>
+</div>
+<div class=\"et_pb_module et_pb_blurb et_pb_blurb_1  et_pb_text_align_left  et_pb_blurb_position_top et_pb_bg_layout_light\">
+<div class=\"et_pb_blurb_content\">
+<div class=\"et_pb_blurb_container\">
+<h3 class=\"et_pb_module_header\">2. Bring Together Structured and Unstructured Data</h3>
+<div class=\"et_pb_blurb_description\">
+<p>Accumulating data doesn&rsquo;t mean just assembling documents and excel sheets. Knowledge Graph technology means being able to connect different types of data in meaningful ways and supporting richer data services than most knowledge management systems. Organizations will then use this technology to extract and&nbsp;<a href=\"https://www.poolparty.biz/semantic-ai/\">discover deeper and more subtle patterns with the help of AI and Machine Learning technology</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class=\"et_pb_module et_pb_blurb et_pb_blurb_2  et_pb_text_align_left  et_pb_blurb_position_top et_pb_bg_layout_light\">
+<div class=\"et_pb_blurb_content\">
+<div class=\"et_pb_blurb_container\">
+<h3 class=\"et_pb_module_header\">3. Make Better Decisions by Finding Things Faster</h3>
+<div class=\"et_pb_blurb_description\">
+<p>Even prior to computers, looking for information meant digging through piles of documents to find a particular sentence, or number, etc. that is valuable to your train of thought. Using Knowledge Graph technology mitigates this by&nbsp;<a href=\"https://www.poolparty.biz/semantic-search/\">giving you more enriched and in-depth search results</a>, helping to provide relevant facts and contextualized answers to your specific questions, rather than a broad search result with many (ir)relevant documents and messages &ndash; but no valuable input. Knowledge Graphs are able to do this because of its networks of &lsquo;things&rsquo; and facts that belong to these &lsquo;things&rsquo;. &lsquo;Things&rsquo; could be any of your business objects or attributes and facets of these business objects, such&nbsp;as:&nbsp;projects, products, employees or their skills.&nbsp;<a href=\"https://www.poolparty.biz/poolparty-grapheditor/\">Any graph can be linked to other graphs as well as relational databases</a>. With all of these linkages in place, a fully fledged Knowledge Graph can provide enterprises with a solid infrastructure and foundation for any smart application.</p>
+</div>
+</div>
+</div>
+</div>
+<div class=\"et_pb_module et_pb_blurb et_pb_blurb_3 et_hover_enabled  et_pb_text_align_left  et_pb_blurb_position_top et_pb_bg_layout_light\">
+<div class=\"et_pb_blurb_content\">
+<div class=\"et_pb_blurb_container\">
+<h3 class=\"et_pb_module_header\">4. Future Proof your Database with Standards</h3>
+<div class=\"et_pb_blurb_description\">
+<p>Most enterprises working towards their AI strategy assume that external vendors are able to create a black box that funnels their data into an intelligent Knowledge Graph. This also means that these enterprises are highly dependent on external services and are unaware of how their machines are making decisions. Without quality data, it is impossible to get quality knowledge. With an Enterprise Knowledge Graph in place, organizations will benefit from higher reusability of their data, when managing data models because their&nbsp;<a href=\"https://www.poolparty.biz/why-semantic-technologies/\">Knowledge Graphs are compliant with W3C standards.</a>&nbsp;This triggers, not only internal network effects, but it also allows for the&nbsp;<a href=\"https://www.poolparty.biz/vocabulary-hub/\">re-use of publicly available industry graphs and ontologies</a>&nbsp;(e.g., FIBO, CHEBI, ESCO, etc.), as well as the ISO standard for multilingual thesauri. This also ensures that you are fully in control of your Knowledge Graph since everything is maintained in-house.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>"""^^rdf:HTML ;
+  skos:example """<div><h2>Four Examples of Knowledge Graph Implementations</h2>
+<div class=\"et_pb_module et_pb_blurb et_pb_blurb_4  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light\">
+<div class=\"et_pb_blurb_content\">
+<ol>
+<li class=\"et_pb_blurb_container\"><strong>Pharmaceutical Industry</strong><br />One of the&nbsp;<a href=\"https://www.poolparty.biz/wp-content/uploads/2015/10/CustomerSuccessStoryBoehringer.pdf\">top 20 companies in the pharmaceutical industry</a>&nbsp;uses the extensive capabilities of Enterprise Knowledge Graphs to provide a unified view of all their research activities.<br /><br /></li>
+<li class=\"et_pb_blurb_container\"><strong>IT &amp; IT Services</strong><br />A large IT services enterprise uses Enterprise Knowledge Graphs to help them link all unstructured (legal) documents to their structured data; helping the enterprise to intelligently evaluate risks that are often hidden in common legal documents in an automated manner.<br /><br /></li>
+<li class=\"et_pb_blurb_container\"><strong>Telecommunications</strong><br />A global telecom company benefits from the power of Enterprise Knowledge Graphs, helping to generate chatbots based on semi-structured documents.<br /><br /></li>
+<li class=\"et_pb_blurb_container\"><strong>Government<br /></strong>A large governmental organization provides trusted health information for their citizens by using several standard industry Knowledge Graphs (such as MeSH and DBPedia etc.).&nbsp;<a href=\"https://www.poolparty.biz/healthcare-information-system/\">The governmental health platform links more than 200 trusted medical information sources</a>&nbsp;that help to enrich search results and provide accurate answers<strong><br /></strong></li>
+</ol>
+</div>
+</div></div>"""^^rdf:HTML ;
+  skos:note """<div lang=\"en\">
+<div class=\"et_pb_row et_pb_row_2\">
+<div class=\"et_pb_column et_pb_column_4_4 et_pb_column_2  et_pb_css_mix_blend_mode_passthrough et-last-child\">
+<div class=\"et_pb_module et_pb_text et_pb_text_6  et_pb_text_align_left et_pb_bg_layout_light\">
+<div class=\"et_pb_text_inner\">
+<h2>How is an Enterprise Knowledge Graph different than Google&rsquo;s Knowledge Graph?</h2>
+</div>
+</div>
+</div>
+</div>
+<div class=\"et_pb_row et_pb_row_3\">
+<div class=\"et_pb_column et_pb_column_1_2 et_pb_column_3  et_pb_css_mix_blend_mode_passthrough\">
+<div class=\"et_pb_module et_pb_text et_pb_text_7  et_pb_text_align_left et_pb_bg_layout_light\">
+<div class=\"et_pb_text_inner\">
+<p>Knowledge Graphs are all around: Facebook, Microsoft, Google, all of them operate their own Knowledge Graphs as part of their infrastructure. Google introduced in May 2012 its own version and interpretation of a Knowledge Graph. Since then the notion of a &lsquo;Knowledge Graph&rsquo; got more and more popular. On the surface, the information from the Google Knowledge Graph is used to augment search results.<br /><br />On top of that, the Google Knowledge Graph also enhances its Artificial Intelligence (AI) when answering direct spoken questions in Google Assistant and Google Home voice queries. Behind the scenes and in return, Google uses its Knowledge Graph to improve its machine learning algorithms.<br /><br />But Google&rsquo;s Knowledge Graph is quite limited in how users and software agents can interact with it. It only covers a few areas of industry-specific knowledge, and it doesn&rsquo;t cover the internal knowledge of companies. Its API returns only individual matching entities, rather than graphs of interconnected objects.<br /><br />This is where Enterprise Knowledge Graphs come into place.&nbsp;<a href=\"https://www.poolparty.biz/white-paper-knowledge-graphs/\">Enterprise Knowledge Graphs help companies create their specific web of knowledge</a>&nbsp;representing their very own domain. As a result, they can seamlessly break down data silos to use information assets in an agile way. Furthermore, it is a cost-efficient solution that does not replace but boosts existing IT systems. Enterprise Knowledge Graphs fulfill today&rsquo;s requirements to process real-time sources of information and retrieve knowledge from data stored in disparate systems.</p>
+</div>
+</div>
+</div>
+</div>
+</div>"""^^rdf:HTML ;
+  skos:note """<div lang=\"en\"><div class=\"et_pb_module et_pb_text et_pb_text_4  et_pb_text_align_left et_pb_bg_layout_light\">
+<div class=\"et_pb_text_inner\">
+<h2>What is the difference between a Knowledge Graph and a Graph Database?</h2>
+</div>
+</div>
+<div class=\"et_pb_module et_pb_text et_pb_text_5  et_pb_text_align_left et_pb_bg_layout_light\">
+<div class=\"et_pb_text_inner\">
+<p>Knowledge graphs are data. They have to be stored, managed, extended, quality-assured and can be queried. This requires databases and components on top, which are usually implemented in the Semantic Middleware Layer. This &lsquo;sits&rsquo; on the database and at the same time offers service endpoints for integration with third-party systems.</p>
+<p>Thus&nbsp;<a href=\"https://www.poolparty.biz/integrations\">graph databases form the foundation of every knowledge graph</a>. Typically, these are technologies based either on the Resource Description Framework (RDF), a W3C standard, or on Labeled Property Graphs (LPG).</p>
+<p>In order to roll out knowledge graphs in companies, however, more than a database is required: Only with the help of components such as&nbsp;<a href=\"https://www.poolparty.biz/taxonomy-thesaurus-management\">taxonomy and ontology editors</a>, entity extractors, graph mappers, validation, visualization and search tools, etc. can it be ensured that a knowledge graph can be sustainably developed and managed. While graph databases are typically maintained by highly qualified data engineers or Semantic Web experts, the interfaces of the Semantic Middleware also allow people to interact with the knowledge graph who can contribute less technical knowledge instead of business and expert knowledge to the graphs.</p>
+</div>
+</div></div>"""^^rdf:HTML ;
+  skos:prefLabel "PoolParty Enterprise Knowledge Graph Management"@en ;
+  skos:related esdm_begrip:KnowledgeGraph ;
+.
+esdm_begrip:PoolPartyEntityExtractionSemanticEnrichment
+  a skos:Concept ;
+  skos:broader esdm_begrip:PoolPartyTextMiningNaturalLanguageProcessing ;
+  skos:definition "PoolParty Semantic Suite offers entity extraction services which support semi-automatic tagging and semantic enrichment, creating an additional class of metadata that further improves the discovery of content. In addition to this, PoolParty is able to recognize patterns in your data, which consists of various entities that are related to each other."@en ;
+  skos:prefLabel "PoolParty Entity Extraction & Semantic Enrichment"@en ;
+.
+esdm_begrip:PoolPartyEntityLinking
+  a skos:Concept ;
+  skos:broader esdm_begrip:PoolPartyGraphAutomation ;
+  skos:definition "PoolParty Semantic Suite can make sense of any enterprise data source by enhancing information retrieval systems and semantic search. PoolParty Semantic Suite also analyzes textual documents to extract and determine the meaning of contained entities by linking them to a domain-specific knowledge graph"@en ;
+  skos:prefLabel "PoolParty Entity Linking"@en ;
+.
+esdm_begrip:PoolPartyGraphAutomation
+  a skos:Concept ;
+  skos:broader esdm_begrip:PoolPartySemanticSuite ;
+  skos:definition "PoolParty Semantic Suite is based on supervised machine learning and supports the creation and management of Enterprise Knowledge Graphs in a highly automated way. It is used to break down data silos by linking data from various departments and organizations. PoolParty Semantic Suite helps enterprises to tackle challenges with data management and data integration in an orchestrated manner along the whole Linked Data Lifecycle."@en ;
+  skos:prefLabel "PoolParty Graph Automation"@en ;
+.
+esdm_begrip:PoolPartyGraphDataManagement
+  a skos:Concept ;
+  skos:broader esdm_begrip:PoolPartyEnterpriseKnowledgeGraphManagement ;
+  skos:definition """The PoolParty Semantic Suite allows data scientists
+and domain experts to build and manage data graphs. Enterprises are able to easily connect and manage data from several graph databases using the PoolParty GraphEditor’s collaborative and flexible interface.
+A visual query editor also allows for knowledge graph exploration based on customisable views to edit specific parts of a knowledge graph."""@en ;
+  skos:prefLabel "PoolParty Graph Data Management"@en ;
+.
+esdm_begrip:PoolPartyGraphSearchServer
+  a skos:Concept ;
+  dc:source "https://www.poolparty.biz/poolparty-semantic-graph-search-server/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:PoolPartySemanticAIApplications ;
+  skos:definition """<div lang=\"en\"><h2 class=\"et_pb_module_header\">Beyond Simple Search for Documents</h2>
+<div>
+<ul>
+<li><strong>Semantic search&nbsp;at the highest level</strong>:&nbsp;PoolParty GraphSearch Server&nbsp;combines the power of graph databases and&nbsp;SPARQL engines with features of &lsquo;traditional&rsquo; search engines like Solr or Elastic Search.</li>
+<li><strong>Document search and visual analytics</strong>: benefit from additional insights through interactive&nbsp;visualizations of reports and search results &ndash; derived from your data lake by executing sophisticated SPARQL queries.</li>
+<li><strong>Data linking</strong>:&nbsp;GraphSearch can be&nbsp;based on various&nbsp;linked knowledge graphs, created by automatic data transformation, extracted from databases or custom tailored by taxonomists.</li>
+</ul>
+</div></div>"""^^rdf:HTML ;
+  skos:note """<div lang=\"en\"><h2 class=\"et_pb_module_header\">Versatile Search Platform</h2>
+<div>
+<ul>
+<li><strong>GraphSearch API</strong>: create and configure your own search and analytics application &ndash; based on a&nbsp;management system for&nbsp;SPARQL facet queries and RDF visualizations.</li>
+<li><strong>GraphSearch WebApp</strong>: based on Spring, you can customize your GraphSearch WebApp for your own needs.</li>
+<li><strong>UnifiedViews:&nbsp;</strong>GraphSearch is based on scalable RDF graph stores and linked data. You can gather them from various sources by using UnifiedViews and/or by transforming documents into RDF by means of PoolParty Extractor.</li>
+</ul>
+</div></div>"""^^rdf:HTML ;
+  skos:prefLabel "PoolParty GraphSearch Server"@en ;
+  skos:related esdm_begrip:ApacheSolr ;
+  skos:related esdm_begrip:Elasticsearch ;
+  skos:related esdm_begrip:GraphDB ;
+  skos:related esdm_begrip:MarkLogic ;
+  skos:related esdm_begrip:PoolPartyUnifiedViews ;
+  skos:related esdm_begrip:Stardog ;
+  skos:related esdm_begrip:Virtuoso ;
+.
+esdm_begrip:PoolPartyOntologyManagement
+  a skos:Concept ;
+  skos:broader esdm_begrip:PoolPartyEnterpriseKnowledgeGraphManagement ;
+  skos:definition "PoolParty Semantic Suite lets you design ontologies at your own pace. It helps to create a highly expressive and flexible model of your company’s knowledge. Using PoolParty Semantic Suite you can reuse already existing ontologies such as Friend of a Friend (FOAF), Financial Business Ontology (FIBO), and schema.org."@en ;
+  skos:prefLabel "PoolParty Ontology Management"@en ;
+.
+esdm_begrip:PoolPartySemanticAIApplications
+  a skos:Concept ;
+  dc:source "https://www.poolparty.biz/semantic-ai"^^xsd:anyURI ;
+  skos:broader esdm_begrip:PoolPartySemanticSuite ;
+  skos:definition """Semantic Artificial Intelligence (Semantic AI) is an approach that comes with technical and organizational advantages. It’s more than ‘yet another machine learning algorithm’. It’s rather an AI strategy based on technical and organizational measures, which get implemented along the whole data lifecycle.
+
+Semantic AI combines thoroughly selected methods and tools that solve the most common use cases such as classification and recommendation in a highly precise manner. Current experience shows that AI initiatives often fail due to the lack of appropriate data or low data quality. A semantic knowledge graph is used at the heart of a semantic enhanced AI architecture, which provides means for a more automated data quality management.""" ;
+  skos:prefLabel "PoolParty Semantic AI Applications"@en ;
+.
+esdm_begrip:PoolPartySemanticSearchKnowledgeDiscovery
+  a skos:Concept ;
+  skos:broader esdm_begrip:PoolPartySemanticAIApplications ;
+  skos:definition """Using semantic AI technology, PoolParty Semantic
+Suite provides enterprises with the capabilities of building intelligent search engines. Semantic content organization and semantic metadata are the key pillars to a successful semantic search. PoolParty Semantic Suite also offers the next generation of knowledge discovery. This is enabled by the fusion of graph-based search, recommendation and analytics over a variety of content types and business objects."""@en ;
+  skos:prefLabel "PoolParty Semantic Search & Knowledge Discovery"@en ;
+.
+esdm_begrip:PoolPartySemanticSuite
+  a skos:Concept ;
+  dc:source "https://www.poolparty.biz/product-overview"^^xsd:anyURI ;
+  skos:definition "<div lang=\"en\">PoolParty Semantic Suite is the most complete and advanced semantic middleware platform on the global market. It uses innovative means to help organizations build and manage enterprise knowledge graphs as a basis for their AI strategy.</div>"^^rdf:HTML ;
+  skos:prefLabel "PoolParty Semantic Suite"@en ;
+.
+esdm_begrip:PoolPartyTaxonomyManagementCardSorting
+  a skos:Concept ;
+  skos:broader esdm_begrip:PoolPartyEnterpriseKnowledgeGraphManagement ;
+  skos:definition "PoolParty Semantic Suite offers a user-friendly taxonomy editor and card sorting tool to build and maintain your information architecture. It differs from other taxonomy management solutions because of its powerful technologies, such as: corpus analysis, import assistants and reporting tools."@en ;
+  skos:prefLabel "PoolParty Taxonomy Management & Card Sorting"@en ;
+.
+esdm_begrip:PoolPartyTextClassification
+  a skos:Concept ;
+  skos:broader esdm_begrip:PoolPartyTextMiningNaturalLanguageProcessing ;
+  skos:definition "PoolParty Semantic Suite combines machine learning algorithms such as Deep Learning or Support Vector Machines (SVM) with Enterprise Knowledge Graphs to automatically classify text with targeted precision. This mixed approach increases F1 scores of the resulting document classifier by 1-3% compared to classifiers which rely solely on unstructured text."@en ;
+  skos:prefLabel "PoolParty Text Classification"@en ;
+.
+esdm_begrip:PoolPartyTextMiningNaturalLanguageProcessing
+  a skos:Concept ;
+  dc:source "https://www.poolparty.biz/natural-language-processing/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:PoolPartySemanticSuite ;
+  skos:definition "<div lang=\"en\">PoolParty Semantic Suite uses advanced text mining algorithms and Natural Language Processing (NLP) to automatically extract relevant entities, terms and other metadata from text and documents. An Enterprise Knowledge Graph provides additional value to traditional text mining technologies by adding facts about the extracted entities, helping to drive in-depth text analytics.</div>"^^rdf:HTML ;
+  skos:prefLabel "PoolParty Text Mining & Natural Language Processing"@en ;
+.
+esdm_begrip:PoolPartyThesaurusServer
+  a skos:Concept ;
+  dc:source "https://www.poolparty.biz/poolparty-thesaurus-manager/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:PoolPartyEnterpriseKnowledgeGraphManagement ;
+  skos:definition """<div lang=\"en\"><h2 class=\"et_pb_module_header\">Enterprise Taxonomy and Ontology Management</h2>
+<div>
+<ul>
+<li><strong>Efficient working environment</strong>: benefit from intuitively usable interfaces that ensure faster training times.</li>
+<li><strong>Integrated quality management</strong>: your taxonomies stay consistent and valid, at any time.</li>
+<li><strong>Just open your browser and log in</strong>: easy to use, fast and clean web interface.</li>
+<li><strong>Based on standards</strong>: your taxonomies will be future-proof based on the SKOS standard.</li>
+</ul>
+</div></div>"""^^rdf:HTML ;
+  skos:prefLabel "PoolParty Thesaurus Server"@en ;
+.
+esdm_begrip:PoolPartyUnifiedViews
+  a skos:Concept ;
+  dc:source "https://www.poolparty.biz/agile-data-integration"^^xsd:anyURI ;
+  skos:broader esdm_begrip:PoolPartyGraphAutomation ;
+  skos:definition "Data silos are a challenge to the digital transformation. When data is isolated in one department or database and not available to an entire organization, employees have to spend a lot of time searching for information. This is very costly to organizations. PoolParty UnifiedViews solves this problem through agile data integration. With it, organizations have an overview of all their knowledge in one single place, without the need to create and build more data."@en ;
+  skos:note """<div lang=\"en\"><div class=\"et_pb_module et_pb_text et_pb_text_3  et_pb_text_align_left et_pb_bg_layout_light\">
+<div class=\"et_pb_text_inner\">
+<h2>How does PoolParty UnifiedViews work?</h2>
+</div>
+</div>
+<div class=\"et_pb_module et_pb_text et_pb_text_4  et_pb_text_align_left et_pb_bg_layout_light\">
+<div class=\"et_pb_text_inner\">
+<p>UnifiedViews is an Extract-Transform-Load (ETL) framework that natively supports RDF data and ontologies. It is part of the&nbsp;<a href=\"https://www.poolparty.biz/semantic-integrator\">PoolParty Semantic Integrator</a>&nbsp;product bundle that helps organizations to integrate different data types and to connect them in a Knowledge Graph.</p>
+<p><a href=\"https://www.poolparty.biz/what-is-a-knowledge-graph\">Knowledge Graph technology</a>&nbsp;helps to pinpoint exactly where your data currently is and what it means, so that it can be re-used immediately and effectively.</p>
+<p>After transforming data into RDF, you can store it and&nbsp;<a href=\"https://www.poolparty.biz/resources/data-integration-across-the-linked-data-lifecycle/\">use it for any end-user application</a>. UnifiedViews has a graphical user interface for the administration, debugging, and monitoring of the ETL process. This interface helps to be more agile from the perspective of data changes compared to other data models.</p>
+</div>
+</div></div>"""^^rdf:HTML ;
+  skos:prefLabel "PoolParty UnifiedViews"@en ;
+  skos:related esdm_begrip:ETL ;
+  skos:related esdm_begrip:PoolPartyGraphSearchServer ;
+.
+esdm_begrip:PoolPartyVirtualAssistantsRecommenderSystems
+  a skos:Concept ;
+  skos:broader esdm_begrip:PoolPartySemanticAIApplications ;
+  skos:definition """PoolParty Semantic Suite identifies the intent of
+your customer’s interactions based on an enterprise knowledge graph. As a result, your virtual assistants
+offer more accurate answers. PoolParty Semantic Suite also allows you to build a sustainable framework for automated recommendations to important stakeholders."""@en ;
+  skos:prefLabel "PoolParty Virtual Assistants & Recommender Systems"@en ;
+.
 esdm_begrip:Postfix
   a skos:Concept ;
   skos:broader esdm_begrip:Mailserver ;
@@ -3681,6 +4174,17 @@ esdm_begrip:StandardBusinessReporting
 SBR is de nationale standaard voor de digitale uitwisseling van alle bedrijfsmatige rapportages. Samen met organisaties uit de markt, zoals accountants, boekhouders, softwareleveranciers en banken heeft de Nederlandse overheid SBR ontwikkeld. Met SBR worden de gegevens in de bedrijfsadministratie eenmalig op een standaard manier vastgelegd. De gegevens zijn eenvoudig te hergebruiken voor verschillende rapportages aan uiteenlopende partijen."""@nl ;
   skos:prefLabel "Standard Business Reporting"@en ;
 .
+esdm_begrip:Stardog
+  a skos:Concept ;
+  dc:source "https://www.stardog.com/"^^xsd:anyURI ;
+  skos:definition """Stardog is the only graph platform to connect data at the compute layer instead of the storage layer.
+
+No migrations. No rip and replace. No copies of copies of data. Just a seamless data fabric.
+
+Stardog is the critical data infrastructure that powers your business’ apps, AI, and analytics."""@en ;
+  skos:prefLabel "Stardog"@en ;
+  skos:related esdm_begrip:PoolPartyGraphSearchServer ;
+.
 esdm_begrip:StorageAccountSettings
   a skos:Concept ;
   dc:source "https://docs.microsoft.com/en-us/learn/modules/create-azure-storage-account/3-choose-your-account-settings"^^xsd:anyURI ;
@@ -3902,6 +4406,14 @@ esdm_begrip:Tkrzw
   skos:broader esdm_begrip:KeyValueDatabase ;
   skos:prefLabel "Tkrzw" ;
 .
+esdm_begrip:TopBraidEDG
+  a skos:Concept ;
+  dc:source "https://www.topquadrant.com/products/topbraid-enterprise-data-governance/"^^xsd:anyURI ;
+  skos:altLabel "Enterprise Data Governance"@en ;
+  skos:broader esdm_begrip:DataCatalogus ;
+  skos:definition "<div lang=\"en\">TopBraid EDG provides a comprehensive data governance solution for enterprises with growing and changing heterogeneous data stores and data processing needs.</div>"^^rdf:HTML ;
+  skos:prefLabel "TopBraid EDG"@en ;
+.
 esdm_begrip:Transactie
   a skos:Concept ;
   dc:source "https://nl.wikipedia.org/wiki/Transactie_(dataopslag)"^^xsd:anyURI ;
@@ -4046,6 +4558,7 @@ esdm_begrip:Virtuoso
   skos:broader esdm_begrip:GraphDatabase ;
   skos:definition "Virtuoso Universal Server is een middleware- en database-engine-hybride die de functionaliteit van een traditionele RDBMS, ORDBMS, virtuele database, RDF, XML, vrije tekst, webtoepassingsserver en bestandsserverfunctionaliteit combineert in één systeem"@nl ;
   skos:prefLabel "Virtuoso"@nl ;
+  skos:related esdm_begrip:PoolPartyGraphSearchServer ;
 .
 esdm_begrip:VisualStudio
   a skos:Concept ;
