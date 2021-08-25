@@ -344,6 +344,14 @@ esdm_begrip:AzureActiveDirectory
   skos:related esdm_begrip:ActiveDirectory ;
   skos:related esdm_begrip:OAuth20 ;
 .
+esdm_begrip:AzureActivity
+  a skos:Concept ;
+  skos:broader esdm_begrip:AzureDataFactory ;
+  skos:definition "Activities represent a processing step in a pipeline. For example, you might use a copy activity to copy data from one data store to another data store. Similarly, you might use a Hive activity, which runs a Hive query on an Azure HDInsight cluster, to transform or analyze your data. Data Factory supports three types of activities: data movement activities, data transformation activities, and control activities."@en ;
+  skos:prefLabel "Azure Activity"@en ;
+  skos:related esdm_begrip:AzureIntegrationRuntime ;
+  skos:related esdm_begrip:AzureParameter ;
+.
 esdm_begrip:AzureAnalysisServices
   a skos:Concept ;
   skos:broader esdm_begrip:MicrosoftAzure ;
@@ -365,6 +373,68 @@ esdm_begrip:AzureBlobFileSystem
   skos:broader esdm_begrip:AzureDataLakeStorage ;
   skos:prefLabel "Azure Blob File System"@en ;
   skos:related esdm_begrip:AzureBlob ;
+.
+esdm_begrip:AzureBlobStorageAccessTiers
+  a skos:Concept ;
+  dc:source "https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers"^^xsd:anyURI ;
+  skos:broader esdm_begrip:AzureBlob ;
+  skos:definition """<div lang=\"en\"><p>Azure storage offers different access tiers, allowing you to store blob object data in the most cost-effective manner. Available access tiers include:</p>
+<ul>
+<li><strong>Hot</strong>&nbsp;- Optimized for storing data that is accessed frequently.</li>
+<li><strong>Cool</strong>&nbsp;- Optimized for storing data that is infrequently accessed and stored for at least 30 days.</li>
+<li><strong>Archive</strong>&nbsp;- Optimized for storing data that is rarely accessed and stored for at least 180 days with flexible latency requirements, on the order of hours.</li>
+</ul>
+<p>The following considerations apply to the different access tiers:</p>
+<ul>
+<li>The access tier can be set on a blob during or after upload.</li>
+<li>Only the hot and cool access tiers can be set at the account level. The archive access tier can only be set at the blob level.</li>
+<li>Data in the cool access tier has slightly lower availability, but still has high durability, retrieval latency, and throughput characteristics similar to hot data. For cool data, slightly lower availability and higher access costs are acceptable trade-offs for lower overall storage costs compared to hot data. For more information, see&nbsp;<a href=\"https://azure.microsoft.com/support/legal/sla/storage/v1_5/\" data-linktype=\"external\">SLA for storage</a>.</li>
+<li>Data in the archive access tier is stored offline. The archive tier offers the lowest storage costs but also the highest access costs and latency.</li>
+<li>The hot and cool tiers support all redundancy options. The archive tier supports only LRS, GRS, and RA-GRS.</li>
+<li>Data storage limits are set at the account level and not per access tier. You can choose to use all of your limit in one tier or across all three tiers.</li>
+</ul>
+<p>Data stored in the cloud grows at an exponential pace. To manage costs for your expanding storage needs, it's helpful to organize your data based on attributes like frequency-of-access and planned retention period to optimize costs. Data stored in the cloud can be different based on how it's generated, processed, and accessed over its lifetime. Some data is actively accessed and modified throughout its lifetime. Some data is accessed frequently early in its lifetime, with access dropping drastically as the data ages. Some data remains idle in the cloud and is rarely, if ever, accessed after it's stored.</p>
+<p>Each of these data access scenarios benefits from a different access tier that is optimized for a particular access pattern. With hot, cool, and archive access tiers, Azure Blob Storage addresses this need for differentiated access tiers with separate pricing models.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Access Tiers"@en ;
+.
+esdm_begrip:AzureBlobStorageArchive
+  a skos:Concept ;
+  skos:broader esdm_begrip:AzureBlobStorageAccessTiers ;
+  skos:definition """<div lang=\"en\">
+<p>The archive access tier has the lowest storage cost but higher data retrieval costs compared to hot and cool tiers. Data must remain in the archive tier for at least 180 days or be subject to an early deletion charge. Data in the archive tier can take several hours to retrieve depending on the specified rehydration priority. For small objects, a high priority rehydrate may retrieve the object from archive in under an hour. See&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview\" data-linktype=\"relative-path\">Overview of blob rehydration from the archive tier</a>&nbsp;to learn more.</p>
+<p>While a blob is in archive storage, the blob data is offline and can't be read or modified. To read or download a blob in archive, you must first rehydrate it to an online tier. You can't take snapshots of a blob in archive storage. However, the blob metadata remains online and available, allowing you to list the blob, its properties, metadata, and blob index tags. Setting or modifying the blob metadata while in archive isn't allowed. However, you can set and modify the blob index tags. For blobs in archive, the only valid operations are&nbsp;<a href=\"https://docs.microsoft.com/en-us/rest/api/storageservices/get-blob-properties\" data-linktype=\"absolute-path\">Get Blob Properties</a>,&nbsp;<a href=\"https://docs.microsoft.com/en-us/rest/api/storageservices/get-blob-metadata\" data-linktype=\"absolute-path\">Get Blob Metadata</a>,&nbsp;<a href=\"https://docs.microsoft.com/en-us/rest/api/storageservices/set-blob-tags\" data-linktype=\"absolute-path\">Set Blob Tags</a>,&nbsp;<a href=\"https://docs.microsoft.com/en-us/rest/api/storageservices/get-blob-tags\" data-linktype=\"absolute-path\">Get Blob Tags</a>,&nbsp;<a href=\"https://docs.microsoft.com/en-us/rest/api/storageservices/find-blobs-by-tags\" data-linktype=\"absolute-path\">Find Blobs by Tags</a>,&nbsp;<a href=\"https://docs.microsoft.com/en-us/rest/api/storageservices/list-blobs\" data-linktype=\"absolute-path\">List Blobs</a>,&nbsp;<a href=\"https://docs.microsoft.com/en-us/rest/api/storageservices/set-blob-tier\" data-linktype=\"absolute-path\">Set Blob Tier</a>,&nbsp;<a href=\"https://docs.microsoft.com/en-us/rest/api/storageservices/copy-blob\" data-linktype=\"absolute-path\">Copy Blob</a>, and&nbsp;<a href=\"https://docs.microsoft.com/en-us/rest/api/storageservices/delete-blob\" data-linktype=\"absolute-path\">Delete Blob</a>.</p>
+</div>"""^^rdf:HTML ;
+  skos:example """<div lang=\"en\">
+<p>Example usage scenarios for the archive access tier include:</p>
+<ul>
+<li>Long-term backup, secondary backup, and archival datasets</li>
+<li>Original (raw) data that must be preserved, even after it has been processed into final usable form</li>
+<li>Compliance and archival data that needs to be stored for a long time and is hardly ever accessed</li>
+</ul>
+</div>"""^^rdf:HTML ;
+  skos:note "<div lang=\"en\">The archive tier is not supported for ZRS, GZRS, or RA-GZRS accounts. Migrating from LRS to GRS is supported as long as no blobs were moved to the archive tier while the account was set to LRS. An account can be moved back to GRS if the update is done less than 30 days from the time the account became LRS, and no blobs were moved to the archive tier while the account was set to LRS.</div>"^^rdf:HTML ;
+  skos:prefLabel "Archive access tier"@en ;
+.
+esdm_begrip:AzureBlobStorageCool
+  a skos:Concept ;
+  skos:broader esdm_begrip:AzureBlobStorageAccessTiers ;
+  skos:definition """<div lang=\"en\"><p>The cool access tier has lower storage costs and higher access costs compared to hot storage. This tier is intended for data that will remain in the cool tier for at least 30 days. Example usage scenarios for the cool access tier include:</p>
+<ul>
+<li>Short-term backup and disaster recovery</li>
+<li>Older data not used frequently but expected to be available immediately when accessed</li>
+<li>Large data sets that need to be stored cost effectively, while more data is being gathered for future processing</li>
+</ul></div>"""^^rdf:HTML ;
+  skos:prefLabel "Cool access tier"@en ;
+.
+esdm_begrip:AzureBlobStorageTierHot
+  a skos:Concept ;
+  skos:broader esdm_begrip:AzureBlobStorageAccessTiers ;
+  skos:definition """<div lang=\"en\"><p>The hot access tier has higher storage costs than cool and archive tiers, but the lowest access costs. Example usage scenarios for the hot access tier include:</p>
+<ul>
+<li>Data that's in active use or is expected to be read from and written to frequently</li>
+<li>Data that's staged for processing and eventual migration to the cool access tier</li>
+</ul></div>"""^^rdf:HTML ;
+  skos:prefLabel "Hot access tier"@en ;
 .
 esdm_begrip:AzureCLI
   a skos:Concept ;
@@ -394,11 +464,12 @@ esdm_begrip:AzureCognitiveSearch
 esdm_begrip:AzureDataDrivenWorkflow
   a skos:Concept ;
   dc:source "https://docs.microsoft.com/en-us/learn/modules/data-integration-azure-data-factory/4-explain-process"^^xsd:anyURI ;
-  skos:broader esdm_begrip:AzureDataFactory ;
+  skos:broader esdm_begrip:AzureDataFlow ;
   skos:prefLabel "Azure Data-driven workflow"@en ;
 .
 esdm_begrip:AzureDataFactory
   a skos:Concept ;
+  dc:source "https://docs.microsoft.com/en-us/azure/data-factory/introduction"^^xsd:anyURI ;
   dc:source "https://docs.microsoft.com/en-us/learn/modules/data-integration-azure-data-factory/2-understand"^^xsd:anyURI ;
   dc:source "https://docs.microsoft.com/en-us/learn/modules/upload-data-to-azure-data-lake-storage/5-copy-data-from-gen1-to-gen2"^^xsd:anyURI ;
   skos:broader esdm_begrip:MicrosoftAzure ;
@@ -422,6 +493,12 @@ esdm_begrip:AzureDataFactory
   skos:prefLabel "Azure Data Factory"@en ;
   skos:related esdm_begrip:DataIntegratie ;
   skos:related esdm_begrip:Ingestion ;
+.
+esdm_begrip:AzureDataFlow
+  a skos:Concept ;
+  skos:broader esdm_begrip:AzureDataFactory ;
+  skos:definition "Create and manage graphs of data transformation logic that you can use to transform any-sized data. You can build-up a reusable library of data transformation routines and execute those processes in a scaled-out manner from your ADF pipelines. Data Factory will execute your logic on a Spark cluster that spins-up and spins-down when you need it. You won't ever have to manage or maintain clusters."@en ;
+  skos:prefLabel "Azure Data Flow"@en ;
 .
 esdm_begrip:AzureDataLakeStorage
   a skos:Concept ;
@@ -460,6 +537,13 @@ esdm_begrip:AzureDatabricks
   skos:related esdm_begrip:PrepAndTrain ;
   skos:related esdm_begrip:TransformAndEnrich ;
 .
+esdm_begrip:AzureDataset
+  a skos:Concept ;
+  skos:broader esdm_begrip:AzureDataFactory ;
+  skos:definition "Datasets represent data structures within the data stores, which simply point to or reference the data you want to use in your activities as inputs or outputs."@en ;
+  skos:prefLabel "Azure Dataset"@en ;
+  skos:related esdm_begrip:AzureParameter ;
+.
 esdm_begrip:AzureDefenderForStorage
   a skos:Concept ;
   dc:source "https://docs.microsoft.com/en-us/learn/modules/secure-azure-storage-account/6-advanced-threat-protection"^^xsd:anyURI ;
@@ -470,6 +554,17 @@ Security alerts are triggered when anomalies in activity occur. These security a
 
 Azure Defender for Storage is currently available for Blob storage, Azure Files, and Azure Data Lake Storage Gen2. Account types that support Azure Defender include general-purpose v2, block blob, and Blob storage accounts. Azure Defender for Storage is available in all public clouds and US government clouds, but not in other sovereign or Azure Government cloud regions."""@en ;
   skos:prefLabel "Azure Defender for Storage"@en ;
+.
+esdm_begrip:AzureDisks
+  a skos:Concept ;
+  dc:source "https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview"^^xsd:anyURI ;
+  skos:altLabel "Azure managed disks"@en ;
+  skos:broader esdm_begrip:AzureStorage ;
+  skos:definition """<div lang=\"en\"><p>Azure managed disks are block-level storage volumes that are managed by Azure and used with Azure Virtual Machines. Managed disks are like a physical disk in an on-premises server but, virtualized. With managed disks, all you have to do is specify the disk size, the disk type, and provision the disk. Once you provision the disk, Azure handles the rest.</p>
+<p>The available types of disks are ultra disks, premium solid-state drives (SSD), standard SSDs, and standard hard disk drives (HDD). For information about each individual disk type, see&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types\" data-linktype=\"relative-path\">Select a disk type for IaaS VMs</a>.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Azure Disks"@en ;
+  skos:related esdm_begrip:AzureVirtualMachine ;
+  skos:related esdm_begrip:PageBlob ;
 .
 esdm_begrip:AzureEventHub
   a skos:Concept ;
@@ -538,11 +633,60 @@ esdm_begrip:AzureGlobalRegion
 <div class=\"column\">&nbsp;</div></div>"""^^rdf:HTML ;
   skos:prefLabel "Azure Global Region"@en ;
 .
+esdm_begrip:AzureIntegrationRuntime
+  a skos:Concept ;
+  skos:broader esdm_begrip:AzureDataFactory ;
+  skos:definition "In Data Factory, an activity defines the action to be performed. A linked service defines a target data store or a compute service. An integration runtime provides the bridge between the activity and linked Services. It's referenced by the linked service or activity, and provides the compute environment where the activity either runs on or gets dispatched from. This way, the activity can be performed in the region closest possible to the target data store or compute service in the most performant way while meeting security and compliance needs."@en ;
+  skos:prefLabel "Azure Integration Runtime"@en ;
+  skos:related esdm_begrip:AzureActivity ;
+  skos:related esdm_begrip:AzureLinkedService ;
+.
 esdm_begrip:AzureKeyVault
   a skos:Concept ;
   skos:broader esdm_begrip:MicrosoftAzure ;
   skos:prefLabel "Azure Key Vault"@en ;
   skos:related esdm_begrip:StorageServiceEncryption ;
+.
+esdm_begrip:AzureLinkedService
+  a skos:Concept ;
+  skos:broader esdm_begrip:AzureDataFactory ;
+  skos:definition """<div lang=\"en\"><p>Linked services are much like connection strings, which define the connection information that's needed for Data Factory to connect to external resources. Think of it this way: a linked service defines the connection to the data source, and a dataset represents the structure of the data. For example, an Azure Storage-linked service specifies a connection string to connect to the Azure Storage account. Additionally, an Azure blob dataset specifies the blob container and the folder that contains the data.</p>
+<p>Linked services are used for two purposes in Data Factory:</p>
+<ul>
+<li>
+<p>To represent a&nbsp;<strong>data store</strong>&nbsp;that includes, but isn't limited to, a SQL Server database, Oracle database, file share, or Azure blob storage account. For a list of supported data stores, see the&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/data-factory/copy-activity-overview\" data-linktype=\"relative-path\">copy activity</a>&nbsp;article.</p>
+</li>
+<li>
+<p>To represent a&nbsp;<strong>compute resource</strong>&nbsp;that can host the execution of an activity. For example, the HDInsightHive activity runs on an HDInsight Hadoop cluster. For a list of transformation activities and supported compute environments, see the&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/data-factory/transform-data\" data-linktype=\"relative-path\">transform data</a>&nbsp;article.</p>
+</li>
+</ul></div>"""^^rdf:HTML ;
+  skos:prefLabel "Azure Linked Service"@en ;
+  skos:related esdm_begrip:AzureIntegrationRuntime ;
+  skos:related esdm_begrip:AzureParameter ;
+.
+esdm_begrip:AzureParameter
+  a skos:Concept ;
+  skos:broader esdm_begrip:AzureDataFactory ;
+  skos:definition """Parameters are key-value pairs of read-only configuration.  Parameters are defined in the pipeline. The arguments for the defined parameters are passed during execution from the run context that was created by a trigger or a pipeline that was executed manually. Activities within the pipeline consume the parameter values.
+
+A dataset is a strongly typed parameter and a reusable/referenceable entity. An activity can reference datasets and can consume the properties that are defined in the dataset definition.
+
+A linked service is also a strongly typed parameter that contains the connection information to either a data store or a compute environment. It is also a reusable/referenceable entity."""@en ;
+  skos:prefLabel "Azure Parameter"@en ;
+  skos:related esdm_begrip:AzureActivity ;
+  skos:related esdm_begrip:AzureDataset ;
+  skos:related esdm_begrip:AzureLinkedService ;
+  skos:related esdm_begrip:AzurePipeline ;
+  skos:related esdm_begrip:AzureTrigger ;
+.
+esdm_begrip:AzurePipeline
+  a skos:Concept ;
+  skos:broader esdm_begrip:AzureDataFactory ;
+  skos:definition """A data factory might have one or more pipelines. A pipeline is a logical grouping of activities that performs a unit of work. Together, the activities in a pipeline perform a task. For example, a pipeline can contain a group of activities that ingests data from an Azure blob, and then runs a Hive query on an HDInsight cluster to partition the data.
+
+The benefit of this is that the pipeline allows you to manage the activities as a set instead of managing each one individually. The activities in a pipeline can be chained together to operate sequentially, or they can operate independently in parallel."""@en ;
+  skos:prefLabel "Azure Pipeline"@en ;
+  skos:related esdm_begrip:AzureParameter ;
 .
 esdm_begrip:AzurePowerShell
   a skos:Concept ;
@@ -591,6 +735,7 @@ esdm_begrip:AzureSQL
 .
 esdm_begrip:AzureStorage
   a skos:Concept ;
+  dc:source "https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction"^^xsd:anyURI ;
   dc:source "https://docs.microsoft.com/en-us/learn/modules/survey-the-azure-data-platform/3-store-data-using-azure-store-account"^^xsd:anyURI ;
   skos:broader esdm_begrip:MicrosoftAzure ;
   skos:definition "Azure Storage offers a very scalable object store for data objects and file system services in the cloud. It can also provide a messaging store for reliable messaging, or it can act as a NoSQL store."@en ;
@@ -638,6 +783,19 @@ esdm_begrip:AzureStorageExplorer
   a skos:Concept ;
   skos:broader esdm_begrip:MicrosoftAzure ;
   skos:prefLabel "Azure Storage Explorer"@en ;
+.
+esdm_begrip:AzureStorageRedundancy
+  a skos:Concept ;
+  dc:source "https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy"^^xsd:anyURI ;
+  skos:broader esdm_begrip:AzureStorage ;
+  skos:definition """<div lang=\"en\"><p>Azure Storage always stores multiple copies of your data so that it is protected from planned and unplanned events, including transient hardware failures, network or power outages, and massive natural disasters. Redundancy ensures that your storage account meets its availability and durability targets even in the face of failures.</p>
+<p>When deciding which redundancy option is best for your scenario, consider the tradeoffs between lower costs and higher availability. The factors that help determine which redundancy option you should choose include:</p>
+<ul>
+<li>How your data is replicated in the primary region</li>
+<li>Whether your data is replicated to a second region that is geographically distant to the primary region, to protect against regional disasters</li>
+<li>Whether your application requires read access to the replicated data in the secondary region if the primary region becomes unavailable for any reason</li>
+</ul></div>"""^^rdf:HTML ;
+  skos:prefLabel "Azure Storage redundancy"@en ;
 .
 esdm_begrip:AzureStreamAnalytics
   a skos:Concept ;
@@ -690,6 +848,13 @@ esdm_begrip:AzureTable
   skos:prefLabel "Azure Table"@en ;
   skos:related esdm_begrip:NoSQL ;
 .
+esdm_begrip:AzureTrigger
+  a skos:Concept ;
+  skos:broader esdm_begrip:AzureDataFactory ;
+  skos:definition "Triggers represent the unit of processing that determines when a pipeline execution needs to be kicked off. There are different types of triggers for different types of events."@en ;
+  skos:prefLabel "Azure Trigger"@en ;
+  skos:related esdm_begrip:AzureParameter ;
+.
 esdm_begrip:AzureVirtualMachine
   a skos:Concept ;
   dc:source "https://azure.microsoft.com/nl-nl/overview/what-is-a-virtual-machine/"^^xsd:anyURI ;
@@ -698,6 +863,7 @@ esdm_begrip:AzureVirtualMachine
   skos:definition "Een virtuele machine, vaak kortweg een VM, is niet anders dan andere fysieke computers, zoals een laptop, een smartphone of een server. Het heeft een CPU, geheugen, schijven om uw bestanden op te slaan en kan indien nodig verbinding maken met internet. Hoewel de onderdelen waaruit uw computer bestaat (hardware) fysiek en tastbaar zijn, worden VM's vaak gezien als virtuele computers of door software gedefinieerde computers binnen fysieke servers, die alleen bestaan uit code."@nl ;
   skos:note "<div lang=\"nl\">Virtualisatie is het proces van het maken van een op software gebaseerde, of virtuele versie van een computer, met toegewezen aantallen CPU, geheugen en opslag die is 'geleend' van een fysieke hostcomputer (zoals uw pc) en/of een externe server, zoals een server in het datacentrum van een cloudprovider. Een virtuele machine is een computerbestand (meestal een installatiekopie genoemd), dat zich als echte computer gedraagt. Het kan in een venster worden uitgevoerd als een afzonderlijke computeromgeving, vaak om een ander besturingssysteem uit te voeren, of kan zelfs functioneren als de volledige computerervaring van de gebruiker, zoals gebruikelijk op de werkcomputers van een groot aantal personen. De virtuele machine wordt gepartitioneerd van de rest van het systeem, wat inhoudt dat de software binnen een VM niet kan conflicteren met het primaire besturingssysteem van de hostcomputer.</div>"^^rdf:HTML ;
   skos:prefLabel "Azure Virtual Machine"@en ;
+  skos:related esdm_begrip:AzureDisks ;
   skos:related esdm_begrip:AzureFiles ;
   skos:related esdm_begrip:PageBlob ;
 .
@@ -2039,6 +2205,22 @@ esdm_begrip:GeoPortaal
   skos:definition "Een geo-portaal is een portaal, oftewel een toegangspagina voor het kunnen vinden, (eventueel) betalen en het combineren van geo-informatie. Een geo-portaal geeft toegang tot geo-informatie via webservices, of specifieker, geo-services. Veelal gaat het bij het combineren nog om het combineren van kaartlagen, maar ook analyses, al of niet op de achtergrond, kunnen geleverd worden door de webservices. Een webservice is dienstverlening via het internet aan een client. Een geo-portaal is een bijzonder soort GIS. In principe is deze techniek alléén bedoeld indien geo-informatie van verschillende organisaties gecombineerd dient te worden, en men de gegevenspakhuizen (geo-databases) niet onderling wil uitwisselen. Het gaat dus specifiek niet om het combineren van geo-informatie in een geo-service, maar om het combineren van meerdere geo-services in een bijzonder soort webservice: een geo-portaal."@nl ;
   skos:prefLabel "Geo-portaal"@nl ;
 .
+esdm_begrip:GeoRedundantStorage
+  a skos:Concept ;
+  skos:altLabel "GRS"@en ;
+  skos:broader esdm_begrip:RedundancyInASecondaryRegion ;
+  skos:definition """<div lang=\"en\"><p>Geo-redundant storage (GRS) copies your data synchronously three times within a single physical location in the primary region using LRS. It then copies your data asynchronously to a single physical location in a secondary region that is hundreds of miles away from the primary region. GRS offers durability for Azure Storage data objects of at least 99.99999999999999% (16 9's) over a given year.</p>
+<p>A write operation is first committed to the primary location and replicated using LRS. The update is then replicated asynchronously to the secondary region. When data is written to the secondary location, it's also replicated within that location using LRS.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Geo-redundant storage"@en ;
+.
+esdm_begrip:GeoZoneRedundantStorage
+  a skos:Concept ;
+  skos:altLabel "GZRS"@en ;
+  skos:broader esdm_begrip:RedundancyInASecondaryRegion ;
+  skos:definition """<div lang=\"en\"><p>Geo-zone-redundant storage (GZRS) combines the high availability provided by redundancy across availability zones with protection from regional outages provided by geo-replication. Data in a GZRS storage account is copied across three&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/availability-zones/az-overview\" data-linktype=\"relative-path\">Azure availability zones</a>&nbsp;in the primary region and is also replicated to a secondary geographic region for protection from regional disasters. Microsoft recommends using GZRS for applications requiring maximum consistency, durability, and availability, excellent performance, and resilience for disaster recovery.</p>
+<p>With a GZRS storage account, you can continue to read and write data if an availability zone becomes unavailable or is unrecoverable. Additionally, your data is also durable in the case of a complete regional outage or a disaster in which the primary region isn't recoverable. GZRS is designed to provide at least 99.99999999999999% (16 9's) durability of objects over a given year.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Geo-zone-redundant storage"@en ;
+.
 esdm_begrip:GeografischInformatieSysteem
   a skos:Concept ;
   dc:source "https://nl.wikipedia.org/wiki/Geografisch_informatiesysteem"^^xsd:anyURI ;
@@ -2628,6 +2810,23 @@ In een aantal gevallen kan load balancing ook gebruikt worden om het crashen van
   skos:prefLabel "Load balancing"@nl ;
   skos:related esdm_begrip:ReverseProxy ;
   skos:related esdm_begrip:ServiceOrientedArchitecture ;
+.
+esdm_begrip:LocallyRedundantStorage
+  a skos:Concept ;
+  skos:altLabel "LRS"@en ;
+  skos:broader esdm_begrip:RedundancyInThePrimaryRegion ;
+  skos:definition """<div lang=\"en\">
+<p>Locally redundant storage (LRS) replicates your data three times within a single data center in the primary region. LRS provides at least 99.999999999% (11 nines) durability of objects over a given year.</p>
+<p>LRS is the lowest-cost redundancy option and offers the least durability compared to other options. LRS protects your data against server rack and drive failures. However, if a disaster such as fire or flooding occurs within the data center, all replicas of a storage account using LRS may be lost or unrecoverable. To mitigate this risk, Microsoft recommends using&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy#zone-redundant-storage\" data-linktype=\"self-bookmark\">zone-redundant storage</a>&nbsp;(ZRS),&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy#geo-redundant-storage\" data-linktype=\"self-bookmark\">geo-redundant storage</a>&nbsp;(GRS), or&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy#geo-zone-redundant-storage\" data-linktype=\"self-bookmark\">geo-zone-redundant storage</a>&nbsp;(GZRS).</p>
+<p>A write request to a storage account that is using LRS happens synchronously. The write operation returns successfully only after the data is written to all three replicas.</p>
+</div>"""^^rdf:HTML ;
+  skos:definition "Locally redundant storage (LRS) copies your data synchronously three times within a single physical location in the primary region. LRS is the least expensive replication option, but is not recommended for applications requiring high availability or durability."@en ;
+  skos:example """<div lang=\"en\"><p>LRS is a good choice for the following scenarios:</p>
+<ul>
+<li>If your application stores data that can be easily reconstructed if data loss occurs, you may opt for LRS.</li>
+<li>If your application is restricted to replicating data only within a country or region due to data governance requirements, you may opt for LRS. In some cases, the paired regions across which the data is geo-replicated may be in another country or region. For more information on paired regions, see&nbsp;<a href=\"https://azure.microsoft.com/regions/\" data-linktype=\"external\">Azure regions</a>.</li>
+</ul></div>"""^^rdf:HTML ;
+  skos:prefLabel "Locally redundant storage"@en ;
 .
 esdm_begrip:Logging
   a skos:Concept ;
@@ -3324,6 +3523,7 @@ esdm_begrip:PageBlob
   skos:definition "<div lang=\"en\"><strong>Page blobs</strong>&nbsp;are designed for scenarios that involve random-access reads and writes. Page blobs are used to store the virtual hard disk (VHD) files used by Azure Virtual Machines, but they're great for any scenario that involves random access.</div>"^^rdf:HTML ;
   skos:definition "Page blobs are used to hold random-access files up to 8 TB in size. Page blobs are used primarily as the backing storage for the VHDs used to provide durable disks for Azure Virtual Machines (Azure VMs). They are named page blobs because they provide random read/write access to 512-byte pages."@en ;
   skos:prefLabel "Page blob"@en ;
+  skos:related esdm_begrip:AzureDisks ;
   skos:related esdm_begrip:AzureVirtualMachine ;
   skos:related esdm_begrip:VirtueleHardeSchijf ;
 .
@@ -3650,6 +3850,24 @@ esdm_begrip:Prediction
   a skos:Concept ;
   skos:prefLabel "Prediction"@nl ;
 .
+esdm_begrip:PremiumBlockBlob
+  a skos:Concept ;
+  skos:broader esdm_begrip:AzureStorageAccount ;
+  skos:definition "Premium storage account type for block blobs and append blobs. Recommended for scenarios with high transactions rates, or scenarios that use smaller objects or require consistently low storage latency."@en ;
+  skos:prefLabel "Premium block blob"@en ;
+.
+esdm_begrip:PremiumFileShares
+  a skos:Concept ;
+  skos:broader esdm_begrip:AzureStorageAccount ;
+  skos:definition "Premium storage account type for file shares only. Recommended for enterprise or high-performance scale applications. Use this account type if you want a storage account that supports both SMB and NFS file shares."@en ;
+  skos:prefLabel "Premium file shares"@en ;
+.
+esdm_begrip:PremiumPageBlobs
+  a skos:Concept ;
+  skos:broader esdm_begrip:AzureStorageAccount ;
+  skos:definition "Premium storage account type for page blobs only. "@en ;
+  skos:prefLabel "Premium page blobs"@en ;
+.
 esdm_begrip:PrepAndTrain
   a skos:Concept ;
   dc:source "https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-data-lake-storage/5-stages-for-processing-big-data"^^xsd:anyURI ;
@@ -3783,6 +4001,21 @@ esdm_begrip:RavenDB
   skos:definition "RavenDB is ook een documentendatabase van de 2e generatie. Wat we daarmee bedoelen, is dat er veel over nagedacht is om ervoor te zorgen dat het alles goed doet. Functies zoals Inclusief, Live-projecties en Multi-map, en ontwerpbeslissingen, zoals Safe-by-Default, zijn allemaal aanwezig om ervoor te zorgen dat RavenDB een echte toegevoegde waarde biedt en niet zomaar een nieuwe NoSQL-oplossing is"@nl ;
   skos:prefLabel "RavenDB"@nl ;
 .
+esdm_begrip:ReadAccessGeoRedundantStorage
+  a skos:Concept ;
+  skos:altLabel "RA-GRS"@en ;
+  skos:broader esdm_begrip:RedundancyInASecondaryRegion ;
+  skos:definition "Geo-redundant storage (with GRS or GZRS) replicates your data to another physical location in the secondary region to protect against regional outages. However, that data is available to be read only if the customer or Microsoft initiates a failover from the primary to secondary region. When you enable read access to the secondary region, your data is available to be read at all times, including in a situation where the primary region becomes unavailable. For read access to the secondary region, enable read-access geo-redundant storage (RA-GRS) or read-access geo-zone-redundant storage (RA-GZRS)."@en ;
+  skos:note "<div lang=\"en\">Azure Files does not support read-access geo-redundant storage (RA-GRS) and read-access geo-zone-redundant storage (RA-GZRS).</div>"^^rdf:HTML ;
+  skos:prefLabel "Read-Access Geo-redundant storage"@en ;
+.
+esdm_begrip:ReadAccessGeoZoneRedundantStorage
+  a skos:Concept ;
+  skos:altLabel "RA-GZRS"@en ;
+  skos:broader esdm_begrip:RedundancyInASecondaryRegion ;
+  skos:definition "<div lang=\"en\">Geo-redundant storage (with GRS or GZRS) replicates your data to another physical location in the secondary region to protect against regional outages. However, that data is available to be read only if the customer or Microsoft initiates a failover from the primary to secondary region. When you enable read access to the secondary region, your data is available to be read at all times, including in a situation where the primary region becomes unavailable. For read access to the secondary region, enable read-access geo-redundant storage (RA-GRS) or read-access geo-zone-redundant storage (RA-GZRS).</div>"^^rdf:HTML ;
+  skos:prefLabel "Read-Access Geo-zone-redundant storage"@en ;
+.
 esdm_begrip:Redis
   a skos:Concept ;
   skos:broader esdm_begrip:KeyValueDatabase ;
@@ -3792,6 +4025,24 @@ esdm_begrip:RedisGraph
   a skos:Concept ;
   skos:broader esdm_begrip:GraphDatabase ;
   skos:prefLabel "RedisGraph"@nl ;
+.
+esdm_begrip:RedundancyInASecondaryRegion
+  a skos:Concept ;
+  skos:broader esdm_begrip:AzureStorageRedundancy ;
+  skos:definition """For applications requiring high durability, you can choose to additionally copy the data in your storage account to a secondary region that is hundreds of miles away from the primary region. If your storage account is copied to a secondary region, then your data is durable even in the case of a complete regional outage or a disaster in which the primary region isn't recoverable.
+
+Azure Storage offers two options for copying your data to a secondary region:
+
+Geo-redundant storage (GRS) copies your data synchronously three times within a single physical location in the primary region using LRS. It then copies your data asynchronously to a single physical location in the secondary region. Within the secondary region, your data is copied synchronously three times using LRS.
+Geo-zone-redundant storage (GZRS) copies your data synchronously across three Azure availability zones in the primary region using ZRS. It then copies your data asynchronously to a single physical location in the secondary region. Within the secondary region, your data is copied synchronously three times using LRS."""@en ;
+  skos:note "<div lang=\"en\">The primary difference between GRS and GZRS is how data is replicated in the primary region. Within the secondary region, data is always replicated synchronously three times using LRS. LRS in the secondary region protects your data against hardware failures.</div>"^^rdf:HTML ;
+  skos:prefLabel "Redundancy in a secondary region"@en ;
+.
+esdm_begrip:RedundancyInThePrimaryRegion
+  a skos:Concept ;
+  skos:broader esdm_begrip:AzureStorageRedundancy ;
+  skos:definition "<div lang=\"en\">Data in an Azure Storage account is always replicated three times in the primary region. Azure Storage offers two options for how your data is replicated in the primary region.</div>"^^rdf:HTML ;
+  skos:prefLabel "Redundancy in the primary region"@en ;
 .
 esdm_begrip:RelationeleDatabase
   a skos:Concept ;
@@ -4173,6 +4424,13 @@ esdm_begrip:StandardBusinessReporting
   skos:definition """Bedrijven in Nederland leveren jaarlijks miljoenen (verplichte) rapportages aan verschillende partijen. Dat kost tijd, geld en energie. Het eenmalig inrichten van de bedrijfsadministratie volgens Standard Business Reporting (SBR) zorgt voor efficiënt hergebruik van gegevens. Met SBR wordt rapporteren beter, sneller en eenvoudiger.
 SBR is de nationale standaard voor de digitale uitwisseling van alle bedrijfsmatige rapportages. Samen met organisaties uit de markt, zoals accountants, boekhouders, softwareleveranciers en banken heeft de Nederlandse overheid SBR ontwikkeld. Met SBR worden de gegevens in de bedrijfsadministratie eenmalig op een standaard manier vastgelegd. De gegevens zijn eenvoudig te hergebruiken voor verschillende rapportages aan uiteenlopende partijen."""@nl ;
   skos:prefLabel "Standard Business Reporting"@en ;
+.
+esdm_begrip:StandardGeneralPurposeV2
+  a skos:Concept ;
+  dc:source "https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview?toc=/azure/storage/blobs/toc.json"^^xsd:anyURI ;
+  skos:broader esdm_begrip:AzureStorageAccount ;
+  skos:definition "<div lang=\"en\">Standard storage account type for blobs, file shares, queues, and tables. Recommended for most scenarios using Azure Storage. Note that if you want support for NFS file shares in Azure Files, use the premium file shares account type.</div>"^^rdf:HTML ;
+  skos:prefLabel "Standard general-purpose v2"@en ;
 .
 esdm_begrip:Stardog
   a skos:Concept ;
@@ -4689,6 +4947,17 @@ esdm_begrip:ZMailer
   a skos:Concept ;
   skos:broader esdm_begrip:Mailserver ;
   skos:prefLabel "ZMailer"@nl ;
+.
+esdm_begrip:ZoneRedundantStorage
+  a skos:Concept ;
+  skos:altLabel "ZRS"@en ;
+  skos:broader esdm_begrip:RedundancyInThePrimaryRegion ;
+  skos:definition """<div lang=\"en\"><p>Zone-redundant storage (ZRS) replicates your Azure Storage data synchronously across three Azure availability zones in the primary region. Each availability zone is a separate physical location with independent power, cooling, and networking. ZRS offers durability for Azure Storage data objects of at least 99.9999999999% (12 9's) over a given year.</p>
+<p>With ZRS, your data is still accessible for both read and write operations even if a zone becomes unavailable. If a zone becomes unavailable, Azure undertakes networking updates, such as DNS re-pointing. These updates may affect your application if you access data before the updates have completed. When designing applications for ZRS, follow practices for transient fault handling, including implementing retry policies with exponential back-off.</p>
+<p>A write request to a storage account that is using ZRS happens synchronously. The write operation returns successfully only after the data is written to all replicas across the three availability zones.</p>
+<p>Microsoft recommends using ZRS in the primary region for scenarios that require high availability. ZRS is also recommended for restricting replication of data to within a country or region to meet data governance requirements.</p></div>"""^^rdf:HTML ;
+  skos:definition "Zone-redundant storage (ZRS) copies your data synchronously across three Azure availability zones in the primary region. For applications requiring high availability, Microsoft recommends using ZRS in the primary region, and also replicating to a secondary region."@en ;
+  skos:prefLabel "Zone-redundant storage"@en ;
 .
 esdm_begrip:hMailServer
   a skos:Concept ;
