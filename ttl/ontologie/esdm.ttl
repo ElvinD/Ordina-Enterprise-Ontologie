@@ -38,6 +38,18 @@ evnprojects:Taxonomy
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:imports sh: ;
   owl:versionInfo "Created with TopBraid Composer" ;
+  sh:declare [
+      a sh:PrefixDeclaration ;
+      sh:namespace "http://ordina.nl/esdm#"^^xsd:anyURI ;
+      sh:prefix "esdm" ;
+    ] ;
+.
+esdm:Actor
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Actor"@nl ;
+  rdfs:subClassOf skos:Concept ;
+  skos:prefLabel "Actor"@nl ;
 .
 esdm:Agentschap
   a owl:Class ;
@@ -52,6 +64,144 @@ esdm:Bedrijf
   rdfs:label "Bedrijf"@nl ;
   rdfs:subClassOf <http://schema.org/Corporation> ;
   skos:prefLabel "Bedrijf"@nl ;
+.
+esdm:Dossier
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Dossier"@nl ;
+  rdfs:subClassOf skos:Concept ;
+  skos:prefLabel "Dossier"@nl ;
+  sh:property esdm:Dossier-stakeholder ;
+  sh:property esdm:Dossier-subject ;
+  sh:property esdm:Dossier-tijdlijn ;
+  sh:property esdm:Dossier-zaak ;
+.
+esdm:Dossier-stakeholder
+  a sh:PropertyShape ;
+  sh:path esdm:stakeholder ;
+  sh:class esdm:Stakeholder ;
+  sh:group esdm:ZaakPropertyGroup ;
+  sh:name "Stakeholder" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Dossier-subject
+  a sh:PropertyShape ;
+  sh:path dcterms:subject ;
+  sh:class skos:Concept ;
+  sh:group esdm:ZaakPropertyGroup ;
+  sh:name "Onderwerp" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Dossier-tijdlijn
+  a sh:PropertyShape ;
+  sh:path esdm:tijdlijn ;
+  sh:class esdm:Tijdlijn ;
+  sh:group esdm:ZaakPropertyGroup ;
+  sh:name "Tijdlijn" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Dossier-zaak
+  a sh:PropertyShape ;
+  sh:path esdm:zaak ;
+  sh:class esdm:Zaak ;
+  sh:group esdm:ZaakPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Zaak" ;
+  sh:nodeKind sh:IRI ;
+  sh:values [
+      sh:path [
+          sh:inversePath esdm:dossier ;
+        ] ;
+    ] ;
+.
+esdm:ESDM_Gegevens
+  a sh:PropertyGroup ;
+  rdfs:label "ESDM Gegevens"@nl ;
+  skos:prefLabel "ESDM Gegevens"@nl ;
+.
+esdm:Emailuitwisseling
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Emailuitwisseling"@nl ;
+  rdfs:subClassOf esdm:Gebeurtenis ;
+  skos:prefLabel "Emailuitwisseling"@nl ;
+  sh:property esdm:Emailuitwisseling-afzender ;
+  sh:property esdm:Emailuitwisseling-antwoord ;
+  sh:property esdm:Emailuitwisseling-ontvanger ;
+  sh:property esdm:Emailuitwisseling-volgende ;
+.
+esdm:Emailuitwisseling-afzender
+  a sh:PropertyShape ;
+  sh:path esdm:afzender ;
+  sh:class esdm:Actor ;
+  sh:group esdm:ZaakPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Afzender" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Emailuitwisseling-antwoord
+  a sh:PropertyShape ;
+  sh:path esdm:antwoord ;
+  sh:class esdm:Emailuitwisseling ;
+  sh:group esdm:ZaakPropertyGroup ;
+  sh:name "Antwoord" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Emailuitwisseling-ontvanger
+  a sh:PropertyShape ;
+  sh:path esdm:ontvanger ;
+  sh:class esdm:Actor ;
+  sh:group esdm:ZaakPropertyGroup ;
+  sh:minCount 1 ;
+  sh:name "Ontvanger" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Emailuitwisseling-volgende
+  a sh:PropertyShape ;
+  sh:path esdm:volgende ;
+  sh:class esdm:Emailuitwisseling ;
+  sh:group esdm:ZaakPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Volgende" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Gebeurtenis
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Gebeurtenis"@nl ;
+  rdfs:subClassOf <http://schema.org/Event> ;
+  rdfs:subClassOf skos:Concept ;
+  skos:prefLabel "Gebeurtenis"@nl ;
+  sh:property esdm:Gebeurtenis-coverage ;
+  sh:property esdm:Gebeurtenis-date ;
+  sh:property esdm:Gebeurtenis-volgende ;
+.
+esdm:Gebeurtenis-coverage
+  a sh:PropertyShape ;
+  sh:path dcterms:coverage ;
+  sh:class <http://schema.org/Place> ;
+  sh:group esdm:ZaakPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Plaats" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Gebeurtenis-date
+  a sh:PropertyShape ;
+  sh:path dcterms:date ;
+  sh:datatype xsd:dateTime ;
+  sh:group esdm:ZaakPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Datum" ;
+.
+esdm:Gebeurtenis-volgende
+  a sh:PropertyShape ;
+  sh:path esdm:volgende ;
+  sh:class esdm:Gebeurtenis ;
+  sh:group esdm:ZaakPropertyGroup ;
+  sh:name "Volgende gebeurtenis" ;
+  sh:nodeKind sh:IRI ;
 .
 esdm:Medewerker
   a owl:Class ;
@@ -71,7 +221,7 @@ esdm:Stakeholder
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:label "Stakeholder"@nl ;
-  rdfs:subClassOf <http://schema.org/Person> ;
+  rdfs:subClassOf esdm:Actor ;
   skos:prefLabel "Stakeholder"@nl ;
 .
 esdm:Taxonomy-creator
@@ -80,12 +230,154 @@ esdm:Taxonomy-creator
   sh:datatype xsd:anyURI ;
   sh:name "Auteur" ;
 .
+esdm:Telefoongesprek
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Telefoongesprek"@nl ;
+  rdfs:subClassOf esdm:Gebeurtenis ;
+  skos:prefLabel "Telefoongesprek"@nl ;
+.
+esdm:Tijdlijn
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Tijdlijn"@nl ;
+  rdfs:subClassOf skos:Concept ;
+  skos:prefLabel "Tijdlijn"@nl ;
+  sh:property esdm:Tijdlijn-gebeurtenis ;
+.
+esdm:Tijdlijn-gebeurtenis
+  a sh:PropertyShape ;
+  sh:path esdm:gebeurtenis ;
+  sh:class esdm:Gebeurtenis ;
+  sh:group esdm:ZaakPropertyGroup ;
+  sh:name "Gebeurtenis" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Zaak
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Zaak"@nl ;
+  rdfs:subClassOf skos:ConceptScheme ;
+  skos:prefLabel "Zaak"@nl ;
+  sh:property esdm:Zaak-dossier ;
+  sh:property esdm:Zaak-sameAs ;
+  sh:property esdm:Zaak-stakeholder ;
+  sh:property esdm:Zaak-subject ;
+  sh:property esdm:Zaak-zaakNummer ;
+.
+esdm:Zaak-dossier
+  a sh:PropertyShape ;
+  sh:path esdm:dossier ;
+  sh:class esdm:Dossier ;
+  sh:group esdm:ZaakPropertyGroup ;
+  sh:name "Dossier" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Zaak-sameAs
+  a sh:PropertyShape ;
+  sh:path owl:sameAs ;
+  sh:class esdm:Zaak ;
+  sh:group esdm:ZaakPropertyGroup ;
+  sh:name "Zelfde zaak" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Zaak-stakeholder
+  a sh:PropertyShape ;
+  sh:path esdm:stakeholder ;
+  sh:class esdm:Stakeholder ;
+  sh:group esdm:ZaakPropertyGroup ;
+  sh:name "Stakeholder" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Zaak-subject
+  a sh:PropertyShape ;
+  sh:path dcterms:subject ;
+  sh:class skos:Concept ;
+  sh:group esdm:ZaakPropertyGroup ;
+  sh:minCount 1 ;
+  sh:name "Onderwerp" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Zaak-zaakNummer
+  a sh:PropertyShape ;
+  sh:path esdm:zaakNummer ;
+  sh:datatype xsd:string ;
+  sh:group esdm:ZaakPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Zaaknummer" ;
+.
+esdm:ZaakPropertyGroup
+  a sh:PropertyGroup ;
+  rdfs:label "Zaakgegevens"@nl ;
+  skos:prefLabel "Zaakgegevens"@nl ;
+.
+esdm:afzender
+  a owl:ObjectProperty ;
+  rdfs:label "afzender"@nl ;
+  rdfs:range esdm:Actor ;
+.
 esdm:agentschap
   a owl:ObjectProperty ;
   rdfs:domain esdm:Ministerie ;
   rdfs:label "agentschap"@nl ;
   rdfs:range esdm:Agentschap ;
   skos:prefLabel "agentschap"@nl ;
+.
+esdm:antwoord
+  a owl:ObjectProperty ;
+  rdfs:label "antwoord"@nl ;
+.
+esdm:beller
+  a owl:ObjectProperty ;
+  rdfs:domain esdm:Telefoongesprek ;
+  rdfs:label "beller"@nl ;
+  rdfs:range <http://schema.org/Person> ;
+.
+esdm:dossier
+  a owl:ObjectProperty ;
+  rdfs:label "dossier"@nl ;
+  rdfs:range esdm:Dossier ;
+.
+esdm:gebelde
+  a owl:ObjectProperty ;
+  rdfs:domain esdm:Telefoongesprek ;
+  rdfs:label "gebelde"@nl ;
+  rdfs:range <http://schema.org/Person> ;
+.
+esdm:gebeurtenis
+  a owl:ObjectProperty ;
+  rdfs:label "gebeurtenis"@nl ;
+  rdfs:range esdm:Gebeurtenis ;
+.
+esdm:ontvanger
+  a owl:ObjectProperty ;
+  rdfs:label "ontvanger"@nl ;
+  rdfs:range esdm:Actor ;
+.
+esdm:stakeholder
+  a owl:ObjectProperty ;
+  rdfs:label "stakeholder"@nl ;
+  rdfs:range esdm:Stakeholder ;
+.
+esdm:tijdlijn
+  a owl:ObjectProperty ;
+  rdfs:label "tijdlijn"@nl ;
+  rdfs:range esdm:Tijdlijn ;
+.
+esdm:volgende
+  a owl:ObjectProperty ;
+  rdfs:label "volgende"@nl ;
+.
+esdm:zaak
+  a owl:ObjectProperty ;
+  rdfs:label "zaak"@nl ;
+  rdfs:range esdm:Zaak ;
+.
+esdm:zaakNummer
+  a owl:DatatypeProperty ;
+  rdfs:domain esdm:Zaak ;
+  rdfs:label "zaaknummer"@nl ;
 .
 bedrijven:Ordina
   a esdm:Bedrijf ;
@@ -104,16 +396,21 @@ ovrh:Rijkswaterstaat
   skos:prefLabel "Rijkswaterstaat"@nl ;
 .
 <http://schema.org/Corporation>
-a owl:Class ;
+  a owl:Class ;
   a sh:NodeShape ;
 .
 <http://schema.org/GovernmentOrganization>
-a owl:Class ;
+  a owl:Class ;
   a sh:NodeShape ;
 .
 <http://schema.org/Organization>
-a owl:Class ;
+  a owl:Class ;
   a sh:NodeShape ;
+  rdfs:subClassOf esdm:Stakeholder ;
+.
+<http://schema.org/Person>
+  a sh:NodeShape ;
+  rdfs:subClassOf esdm:Stakeholder ;
 .
 owl:Thing
   a sh:NodeShape ;
@@ -123,6 +420,7 @@ owl:Thing-subject
   a sh:PropertyShape ;
   sh:path dcterms:subject ;
   sh:class skos:Concept ;
+  sh:group esdm:ESDM_Gegevens ;
   sh:name "Grondslag" ;
   sh:nodeKind sh:IRI ;
 .
@@ -135,15 +433,17 @@ skos:Concept-related
   a sh:PropertyShape ;
   sh:path skos:related ;
   sh:class skos:Concept ;
+  sh:group esdm:ESDM_Gegevens ;
   sh:name "Gerelateerd" ;
 .
 skos:Concept-source
   a sh:PropertyShape ;
   sh:path dc:source ;
   sh:datatype xsd:anyURI ;
+  sh:group esdm:ESDM_Gegevens ;
   sh:name "Bron" ;
 .
 skos:ConceptScheme
-a owl:Class ;
+  a owl:Class ;
   a sh:NodeShape ;
 .

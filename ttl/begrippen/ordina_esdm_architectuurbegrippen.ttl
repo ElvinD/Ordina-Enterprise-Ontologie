@@ -1319,6 +1319,7 @@ esdm_begrip:DataLake
   skos:note "<div lang=\"nl\">Het probleem met het <em>Data Warehouse </em>concept is de grote hoeveelheid benodigde verwerking die nodig is om data te structureren (via o.a. <em>Operational Data Stores</em>), zodat analyse plaatsvindt op het opgeschoonde data. Dit heeft geleid tot het ontstaan van <em>Data Lakes</em>, wat net zoals een <em>Data Warehouse </em>een gecentraliseerde opslagplaats is voor gegevens. Het verschil zit in het feit dat <em>Data Lakes, </em>ten opzichte van <em>Data Warehouses</em>, ook ruwe en ongestructureerde data (o.a. social media feeds, clickstreams, server logs, sensor data) opslaat zonder deze te transformeren of te structureren. Op deze data kan analytics, mining, reporting, prediction, machine learning and visualization worden toegepast. Waar <em>Data Warehouses </em>meer richten op de doelstellingen van besluitvormers op middel- en topmanagement, zijn <em>Data Lakes </em>meer gericht op data scientists (Panoply, 2020)</div>"^^rdf:HTML ;
   skos:prefLabel "Data lake"@nl ;
   skos:related esdm_begrip:Datawarehouse ;
+  skos:related esdm_begrip:LakehouseArchitecture ;
   skos:related esdm_begrip:OngestructureerdeData ;
   skos:related esdm_begrip:StreamingData ;
 .
@@ -1497,17 +1498,28 @@ esdm_begrip:Datatransport
 esdm_begrip:Datawarehouse
   a skos:Concept ;
   dc:source "https://en.wikipedia.org/wiki/Data_warehouse"^^xsd:anyURI ;
+  dc:source "https://nl.wikipedia.org/wiki/Datawarehouse"^^xsd:anyURI ;
   skos:altLabel "DWH"@nl ;
+  skos:altLabel "Data warehouse"@en ;
   skos:altLabel "Enterprise data warehouse (EDW)"@en ;
   skos:broader esdm_begrip:DataRepository ;
   skos:definition """<div lang=\"nl\"><p>Een datawarehouse is een database voor het centraal opslaan en verwerken van gestructureerde data uit verschillende onderliggende databases. Deze onderliggende databases horen bij meerdere operationele systemen, zoals ERP software, CRM software, HRM software of andere soorten bedrijfssoftware. Bij het dagelijkse gebruik van de operationele systemen, benutten deze alleen hun eigen databases. Als er tussen verschillende bedrijfsprocessen met behulp van data verbanden gelegd of conclusies getrokken moeten worden, dan lukt dat niet meer door gebruik te maken van de afzonderlijke databases. De oplossing is dan om alle data samen te voegen in een centrale database: het datawarehouse.</p>
 <p>De databases van operationele systemen bevatten gestructureerde data. Kenmerk daarvan is dat deze data in tabelachtige structuren opgeslagen kan worden. Ook het resultaat van de samenvoeging, het datawarehouse, is weer een database met gestructureerde data. Met hulp van&nbsp;<a href=\"https://www.ictinformatiecentrum.nl/bi-software\"><u>business intelligence</u></a>&nbsp;en&nbsp;<a href=\"https://www.ictinformatiecentrum.nl/data-analytics\"><u>data analytics</u></a>&nbsp;kunt u waardevolle inzichten verwerven uit deze data en op basis daarvan beslissingen nemen. Een goed datawarehouse draagt hierdoor in grote mate bij aan het succes van een datagedreven organisatie.</p></div>"""^^rdf:HTML ;
+  skos:definition """<div lang=\"nl\"><p>Een&nbsp;<strong>datawarehouse</strong>&nbsp;(vaak afgekort tot DWH) is een&nbsp;<a class=\"mw-redirect\" title=\"Gegevensverzameling\" href=\"https://nl.wikipedia.org/wiki/Gegevensverzameling\">gegevensverzameling</a>&nbsp;die in een dusdanige vorm is gebracht dat terugkerende en ad-hocvragen in relatief korte tijd beantwoord kunnen worden zonder dat de bronsystemen zelf daardoor overmatig belast worden. Hierin onderscheidt een datawarehouse zich van een standaard&nbsp;<a title=\"Database\" href=\"https://nl.wikipedia.org/wiki/Database\">database</a>. De betreffende gegevens zijn afkomstig van en worden op geautomatiseerde wijze onttrokken aan de bronsystemen. Gegevens kunnen in een datawarehouse niet worden ingevoerd of aangepast door gebruikers zelf. Als aanpassing van gegevens nodig is dan dient dit &ograve;f in de bronsystemen &ograve;f in het&nbsp;<a title=\"Extraction, Transformation and Load\" href=\"https://nl.wikipedia.org/wiki/Extraction,_Transformation_and_Load\">ETL</a>&nbsp;proces (door aanpassing van de daarin vastgelegde regels) plaats te vinden.</p>
+<p>Een datawarehouse kent de volgende kenmerken:</p>
+<ul>
+<li>thematisch ingericht</li>
+<li>ge&iuml;ntegreerd</li>
+<li>geordend in de tijd</li>
+<li>bevroren</li>
+</ul></div>"""^^rdf:HTML ;
   skos:definition "Een integratievorm van vooraf gestructureerde data ten behoeve van het integreren van data ten behoeve van een concrete, vooraf gedefinieerde vraag."@nl ;
   skos:note "<p lang=\"nl\">Een <em>Data Warehouse</em> is een opslagarchitectuur die is ontworpen om gegevens te verwerken en te analyseren die zijn ge&euml;xtraheerd uit bronsystemen met behulp van <em>ETL tooling</em> en opgeschoond/ge&iuml;ntegreerd (m.b.v. data consolidatie en virtualisatie/federatie) in een <em>Operational Data Store</em>. De <em>Data Warehouse</em> verwerkt en aggregeert deze data tot een vorm zodat het geschikt is voor analyse, mining en rapportage. Echter, soms wordt er ook gebruik gemaakt van <em>Data Marts</em>, welke eindgebruikers toegang biedt tot segmenten van een <em>Data Warehouse (Medium, 2019)</em>.</p>"^^rdf:HTML ;
   skos:prefLabel "Datawarehouse"@nl ;
   skos:related esdm_begrip:DataLake ;
   skos:related esdm_begrip:ELT ;
   skos:related esdm_begrip:ETL ;
+  skos:related esdm_begrip:LakehouseArchitecture ;
   skos:related esdm_begrip:Reporting ;
 .
 esdm_begrip:Dienstverlener
@@ -2728,6 +2740,43 @@ esdm_begrip:LMDB
   a skos:Concept ;
   skos:broader esdm_begrip:KeyValueDatabase ;
   skos:prefLabel "LMDB" ;
+.
+esdm_begrip:LakehouseArchitecture
+  a skos:Concept ;
+  dc:source "https://databricks.com/glossary/data-lakehouse"^^xsd:anyURI ;
+  dc:source "https://techcommunity.microsoft.com/t5/analytics-on-azure/simplify-your-lakehouse-architecture-with-azure-databricks-delta/ba-p/2027272"^^xsd:anyURI ;
+  dc:source "https://www.snowflake.com/guides/what-data-lakehouse"^^xsd:anyURI ;
+  skos:broader esdm_begrip:DataArchitectuurDesignPrincipes ;
+  skos:definition """<div lang=\"en\"><p><span lang=\"EN-US\" data-contrast=\"none\">A data lakehouse is a data solution concept that combines elements of the&nbsp;</span><a href=\"https://www.snowflake.com/workloads/data-warehouse-modernization/\" target=\"_blank\" rel=\"noreferrer noopener\"><span lang=\"EN-US\" data-contrast=\"none\"><span data-ccp-charstyle=\"Hyperlink\">data warehouse</span></span></a><span lang=\"EN-US\" data-contrast=\"none\">&nbsp;with those of the&nbsp;</span><a href=\"https://www.snowflake.com/workloads/data-lake/\" target=\"_blank\" rel=\"noreferrer noopener\"><span lang=\"EN-US\" data-contrast=\"none\"><span data-ccp-charstyle=\"Hyperlink\">data lake</span></span></a><span lang=\"EN-US\" data-contrast=\"none\">. Data&nbsp;lakehouses&nbsp;implement data warehouses&rsquo; data structures and management features for data lakes, which are typically more cost-effective for data storage. Data&nbsp;lakehouses&nbsp;are useful to data scientists as they enable machine learning and business intelligence.</span><span data-ccp-props=\"{&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:259}\">&nbsp;</span></p>
+<h2 lang=\"EN-US\"><span lang=\"EN-US\" data-contrast=\"none\"><span data-ccp-parastyle=\"heading 2\">FEATURES OF A DATA LAKEHOUSE</span></span><span data-ccp-props=\"{&quot;201341983&quot;:0,&quot;335559738&quot;:40,&quot;335559739&quot;:0,&quot;335559740&quot;:259}\">&nbsp;</span></h2>
+<p lang=\"EN-US\"><span lang=\"EN-US\" data-contrast=\"none\">As a&nbsp;</span><a href=\"https://resources.snowflake.com/youtube-all-videos/data-innovation-summit-a-cloud-lakehouse-in-the-heart-of-a-lean-analytics-function\" target=\"_blank\" rel=\"noreferrer noopener\"><span lang=\"EN-US\" data-contrast=\"none\"><span data-ccp-charstyle=\"Hyperlink\">combination of data warehouses and data lakes</span></span></a><span lang=\"EN-US\" data-contrast=\"none\">, data&nbsp;lakehouses&nbsp;feature elements of both data platforms. Namely:</span><span data-ccp-props=\"{&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:259}\">&nbsp;</span></p>
+<ul>
+<li data-aria-level=\"1\" data-aria-posinset=\"1\" data-font=\"Symbol\" data-leveltext=\"\" data-listid=\"1\">
+<p lang=\"EN-US\"><span lang=\"EN-US\" data-contrast=\"none\">Concurrent reading and writing of data</span><span data-ccp-props=\"{&quot;134233279&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:259}\">&nbsp;</span></p>
+</li>
+<li data-aria-level=\"1\" data-aria-posinset=\"2\" data-font=\"Symbol\" data-leveltext=\"\" data-listid=\"1\">
+<p lang=\"EN-US\"><span lang=\"EN-US\" data-contrast=\"none\">Schema support with mechanisms for data governance</span><span data-ccp-props=\"{&quot;134233279&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:259}\">&nbsp;</span></p>
+</li>
+<li data-aria-level=\"1\" data-aria-posinset=\"3\" data-font=\"Symbol\" data-leveltext=\"\" data-listid=\"1\">
+<p lang=\"EN-US\"><span lang=\"EN-US\" data-contrast=\"none\">Direct access to source data</span><span data-ccp-props=\"{&quot;134233279&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:259}\">&nbsp;</span></p>
+</li>
+<li data-aria-level=\"1\" data-aria-posinset=\"4\" data-font=\"Symbol\" data-leveltext=\"\" data-listid=\"1\">
+<p lang=\"EN-US\"><span lang=\"EN-US\" data-contrast=\"none\">Separation of storage and compute resources</span><span data-ccp-props=\"{&quot;134233279&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:259}\">&nbsp;</span></p>
+</li>
+<li data-aria-level=\"1\" data-aria-posinset=\"5\" data-font=\"Symbol\" data-leveltext=\"\" data-listid=\"1\">
+<p lang=\"EN-US\"><span lang=\"EN-US\" data-contrast=\"none\">Standardized storage formats</span><span data-ccp-props=\"{&quot;134233279&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:259}\">&nbsp;</span></p>
+</li>
+<li data-aria-level=\"1\" data-aria-posinset=\"6\" data-font=\"Symbol\" data-leveltext=\"\" data-listid=\"1\">
+<p lang=\"EN-US\"><span lang=\"EN-US\" data-contrast=\"none\">Support for structured and semi-structured data types, including IoT data</span><span data-ccp-props=\"{&quot;134233279&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:259}\">&nbsp;</span></p>
+</li>
+<li data-aria-level=\"1\" data-aria-posinset=\"7\" data-font=\"Symbol\" data-leveltext=\"\" data-listid=\"1\">
+<p lang=\"EN-US\"><span lang=\"EN-US\" data-contrast=\"none\">End-to-end streaming</span><span data-ccp-props=\"{&quot;134233279&quot;:true,&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:259}\">&nbsp;</span></p>
+</li>
+</ul></div>"""^^rdf:HTML ;
+  skos:definition "<div lang=\"en\">A data lakehouse is a new, open data management architecture that combines the flexibility, cost-efficiency, and scale of data lakes with the data management and ACID transactions of data warehouses, enabling business intelligence (BI) and machine learning (ML) on all data.</div>"^^rdf:HTML ;
+  skos:prefLabel "Lakehouse Architecture"@en ;
+  skos:related esdm_begrip:DataLake ;
+  skos:related esdm_begrip:Datawarehouse ;
 .
 esdm_begrip:LambdaArchitecture
   a skos:Concept ;
