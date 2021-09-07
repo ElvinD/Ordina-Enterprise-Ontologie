@@ -1,4 +1,5 @@
 # baseURI: http://ordina.nl/esdm
+# imports: http://ordina.nl/esdm-implementatie
 # imports: http://purl.org/dc/elements/1.1/
 # imports: http://purl.org/dc/terms/
 # imports: http://topbraid.org/schema/schema-single-range
@@ -31,6 +32,7 @@ evnprojects:Taxonomy
 <http://ordina.nl/esdm>
   a owl:Ontology ;
   rdfs:label "Ontologie ESDM Ordina"@nl ;
+  owl:imports <http://ordina.nl/esdm-implementatie> ;
   owl:imports dc: ;
   owl:imports dcterms: ;
   owl:imports <http://topbraid.org/schema/schema-single-range> ;

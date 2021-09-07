@@ -1,0 +1,57 @@
+# baseURI: http://ordina.nl/esdm-implementatie
+# imports: http://ordina.nl/esdm
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
+# imports: http://www.w3.org/2004/02/skos/core
+# prefix: esdm_i
+
+@prefix esdm: <http://ordina.nl/esdm#> .
+@prefix esdm_i: <http://ordina.nl/esdm-implementatie#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ordina.nl/esdm-implementatie>
+  a owl:Ontology ;
+  owl:imports <http://ordina.nl/esdm> ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+  owl:imports <http://purl.org/dc/terms/> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+  sh:declare [
+      a sh:PrefixDeclaration ;
+      sh:namespace "http://www.w3.org/2004/02/skos/core#"^^xsd:anyURI ;
+      sh:prefix "skos" ;
+    ] ;
+  sh:declare [
+      sh:namespace "http://www.w3.org/2004/02/skos/core#" ;
+      sh:prefix "skos" ;
+    ] ;
+.
+esdm_i:aantalBegrippen
+  a owl:DatatypeProperty ;
+  rdfs:label "Aantal begrippen"@nl ;
+  skos:prefLabel "Aantal begrippen"@nl ;
+.
+skos:ConceptScheme
+  sh:property skos:ConceptScheme-aantalBegrippen ;
+.
+skos:ConceptScheme-aantalBegrippen
+  a sh:PropertyShape ;
+  sh:path esdm_i:aantalBegrippen ;
+  sh:datatype xsd:integer ;
+  sh:group esdm:ESDM_Gegevens ;
+  sh:maxCount 1 ;
+  sh:name "Aantal begrippen" ;
+  sh:values [
+      sh:select """
+		PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+		SELECT  (count (?childConcepts) as ?totalConcepts) {
+			?this skos:hasTopConcept ?concepts .
+		    ?concepts ^skos:broader* ?childConcepts .
+		} GROUP BY ?totalConcepts""" ;
+    ] ;
+.
