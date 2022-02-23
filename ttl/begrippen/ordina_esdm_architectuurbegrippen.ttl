@@ -95,6 +95,17 @@ esdm_begrip:AccessControlList
   skos:prefLabel "Access Control List"@en ;
   skos:related esdm_begrip:POSIX ;
 .
+esdm_begrip:AccessPoint
+  a skos:Concept ;
+  dc:source "https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/networking-basics.html#~access-points"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Netwerkinfrastructuur ;
+  skos:definition """<div lang=\"en\">An access point* allows devices to connect to the wireless network without cables. A wireless network makes it easy to bring new devices online and provides flexible support to mobile workers.<br />
+<p>An access point acts like an amplifier for your network. While a router provides the bandwidth, an access point extends that bandwidth so that the network can support many devices, and those devices can access the network from farther away.</p>
+<p>But an access point does more than simply extend Wi-Fi. It can also give useful data about the devices on the network, provide proactive security, and serve many other practical purposes.</p>
+<p>*Access points support different IEEE standards. Each standard is an amendment that was ratified over time. The standards operate on varying frequencies, deliver different bandwidth, and support different numbers of channels.</p>
+</div>"""^^rdf:HTML ;
+  skos:prefLabel "Access Point"@en ;
+.
 esdm_begrip:Accessibility
   a skos:Concept ;
   dc:source "https://www.w3.org/standards/webdesign/accessibility"^^xsd:anyURI ;
@@ -148,6 +159,24 @@ esdm_begrip:Afnemer
   skos:related esdm_begrip:Leverancier ;
   skos:related esdm_begrip:ServiceLevelAgreement ;
 .
+esdm_begrip:Agile
+  a skos:Concept ;
+  skos:broader esdm_begrip:WerkwijzenProcessen ;
+  skos:prefLabel "Agile"@en ;
+.
+esdm_begrip:AlgemeneBedrijfsinformatie
+  a skos:Concept ;
+  dc:source "https://www.vainu.com/nl/blog/bedrijfsinformatie/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Bedrijfsinformatie ;
+  skos:definition """<div lang=\"nl\"><p>Algemene&nbsp;<a href=\"https://www.vainu.com/nl/blog/firmographics-en-technographics-sales-prospecting/\">bedrijfsinformatie</a>&nbsp;betreft de basis informatie over een bedrijf. Hierbij kun je denken aan industrie, de locatie en bedrijfsgrootte. Zoals je mensen kunt analyseren op basis van demografie, kun je algemene bedrijfsinformatie gebruiken voor het analyseren van bedrijven.</p>
+<h5>Vainu&rsquo;s algemene bedrijfsinformatie:</h5>
+<p><strong>Industrie:</strong>&nbsp;Software, SaaS, Cloud<br /><strong>Locatie:</strong>&nbsp;Helsinki, Finland(hq)<br /><strong>Bedrijfsgrootte:</strong>&nbsp;180 werknemers, 10 miljoen US dollar omzet in 2017</p>
+<p>Algemene bedrijfsinformatie is waardevol voor salesmensen die zich op bedrijven richten in een specifieke industrie of met een bepaalde grootte. Het geeft je de mogelijkheid om snel veelbelovende prospects uit een grotere lijst te filteren. Maar voor jou, als salespersoon heb je aan enkel algemene bedrijfsinformatie data niet genoeg om te bepalen of een bedrijf een goede prospect is of niet. Je wilt meer weten.</p></div>"""^^rdf:HTML ;
+  skos:example """<div lang=\"nl\"><p>Laten wij het volgende voorbeeld nemen: Bedrijf A met $10 miljoen in omzet zit in een snelle groeifase en zal grote bedragen investeren resources om hun groei te ondersteunen. Tegelijkertijd heeft Bedrijf B dezelfde $10 miljoen omzet, maar zit het in een krimp. Zo zie dat bedrijven met overeenkomende generieke karakteristieken, toch hele andere situaties spelen.</p>
+<p>Afhankelijk van jouw propositie, wil je waarschijnlijk&nbsp;<strong>alleen contact zoeken met Bedrijf A of Bedrijf B.</strong></p>
+<p>Soms vind je in bronnen met algemene bedrijfsinformatie ook andere variabelen zoals prestatie (groei, kredietwaardigheid), status en hi&euml;rarchie (juridische status, relaties tussen de ene organisatie en de andere), leeftijd, eigendom en positie (marktaandeel, positie in de sector).</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Algemene bedrijfsinformatie"@nl ;
+.
 esdm_begrip:AllegroGraph
   a skos:Concept ;
   skos:broader esdm_begrip:GraphDatabase ;
@@ -190,6 +219,7 @@ esdm_begrip:ApacheHadoop
   skos:definition "The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models. It is designed to scale up from single servers to thousands of machines, each offering local computation and storage. Rather than rely on hardware to deliver high-availability, the library itself is designed to detect and handle failures at the application layer, so delivering a highly-available service on top of a cluster of computers, each of which may be prone to failures."@en ;
   skos:prefLabel "Apache Hadoop"@en ;
   skos:related esdm_begrip:AzureDataLakeStorage ;
+  skos:relatedMatch esdm_begrip:HDInsight ;
 .
 esdm_begrip:ApacheIgnite
   a skos:Concept ;
@@ -251,6 +281,13 @@ esdm_begrip:ApacheSolr
   skos:prefLabel "Apache Solr"@en ;
   skos:related esdm_begrip:PoolPartyGraphSearchServer ;
 .
+esdm_begrip:ApacheSpark
+  a skos:Concept ;
+  dc:source "https://spark.apache.org/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:DataAnalyseSoftware ;
+  skos:definition "<div lang=\"en\">Apache Spark<span class=\"tm\">&trade;</span>&nbsp;is a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters.</div>"^^rdf:HTML ;
+  skos:prefLabel "Apache Spark"@en ;
+.
 esdm_begrip:AppServer
   a skos:Concept ;
   skos:broader esdm_begrip:Applicatieserver ;
@@ -296,6 +333,13 @@ esdm_begrip:ArangoDB
   skos:broader esdm_begrip:KeyValueDatabase ;
   skos:broader esdm_begrip:MultiModelDatabase ;
   skos:prefLabel "ArangoDB"@nl ;
+.
+esdm_begrip:ArchitecturalEnablers
+  a skos:Concept ;
+  skos:broader esdm_begrip:SafeEnablers ;
+  skos:definition """These are created to build the Architectural Runway, which allows smoother and faster development. 
+"""@en ;
+  skos:prefLabel "Architectural enablers"@en ;
 .
 esdm_begrip:Architectuur
   a skos:Concept ;
@@ -641,6 +685,16 @@ esdm_begrip:AzureIntegrationRuntime
   skos:related esdm_begrip:AzureActivity ;
   skos:related esdm_begrip:AzureLinkedService ;
 .
+esdm_begrip:AzureIoTCentral
+  a skos:Concept ;
+  skos:broader esdm_begrip:MicrosoftAzure ;
+  skos:prefLabel "Azure IoT Central"@en ;
+.
+esdm_begrip:AzureIoTHub
+  a skos:Concept ;
+  skos:broader esdm_begrip:MicrosoftAzure ;
+  skos:prefLabel "Azure IoT Hub"@en ;
+.
 esdm_begrip:AzureKeyVault
   a skos:Concept ;
   skos:broader esdm_begrip:MicrosoftAzure ;
@@ -723,7 +777,9 @@ esdm_begrip:AzureResourceGroup
 .
 esdm_begrip:AzureResourceManager
   a skos:Concept ;
+  dc:source "https://docs.microsoft.com/nl-nl/azure/azure-resource-manager/management/overview"^^xsd:anyURI ;
   skos:broader esdm_begrip:MicrosoftAzure ;
+  skos:definition "<div lang=\"nl\">Azure Resource Manager is de implementatie- en beheersservice voor Azure. Het biedt een beheerlaag waarmee u resources in uw Azure-account kunt maken, bijwerken en verwijderen. U kunt beheerfuncties gebruiken, zoals toegangscontrole, vergrendelingen en tags, om uw resources te beveiligen en te organiseren na de implementatie.</div>"^^rdf:HTML ;
   skos:prefLabel "Azure Resource Manager"@en ;
 .
 esdm_begrip:AzureSQL
@@ -732,6 +788,11 @@ esdm_begrip:AzureSQL
   skos:broader esdm_begrip:RelationeleDatabase ;
   skos:prefLabel "Azure SQL"@en ;
   skos:related esdm_begrip:Publish ;
+.
+esdm_begrip:AzureSphere
+  a skos:Concept ;
+  skos:broader esdm_begrip:MicrosoftAzure ;
+  skos:prefLabel "Azure Sphere"@en ;
 .
 esdm_begrip:AzureStorage
   a skos:Concept ;
@@ -885,6 +946,13 @@ esdm_begrip:BatchLayer
 The master dataset is the source of truth. Even if you were to lose all your serving layer datasets and speed layer datasets, you could re-construct your application from the master dataset. The batch layer also pre-computes the master dataset into batch views so that queries can be resolved with low-latency. <br />Because our master dataset is continually growing, we must have a strategy for managing our batch views when new data becomes available. Re-computation algorithms: throwing away the old batch views and re-computing functions over the entire master dataset. Incremental algorithms: updating the views directly when new data arrives.</div>"""^^rdf:HTML ;
   skos:prefLabel "Batch layer"@en ;
 .
+esdm_begrip:Bedrijfsinformatie
+  a skos:Concept ;
+  skos:broader esdm_begrip:Informatie ;
+  skos:definition "Bedrijfsinformatie bevat data over de bedrijfskarakteristieken, behoeften en beweegredenen van een bedrijf. Deze informatie is onder te verdelen in interne operationele informatie uit je CRM systeem en externe informatie, zoals bedrijfseigenschappen, technologieën en koopsignalen."@nl ;
+  skos:prefLabel "Bedrijfsinformatie"@nl ;
+  skos:related esdm_begrip:DataAnalyse ;
+.
 esdm_begrip:Bedrijfssoftware
   a skos:Concept ;
   skos:broader esdm_begrip:SoftwareSoorten ;
@@ -958,6 +1026,18 @@ esdm_begrip:Boekhoudsoftware
 In de praktijk bieden de meeste pakketten meer functionaliteit doordat ook functies voor subadministraties (debiteuren, crediteuren en/of voorraad) aanwezig zijn. Verder kunnen gelieerde functies als telebankieren, consolidatie, budgettering, relatiebeheer, vaste activa, inkoop, verkoop, projecten of productie naar voren komen."""@nl ;
   skos:prefLabel "Boekhoudsoftware"@nl ;
 .
+esdm_begrip:BorderGatewayProtocol
+  a skos:Concept ;
+  dc:source "https://nl.wikipedia.org/wiki/Border_Gateway_Protocol"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Protocol ;
+  skos:definition """<div lang=\"nl\"><p>Het&nbsp;<strong>Border Gateway Protocol (BGP)</strong>&nbsp;is het belangrijkste&nbsp;<a class=\"new\" title=\"Routeringsprotocol (de pagina bestaat niet)\" href=\"https://nl.wikipedia.org/w/index.php?title=Routeringsprotocol&amp;action=edit&amp;redlink=1\">routeringsprotocol</a>&nbsp;van het&nbsp;<a title=\"Internet\" href=\"https://nl.wikipedia.org/wiki/Internet\">internet</a>: het wordt gebruikt om verkeer tussen verschillende providers te routeren.<sup id=\"cite_ref-1\" class=\"reference\"><a href=\"https://nl.wikipedia.org/wiki/Border_Gateway_Protocol#cite_note-1\">[1]</a></sup>&nbsp;Binnen het netwerk van een provider (een zogenaamd&nbsp;<a title=\"Autonoom systeem (computernetwerk)\" href=\"https://nl.wikipedia.org/wiki/Autonoom_systeem_(computernetwerk)\">autonoom systeem</a>) kiest de provider voor een bepaald&nbsp;<em>intra</em>-routeringsprotocol zoals&nbsp;<a class=\"mw-redirect\" title=\"OSPF\" href=\"https://nl.wikipedia.org/wiki/OSPF\">OSPF</a>&nbsp;of&nbsp;<a title=\"Routing Information Protocol\" href=\"https://nl.wikipedia.org/wiki/Routing_Information_Protocol\">Routing Information Protocol</a>, maar om routes uit te wisselen met andere providers wordt exclusief gebruikgemaakt van BGP. Het is dus niet zo dat BGP het meest gebruikte routeringsprotocol is, maar zonder BGP zou er geen internet zijn. Dan was er slechts een verzameling losse netwerken die niet met elkaar kunnen communiceren.</p>
+<p>BGP werkt door een tabel van IP-netwerken of 'prefixes' bij te houden die de netwerkbereikbaarheid tussen autonome systemen aangeeft. Het is beschreven als een&nbsp;<a class=\"new\" title=\"Path vector protocol (de pagina bestaat niet)\" href=\"https://nl.wikipedia.org/w/index.php?title=Path_vector_protocol&amp;action=edit&amp;redlink=1\">path vector protocol</a>. BGP gebruikt geen technische metrics, maar neemt routeringsbeslissingen gebaseerd op&nbsp;<em>network policies</em>&nbsp;of regels. De huidige versie van BGP, versie 4, is gespecificeerd in&nbsp;<a title=\"Request for Comments\" href=\"https://nl.wikipedia.org/wiki/Request_for_Comments\">RFC</a>&nbsp;<a class=\"external text\" href=\"https://datatracker.ietf.org/doc/html/rfc4271\" rel=\"nofollow\">4271</a>.</p>
+<p>BGP is fundamenteel een ander type routeringsprotocol dan de andere protocollen: het is meer een methode om andere BGP-routers te vertellen dat bepaalde prefixes bereikbaar zijn via die router. Het daadwerkelijke routeren binnen dat netwerk wordt via een van de interne routeringsprotocollen gedaan: BGP zal niet automatisch de beste route naar een bepaalde bestemming kunnen bepalen.</p>
+<p>Wanneer twee BGP-routers met elkaar een sessie opzetten, zijn ze elkaars \"peer\". In jargon wordt het opzetten van een BGP-sessie tussen twee verschillende netwerken zonder dat ervoor betaald wordt, ook wel \"peering\" genoemd. BGP wordt ook gebruikt om een netwerk te voorzien van internet. Wanneer een netwerk (bijvoorbeeld een kleine internetprovider) twee of meer uplinks (grotere internetproviders) heeft, kan het interessant zijn om door middel van BGP zelfstandig een beslissing over de routering te nemen. In dat geval is er sprake van een transitverbinding. Hoewel dit nog steeds peering is, wordt het transit genoemd omdat men immers van netwerk A naar netwerk C gaat via netwerk B. Netwerk B is in dat geval het transitnetwerk. Voor transit moet meestal worden betaald.</p>
+<p>Van BGP bestaan twee hoofdvormen: externe BGP (eBGP) en interne BGP (iBGP). Bij eBGP is er sprake van twee verschillende autonome systemen die elkaar voorzien van routinginformatie. Bij iBGP is er sprake van een internetrelatie in &eacute;&eacute;n&nbsp;<a title=\"Autonoom systeem (computernetwerk)\" href=\"https://nl.wikipedia.org/wiki/Autonoom_systeem_(computernetwerk)\">autonoom systeem</a>. Deze vorm wordt vaak gebruikt om grote hoeveelheden routinginformatie intern te verspreiden, omdat BGP beter schaalt dan bijvoorbeeld&nbsp;<a class=\"mw-redirect\" title=\"OSPF\" href=\"https://nl.wikipedia.org/wiki/OSPF\">OSPF</a>&nbsp;of&nbsp;<a class=\"mw-redirect\" title=\"IS-IS\" href=\"https://nl.wikipedia.org/wiki/IS-IS\">IS-IS</a>. Ook wordt BGP gebruikt voor de signalering van andere diensten zoals&nbsp;<a class=\"new\" title=\"L3vpn (de pagina bestaat niet)\" href=\"https://nl.wikipedia.org/w/index.php?title=L3vpn&amp;action=edit&amp;redlink=1\">layer-3 VPNS</a>.</p>
+<p>Op&nbsp;<a class=\"mw-redirect\" title=\"Internetknooppunt\" href=\"https://nl.wikipedia.org/wiki/Internetknooppunt\">internetknooppunten</a>&nbsp;zoals de&nbsp;<a title=\"Amsterdam Internet Exchange\" href=\"https://nl.wikipedia.org/wiki/Amsterdam_Internet_Exchange\">AMS-IX</a>&nbsp;of&nbsp;<a title=\"NL-ix\" href=\"https://nl.wikipedia.org/wiki/NL-ix\">NL-ix</a>&nbsp;kunnen internetproviders (nationaal en internationaal) elkaars \"peer\" worden via een zogenaamd \"shared-LAN\".</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Border Gateway Protocol"@nl ;
+.
 esdm_begrip:BusinessAnalytics
   a skos:Concept ;
   dc:source "https://www.exact.com/nl/blog/handel/wat-is-het-verschil-tussen-business-reporting-en-analytics"^^xsd:anyURI ;
@@ -966,6 +1046,23 @@ esdm_begrip:BusinessAnalytics
 
 Analytics geeft u antwoord op vragen als: Waarom gebeurt dit? Welke kansen mis ik? Wat is de impact op ons bedrijf als deze trend zich voortzet? Hoe kunnen we dingen beter doen? Het is een dynamischer systeem dat in staat is om verschillende soorten informatie vanuit het gehele systeem te combineren. Op deze manier worden antwoorden gegeven op complexere, strategische vragen. Analytics gaat dus verder dan het creëren van een enkele rapportage om een specifiek antwoord te geven. Bij analytics worden verschillende databronnen gebruikt en naar wens opgedeeld en bekeken. Op die manier is het mogelijk om de bedrijfsgegevens meer ad hoc en diepgaander te onderzoeken."""@nl ;
   skos:prefLabel "Business analytics"@nl ;
+.
+<http://ordina.nl/esdm/im/begrippen/id/BusinessIntelligence(BI)>
+  a skos:Concept ;
+  dc:source "https://www.ictportal.nl/ict-lexicon/business-intelligence-bi"^^xsd:anyURI ;
+  skos:broader <http://ordina.nl/esdm/im/begrippen/id/EnterpriseResourcePlanning(ERP)> ;
+  skos:definition """<div lang=\"nl\"><p>Bij&nbsp;<em>Business Intelligence</em>&nbsp;staan twee kernwoorden centraal:&nbsp;<strong>data-analyse</strong>&nbsp;en&nbsp;<strong>bedrijfsinformatie</strong>. Bedrijven die gebruik maken van business intelligence, analyseren grote hoeveelheden &lsquo;ruwe&rsquo; data, met als doel daarmee waardevolle informatie te verkrijgen voor het maken van strategische en operationele&nbsp;<strong>bedrijfsbeslissingen</strong>&nbsp;(business insights). Deze zogenaamde ruwe data is meestal afkomstig uit verschillende softwaresystemen binnen het bedrijf, zoals een&nbsp;<a class=\"tooltip-link\" title=\"Business Intelligence (BI)\" href=\"https://www.ictportal.nl/onderwerpen/enterprise-resource-planning/erp-systeem\" data-template=\"template_19465\" data-popup-id=\"popup_19465\">ERP</a>,&nbsp;<a class=\"tooltip-link\" title=\"Business Intelligence (BI)\" href=\"https://www.ictportal.nl/onderwerpen/human-resource-management/wat-is-human-resource-management-hrm-software\" data-template=\"template_12021\" data-popup-id=\"popup_12021\">HRM</a>,&nbsp;<a class=\"tooltip-link\" title=\"\" href=\"https://www.ictportal.nl/onderwerpen/document-management-systemen/wat-is-document-management-systeem-dms\" data-template=\"template_271\" data-popup-id=\"popup_271\">DMS</a>&nbsp;of gespecialiseerde financi&euml;le software. Voorbeelden van ruwe data:&nbsp;<a class=\"tooltip-link\" title=\"\" href=\"https://www.ictportal.nl/ict-lexicon/verkoopbeheer\" data-template=\"template_4517\" data-popup-id=\"popup_4517\">verkoopgegevens</a>, markttrends, financi&euml;le resultaten, etc.</p>
+<p>Om business intelligence te laten slagen moeten er voldoende gegevens worden geanalyseerd. De IT-afdeling kan er voor zorgen dat de juiste data op de juiste manier wordt onttrokken uit de diverse interne softwaresystemen. Een eenvoudig BI-stappenplan ziet er als volgt uit:</p>
+<ol>
+<li>Extractie benodigde gegevens uit de verschillende software-systemen.</li>
+<li>Analyse van de data.</li>
+<li>Omzetten ruwe business data naar waardevolle informatie.</li>
+<li>Handelen op basis van de nieuw verkregen &lsquo;business insights&rsquo;.</li>
+</ol>
+<p>Gerelateerd aan BI zijn de begrippen&nbsp;<a class=\"tooltip-link\" title=\"Business Intelligence (BI)\" href=\"https://www.ictportal.nl/ict-lexicon/datawarehousing-dwh\" data-template=\"template_3682\" data-popup-id=\"popup_3682\">datawarehousing</a>&nbsp;(het opslaan van informatie) en&nbsp;<strong>data integratie</strong>. Om door middel van business intelligence nuttige informatie naar boven te halen, is zowel de kwaliteit als de structuur van data van groot belang.</p>
+<p>Met BI kunnen&nbsp;<strong>voorspellende analyses</strong>&nbsp;worden uitgevoerd. Daarmee kan een bedrijf beter inspelen op de toekomstige marktsituatie. Het product van BI, de business insights, komt uiteindelijk terecht bij de directie van een bedrijf. Meestal in de vorm van kant en klare rapporten (reporting) of via overzichtelijke dashboards.</p>
+<p>Business intelligence software wordt de laatste jaren op steeds grotere schaal ge&iuml;ntegreerd in ERP of&nbsp;<a class=\"tooltip-link\" title=\"\" href=\"https://www.ictportal.nl/ict-lexicon/crm-customer-relationship-management\" data-template=\"template_11301\" data-popup-id=\"popup_11301\">CRM-systemen</a>. Grote spelers zoals&nbsp;<a class=\"tooltip-link\" title=\"Business Intelligence (BI)\" href=\"https://www.ictportal.nl/onderwerpen/enterprise-resource-planning/erp-pakketten/microsoft-dynamics-365\" data-template=\"template_14870\" data-popup-id=\"popup_14870\">Microsoft</a>,&nbsp;<a class=\"tooltip-link\" title=\"Oracle ERP\" href=\"https://www.ictportal.nl/onderwerpen/enterprise-resource-planning/erp-pakketten/oracle-erp\" data-template=\"template_2397\" data-popup-id=\"popup_2397\">Oracle</a>&nbsp;en&nbsp;<a class=\"tooltip-link\" title=\"SAP ERP: geschikt systeem voor uw organisatie?\" href=\"https://www.ictportal.nl/onderwerpen/enterprise-resource-planning/erp-pakketten/sap-erp\" data-template=\"template_1352\" data-popup-id=\"popup_1352\">SAP</a>&nbsp;hebben BI-modules in hun ERP-software.&nbsp;<a class=\"tooltip-link\" title=\"\" href=\"https://www.ictportal.nl/onderwerpen/enterprise-resource-planning/erp-pakketten/microsoft-dynamics-365/power-bi\" data-template=\"template_80\" data-popup-id=\"popup_80\">Power BI</a>&nbsp;van Microsoft, OBI en Hyperion van Oracle en Business Objects van SAP.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Business Intelligence (BI)"@nl ;
 .
 esdm_begrip:BusinessReporting
   a skos:Concept ;
@@ -1009,7 +1106,7 @@ esdm_begrip:ClosedSource
 esdm_begrip:Cloudomgeving
   a skos:Concept ;
   dc:source "https://docs.microsoft.com/nl-nl/learn/modules/evolving-world-of-data/3-systems-on-premise-vs-cloud"^^xsd:anyURI ;
-  skos:broader esdm_begrip:ComputingOmgeving ;
+  skos:broader esdm_begrip:Network ;
   skos:definition """<div lang=\"nl\"><p>Cloudomgevingen bieden de fysieke en logische infrastructuur om services, virtuele servers, slimme toepassingen en containers voor hun abonnees te hosten. Voor cloudomgevingen is, in tegenstelling tot fysieke on-premises servers, geen kapitaalinvestering nodig. In plaats daarvan richt een organisatie een service in de cloud in en betaalt alleen voor wat deze gebruikt. Wanneer u servers en services naar de cloud verplaatst, verlaagt u ook de operationele kosten.</p>
 <p>Binnen enkele minuten kan een organisatie met behulp van Azure-services bijvoorbeeld virtuele servers of clusters met apps in containers leveren. Azure maakt en beheert automatisch alle fysieke en logische infrastructuur op de achtergrond. Op deze manier worden door Azure de complexiteit van en de kosten voor het maken van de services verminderd.</p>
 <p>Op de on-premises servers worden gegevens op fysieke en virtuele schijven opgeslagen. Op een cloudplatform is de opslag meer algemeen van aard. Er kunnen verschillende opslagtypen worden gebruikt, zoals Azure Blob Storage, Azure File Storage en Azure Disk Storage. Complexe systemen maken vaak gebruik van elk type opslag als onderdeel van hun technische architectuur. Met Azure Disk Storage kunnen klanten ervoor kiezen om hun schijfopslag door Microsoft te laten beheren of een toeslag te betalen voor meer controle over de schijftoewijzing.</p></div>"""^^rdf:HTML ;
@@ -1055,6 +1152,32 @@ esdm_begrip:Communicatieprotocol
 
 Een communicatieprotocol voor netwerkcomponenten wordt een netwerkprotocol genoemd."""@nl ;
   skos:prefLabel "Communicatieprotocol"@nl ;
+.
+esdm_begrip:Compiere
+  a skos:Concept ;
+  dc:source "https://www.compiere.com/"^^xsd:anyURI ;
+  skos:broader <http://ordina.nl/esdm/im/begrippen/id/EnterpriseResourcePlanning(ERP)> ;
+  skos:definition """<div lang=\"nl\"><p>Compiere bevat modules voor:</p>
+<ul>
+<li>Inkopen</li>
+<li><a title=\"Koopovereenkomst\" href=\"https://nl.wikipedia.org/wiki/Koopovereenkomst\">Koopovereenkomst</a></li>
+<li>Financi&euml;le boekhouding</li>
+<li><a title=\"Marketing\" href=\"https://nl.wikipedia.org/wiki/Marketing\">Marketing</a></li>
+<li><a title=\"Projectmanagement\" href=\"https://nl.wikipedia.org/wiki/Projectmanagement\">Projectmanagement</a></li>
+<li><a title=\"Customer relationship management\" href=\"https://nl.wikipedia.org/wiki/Customer_relationship_management\">Customer relationship management</a></li>
+<li><a title=\"Contentmanagementsysteem\" href=\"https://nl.wikipedia.org/wiki/Contentmanagementsysteem\">Contentmanagementsysteem</a></li>
+<li><a title=\"Supply chain management\" href=\"https://nl.wikipedia.org/wiki/Supply_chain_management\">Supply chain management</a></li>
+<li><a class=\"new\" title=\"Workflow-Management (de pagina bestaat niet)\" href=\"https://nl.wikipedia.org/w/index.php?title=Workflow-Management&amp;action=edit&amp;redlink=1\">Workflow-Management</a></li>
+<li><a title=\"E-mail\" href=\"https://nl.wikipedia.org/wiki/E-mail\">E-mailintegratie</a></li>
+</ul></div>"""^^rdf:HTML ;
+  skos:definition "Compiere (uitspraak KOM-pyeh-reh, Italiaans voor \"bereiken, compleet, vervullen\") is een open source ERP en CRM-software voor het midden- en kleinbedrijf. Compiere wordt uitgegeven door Compiere, Inc. en via het Compiere Partner-netwerk, een collectie van getrainde en geautoriseerde zakenpartners."@nl ;
+  skos:prefLabel "Compiere"@nl ;
+.
+esdm_begrip:ComplianceEnablers
+  a skos:Concept ;
+  skos:broader esdm_begrip:SafeEnablers ;
+  skos:definition "These facilitate managing specific compliance activities, including Verification and Validation (V&V), documentation and signoffs, and regulatory submissions and approvals."@en ;
+  skos:prefLabel "Compliance enablers"@en ;
 .
 esdm_begrip:ComputingOmgeving
   a skos:Concept ;
@@ -1136,6 +1259,7 @@ esdm_begrip:Curation
 <http://ordina.nl/esdm/im/begrippen/id/CustomerRelationshipManagement(CRM)>
   a skos:Concept ;
   dc:source "https://nl.wikipedia.org/wiki/Customer_relationship_management"^^xsd:anyURI ;
+  dc:source "https://www.ictportal.nl/ict-lexicon/crm-customer-relationship-management"^^xsd:anyURI ;
   skos:broader esdm_begrip:Bedrijfssoftware ;
   skos:definition """Customer relationship management oftewel crm is een Engelstalige benaming voor klantrelatiebeheer, soms ook relatiemarketing of verkoopbeheersysteem genoemd. Het is een werkwijze alsmede een technologie waarbij klantgegevens worden geanalyseerd om de zakelijke relatie met klanten te verbeteren, met als doel hen aan het bedrijf of de organisatie te binden en zo uiteindelijk de inkomsten te verhogen.
 
@@ -1182,6 +1306,22 @@ esdm_begrip:Data
   a skos:Concept ;
   skos:broader esdm_begrip:Integratievoorziening ;
   skos:prefLabel "Data"@nl ;
+  skos:related esdm_begrip:DataAnalyse ;
+.
+esdm_begrip:DataAnalyse
+  a skos:Concept ;
+  dc:source "https://www.profilink.nl/kennisbank/beroepsinformatie/data-analyse/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Analytics ;
+  skos:definition """<div lang=\"nl\"><p>Data analyse is een proces waarbij je gegevens onderzoekt, opschoont en eventueel hergebruikt, waarbij je de meest waardevolle informatie bewaart, analyseert en documenteert. Deze gegevensanalyse wordt ook wel data modellering genoemd en kan middels diverse data analyse tools worden geanalyseerd. Er zijn dus verschillende tools en (onderzoeks-) methoden om dit uit te voeren. Eerst maken we een onderscheid tussen kwalitatief en kwantitatief onderzoek. Bij het doen van een onderzoek rondom data analyse draait het om het verzamelen van zoveel mogelijk nuttige informatie.&nbsp;</p>
+<p>Maar de wijze om tot die informatie te komen kan nogal verschillen. Belangijk is dat je geen aannames doet en geheel onafhankelijk naar gegevens kijkt. Met bepaalde voorkennis kan je een vraag soms al beantwoorden wat natuurlijk afbreuk doet aan de kwaliteit van het onderzoek. Je wilt namelijk voorkomen dat je foute conslusies trekt. Wanneer je kwalitatief onderzoek uitvoert bekijk je dus alle gegevens die maar een bijdrage kunnen leveren aan een onderzoeksvraag. Maar wanneer je kwantitatief onderzoek uitvoert ga je juist bepaalde variabelen analyseren. Vaak door antwoorden vanuit gesloten vragen te verwerken in tabellen en grafieken.&nbsp;</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Data analyse"@nl ;
+  skos:related esdm_begrip:Bedrijfsinformatie ;
+  skos:related esdm_begrip:Data ;
+.
+esdm_begrip:DataAnalyseSoftware
+  a skos:Concept ;
+  skos:broader esdm_begrip:Bedrijfssoftware ;
+  skos:prefLabel "Data analyse software"@nl ;
 .
 esdm_begrip:DataArchitectuur
   a skos:Concept ;
@@ -1262,7 +1402,7 @@ esdm_begrip:DataHub
 esdm_begrip:DataIngestion
   a skos:Concept ;
   dc:source "https://www.xplenty.com/blog/data-ingestion-vs-etl/"^^xsd:anyURI ;
-  skos:broader esdm_begrip:Integratievoorziening ;
+  skos:broader esdm_begrip:Data ;
   skos:definition """The term “data ingestion” refers to any process that transports data from one location to another so that it can be taken up for further processing or analysis. In particular, the use of the word “ingestion” suggests that some or all of the data is located outside your internal systems. The two main types of data ingestion are:
 
 Batch data ingestion, in which data is collected and transferred in batches at regular intervals.
@@ -1279,6 +1419,7 @@ Data ingestion is similar to, but distinct from, the concept of data integration
 .
 esdm_begrip:DataIntegratie
   a skos:Concept ;
+  skos:broader esdm_begrip:Data ;
   skos:definition """Data integratie heeft als doel om gegevens die voorkomen in verschillende systemen met elkaar te combineren, zodat deze in uw hele organisatie eenduidig gebruikt kunnen worden. Meestal wordt de gecombineerde data ‘schoon’ en verrijkt opgeslagen op één centrale plaats. Door data uit verschillende bronnen op een goede manier te integreren, worden de gegevens waarmee u werkt betrouwbaarder en is het mogelijk dat verschillende afdelingen gebruik maken van elkaars data.
 
 Wat is een data integratie?
@@ -1416,10 +1557,12 @@ esdm_begrip:DataVirtualization
 .
 esdm_begrip:DataVisualization
   a skos:Concept ;
+  skos:broader esdm_begrip:Data ;
   skos:prefLabel "Data visualization"@nl ;
 .
 esdm_begrip:Database
   a skos:Concept ;
+  skos:broader esdm_begrip:DataRepository ;
   skos:exactMatch esdm_begrip:Databaseserver ;
   skos:prefLabel "Database"@nl ;
 .
@@ -1499,10 +1642,13 @@ esdm_begrip:Datawarehouse
   a skos:Concept ;
   dc:source "https://en.wikipedia.org/wiki/Data_warehouse"^^xsd:anyURI ;
   dc:source "https://nl.wikipedia.org/wiki/Datawarehouse"^^xsd:anyURI ;
+  dc:source "https://www.ibm.com/docs/en/informix-servers/12.10?topic=databases-overview-data-warehousing"^^xsd:anyURI ;
   skos:altLabel "DWH"@nl ;
   skos:altLabel "Data warehouse"@en ;
   skos:altLabel "Enterprise data warehouse (EDW)"@en ;
   skos:broader esdm_begrip:DataRepository ;
+  skos:definition """<div lang=\"en\">A database that is optimized for data retrieval to facilitate reporting and analysis. A data warehouse incorporates information about many subject areas, often the entire enterprise. Typically you use a dimensional data model to design a data warehouse. The data is organized into dimension tables and fact tables using star and snowflake schemas. The data is denormalized to improve query performance. The design of a data warehouse often starts from an analysis of what data already exists and how to collected in such a way that the data can later be used. Instead of loading transactional data directly into a warehouse, the data is often integrated and transformed before it is loaded into the warehouse.
+<div class=\"p\">The primary advantage of a data warehouse is that it provides easy access to and analysis of vast stores of information on many subject areas.</div></div>"""^^rdf:HTML ;
   skos:definition """<div lang=\"nl\"><p>Een datawarehouse is een database voor het centraal opslaan en verwerken van gestructureerde data uit verschillende onderliggende databases. Deze onderliggende databases horen bij meerdere operationele systemen, zoals ERP software, CRM software, HRM software of andere soorten bedrijfssoftware. Bij het dagelijkse gebruik van de operationele systemen, benutten deze alleen hun eigen databases. Als er tussen verschillende bedrijfsprocessen met behulp van data verbanden gelegd of conclusies getrokken moeten worden, dan lukt dat niet meer door gebruik te maken van de afzonderlijke databases. De oplossing is dan om alle data samen te voegen in een centrale database: het datawarehouse.</p>
 <p>De databases van operationele systemen bevatten gestructureerde data. Kenmerk daarvan is dat deze data in tabelachtige structuren opgeslagen kan worden. Ook het resultaat van de samenvoeging, het datawarehouse, is weer een database met gestructureerde data. Met hulp van&nbsp;<a href=\"https://www.ictinformatiecentrum.nl/bi-software\"><u>business intelligence</u></a>&nbsp;en&nbsp;<a href=\"https://www.ictinformatiecentrum.nl/data-analytics\"><u>data analytics</u></a>&nbsp;kunt u waardevolle inzichten verwerven uit deze data en op basis daarvan beslissingen nemen. Een goed datawarehouse draagt hierdoor in grote mate bij aan het succes van een datagedreven organisatie.</p></div>"""^^rdf:HTML ;
   skos:definition """<div lang=\"nl\"><p>Een&nbsp;<strong>datawarehouse</strong>&nbsp;(vaak afgekort tot DWH) is een&nbsp;<a class=\"mw-redirect\" title=\"Gegevensverzameling\" href=\"https://nl.wikipedia.org/wiki/Gegevensverzameling\">gegevensverzameling</a>&nbsp;die in een dusdanige vorm is gebracht dat terugkerende en ad-hocvragen in relatief korte tijd beantwoord kunnen worden zonder dat de bronsystemen zelf daardoor overmatig belast worden. Hierin onderscheidt een datawarehouse zich van een standaard&nbsp;<a title=\"Database\" href=\"https://nl.wikipedia.org/wiki/Database\">database</a>. De betreffende gegevens zijn afkomstig van en worden op geautomatiseerde wijze onttrokken aan de bronsystemen. Gegevens kunnen in een datawarehouse niet worden ingevoerd of aangepast door gebruikers zelf. Als aanpassing van gegevens nodig is dan dient dit &ograve;f in de bronsystemen &ograve;f in het&nbsp;<a title=\"Extraction, Transformation and Load\" href=\"https://nl.wikipedia.org/wiki/Extraction,_Transformation_and_Load\">ETL</a>&nbsp;proces (door aanpassing van de daarin vastgelegde regels) plaats te vinden.</p>
@@ -1517,6 +1663,7 @@ esdm_begrip:Datawarehouse
   skos:note "<p lang=\"nl\">Een <em>Data Warehouse</em> is een opslagarchitectuur die is ontworpen om gegevens te verwerken en te analyseren die zijn ge&euml;xtraheerd uit bronsystemen met behulp van <em>ETL tooling</em> en opgeschoond/ge&iuml;ntegreerd (m.b.v. data consolidatie en virtualisatie/federatie) in een <em>Operational Data Store</em>. De <em>Data Warehouse</em> verwerkt en aggregeert deze data tot een vorm zodat het geschikt is voor analyse, mining en rapportage. Echter, soms wordt er ook gebruik gemaakt van <em>Data Marts</em>, welke eindgebruikers toegang biedt tot segmenten van een <em>Data Warehouse (Medium, 2019)</em>.</p>"^^rdf:HTML ;
   skos:prefLabel "Datawarehouse"@nl ;
   skos:related esdm_begrip:DataLake ;
+  skos:related esdm_begrip:DimensionalDatabase ;
   skos:related esdm_begrip:ELT ;
   skos:related esdm_begrip:ETL ;
   skos:related esdm_begrip:LakehouseArchitecture ;
@@ -1535,6 +1682,14 @@ esdm_begrip:DigitaalArchiefsysteem
   skos:broader esdm_begrip:DataRepository ;
   skos:definition "Een digitaal archiefsysteem (ook wel E-depot, elektronisch depot of digitaal depot) is een systeem voor het elektronisch verwerken en beheren van statische documenten. Het betreft daarbij alle soorten en formaten van elektronische documenten: gescande papieren documenten, office-documenten, zoals tekstverwerking, rekenschema's, presentaties, etc., foto's, tekeningen, multimedia, kortom alles wat als een digitaal object opgeslagen kan worden. Dit systeem is in feite een technische voorziening, bestaande uit hardware en software, voor de duurzame bewaring en beschikbaarstelling van onveranderlijke digitale informatie, zowel digitaal geboren als gedigitaliseerd. Het gaat dus niet alleen om geheugenruimte maar om het samenspel van speciaal voor archiefbeheer ontwikkelde software en speciaal voor archiefopslag ontwikkelde hardware."@nl ;
   skos:prefLabel "Digitaal archiefsysteem"@nl ;
+.
+esdm_begrip:DimensionalDatabase
+  a skos:Concept ;
+  dc:source "https://www.ibm.com/docs/en/informix-servers/12.10?topic=databases-dimensional"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Database ;
+  skos:definition "<div lang=\"en\">A dimensional database is a relational database that uses a&nbsp;<dfn class=\"term\">dimensional data model</dfn>&nbsp;to organize data. This model uses fact tables and dimension tables in a star or snowflake schema.</div>"^^rdf:HTML ;
+  skos:prefLabel "Dimensional Database"@en ;
+  skos:related esdm_begrip:Datawarehouse ;
 .
 esdm_begrip:DocumentStoreDatabase
   a skos:Concept ;
@@ -1763,13 +1918,29 @@ esdm_begrip:ESDMArchitectuurSolutions
   skos:hasTopConcept esdm_begrip:Elasticsearch ;
   skos:hasTopConcept esdm_begrip:GraphDB ;
   skos:hasTopConcept esdm_begrip:MarkLogic ;
+  skos:hasTopConcept esdm_begrip:MicrosoftAzure ;
   skos:hasTopConcept esdm_begrip:PoolPartySemanticSuite ;
   skos:hasTopConcept esdm_begrip:Stardog ;
   skos:hasTopConcept esdm_begrip:TopBraidEDG ;
   skos:hasTopConcept esdm_begrip:Virtuoso ;
+  skos:prefLabel "ESDM Architectuur Solutions"@nl ;
 .
 esdm_begrip:ESDM_Begrippen
   a skos:ConceptScheme ;
+  <http://ordina.nl/esdm-implementatie#indexedProperty> [
+      a <http://ordina.nl/esdm-implementatie#IndexedPredicate> ;
+      rdf:object esdm_begrip:Actoren ;
+      rdf:predicate skos:hasTopConcept ;
+      rdf:value 0 ;
+      skos:prefLabel "Test indexed property 0"@en ;
+    ] ;
+  <http://ordina.nl/esdm-implementatie#indexedProperty> [
+      a <http://ordina.nl/esdm-implementatie#IndexedPredicate> ;
+      rdf:object esdm_begrip:Analytics ;
+      rdf:predicate skos:hasTopConcept ;
+      rdf:value 1 ;
+      skos:prefLabel "Test indexed property 1"@en ;
+    ] ;
   rdfs:comment "<div lang=\"nl\">Begrippen (kennis) over data en data gerelateerde architectuur. De begrippen vormen een 'knowledge graph' (kennisgraaf) die de kennis van Ordina Data Driven borgt. We noemen een dergelijke knowledge graph ook wel een begrippenkader. Iedereen is welkom om begrippen aan te dragen of bestaande begrippen aan te scherpen, sterker nog - het is noodzakelijk om onze kennis op een gestructureerde wijze op te slaan en te delen.<br /><br />Elk begrip heeft een uniek ID; een platform overstijgend URI waardoor het begrip deelbaar is en kan worden hergebruikt door andere applicaties of (keten-) partners.&nbsp;</div>"^^rdf:HTML ;
   rdfs:label "ESDM Begrippen Ordina"@nl ;
   skos:hasTopConcept esdm_begrip:Actoren ;
@@ -1780,13 +1951,9 @@ esdm_begrip:ESDM_Begrippen
   skos:hasTopConcept esdm_begrip:ComputingOmgeving ;
   skos:hasTopConcept esdm_begrip:Curation ;
   skos:hasTopConcept esdm_begrip:Data ;
-  skos:hasTopConcept esdm_begrip:DataIntegratie ;
-  skos:hasTopConcept esdm_begrip:DataVisualization ;
-  skos:hasTopConcept esdm_begrip:Database ;
   skos:hasTopConcept esdm_begrip:Dienstverlener ;
   skos:hasTopConcept esdm_begrip:EnterpriseServiceBus ;
   skos:hasTopConcept esdm_begrip:ICTInfrastructuur ;
-  skos:hasTopConcept esdm_begrip:ITILProcessen ;
   skos:hasTopConcept esdm_begrip:Integratievoorziening ;
   skos:hasTopConcept esdm_begrip:IoT ;
   skos:hasTopConcept esdm_begrip:Leverancier ;
@@ -1812,6 +1979,7 @@ esdm_begrip:ESDM_Begrippen
   skos:hasTopConcept esdm_begrip:Software ;
   skos:hasTopConcept esdm_begrip:SoftwareSoorten ;
   skos:hasTopConcept esdm_begrip:Standaard ;
+  skos:hasTopConcept esdm_begrip:TestIndexedProperty0 ;
   skos:hasTopConcept esdm_begrip:Virtualisatie ;
   skos:hasTopConcept esdm_begrip:Wetgeving ;
   skos:prefLabel "ESDM Begrippen Ordina"@nl ;
@@ -2066,6 +2234,12 @@ esdm_begrip:Exim
   skos:broader esdm_begrip:Mailserver ;
   skos:prefLabel "Exim"@nl ;
 .
+esdm_begrip:ExplorationEnablers
+  a skos:Concept ;
+  skos:broader esdm_begrip:SafeEnablers ;
+  skos:definition "<div lang=\"en\">These support research, prototyping, and other activities needed to develop an understanding of customer needs, including the exploration of prospective Solutions and evaluating alternatives.</div>"^^rdf:HTML ;
+  skos:prefLabel "Exploration enablers"@en ;
+.
 esdm_begrip:Extract
   a skos:Concept ;
   dc:source "https://docs.microsoft.com/en-us/learn/modules/data-integration-azure-data-factory/3-describe-data-integration-patterns"^^xsd:anyURI ;
@@ -2176,6 +2350,21 @@ esdm_begrip:Gameserver
   a skos:Concept ;
   skos:broader esdm_begrip:Server ;
   skos:prefLabel "Gameserver"@nl ;
+.
+esdm_begrip:Gateway
+  a skos:Concept ;
+  dc:source "https://whatismyipaddress.com/gateway"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Router ;
+  skos:definition """<div lang=\"en\"><p>A gateway is a node (router) in a computer network, a key&nbsp;<em>stopping point</em>&nbsp;for data on its way to or from other networks. Thanks to gateways, we are able to communicate and send data back and forth. The Internet wouldn&rsquo;t be any use to us without gateways (as well as a lot of other hardware and software).</p>
+<p>In a workplace, the gateway is the computer that routes traffic from a workstation to the outside network that is serving up the Web pages. For basic Internet connections at home, the gateway is the Internet Service Provider that gives you access to the entire Internet.</p>
+<p>A node is simply a physical place where the data stops for either transporting or reading/using. (A computer or modem is a node; a computer cable isn&rsquo;t.) Here are a few node notes:</p>
+<ul class=\"ra\">
+<li>On the Internet, the node that&rsquo;s a stopping point can be a gateway or a host node.</li>
+<li>A computer that controls the traffic your Internet Service Provider (ISP) receives is a node.</li>
+</ul>
+<p>If you have a wireless network at home that gives your entire family access to the Internet, your gateway is the modem (or modem-router combo) your ISP provides so you can connect to their network. On the other end, the computer that controls all of the data traffic your Internet Service Provider (ISP) takes and sends out is itself a node.</p>
+<p>When computer-server acts as a gateway, it also operates as a firewall and a proxy server. A firewall keeps out unwanted traffic and outsiders off a private network. A proxy server is software that &ldquo;sits&rdquo; between programs on your computer that you use (such as a Web browser) and a computer server&mdash;the computer that serves your network. The proxy server&rsquo;s task is to make sure the real server can handle your online data requests.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Gateway"@en ;
 .
 esdm_begrip:Gegevenspartionering
   a skos:Concept ;
@@ -2362,6 +2551,7 @@ esdm_begrip:HDInsight
   a skos:Concept ;
   skos:broader esdm_begrip:MicrosoftAzure ;
   skos:prefLabel "HDInsight"@en ;
+  skos:relatedMatch esdm_begrip:ApacheHadoop ;
 .
 esdm_begrip:HTML_CSS
   a skos:Concept ;
@@ -2470,6 +2660,21 @@ esdm_begrip:HorizontalePartitionering
   skos:definition "In deze strategie is elke partitie een afzonderlijk gegevensopslag, maar alle partities hebben hetzelfde schema. Elke partitie wordt een shard genoemd en bevat een specifieke subset van de gegevens, zoals alle orders voor een specifieke set klanten."@nl ;
   skos:prefLabel "Horizontale partitionering"@nl ;
 .
+esdm_begrip:HubAndSpokeNetwork
+  a skos:Concept ;
+  dc:source "https://docs.oracle.com/en/solutions/hub-spoke-network/index.html"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Network ;
+  skos:definition "<div lang=\"en\">A hub-and-spoke network, often called star network, has a central component that's connected to multiple networks around it. The overall topology resembles a wheel, with a central hub connected to points along the edge of the wheel through multiple spokes</div>"^^rdf:HTML ;
+  skos:prefLabel "Hub-and-Spoke Network"@en ;
+.
+<http://ordina.nl/esdm/im/begrippen/id/HumanResourcesManagementSystem(HRMS)>
+  a skos:Concept ;
+  dc:source "https://www.ictportal.nl/onderwerpen/human-resource-management/wat-is-human-resource-management-hrm-software"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Bedrijfssoftware ;
+  skos:definition """<div lang=\"nl\"><p>Een HRM-systeem is een&nbsp;<a class=\"tooltip-link\" title=\"Wat is Human Resource Management Software?\" href=\"https://www.ictportal.nl/onderwerpen/human-resource-management/hrm-pakketten\" data-template=\"template_7269\" data-popup-id=\"popup_7269\">softwarepakket</a>&nbsp;waarmee processen rondom personeelszaken effici&euml;nt worden geregeld. Veel processen die voorheen handmatig moesten worden geregeld, geregistreerd of bijgehouden, kunnen dankzij een HRM-systeem worden&nbsp;<strong>geautomatiseerd</strong>. Dit bespaart niet alleen tijd voor de HR-afdeling, ook voor het overige personeel. Er hoeft namelijk niet voor elk kleinigheidje (zoals adreswijziging, telefoonnummer van een collega, verlofaanvraag, etc.) worden aangeklopt bij het HR-kantoor. Het personeel kan&nbsp;<a class=\"tooltip-link\" title=\"\" href=\"https://www.ictportal.nl/onderwerpen/human-resource-management/employee-self-service-ess\" data-template=\"template_6217\" data-popup-id=\"popup_6217\">zelf persoonlijke informatie aanpassen</a>, via het systeem vakantiedagen aanvragen of digitaal de salarisstroken bekijken. De&nbsp;<a class=\"tooltip-link\" title=\"Wat is Human Resource Management Software?\" href=\"https://www.ictportal.nl/onderwerpen/human-resource-management/functionaliteiten-hrm-software/manager-self-service-mss\" data-template=\"template_9165\" data-popup-id=\"popup_9165\">HR-manager</a>&nbsp;behandelt de verzoeken en het HRM-systeem verwerkt ze vervolgens automatisch in de administratie. Dankzij de automatisering van de HR-processen wordt de&nbsp;<strong>effici&euml;ntie van een organisatie verhoogd</strong>.</p>
+<p>Naast traditionele&nbsp;<a class=\"tooltip-link\" title=\"\" href=\"https://www.ictportal.nl/onderwerpen/human-resource-management/functionaliteiten-hrm-software\" data-template=\"template_5337\" data-popup-id=\"popup_5337\">functionaliteiten voor personeelsbeheer</a>, zijn er ook mogelijkheden voor tijdregistratie en complete salarisverwerking. De HRM-software kan op de eigen servers binnen de organisatie worden ge&iuml;mplementeerd, maar er bestaat ook HRM-software in de&nbsp;<a class=\"tooltip-link\" title=\"Wat is Human Resource Management Software?\" href=\"https://www.ictportal.nl/ict-lexicon/cloud-computing\" data-template=\"template_6454\" data-popup-id=\"popup_6454\">cloud</a>. Deze laatste optie wordt ook wel&nbsp;<a class=\"tooltip-link\" title=\"Wat is Human Resource Management Software?\" href=\"https://www.ictportal.nl/onderwerpen/human-resource-management/e-hrm\" data-template=\"template_19159\" data-popup-id=\"popup_19159\">e-HRM</a>&nbsp;genoemd. Het Human Resource Management systeem is dan overal en vanaf elk apparaat te bereiken via het internet.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Human Resources Management System (HRMS)"@nl ;
+.
 esdm_begrip:HyperSQL
   a skos:Concept ;
   skos:broader esdm_begrip:RelationeleDatabase ;
@@ -2521,15 +2726,65 @@ esdm_begrip:IIS
   skos:broader esdm_begrip:Webserver ;
   skos:prefLabel "IIS"@nl ;
 .
+esdm_begrip:IPAdres
+  a skos:Concept ;
+  dc:source "https://nl.wikipedia.org/wiki/IP-adres"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Netwerkprotocol ;
+  skos:definition """<div lang=\"nl\"><p>Een&nbsp;<strong>IP-adres</strong>, waarin IP staat voor&nbsp;<a title=\"Internetprotocol\" href=\"https://nl.wikipedia.org/wiki/Internetprotocol\">Internet Protocol</a>, is in een&nbsp;<a title=\"Computernetwerk\" href=\"https://nl.wikipedia.org/wiki/Computernetwerk\">computernetwerk</a>&nbsp;een adres waarmee een&nbsp;<a title=\"Netwerkkaart\" href=\"https://nl.wikipedia.org/wiki/Netwerkkaart\">NIC</a>&nbsp;(<em>network interface card</em>&nbsp;of&nbsp;<em>controller</em>), of in het Nederlands 'netwerkkaart', van een&nbsp;<a title=\"Host\" href=\"https://nl.wikipedia.org/wiki/Host\">host</a>&nbsp;in het netwerk eenduidig geadresseerd kan worden binnen het&nbsp;<a title=\"TCP/IP\" href=\"https://nl.wikipedia.org/wiki/TCP/IP\">TCP/IP</a>-model, de standaard van \"het\"&nbsp;<a title=\"Internet\" href=\"https://nl.wikipedia.org/wiki/Internet\">internet</a>. Het concept achter TCP/IP en de daarbij behorende IP-adressen is initieel opgezet door&nbsp;<a title=\"Defense Advanced Research Projects Agency\" href=\"https://nl.wikipedia.org/wiki/Defense_Advanced_Research_Projects_Agency\">DARPA</a>&nbsp;rond 1980. De huidige standaard wordt verder ontwikkeld door de&nbsp;<a title=\"Internet Engineering Task Force\" href=\"https://nl.wikipedia.org/wiki/Internet_Engineering_Task_Force\">Internet Engineering Task Force (IETF)</a>.</p>
+<p>De wereldwijde administratie van publieke IP-adressen is in handen van&nbsp;<a title=\"Internet Assigned Numbers Authority\" href=\"https://nl.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority\">IANA</a>, waarbij er wereldwijd door 5 regionale&nbsp;<a title=\"Regional Internet Registry\" href=\"https://nl.wikipedia.org/wiki/Regional_Internet_Registry\">RIR</a>'s daadwerkelijk IP-adressen worden uitgegeven.</p>
+<p>Elke&nbsp;<a title=\"Computer\" href=\"https://nl.wikipedia.org/wiki/Computer\">computer</a>&nbsp;die is aangesloten op het internet of netwerk heeft een nummer waarmee hij zichtbaar is voor alle andere computers op het internet. Men kan dit vergelijken met&nbsp;<a title=\"Telefoonnummer\" href=\"https://nl.wikipedia.org/wiki/Telefoonnummer\">telefoonnummers</a>. Om het mogelijk te maken dat computers elkaar kunnen vinden en identificeren, hebben deze hun eigen nummer nodig. Deze nummers zijn de IP-adressen. Een IP-adres op het internet is meestal gekoppeld aan een bedrijf of instantie. Zo is te achterhalen waar bewerkingen die onder een bepaald IP-adres gedaan zijn, vandaan komen. Bij mensen die vanuit huis werken, identificeert het IP-adres hun&nbsp;<a title=\"Internetprovider\" href=\"https://nl.wikipedia.org/wiki/Internetprovider\">internetprovider</a>. Bijdragen op het internet zijn hierdoor bijna nooit werkelijk anoniem. Het werkelijke adres achter een IP-adres is in de meeste gevallen alleen te achterhalen via de&nbsp;<a title=\"Internetprovider\" href=\"https://nl.wikipedia.org/wiki/Internetprovider\">internetprovider</a>.<sup id=\"cite_ref-1\" class=\"reference\"><a href=\"https://nl.wikipedia.org/wiki/IP-adres#cite_note-1\">[1]</a></sup>&nbsp;In sommige gevallen kan de rechter de internetprovider verplichten de gegevens van de afnemer van de internetverbinding behorende bij het IP-adres te overhandigen.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "IP-adres"@nl ;
+  skos:related esdm_begrip:Internetprotocol ;
+  skos:related esdm_begrip:Subnet ;
+.
+esdm_begrip:IPv4Adres
+  a skos:Concept ;
+  dc:source "https://nl.wikipedia.org/wiki/IP-adres#IPv4"^^xsd:anyURI ;
+  skos:broader esdm_begrip:IPAdres ;
+  skos:definition """<div lang=\"nl\">
+<p>In IPv4 is een IP-adres een reeks van 32 bits. De adresruimte van IPv4 bevat daarom maximaal&nbsp;<span class=\"nowrap\">2<sup>32</sup>&nbsp;= 4.294.967.296</span>&nbsp;IP-adressen. Dat is minder dan er mensen op aarde zijn. In werkelijkheid is het beschikbare aantal adressen minder, want in de praktijk worden bepaalde adressen als&nbsp;<a title=\"Broadcastadres\" href=\"https://nl.wikipedia.org/wiki/Broadcastadres\">broadcastadres</a>&nbsp;of netwerkadres gebruikt en is een deel van de adresruimte als priv&eacute;-adresruimte voor bijvoorbeeld testdoeleinden gereserveerd, zoals beschreven staat in&nbsp;<a title=\"RFC 1918\" href=\"https://nl.wikipedia.org/wiki/RFC_1918\">RFC 1918</a>. Dit deel wordt niet over het internet gerouteerd. Verder zijn hele reeksen IP-adressen toegekend aan bedrijven en providers, bijvoorbeeld een reeks van 65.536 adressen, terwijl dat bedrijf niet zo veel adressen nodig heeft.</p>
+<p>Het is gebruikelijk een IP-adres uit IPv4 op te delen in vier groepen van 8 bits en deze weer te geven in de vorm van door punten gescheiden decimale getallen, bijvoorbeeld 192.0.2.197. Dit is korter dan de 32 bits en eenvoudiger te lezen. Elk van de vier getallen ligt tussen&nbsp;<span class=\"nowrap\">0 en 255</span>, beide inbegrepen. Voor de mens zijn zulke combinaties van vier getallen echter ook nog moeilijk te onthouden. Daarom wordt het&nbsp;<a title=\"Domain Name System\" href=\"https://nl.wikipedia.org/wiki/Domain_Name_System\">Domain Name System</a>&nbsp;(DNS) gebruikt om IP-adressen in leesbare en makkelijker te onthouden namen, zoals&nbsp;<em>nl.wikipedia.org</em>, om te zetten en vice versa.</p>
+<p>In principe bestaat een IP-adres in IPv4 uit een netwerkgedeelte, gevolgd door een hostgedeelte. Het netwerkgedeelte geeft aan welk netwerk bedoeld is en het hostgedeelte geeft de host (bv. een pc of een router) aan binnen het netwerk.</p>
+<p>De reeks van IP-adressen binnen een subnet wordt meestal als volgt weergegeven. In een adres dat&nbsp;<a title=\"Decimaal\" href=\"https://nl.wikipedia.org/wiki/Decimaal\">decimaal</a>&nbsp;wordt aangegeven met G.H.K.L/M, waarbij G-M gehele getallen zijn, geeft het getal M aan hoeveel bits van het adres voor het netwerkgedeelte zijn (M ligt dus tussen 0 en 32); de rest van de 32 bits is voor het hostgedeelte.</p>
+<p>Bij bijvoorbeeld 192.0.2.197/32 zijn alle bits voor het netwerkgedeelte en is er sprake van een enkele host. Indien een subnet 192.0.2.0/24 als allocatie heeft, zijn de eerste 24 bits uit het adres, dus de eerste drie door punten gescheiden decimale getallen, voor het netwerkgedeelte, en de laatste 8 bits voor de hosts binnen het subnet. Hierdoor zijn er in dit voorbeeld&nbsp;<span class=\"nowrap\">2<sup>8</sup>&nbsp;= 256</span>&nbsp;adressen voor adressering van individuele hosts (N.B.: het eerste adres, 192.0.2.0, en het laatste, 192.0.2.255, vallen normaal gesproken af, omdat ze dan het (sub-)netwerkadres resp. het broadcastadres zijn).</p>
+</div>"""^^rdf:HTML ;
+  skos:prefLabel "IPv4-adres"@nl ;
+  skos:related esdm_begrip:IPv6Adres ;
+.
+esdm_begrip:IPv6Adres
+  a skos:Concept ;
+  dc:source "https://nl.wikipedia.org/wiki/Internet_Protocol_versie_6"^^xsd:anyURI ;
+  skos:broader esdm_begrip:IPAdres ;
+  skos:definition "<div lang=\"nl\">Een structurele oplossing voor de schaarste in adresruimte van IPv4 is te vinden in de opvolger hiervan: IPv6. In IPv6 zijn er 128 bits beschikbaar voor een IP-adres, en is de theoretische bovengrens dus&nbsp;<span class=\"nowrap\">2<sup>128</sup>&nbsp;&asymp; 3,4 &times;10<sup>38</sup></span>&nbsp;IP-adressen. Net als bij IPv4 geldt dat in de praktijk weer adressen gebruikt worden als netwerkadres en broadcastadres, maar evengoed is het aantal toe te kennen IP-adressen hiermee enorm groot: triljarden adressen per persoon.</div>"^^rdf:HTML ;
+  skos:prefLabel "IPv6-adres"@nl ;
+  skos:related esdm_begrip:IPv4Adres ;
+.
 esdm_begrip:IRCServer
   a skos:Concept ;
   skos:broader esdm_begrip:Server ;
   skos:prefLabel "IRC-server"@nl ;
 .
+esdm_begrip:ISO27002
+  a skos:Concept ;
+  dc:source "https://bio-overheid.nl/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:ISOStandaard ;
+  skos:definition "<div lang=\"nl\">De ISO 27002 &lsquo;Code voor informatiebeveiliging&rsquo;<br />geeft richtlijnen en principes voor het initi&euml;ren, het<br />implementeren, het onderhouden en het verbeteren<br />van informatiebeveiliging binnen een organisatie.<br />Deze standaard is een &ldquo;best practice&rdquo; om informatiebeveiligingsrisico&rsquo;s<br />aan te pakken met betrekking<br />tot vertrouwelijkheid, integriteit en beschikbaarheid<br />van de informatievoorziening. De standaard kan<br />gezien worden als een nadere specificatie van de<br />ISO 27001 standaard15). De ISO 27002 kan dienen<br />als een praktische richtlijn voor het ontwerpen van<br />veiligheidsstandaarden binnen een organisatie en<br />als effectieve methode voor het bereiken van deze<br />veiligheid.</div>"^^rdf:HTML ;
+  skos:prefLabel "ISO 27002 ‘Code voor informatiebeveiliging’"@nl ;
+.
+esdm_begrip:ISOStandaard
+  a skos:Concept ;
+  dc:source "https://brownpaperaudit.nl/wat-zijn-iso-normen/"^^xsd:anyURI ;
+  skos:altLabel "ISO Norm"@nl ;
+  skos:broader esdm_begrip:Standaard ;
+  skos:definition """<div lang=\"nl\"><p>ISO normen zijn normen op het gebied van standaardisatie. ISO is een afkorting voor 'International Organisation for Standardization, in het Nederlands ook wel:&nbsp; &lsquo;Internationale Organisatie voor Standaardisatie&rsquo; genoemd. Eenvoudiger uitgedrukt betreft &lsquo;ISO&rsquo; een organisatie welke momenteel in 163 landen actief is en in deze een scherp toezicht houdt op het nastreven van de door deze organisatie opgestelde ISO normen. Deze normen worden ook wel &lsquo;standaarden&rsquo; genoemd, wat het begrip &lsquo;standaardisatie&rsquo; verklaart. Standaardisatie wordt toegepast binnen vrijwel iedere organisatie en onderneming. Het gaat specifiek over erkende afspraken met betrekking tot een product, een methode of een dienst.</p>
+<p>Om de vraag 'Wat zijn ISO normen' volledig te beantwoorden worden hieronder verschillende voorbeelden gegeven. Inmiddels zijn er ruim 18.000 verschillende ISO-normen actief. Deze normen worden opgesteld door de ISO organisatie en bovendien afgestemd op de vakgebieden waarin zij actief zijn.&nbsp;</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "ISO Standaard"@nl ;
+.
 esdm_begrip:ITILProcessen
   a skos:Concept ;
   dc:source "https://freshservice.com/nl/itil/itil-processen/"^^xsd:anyURI ;
   skos:altLabel "Information Technology Infrastructure Library"@nl ;
+  skos:broader esdm_begrip:WerkwijzenProcessen ;
   skos:definition """Information Technology Infrastructure Library, ofwel ITIL wordt gedefinieerd als een framework met een verzameling best practices voor het leveren van efficiënte IT-ondersteuningsdiensten. Hiermee kunnen organisaties en individuen kosteneffectief IT-Servicemanagement (ITSM), leveren, afgestemd op de bedrijfsvisie, -strategie en -groei, en het handelt als één aanspreekpunt tussen serviceprovider en eindgebruikers. Terwijl ITSM bedrijven helpt bij het behalen van de missie en de visie met behulp van de juiste balans aan processen, technologie en mensen, begeleidt ITIL de manier waarop IT-diensten beheerd en geleverd worden. Initiatieven voor digitale transformatie en technologie worden begeleid door de best practices van ITIL. Bedrijven gebruiken ITIL om bedrijfsvoordelen sneller te realiseren, met gedefinieerde processen en mogelijk gemaakt door de juiste technologie. ITIL streeft naar optimaal gebruik van middelen en beoordeelt ter verbetering continu de bestaande processen. Het doet tevens dienst als zakenpartner voor organisaties, waarmee organisaties alleen de praktijken kunnen inzetten die voor hen relevant zijn.
 
 Het ITIL-framework bestaat uit vijf fasen als onderdeel van de servicelevenscyclus. Elke fase bestaat uit een reeks processen of functies die zijn afgestemd op de IT-organisatiestructuur. Bedrijven passen een aantal van deze processen toe die geschikt zijn voor hun teams. ITIL is daardoor flexibel qua adoptie."""@nl ;
@@ -2586,10 +2841,28 @@ esdm_begrip:Informatica
   skos:definition "<div lang=\"nl\">Informatica biedt een oplossing waarmee <em>Data Warehouses </em>en <em>Data Lakes </em>worden gemigreerd naar een cloud omgeving.</div>"^^rdf:HTML ;
   skos:prefLabel "Informatica"@nl ;
 .
+esdm_begrip:Informatie
+  a skos:Concept ;
+  skos:broader esdm_begrip:Data ;
+  skos:prefLabel "Informatie"@nl ;
+.
 esdm_begrip:InformatieArchitectuur
   a skos:Concept ;
   skos:broader esdm_begrip:DataArchitectuur ;
   skos:prefLabel "Informatie Architectuur"@nl ;
+.
+esdm_begrip:Informix
+  a skos:Concept ;
+  dc:source "https://www.ibm.com/products/informix"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Datawarehouse ;
+  skos:definition "IBM® Informix® is an embeddable, high-performance database for integrating SQL, NoSQL, JSON, time-series and spatial data. Designed for analytics on the edge, in the cloud or on premises, the low-footprint database features self-management and automated administrative capabilities. And now, with a containerized version of Informix on the IBM Cloud Pak® for Data platform, you can more easily deploy on public, private or hybrid clouds." ;
+  skos:prefLabel "Informix"@en ;
+.
+esdm_begrip:InfrastructureEnablers
+  a skos:Concept ;
+  skos:broader esdm_begrip:SafeEnablers ;
+  skos:definition "These are created to build, enhance, and automate the development, testing, and deployment environments. They facilitate faster development, higher-quality testing, and a faster Continuous Delivery Pipeline. "@en ;
+  skos:prefLabel "Infrastructure enablers"@en ;
 .
 esdm_begrip:Ingestion
   a skos:Concept ;
@@ -2628,6 +2901,45 @@ Een zogenaamde API definieert de interface tussen twee computerapplicaties (mees
   skos:related esdm_begrip:API_Management ;
   skos:related esdm_begrip:Applicatie ;
 .
+esdm_begrip:InternetAccessProvider
+  a skos:Concept ;
+  dc:source "https://www.internetvergelijk.nl/blog/wat-is-een-isp/"^^xsd:anyURI ;
+  skos:altLabel "IAP"@en ;
+  skos:broader esdm_begrip:Gateway ;
+  skos:definition """<div lang=\"nl\"><p>Een IAP is een bedrijf dat ervoor zorgt dat je toegang hebt tot het internet. Dit kan bijvoorbeeld gaan via&nbsp;<a href=\"https://www.internetvergelijk.nl/blog/wat-is-wifi-en-hoe-werkt-het/\">WiFi</a>, 4G,&nbsp;<a href=\"https://www.internetvergelijk.nl/glasvezel/\">glasvezel</a>,&nbsp;<a href=\"https://www.internetvergelijk.nl/vragen/wat-is-adsl-internet/\">ADSL</a>,&nbsp;<a href=\"https://www.internetvergelijk.nl/blog/wat-is-vdsl/\">VDSL</a>, of een andere manier van bekabeld of draadloos internet. Met een abonnement op een IAP verkrijg je dus toegang tot het internet. Hierdoor kun je het internet gebruiken op je computer, telefoon, laptop,&nbsp;<a href=\"https://www.internetvergelijk.nl/blog/wat-is-een-smart-tv/\">smart tv</a>, tablet, of welk apparaat dan ook.</p>
+<p>Een IAP is dus essentieel voor iedereen die toegang wilt tot het internet. Of je het internet nu priv&eacute; of als bedrijf gebruikt.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Internet Access Provider"@en ;
+.
+esdm_begrip:InternetHostingProvider
+  a skos:Concept ;
+  dc:source "https://www.internetvergelijk.nl/blog/wat-is-een-isp/"^^xsd:anyURI ;
+  skos:altLabel "IHP"@en ;
+  skos:broader esdm_begrip:InternetAccessProvider ;
+  skos:definition """<div lang=\"nl\"><p>Iedereen heeft een IAP nodig en veel mensen zullen ook een ISP willen, maar er is slechts een select groepje mensen dat behoefte heeft aan een IHP. Dat komt omdat IHP&rsquo;s een heel specifiek doel hebben: het hosten van een website. Natuurlijk heeft lang niet iedereen dit nodig, maar er zijn genoeg situaties waar dit wel van pas komt. Misschien heb je een eigen bedrijf, wil je een blog beginnen, ben je zzp&rsquo;er of wil je een online portfolio bijhouden. Dan komt een eigen website van pas en wordt een IHP dus ineens interessant.</p>
+<p>Naast de diensten die aangeboden door IAP&rsquo;s en ISP&rsquo;s, biedt een IHP ook de mogelijkheid om een eigen domein (een &lsquo;adres&rsquo; voor je website) te registreren. Daarnaast geven veel IHP&rsquo;s je de toegang tot geavanceerde serverruimtes. Ideaal dus voor iedereen die een zakelijke of priv&eacute;-website op wil zetten.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Internet Hosting Provider"@en ;
+.
+esdm_begrip:InternetServiceProvider
+  a skos:Concept ;
+  dc:source "https://www.internetvergelijk.nl/blog/wat-is-een-isp/"^^xsd:anyURI ;
+  skos:altLabel "ISP"@en ;
+  skos:broader esdm_begrip:InternetAccessProvider ;
+  skos:definition """<div lang=\"nl\"><p>Een ISP kun je eigenlijk zien als een uitgebreide IAP. ISP&rsquo;s bieden namelijk niet alleen maar toegang tot het internet, maar bieden ook verschillende diensten aan via het internet. Hierbij kun je denken aan de mogelijkheid om een eigen website op te zetten, een eigen e-mail adres aan te maken, of de mogelijkheid om gegevens via FTP toegankelijk te maken. Daarnaast verlenen sommige ISP&rsquo;s ook toegang tot&nbsp;<a href=\"https://www.internetvergelijk.nl/blog/wat-is-usenet/\">Usenet</a>&nbsp;of Nieuwsgroepen. Dit zijn servers die afgesloten zijn van het World Wide Web, waarop fanatiek en anoniem gediscussieerd kan worden over uiteenlopende onderwerpen.</p>
+<p>Als je vroeger van dit soort diensten gebruik wilde maken, moest je zowel een abonnement hebben op een IAP als een ISP. Tegenwoordig is dat echter niet meer noodzakelijk. Dit komt doordat steeds meer IAP&rsquo;s ook dit soort diensten aan gaan bieden. Hierdoor vervaagt de grens tussen IAP en ISP. Voordat je een abonnement afsluit bij een ISP is het dan ook verstandig om eerst te kijken wat de mogelijkheden bij je huidige Internet Access Provider zijn.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Internet Service Provider"@en ;
+.
+esdm_begrip:Internetprotocol
+  a skos:Concept ;
+  dc:source "https://nl.wikipedia.org/wiki/Internetprotocol"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Netwerkprotocol ;
+  skos:definition """<div lang=\"nl\"><p>Het&nbsp;<strong>internetprotocol</strong>, meestal afgekort tot&nbsp;<strong>IP</strong>, is een&nbsp;<a title=\"Netwerkprotocol\" href=\"https://nl.wikipedia.org/wiki/Netwerkprotocol\">netwerkprotocol</a>&nbsp;waarmee computers op een&nbsp;<a title=\"Computernetwerk\" href=\"https://nl.wikipedia.org/wiki/Computernetwerk\">computernetwerk</a>&nbsp;met elkaar kunnen communiceren, zoals op het&nbsp;<a title=\"Internet\" href=\"https://nl.wikipedia.org/wiki/Internet\">internet</a>.</p>
+<p>Sinds 20 juli 2004 worden binnen het internet twee versies van het internetprotocol ondersteund, de versies&nbsp;<a title=\"Internet Protocol versie 4\" href=\"https://nl.wikipedia.org/wiki/Internet_Protocol_versie_4\">IPv4</a>&nbsp;en&nbsp;<a title=\"Internet Protocol versie 6\" href=\"https://nl.wikipedia.org/wiki/Internet_Protocol_versie_6\">IPv6</a>. De eerste domeinen die van IPv6 gebruikmaken zijn&nbsp;<a title=\"Japan\" href=\"https://nl.wikipedia.org/wiki/Japan\">Japan</a>&nbsp;en&nbsp;<a title=\"Korea\" href=\"https://nl.wikipedia.org/wiki/Korea\">Korea</a>.</p>
+<p>IPv4 wordt in tegenstelling tot veel andere protocollen door alle computers op het internet ondersteund.</p>
+<p>Het internetprotocol is een onderdeel van een&nbsp;<a title=\"Stack (informatica)\" href=\"https://nl.wikipedia.org/wiki/Stack_(informatica)\">stack</a>&nbsp;die nodig is voor communicatie. In combinatie met het&nbsp;<a title=\"Transmission Control Protocol\" href=\"https://nl.wikipedia.org/wiki/Transmission_Control_Protocol\">Transmission Control Protocol</a>&nbsp;(TCP) wordt wel over&nbsp;<em><a title=\"TCP/IP\" href=\"https://nl.wikipedia.org/wiki/TCP/IP\">TCP/IP</a></em>&nbsp;gesproken. Een ander veelgebruikt protocol dat samen met IP gebruikt kan worden is het&nbsp;<a title=\"User Datagram Protocol\" href=\"https://nl.wikipedia.org/wiki/User_Datagram_Protocol\">User Datagram Protocol</a>.</p>
+<p>Iedere afzonderlijke&nbsp;<a title=\"Computer\" href=\"https://nl.wikipedia.org/wiki/Computer\">computer</a>&nbsp;die via IP met andere computers communiceert moet een uniek adres hebben. Aanvankelijk had iedere netwerkkaart een vast adres. Wegens het gebrek aan adressen wordt nu door gebruikmaking van&nbsp;<a class=\"mw-redirect\" title=\"NAT\" href=\"https://nl.wikipedia.org/wiki/NAT\">NAT</a>&nbsp;en&nbsp;<a class=\"mw-redirect\" title=\"DHCP\" href=\"https://nl.wikipedia.org/wiki/DHCP\">DHCP</a>&nbsp;meestal een tijdelijk of een intern&nbsp;<a title=\"IP-adres\" href=\"https://nl.wikipedia.org/wiki/IP-adres\">IP-adres</a>&nbsp;(IP-nummer) toegewezen.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Internetprotocol"@nl ;
+  skos:related esdm_begrip:IPAdres ;
+.
 esdm_begrip:IoT
   a skos:Concept ;
   dc:source "https://nl.wikipedia.org/wiki/Internet_der_dingen"^^xsd:anyURI ;
@@ -2664,6 +2976,13 @@ esdm_begrip:JavaScriptWebAPIs
   dc:source "https://www.w3.org/standards/webdesign/script"^^xsd:anyURI ;
   skos:broader esdm_begrip:WebDesignAndApplications ;
   skos:prefLabel "JavaScript Web APIs (W3C)"@en ;
+.
+esdm_begrip:JeevesERP
+  a skos:Concept ;
+  dc:source "https://www.jeeveserp.com/sv/affarssystem"^^xsd:anyURI ;
+  skos:broader <http://ordina.nl/esdm/im/begrippen/id/EnterpriseResourcePlanning(ERP)> ;
+  skos:definition "De kern van het Jeeves bedrijfssysteem bestaat uit zeven verschillende toepassingsgebieden, die worden versterkt met krachtige functionaliteit voor multi-company en groepen. Daarnaast is de ERP-oplossing eenvoudig uit te breiden met slimme add-on functionaliteit en diverse integraties. Elk toepassingsgebied bevat rijke en diepgaande functionaliteit: het resultaat van 20 jaar productontwikkeling.  "@nl ;
+  skos:prefLabel "Jeeves ERP"@en ;
 .
 esdm_begrip:Kantoorsoftware
   a skos:Concept ;
@@ -2801,6 +3120,11 @@ Data Sources. Data can be obtained from a variety of sources, which can then be 
   skos:related esdm_begrip:BigDataProcessen ;
   skos:related esdm_begrip:EventDrivenArchitecture ;
   skos:related esdm_begrip:KappaArchitecture ;
+.
+esdm_begrip:Lean
+  a skos:Concept ;
+  skos:broader esdm_begrip:WerkwijzenProcessen ;
+  skos:prefLabel "Lean"@en ;
 .
 esdm_begrip:LevelDB
   a skos:Concept ;
@@ -3040,6 +3364,7 @@ esdm_begrip:MicrosoftAzure
   skos:definition "Microsoft Azure Platform (voorheen: Windows Azure Platform) is een cloud computing-platform van Microsoft waarmee een aantal internetdiensten aangeboden kan worden via het internet of binnen de omgeving van het eigen bedrijf. Microsoft wil hiermee de concurrentie aangaan met andere cloudsystemen die software as a service (SaaS) aanbieden, zoals Google Compute Engine van Google en EC2 van Amazon. Deze software hoeft niet geïnstalleerd te worden op de computer van de gebruiker, alles gebeurt via het web; aan de server-kant. Ook toegang tot bestanden en mappen gebeurt via een web-interface, er zijn APIs beschikbaar of er is toegang mogelijk middels andere protocollen, zoals: FTP, SFTP en SSH. Het Azure Services Platform gebruikt een aangepast besturingssysteem Microsoft Azure om een cluster van servers te beheren die in het datacenter van Microsoft staan."@nl ;
   skos:note "<div lang=\"nl\">Het Azure-cloudplatform bestaat uit meer dan 200 producten en cloudservices die zijn ontworpen om u te helpen bij de creatie van nieuwe oplossingen, zodat u de uitdagingen van vandaag het hoofd kunt bieden en u op de toekomst kunt voorbereiden. Bouw toepassingen, voer ze uit en beheer ze in meerdere clouds, on-premises en aan de rand, en gebruik daarvoor de hulpmiddelen en frameworks van uw keuze.</div>"^^rdf:HTML ;
   skos:prefLabel "Microsoft Azure"@nl ;
+  skos:related esdm_begrip:MicrosoftDynamics ;
 .
 <http://ordina.nl/esdm/im/begrippen/id/MicrosoftAzure–DataLake>
   a skos:Concept ;
@@ -3049,10 +3374,26 @@ esdm_begrip:MicrosoftAzure
   skos:exactMatch esdm_begrip:AzureDataLakeStorage ;
   skos:prefLabel "Microsoft Azure – Data Lake"@nl ;
 .
+esdm_begrip:MicrosoftDynamics
+  a skos:Concept ;
+  dc:source "https://www.hso.com/nl/vraag/wat-is-microsoft-dynamics-365/"^^xsd:anyURI ;
+  skos:broader <http://ordina.nl/esdm/im/begrippen/id/EnterpriseResourcePlanning(ERP)> ;
+  skos:definition "<div lang=\"nl\">Microsoft Dynamics 365 is het complete cloud-based platform met bedrijfssoftware van Microsoft waarbij de CRM- en ERP-softwareoplossingen (voorheen Dynamics CRM en AX) zijn samengevoegd met&nbsp;<a href=\"https://www.hso.com/nl/office-365/\" target=\"_blank\" rel=\"noopener noreferrer\">Office 365</a>,&nbsp;<a href=\"https://www.hso.com/nl/data-visualisatie-power-bi/\" target=\"_blank\" rel=\"noopener noreferrer\">Power BI</a>&nbsp;en&nbsp;<a href=\"https://www.hso.com/nl/microsoft-azure/\" target=\"_blank\" rel=\"noopener noreferrer\">Azure Services</a>. De apps in Dynamics 365 zijn gebaseerd op bedrijfsprocessen, klantrelaties en klantenbinding, productiviteit en BI.</div>"^^rdf:HTML ;
+  skos:prefLabel "Microsoft Dynamics 365"@nl ;
+  skos:related esdm_begrip:MicrosoftAzure ;
+  skos:related esdm_begrip:MicrosoftOffice365 ;
+  skos:related esdm_begrip:PowerBI ;
+.
 esdm_begrip:MicrosoftExchangeServer
   a skos:Concept ;
   skos:broader esdm_begrip:Mailserver ;
   skos:prefLabel "Microsoft Exchange Server"@nl ;
+.
+esdm_begrip:MicrosoftOffice365
+  a skos:Concept ;
+  skos:broader esdm_begrip:Kantoorsoftware ;
+  skos:prefLabel "Microsoft Office 365"@nl ;
+  skos:related esdm_begrip:MicrosoftDynamics ;
 .
 esdm_begrip:MicrosoftSQLServer
   a skos:Concept ;
@@ -3251,7 +3592,7 @@ esdm_begrip:Netwerkinfrastructuur
   a skos:Concept ;
   dc:source "https://nl.wikipedia.org/wiki/IT-infrastructuur"^^xsd:anyURI ;
   skos:altLabel "IT-infrastructuur"@nl ;
-  skos:broader esdm_begrip:ComputingOmgeving ;
+  skos:broader esdm_begrip:Network ;
   skos:definition """<div lang=\"nl\"><span style=\"font-size: 10pt;\">De&nbsp;<strong>IT-infrastructuur</strong>&nbsp;is de fysieke&nbsp;<a title=\"\" href=\"https://nl.wikipedia.org/wiki/Verkeersinfrastructuur\">verkeersinfrastructuur</a>&nbsp;ten behoeve van het transport van digitale data, met als hoger doel informatie te delen of aan te bieden en te consumeren.</span><br />
 <p><span style=\"font-size: 10pt;\">Binnen de&nbsp;<a title=\"Informatietechnologie\" href=\"https://nl.wikipedia.org/wiki/Informatietechnologie\">ICT</a>&nbsp;wordt de term \"IT-infrastructuur\" gebruikt voor de verzameling voorzieningen die nodig is voor het&nbsp;<em>transport</em>&nbsp;van digitale signalen die&nbsp;<a title=\"Dataset\" href=\"https://nl.wikipedia.org/wiki/Dataset\">gegevens</a>&nbsp;bevatten. Hieronder vallen alle fysieke en technische middelen die het (foto)elektrische signaal (als gegevensdrager), verplaatsen, verdelen en routeren.</span><br /><span style=\"font-size: 10pt;\">IT-infrastructuur is een deelverzameling van&nbsp;<a title=\"ICT-infrastructuur\" href=\"https://nl.wikipedia.org/wiki/ICT-infrastructuur\">I<u><strong>C</strong></u>T-infrastructuur</a>. Deze laatste omvat (naast transporteren) ook het&nbsp;<em>aanmaken</em>,&nbsp;<em>weergeven</em>,&nbsp;<em>wijzigen</em>,&nbsp;<em>opslaan</em>,&nbsp;<em>verwerken</em>,&nbsp;<em>beveiligen</em>&nbsp;en&nbsp;<em>beheren</em>&nbsp;van data.</span></p>
 <h2><span id=\"Componenten\" class=\"mw-headline\" style=\"font-size: 10pt;\">Componenten</span><span style=\"font-size: 10pt;\">De fysieke IT-infrastructuur wordt opgebouwd uit een combinatie van transportmedia en netwerkcomponenten.</span></h2>
@@ -3284,6 +3625,24 @@ esdm_begrip:Netwerkprotocol
 <li>het afbreken van de communicatiestroom.</li>
 </ul></div>"""^^rdf:HTML ;
   skos:prefLabel "Netwerkprotocol"@nl ;
+.
+esdm_begrip:Network
+  a skos:Concept ;
+  dc:source "https://en.wikipedia.org/wiki/Network_computing"^^xsd:anyURI ;
+  dc:source "https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/networking-basics.html"^^xsd:anyURI ;
+  skos:broader esdm_begrip:ComputingOmgeving ;
+  skos:definition """<div lang=\"en\"><p><strong>Network computing</strong>&nbsp;is a generic term in computing which refers to computers or&nbsp;<a title=\"Node (networking)\" href=\"https://en.wikipedia.org/wiki/Node_(networking)\">nodes</a>&nbsp;working together over a&nbsp;<a title=\"Computer network\" href=\"https://en.wikipedia.org/wiki/Computer_network\">network</a>.</p>
+<p>The two basic models of computing are:</p>
+<p>1- centralized computing:- where computing is done at a central location, using terminals that are attached to a central computer.</p>
+<p>2- decentralized computing:- where computing is done at various individual station or location and each system have power to run independently.</p>
+<p>It may also mean:</p>
+<ul>
+<li><a title=\"Cloud computing\" href=\"https://en.wikipedia.org/wiki/Cloud_computing\">Cloud computing</a>, a kind of Internet-based computing that provides shared processing resources and data to devices on demand</li>
+<li><a title=\"Distributed computing\" href=\"https://en.wikipedia.org/wiki/Distributed_computing\">Distributed computing</a></li>
+<li><a title=\"Virtual Network Computing\" href=\"https://en.wikipedia.org/wiki/Virtual_Network_Computing\">Virtual Network Computing</a></li>
+</ul></div>"""^^rdf:HTML ;
+  skos:definition "<div lang=\"en\">A network connects computers, mobile phones, peripherals, and even IoT devices.</div>"^^rdf:HTML ;
+  skos:prefLabel "Network"@en ;
 .
 esdm_begrip:NoSQL
   a skos:Concept ;
@@ -3510,6 +3869,7 @@ esdm_begrip:Oracle
   a skos:Concept ;
   skos:broader esdm_begrip:RelationeleDatabase ;
   skos:prefLabel "Oracle"@nl ;
+  skos:related esdm_begrip:OracleEBusinessSuite ;
 .
 esdm_begrip:OracleDataWarehousing
   a skos:Concept ;
@@ -3517,6 +3877,29 @@ esdm_begrip:OracleDataWarehousing
   skos:broader esdm_begrip:Datawarehouse ;
   skos:note "<div lang=\"nl\">Oracle biedt vier oplossingen aan, waarvan de <em>Autonomous Data Warehouse</em> oplossing alle DWH gerelateerde zorgen ontneemt.</div>"^^rdf:HTML ;
   skos:prefLabel "Oracle Data Warehousing"@nl ;
+.
+esdm_begrip:OracleEBusinessSuite
+  a skos:Concept ;
+  dc:source "https://www.ictportal.nl/onderwerpen/enterprise-resource-planning/erp-pakketten/oracle-ebs"^^xsd:anyURI ;
+  skos:broader <http://ordina.nl/esdm/im/begrippen/id/EnterpriseResourcePlanning(ERP)> ;
+  skos:definition """<div lang=\"nl\"><p><strong>Oracle EBS is een ERP-pakket dat bestaat uit verschillende modules, die samen de bedrijfsprocessen ondersteunen en verbeteren. Oracle EBS, een afkorting van E-Business Suite, verbindt verschillende informatiestromen binnen een organisatie met elkaar. Hierdoor kunnen processen binnen organisaties worden geautomatiseerd, wat de effici&euml;ntie ten goede komt.</strong></p>
+<h2>Oracle EBS in een notendop</h2>
+<p>Voor bedrijven uit diverse sectoren biedt Oracle E-Business Suite een platform met verschillende softwaremodules voor organisaties. De modules vormen samen een volledig&nbsp;<a class=\"tooltip-link\" title=\"Oracle EBS (E-Business Suite) onder de loep\" href=\"https://www.ictportal.nl/onderwerpen/enterprise-resource-planning/erp-systeem\" data-template=\"template_5367\" data-popup-id=\"popup_5367\">ERP-systeem</a>. Oracle EBS is geschikt voor bedrijven die verschillende specifieke bedrijfsprocessen effici&euml;nter willen laten verlopen. Het platform biedt een breed aanbod van managementmodules voor veel soorten bedrijfsprocessen, zoals&nbsp;<strong>CRM</strong>&nbsp;(Customer Relationship Management) en&nbsp;<strong>HRM</strong>&nbsp;(Human Resource Management). Daarnaast zijn er uitgebreide mogelijkheden voor&nbsp;<strong>Business Intelligence</strong>&nbsp;en kunnen er verschillende producten van derden worden ge&iuml;ntegreerd. Het systeem draait om de eigen&nbsp;<strong>Oracle 12C</strong>&nbsp;<a class=\"tooltip-link\" title=\"Oracle EBS (E-Business Suite) onder de loep\" href=\"https://www.ictportal.nl/ict-lexicon/database\" data-template=\"template_11775\" data-popup-id=\"popup_11775\">database</a>, die gebruikt maak van in-memory technologie. Het grootste voordeel hiervan is dat de snelheid waarmee business intelligence rapporten kunnen worden gemaakt flink kan worden verhoogd.</p>
+<p>In het verleden liep&nbsp;<a class=\"tooltip-link\" title=\"Oracle ERP\" href=\"https://www.ictportal.nl/onderwerpen/enterprise-resource-planning/erp-pakketten/oracle-erp\" data-template=\"template_631\" data-popup-id=\"popup_631\">Oracle</a>&nbsp;altijd voor op het gebied van databasetechnologie. De concurrentie biedt tegenwoordig echter zeer serieuze alternatieven.&nbsp;<a class=\"tooltip-link\" title=\"SAP ERP: geschikt systeem voor uw organisatie?\" href=\"https://www.ictportal.nl/onderwerpen/enterprise-resource-planning/erp-pakketten/sap-erp\" data-template=\"template_12322\" data-popup-id=\"popup_12322\">SAP</a>&nbsp;met&nbsp;<a class=\"tooltip-link\" title=\"Oracle EBS (E-Business Suite) onder de loep\" href=\"https://www.ictportal.nl/nieuws/databases/sap-hana\" data-template=\"template_17851\" data-popup-id=\"popup_17851\">Hana</a>, en SQL Server van Microsoft ondersteunen ook&nbsp;<strong>in-memory technologie</strong>. In de&nbsp;<a class=\"tooltip-link\" title=\"Oracle EBS (E-Business Suite) onder de loep\" href=\"https://www.ictportal.nl/wijzers/erp-wijzer\" data-template=\"template_7640\" data-popup-id=\"popup_7640\">ERP Wijzer 2021</a>&nbsp;staat een vergelijking tussen de verschillende databases en ERP-pakketten op de Nederlandse markt. Staat de&nbsp;<a class=\"tooltip-link\" title=\"ERP-pakketten en de softwareselectie\" href=\"https://www.ictportal.nl/onderwerpen/enterprise-resource-planning/erp-pakketten\" data-template=\"template_10297\" data-popup-id=\"popup_10297\">pakketkeuze</a>&nbsp;al vast, en is het voor u interessanter om te weten welke&nbsp;<a class=\"tooltip-link\" title=\"\" href=\"https://www.ictportal.nl/onderwerpen/enterprise-resource-planning/erp-leveranciers\" data-template=\"template_6509\" data-popup-id=\"popup_6509\">leverancier(s)</a>&nbsp;op de Nederlandse markt het beste aansluit bij uw project? Dan zou u even contact kunnen opnemen met Floris, van het Europees Kenniscentrum voor Informatietechnologie, het kenniscentrum achter de ICT Portal. Voor kosteloos advies is hij te bereiken via: 020-36 90 457.</p>
+<h2>Welke modules heeft Oracle E-Business Suite?</h2>
+<p>Oracle EBS kan worden gepersonaliseerd door middel van de volgende modules en&nbsp;<a class=\"tooltip-link\" title=\"Oracle EBS (E-Business Suite) onder de loep\" href=\"https://www.ictportal.nl/onderwerpen/enterprise-resource-planning/functionaliteiten-erp\" data-template=\"template_6636\" data-popup-id=\"popup_6636\">functionaliteiten</a>:</p>
+<ul>
+<li><a class=\"tooltip-link\" title=\"\" href=\"https://www.ictportal.nl/ict-lexicon/crm-customer-relationship-management\" data-template=\"template_518\" data-popup-id=\"popup_518\">Customer Relationship Management (CRM)</a></li>
+<li><a class=\"tooltip-link\" title=\"\" href=\"https://www.ictportal.nl/onderwerpen/human-resource-management/wat-is-human-resource-management-hrm-software\" data-template=\"template_9776\" data-popup-id=\"popup_9776\">Human Resource Management (HRM)</a></li>
+<li>Finance</li>
+<li><a class=\"tooltip-link\" title=\"Oracle EBS (E-Business Suite) onder de loep\" href=\"https://www.ictportal.nl/ict-lexicon/business-intelligence-bi\" data-template=\"template_19148\" data-popup-id=\"popup_19148\">Business Intelligence (BI)</a></li>
+<li><a class=\"tooltip-link\" title=\"Oracle EBS (E-Business Suite) onder de loep\" href=\"https://www.ictportal.nl/ict-lexicon/warehouse-management-wm\" data-template=\"template_3096\" data-popup-id=\"popup_3096\">Warehouse Management</a></li>
+<li><a class=\"tooltip-link\" title=\"Wat is Supply Chain Management?\" href=\"https://www.ictportal.nl/ict-lexicon/supply-chain-management\" data-template=\"template_17214\" data-popup-id=\"popup_17214\">Supply Chain Management</a></li>
+<li>Bestelling- en prijsbeheer (Order &amp; Price Management)</li>
+<li><a class=\"tooltip-link\" title=\"Oracle EBS (E-Business Suite) onder de loep\" href=\"https://www.ictportal.nl/onderwerpen/document-management-systemen/dms-per-sector/logistiek\" data-template=\"template_75\" data-popup-id=\"popup_75\">Logistiek- en transportbeheer</a>&nbsp;(Logistics &amp; Transportation Management)</li>
+</ul></div>"""^^rdf:HTML ;
+  skos:prefLabel "Oracle E-Business Suite"@en ;
+  skos:related esdm_begrip:Oracle ;
 .
 esdm_begrip:OracleNoSQLDatabase
   a skos:Concept ;
@@ -3880,6 +4263,7 @@ esdm_begrip:PowerBI
   skos:broader esdm_begrip:MicrosoftAzure ;
   skos:prefLabel "Power BI"@en ;
   skos:related esdm_begrip:AzureStreamAnalytics ;
+  skos:related esdm_begrip:MicrosoftDynamics ;
   skos:related esdm_begrip:ModelAndServe ;
 .
 esdm_begrip:PowerShell
@@ -4152,6 +4536,25 @@ esdm_begrip:RoleBasedAccessControl
   skos:broader esdm_begrip:SecurityAndAccess ;
   skos:prefLabel "Role-based access control"@en ;
 .
+esdm_begrip:Router
+  a skos:Concept ;
+  dc:source "https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/networking-basics.html#~routers"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Netwerkinfrastructuur ;
+  skos:definition """<div lang=\"en\"><p>Routers connect multiple networks together. They also connect computers on those networks to the Internet. Routers enable all networked computers to share a single Internet connection, which saves money.&nbsp;</p>
+<p>A&nbsp;<a href=\"https://www.cisco.com/c/en/us/solutions/small-business/routers.html\">router</a>&nbsp;acts a dispatcher. It analyzes data being sent across a network, chooses the best route for data to travel, and sends it on its way.&nbsp;</p>
+<p>Routers connect your business to the world, protect information from security threats, and can even decide which computers receive priority over others.&nbsp;</p>
+<p>Beyond those basic networking functions, routers come with additional features to make networking easier or more secure. Depending on your&nbsp;<a href=\"https://www.cisco.com/c/en/us/solutions/small-business/security.html\">security</a>&nbsp;needs, for example, you can choose a router with a firewall, a virtual private network (VPN), or an Internet Protocol (IP) communications system.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Router"@nl ;
+.
+esdm_begrip:SAFe
+  a skos:Concept ;
+  dc:source "https://agilescrumgroup.nl/scaled-agile-framework/"^^xsd:anyURI ;
+  dc:source "https://www.scaledagileframework.com/"^^xsd:anyURI ;
+  skos:altLabel "Scaled Agile Framework"@en ;
+  skos:broader esdm_begrip:WerkwijzenProcessen ;
+  skos:definition "<div lang=\"en\">SAFe combineert principes van&nbsp;<a href=\"https://agilescrumgroup.nl/misvattingen-lean-scrum/\">Lean</a>&nbsp;en&nbsp;<a href=\"https://agilescrumgroup.nl/wat-is-agile/\">Agile</a>. Het doel is om ook grote organisaties in staat te stellen snel en flexibel klantwaarde te leveren. Er zitten een aantal Agile frameworks verwerkt zoals&nbsp;<a href=\"https://agilescrumgroup.nl/wat-is-scrum-animatieserie/\">Scrum</a>,&nbsp;<a href=\"https://agilescrumgroup.nl/wat-is-kanban-methode/\">Kanban</a>, DevOps en&nbsp;<a href=\"https://agilescrumgroup.nl/lean-startup-methode/\">Lean Startup</a>. Daarnaast introduceert SAFe verschillende nieuwe rollen en events. Het doel van deze nieuwe rollen en events is vooral een belangrijke mate van afstemming tussen betrokkenen. SAFe is mede populair omdat het met herkenbare organisatorische lagen werkt. Per laag zijn bepaalde verantwoordelijkheden verdeeld ten behoeve van afstemming, governance en de alignment.</div>"^^rdf:HTML ;
+  skos:prefLabel "SAFe"@en ;
+.
 esdm_begrip:SAPDataWarehouseCloud
   a skos:Concept ;
   dc:source "https://www.sap.com/netherlands/products/data-warehouse-cloud/features.html"^^xsd:anyURI ;
@@ -4161,8 +4564,19 @@ esdm_begrip:SAPDataWarehouseCloud
 .
 esdm_begrip:SAPHANA
   a skos:Concept ;
-  skos:broader esdm_begrip:GraphDatabase ;
+  dc:source "https://en.wikipedia.org/wiki/SAP_HANA"^^xsd:anyURI ;
+  skos:broader esdm_begrip:ColumnDatabase ;
+  skos:broader esdm_begrip:SAPR_3 ;
+  skos:definition "<div lang=\"en\"><strong>SAP HANA</strong>&nbsp;(high-performance analytic appliance) is an&nbsp;<a class=\"mw-redirect\" title=\"In memory Platform\" href=\"https://en.wikipedia.org/wiki/In_memory_Platform\">in-memory</a>,&nbsp;<a title=\"Column-oriented DBMS\" href=\"https://en.wikipedia.org/wiki/Column-oriented_DBMS\">column-oriented</a>,&nbsp;<a class=\"mw-redirect\" title=\"Relational database management system\" href=\"https://en.wikipedia.org/wiki/Relational_database_management_system\">relational database management system</a>&nbsp;developed and marketed by&nbsp;<a class=\"mw-redirect\" title=\"SAP SE\" href=\"https://en.wikipedia.org/wiki/SAP_SE\">SAP SE</a>.<sup id=\"cite_ref-2\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/SAP_HANA#cite_note-2\">[2]</a></sup><sup id=\"cite_ref-3\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/SAP_HANA#cite_note-3\">[3]</a></sup>&nbsp;Its primary function as the software running a&nbsp;<a title=\"Database server\" href=\"https://en.wikipedia.org/wiki/Database_server\">database server</a>&nbsp;is to store and retrieve data as requested by the applications. In addition, it performs advanced analytics (<a title=\"Predictive analytics\" href=\"https://en.wikipedia.org/wiki/Predictive_analytics\">predictive analytics</a>,&nbsp;<a title=\"Spatial database\" href=\"https://en.wikipedia.org/wiki/Spatial_database\">spatial data processing</a>, text analytics, text search,&nbsp;<a title=\"Event stream processing\" href=\"https://en.wikipedia.org/wiki/Event_stream_processing\">streaming analytics</a>,&nbsp;<a title=\"Graph database\" href=\"https://en.wikipedia.org/wiki/Graph_database\">graph data processing</a>) and includes&nbsp;<a title=\"Extract, transform, load\" href=\"https://en.wikipedia.org/wiki/Extract,_transform,_load\">extract, transform, load</a>&nbsp;(ETL) capabilities as well as an&nbsp;<a title=\"Application server\" href=\"https://en.wikipedia.org/wiki/Application_server\">application server</a>.</div>"^^rdf:HTML ;
   skos:prefLabel "SAP HANA"@nl ;
+.
+esdm_begrip:SAPR_3
+  a skos:Concept ;
+  dc:source "https://en.wikipedia.org/wiki/SAP_R/3"^^xsd:anyURI ;
+  skos:broader <http://ordina.nl/esdm/im/begrippen/id/EnterpriseResourcePlanning(ERP)> ;
+  skos:definition """<div lang=\"en\"><p><strong>SAP R/3</strong>&nbsp;is the former name of the&nbsp;<a title=\"Enterprise resource planning\" href=\"https://en.wikipedia.org/wiki/Enterprise_resource_planning\">enterprise resource planning</a>&nbsp;software produced by the German corporation SAP AG (now&nbsp;<a class=\"mw-redirect\" title=\"SAP SE\" href=\"https://en.wikipedia.org/wiki/SAP_SE\">SAP SE</a>). It is an enterprise-wide information system designed to coordinate all the resources, information, and activities needed to complete business processes such as&nbsp;<a title=\"Order fulfillment\" href=\"https://en.wikipedia.org/wiki/Order_fulfillment\">order fulfillment</a>,&nbsp;<a class=\"mw-redirect\" title=\"Bill (payment)\" href=\"https://en.wikipedia.org/wiki/Bill_(payment)\">billing</a>,&nbsp;<a title=\"Human resource management\" href=\"https://en.wikipedia.org/wiki/Human_resource_management\">human resource management</a>, and&nbsp;<a title=\"Production planning\" href=\"https://en.wikipedia.org/wiki/Production_planning\">production planning</a>.<sup id=\"cite_ref-1\" class=\"reference\"><a href=\"https://en.wikipedia.org/wiki/SAP_R/3#cite_note-1\">[1]</a></sup></p>
+<p>The current successor software to SAP R/3 is known as&nbsp;<a title=\"SAP S/4HANA\" href=\"https://en.wikipedia.org/wiki/SAP_S/4HANA\">SAP S/4HANA</a>.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "SAP R/3"@nl ;
 .
 esdm_begrip:SOAP
   a skos:Concept ;
@@ -4177,11 +4591,38 @@ esdm_begrip:SQLite
   skos:broader esdm_begrip:RelationeleDatabase ;
   skos:prefLabel "SQLite"@nl ;
 .
+esdm_begrip:SafeEnablers
+  a skos:Concept ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:definition "<div lang=\"en\">An Enabler supports the activities needed to extend the Architectural Runway to provide future business functionality. These include exploration, architecture, infrastructure, and compliance. Enablers are captured in the various backlogs and occur throughout the Framework.</div>"^^rdf:HTML ;
+  skos:definition "<div lang=\"en\">Enablers bring visibility to all the work necessary to support efficient development and delivery of future business requirements. Primarily, enablers are used for exploration, evolving the architecture,&nbsp;improving infrastructure and compliance activities. Since enablers reflect real work they cannot remain invisible. Instead, they&rsquo;re treated like all other value-added development activities&mdash;subject to estimating, visibility and tracking, Work in Process (WIP) limits, feedback, and presentation of results.</div>"^^rdf:HTML ;
+  skos:prefLabel "Safe Enablers"@en ;
+.
+esdm_begrip:SafeEssential
+  a skos:Concept ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:prefLabel "Safe Essential"@en ;
+.
+esdm_begrip:SafeLargeSolution
+  a skos:Concept ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:prefLabel "Safe Large Solution"@en ;
+.
+esdm_begrip:SafePortfolio
+  a skos:Concept ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:prefLabel "Safe Portfolio"@en ;
+.
 esdm_begrip:Schaalbaarheid
   a skos:Concept ;
   dc:source "https://nl.wikipedia.org/wiki/Schaalbaarheid"^^xsd:anyURI ;
   skos:definition "Schaalbaar of schaalbaarheid is de mogelijkheid om een configuratie eenvoudig groter te maken. Schaalbaar kan betrekking hebben op een lokaal systeem, maar wordt tegenwoordig ook vaak in een globale bedoeling gebruikt. Het begrip wordt veelgebruikt in de IT-wereld, maar ook in de transportwereld."@nl ;
   skos:prefLabel "Schaalbaarheid"@nl ;
+.
+esdm_begrip:Scrum
+  a skos:Concept ;
+  skos:broader esdm_begrip:WerkwijzenProcessen ;
+  skos:prefLabel "Scrum"@en ;
 .
 esdm_begrip:Search
   a skos:Concept ;
@@ -4371,6 +4812,12 @@ esdm_begrip:SmarterTools
   a skos:Concept ;
   skos:broader esdm_begrip:Mailserver ;
   skos:prefLabel "SmarterTools"@nl ;
+.
+esdm_begrip:Snowflake
+  a skos:Concept ;
+  dc:source "https://www.snowflake.com/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Datawarehouse ;
+  skos:prefLabel "Snowflake"@en ;
 .
 <http://ordina.nl/esdm/im/begrippen/id/Snowflake–DataLake>
   a skos:Concept ;
@@ -4619,6 +5066,24 @@ esdm_begrip:StreamingUnit
 <p>The SU % utilization metric, which ranges from 0% to 100%, describes the memory consumption of your workload. For a streaming job with minimal footprint, this metric is usually between 10% to 20%. If SU% utilization is high (above 80%), or if input events get backlogged (even with a low SU% utilization since it does not show CPU usage), your workload likely requires more compute resources, which requires you to increase the number of SUs. It's best to keep the SU metric below 80% to account for occasional spikes. To react to increased workloads and increase streaming units, consider setting an alert of 80% on the SU Utilization metric. Also, you can use watermark delay and backlogged events metrics to see if there is an impact.</p></div>"""^^rdf:HTML ;
   skos:prefLabel "Streaming Unit"@en ;
 .
+esdm_begrip:Subnet
+  a skos:Concept ;
+  dc:source "https://www.cloudflare.com/learning/network-layer/what-is-a-subnet/"^^xsd:anyURI ;
+  skos:altLabel "Subnetwork"@en ;
+  skos:broader esdm_begrip:Netwerkinfrastructuur ;
+  skos:definition "<div lang=\"en\">A subnet, or subnetwork, is a&nbsp;<a href=\"https://www.cloudflare.com/learning/network-layer/what-is-the-network-layer/\">network</a>&nbsp;inside a network. Subnets make networks more efficient. Through subnetting, network traffic can travel a shorter distance without passing through unnecessary&nbsp;<a href=\"https://www.cloudflare.com/learning/network-layer/what-is-routing/\">routers</a>&nbsp;to reach its destination.</div>"^^rdf:HTML ;
+  skos:example """<div lang=\"en\">
+<p>Imagine Alice puts a letter in the mail that is addressed to Bob, who lives in the town right next to hers. For the letter to reach Bob as quickly as possible, it should be delivered right from Alice's post office to the post office in Bob's town, and then to Bob. If the letter is first sent to a post office hundreds of miles away, Alice's letter could take a lot longer to reach Bob.</p>
+<p>Like the postal service, networks are more efficient when messages travel as directly as possible. When a network receives data packets from another network, it will sort and route those packets by subnet so that the packets do not take an inefficient route to their destination.</p>
+<p>A subnet mask is like an IP address, but for only internal usage within a network. Routers use subnet masks to route data packets to the right place. Subnet masks are not indicated within data packets traversing the Internet &mdash; those packets only indicate the destination IP address, which a router will match with a subnet.</p>
+<p>Suppose Bob answers Alice's letter, but he sends his reply to Alice's place of employment rather than her home. Alice's office is quite large with many different departments. To ensure employees receive their correspondence quickly, the administrative team at Alice's workplace sorts mail by department rather than by individual employee. After receiving Bob's letter, they look up Alice's department and see she works in Customer Support. They send the letter to the Customer Support department instead of to Alice, and the customer support department gives it to Alice.</p>
+<p>In this analogy, \"Alice\" is like an IP address and \"Customer Support\" is like a subnet mask. By matching Alice to her department, Bob's letter was quickly sorted into the right group of potential recipients. Without this step, office administrators would have to spend time laboriously looking for the exact location of Alice's desk, which could be anywhere in the building.</p>
+<p>For a real-world example, suppose an IP packet is addressed to the IP address 192.0.2.15. This IP address is a Class C network, so the network is identified by \"192.0.2\" (or to be technically precise, 192.0.2.0/24). Network routers forward the packet to a host on the network indicated by \"192.0.2.\"</p>
+<p>Once the packet arrives at that network, a router within the network consults its routing table. It does some binary mathematics using its subnet mask of 255.255.255.0, sees the device address \"15\" (the rest of the IP address indicates the network), and calculates which subnet the packet should go to. It forwards the packet to the router or&nbsp;<a href=\"https://www.cloudflare.com/learning/network-layer/what-is-a-network-switch/\">switch</a>&nbsp;responsible for delivering packets within that subnet, and the packet arrives at IP address 192.0.2.15 (learn more about&nbsp;<a href=\"https://www.cloudflare.com/learning/network-layer/what-is-routing/\">routers</a>&nbsp;and&nbsp;<a href=\"https://www.cloudflare.com/learning/network-layer/what-is-a-network-switch/\">switches</a>).</p>
+</div>"""^^rdf:HTML ;
+  skos:prefLabel "Subnet"@en ;
+  skos:related esdm_begrip:IPAdres ;
+.
 <http://ordina.nl/esdm/im/begrippen/id/SupplyChainManagement(SCM)>
   a skos:Concept ;
   dc:source "https://nl.wikipedia.org/wiki/Supply_chain_management"^^xsd:anyURI ;
@@ -4637,6 +5102,20 @@ esdm_begrip:SurgeMail
   a skos:Concept ;
   skos:broader esdm_begrip:Mailserver ;
   skos:prefLabel "SurgeMail"@nl ;
+.
+esdm_begrip:Switch
+  a skos:Concept ;
+  dc:source "https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/networking-basics.html#~switches"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Netwerkinfrastructuur ;
+  skos:definition """<div lang=\"en\">Switches are the foundation of most business networks. A switch acts as a controller, connecting computers, printers, and servers to a network in a building or a campus.<br />
+<p>Switches allow devices on your network to communicate with each other, as well as with other networks, creating a network of shared resources. Through information sharing and resource allocation, switches save money and increase productivity.</p>
+<p>There are two basic types of switches to choose from as part of your networking basics:&nbsp;<a href=\"https://www.cisco.com/c/en/us/solutions/small-business/switches.html#on-premise\">on-premises</a>&nbsp;and&nbsp;<a href=\"https://www.cisco.com/c/en/us/solutions/small-business/switches.html#~cloud-managed\">cloud-managed</a>.</p>
+<ul>
+<li>A&nbsp;<strong>managed on-premises switch</strong>&nbsp;lets you configure and monitor your LAN, giving you tighter control of your network traffic.</li>
+<li>Have a small IT team? A&nbsp;<strong>cloud-managed switch</strong>&nbsp;can simplify your network management. You get a simple user interface, multisite full-stack management, and automatic updates delivered directly to the switch.</li>
+</ul>
+</div>"""^^rdf:HTML ;
+  skos:prefLabel "Switch"@en ;
 .
 esdm_begrip:Systeemsoftware
   a skos:Concept ;
@@ -4670,6 +5149,15 @@ esdm_begrip:Tarantool
   skos:broader esdm_begrip:KeyValueDatabase ;
   skos:prefLabel "Tarantool" ;
 .
+esdm_begrip:TechnologischeBedrijfsinformatie
+  a skos:Concept ;
+  dc:source "https://www.vainu.com/nl/blog/bedrijfsinformatie/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Bedrijfsinformatie ;
+  skos:definition """Technologische bedrijfsinformatie zijn gegevens die worden verzameld uit de stack van technologische tools en software van een bedrijf, de website, social media profielen en de algemene aanwezigheid op het web.
+
+Technologische bedrijfsinformatie betreft informatie over marketing automation, e-commerce platformen, klantenfeedback management, application tracking systemen, live chats, event management software et cetera."""@nl ;
+  skos:prefLabel "Technologische bedrijfsinformatie"@nl ;
+.
 esdm_begrip:TelnetServer
   a skos:Concept ;
   skos:broader esdm_begrip:Server ;
@@ -4691,6 +5179,13 @@ esdm_begrip:TerminusDB
   a skos:Concept ;
   skos:broader esdm_begrip:GraphDatabase ;
   skos:prefLabel "TerminusDB"@nl ;
+.
+esdm_begrip:TestIndexedProperty0
+  a <http://ordina.nl/esdm-implementatie#IndexedPredicate> ;
+  rdf:object esdm_begrip:Actoren ;
+  rdf:predicate skos:hasTopConcept ;
+  rdf:value 0 ;
+  skos:prefLabel "Test indexed property 0"@en ;
 .
 esdm_begrip:TigerGraph
   a skos:Concept ;
@@ -4956,6 +5451,11 @@ Webstandaarden hebben de afgelopen jaren veel aandacht genoten, doordat steeds m
   skos:prefLabel "Webstandaard"@nl ;
   skos:related esdm_begrip:W3C ;
 .
+esdm_begrip:WerkwijzenProcessen
+  a skos:Concept ;
+  skos:broader esdm_begrip:EnterpriseArchitectuur ;
+  skos:prefLabel "Werkwijzen & Processen"@nl ;
+.
 esdm_begrip:Wetgeving
   a skos:Concept ;
   skos:prefLabel "Wetgeving"@nl ;
@@ -4970,6 +5470,19 @@ esdm_begrip:WildFly
   a skos:Concept ;
   skos:broader esdm_begrip:Applicatieserver ;
   skos:prefLabel "Red Hat: WildFly"@nl ;
+.
+esdm_begrip:WirelessNetworking
+  a skos:Concept ;
+  skos:broader esdm_begrip:Network ;
+  skos:prefLabel "Wireless Networking"@en ;
+.
+esdm_begrip:Workday
+  a skos:Concept ;
+  dc:source "https://nl.wikipedia.org/wiki/Workday"^^xsd:anyURI ;
+  dc:source "https://www.workday.com/"^^xsd:anyURI ;
+  skos:broader <http://ordina.nl/esdm/im/begrippen/id/EnterpriseResourcePlanning(ERP)> ;
+  skos:definition "Workday, Inc. is een leverancier van software voor on-demand (cloud-based) financieel management en human capital management. Het werd opgericht door David Duffield, oprichter en voormalig CEO van ERP-bedrijf PeopleSoft, en voormalig PeopleSoft-hoofdstrateeg Aneel Bhusri na de vijandige overname van PeopleSoft door Oracle in 2005. Het richt zich op de klanten van rivalen Oracle en SAP. In oktober 2012 lanceerde het een succesvolle beursintroductie waarbij het bedrijf een waarde van $ 9,5 miljard had"@nl ;
+  skos:prefLabel "Workday"@nl ;
 .
 esdm_begrip:XML
   a skos:Concept ;

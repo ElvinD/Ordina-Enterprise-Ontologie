@@ -1,7 +1,9 @@
 # baseURI: http://ordina.nl/esdm
+# imports: http://datashapes.org/graphql
 # imports: http://ordina.nl/esdm-implementatie
 # imports: http://purl.org/dc/elements/1.1/
 # imports: http://purl.org/dc/terms/
+# imports: http://topbraid.org/corpus
 # imports: http://topbraid.org/schema/schema-single-range
 # imports: http://www.w3.org/2003/01/geo/wgs84_pos
 # imports: http://www.w3.org/2004/02/skos/core
@@ -32,9 +34,11 @@ evnprojects:Taxonomy
 <http://ordina.nl/esdm>
   a owl:Ontology ;
   rdfs:label "Ontologie ESDM Ordina"@nl ;
+  owl:imports <http://datashapes.org/graphql> ;
   owl:imports <http://ordina.nl/esdm-implementatie> ;
   owl:imports dc: ;
   owl:imports dcterms: ;
+  owl:imports <http://topbraid.org/corpus> ;
   owl:imports <http://topbraid.org/schema/schema-single-range> ;
   owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
@@ -211,6 +215,25 @@ esdm:Medewerker
   rdfs:label "Medewerker"@nl ;
   rdfs:subClassOf <http://schema.org/Person> ;
   skos:prefLabel "Medewerker"@nl ;
+  sh:property esdm:Medewerker-cv ;
+  sh:property esdm:Medewerker-functie ;
+.
+esdm:Medewerker-cv
+  a sh:PropertyShape ;
+  sh:path esdm:cv ;
+  sh:class <http://topbraid.org/corpus#Document> ;
+  sh:group esdm:ESDM_Gegevens ;
+  sh:maxCount 1 ;
+  sh:name "CV" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Medewerker-functie
+  a sh:PropertyShape ;
+  sh:path esdm:functie ;
+  sh:class esdm:Rol ;
+  sh:group esdm:ESDM_Gegevens ;
+  sh:name "Functie" ;
+  sh:nodeKind sh:IRI ;
 .
 esdm:Ministerie
   a owl:Class ;
@@ -218,6 +241,34 @@ esdm:Ministerie
   rdfs:label "Ministerie"@nl ;
   rdfs:subClassOf <http://schema.org/GovernmentOrganization> ;
   skos:prefLabel "Ministerie"@nl ;
+.
+esdm:Rol
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Rol"@nl ;
+  rdfs:subClassOf skos:Concept ;
+  skos:prefLabel "Rol"@nl ;
+  sh:property esdm:Rol-medewerker ;
+.
+esdm:Rol-medewerker
+  a sh:PropertyShape ;
+  sh:path esdm:medewerker ;
+  sh:class esdm:Actor ;
+  sh:group esdm:ESDM_Gegevens ;
+  sh:name "Medewerker" ;
+  sh:nodeKind sh:IRI ;
+  sh:values [
+      sh:path (
+          [
+            sh:zeroOrMorePath [
+                sh:inversePath skos:broader ;
+              ] ;
+          ]
+          [
+            sh:inversePath esdm:functie ;
+          ]
+        ) ;
+    ] ;
 .
 esdm:Stakeholder
   a owl:Class ;
@@ -336,10 +387,22 @@ esdm:beller
   rdfs:label "beller"@nl ;
   rdfs:range <http://schema.org/Person> ;
 .
+esdm:cv
+  a owl:ObjectProperty ;
+  rdfs:label "CV"@nl ;
+  rdfs:range <http://topbraid.org/corpus#Document> ;
+  skos:prefLabel "CV"@nl ;
+.
 esdm:dossier
   a owl:ObjectProperty ;
   rdfs:label "dossier"@nl ;
   rdfs:range esdm:Dossier ;
+.
+esdm:functie
+  a owl:ObjectProperty ;
+  rdfs:label "Functie"@nl ;
+  rdfs:range esdm:Rol ;
+  skos:prefLabel "Functie"@nl ;
 .
 esdm:gebelde
   a owl:ObjectProperty ;
@@ -352,10 +415,23 @@ esdm:gebeurtenis
   rdfs:label "gebeurtenis"@nl ;
   rdfs:range esdm:Gebeurtenis ;
 .
+esdm:medewerker
+  a rdf:Property ;
+  rdfs:label "Medewerker"@nl ;
+  rdfs:range esdm:Actor ;
+  skos:prefLabel "Medewerker"@nl ;
+.
 esdm:ontvanger
   a owl:ObjectProperty ;
   rdfs:label "ontvanger"@nl ;
   rdfs:range esdm:Actor ;
+.
+esdm:resource
+  a owl:ObjectProperty ;
+  rdfs:domain rdfs:Resource ;
+  rdfs:label "Resource"@en ;
+  rdfs:range rdfs:Resource ;
+  skos:prefLabel "Resource"@en ;
 .
 esdm:stakeholder
   a owl:ObjectProperty ;
@@ -366,6 +442,11 @@ esdm:tijdlijn
   a owl:ObjectProperty ;
   rdfs:label "tijdlijn"@nl ;
   rdfs:range esdm:Tijdlijn ;
+.
+esdm:value
+  a rdf:Property ;
+  rdfs:label "Value"@en ;
+  skos:prefLabel "Value"@en ;
 .
 esdm:volgende
   a owl:ObjectProperty ;
@@ -430,6 +511,7 @@ skos:Concept
   a sh:NodeShape ;
   sh:property skos:Concept-related ;
   sh:property skos:Concept-source ;
+  sh:property skos:Concept-source_uri ;
 .
 skos:Concept-related
   a sh:PropertyShape ;
@@ -443,7 +525,15 @@ skos:Concept-source
   sh:path dc:source ;
   sh:datatype xsd:anyURI ;
   sh:group esdm:ESDM_Gegevens ;
-  sh:name "Bron" ;
+  sh:name "Externe bron" ;
+.
+skos:Concept-source_uri
+  a sh:PropertyShape ;
+  sh:path dcterms:source ;
+  sh:class <http://topbraid.org/corpus#Document> ;
+  sh:group esdm:ESDM_Gegevens ;
+  sh:name "Interne bron" ;
+  sh:nodeKind sh:IRI ;
 .
 skos:ConceptScheme
   a owl:Class ;
