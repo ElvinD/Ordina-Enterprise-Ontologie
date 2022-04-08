@@ -209,6 +209,13 @@ esdm:Gebeurtenis-volgende
   sh:name "Volgende gebeurtenis" ;
   sh:nodeKind sh:IRI ;
 .
+esdm:KandidaatMedewerker
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Kandidaat Medewerker"@nl ;
+  rdfs:subClassOf esdm:Medewerker ;
+  skos:prefLabel "Kandidaat Medewerker"@nl ;
+.
 esdm:Medewerker
   a owl:Class ;
   a sh:NodeShape ;
