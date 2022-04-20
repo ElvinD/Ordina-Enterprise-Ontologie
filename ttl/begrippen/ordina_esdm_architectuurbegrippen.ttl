@@ -56,6 +56,12 @@ esdm_begrip:API_Management
   skos:related esdm_begrip:API ;
   skos:related esdm_begrip:Interface ;
 .
+esdm_begrip:ARTSync
+  a skos:Concept ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:prefLabel "ART Sync"@en ;
+  skos:related esdm_begrip:AgileReleaseTrain ;
+.
 esdm_begrip:AVG
   a skos:Concept ;
   dc:source "https://autoriteitpersoonsgegevens.nl/nl/over-privacy/wetten/algemene-verordening-gegevensbescherming-avg"^^xsd:anyURI ;
@@ -224,6 +230,7 @@ esdm_begrip:AgileReleaseTrain
 <li>Enabling team &ndash; organized to assist other teams with specialized capabilities and help them become proficient in new technologies.</li>
 </ul></div>"""^^rdf:HTML ;
   skos:prefLabel "Agile Release Train (ART)"@en ;
+  skos:related esdm_begrip:ARTSync ;
   skos:related esdm_begrip:AgileTeam ;
   skos:related esdm_begrip:Flow ;
 .
@@ -458,6 +465,14 @@ esdm_begrip:ArchitecturalEnablers
   skos:definition """These are created to build the Architectural Runway, which allows smoother and faster development. 
 """@en ;
   skos:prefLabel "Architectural enablers"@en ;
+.
+esdm_begrip:ArchitecturalRunway
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/architectural-runway/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:definition "<div lang=\"en\">Architectural Runway is existing code,<br />hardware components, marketing branding<br />guidelines, etc., that enable near-term<br />business Features.<br />► Enablers build up the runway<br />► Features consume it<br />► Architectural Runway must be<br />continuously maintained<br />► Use capacity allocation (a percentage of<br />train&rsquo;s overall capacity in a PI) for<br />Enablers that extend the runway</div>"^^rdf:HTML ;
+  skos:definition "<div lang=\"en\">The Architectural Runway consists of the existing code, components, and technical infrastructure needed to implement near-term features without excessive redesign and delay. Architectural Runway supports the continuous flow of value through the Continuous Delivery Pipeline, providing the necessary technical foundation for developing business initiatives and implementing new Features and/or Capabilities. The architectural runway is one of the primary tools used to implement the Framework&rsquo;s Agile Architecture strategy. Since the development of new features and capabilities consumes the architectural runway, a continual investment must be made to extend it by implementing Enablers. Some enablers address shortcomings with the current Solution, such as improving its performance or User Experience. Others provide foundational capabilities that will be used to support future functionality.</div>"^^rdf:HTML ;
+  skos:prefLabel "Architectural Runway"@en ;
 .
 esdm_begrip:Architectuur
   a skos:Concept ;
@@ -3009,6 +3024,14 @@ esdm_begrip:HierarchicalNamespace
   skos:prefLabel "Hierarchical namespace"@en ;
   skos:related esdm_begrip:FlatNamespace ;
 .
+esdm_begrip:HoldingCost
+  a skos:Concept ;
+  dc:source "https://innolution.com/resources/glossary/holding-cost"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:definition "<div lang=\"en\">The cost for delaying feedback and value by holding a batch of work items (by not immediately performing the work).&nbsp;In manufacturing, holding cost is the cost of not sending a batch to the next process.&nbsp;Contrast with&nbsp;<em><a href=\"https://innolution.com/resources/glossary/transaction-cost/\" target=\"_blank\" rel=\"noopener\">transaction&nbsp;cost</a></em>. See also&nbsp;<a href=\"https://innolution.com/resources/glossary/u-curve-optimization/\" target=\"_blank\" rel=\"noopener\"><em>U-curve optimization</em></a>.</div>"^^rdf:HTML ;
+  skos:prefLabel "Holding Cost"@en ;
+  skos:related esdm_begrip:TransactionCost ;
+.
 esdm_begrip:HorizontaalSchalen
   a skos:Concept ;
   skos:broader esdm_begrip:Schaalbaarheid ;
@@ -3388,6 +3411,13 @@ esdm_begrip:JourneyMap
   skos:broader esdm_begrip:DesignThinking ;
   skos:definition "<div lang=\"en\">A customer journey map illustrates the experience as a user engages with a company&rsquo;s Operational Value Stream, products, and services. As shown in Figure 5, journey maps are powerful design thinking tools for operational value streams. They allow teams to identify ways in which the specific deliverables of one or more Development Value Streams can be improved to create a better end-to-end experience.</div>"^^rdf:HTML ;
   skos:prefLabel "Journey Map"@en ;
+.
+esdm_begrip:Kanban
+  a skos:Concept ;
+  dc:source "https://agilescrumgroup.nl/wat-is-kanban-methode/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:WerkwijzenProcessen ;
+  skos:definition "<div lang=\"nl\">Kanban is een methode om kenniswerk-diensten (processen) te defini&euml;ren, managen, en verbeteren. Denk bijvoorbeeld aan een dienst als klachtafhandeling, softwaredevelopment, of contentproductie voor een website. De kracht van Kanban zit &lsquo;m vooral in het onzichtbare (kenniswerk) zichtbaar maken, en in de kunst om niet alles tegelijk op te pakken.</div>"^^rdf:HTML ;
+  skos:prefLabel "Kanban"@nl ;
 .
 esdm_begrip:Kantoorsoftware
   a skos:Concept ;
@@ -4439,6 +4469,12 @@ esdm_begrip:POSIX
   skos:related esdm_begrip:AccessControlList ;
   skos:related esdm_begrip:Unix ;
 .
+esdm_begrip:POSync
+  a skos:Concept ;
+  skos:broader esdm_begrip:ARTSync ;
+  skos:definition "<div lang=\"en\">▸ Visibility into progress, scope, and priority<br />adjustments<br />▸ Facilitated by RTE or PM<br />▸ Participants: PM, POs, other stakeholders,<br />and SMEs as necessary<br />▸ Weekly or more frequently, 30&ndash;60 minutes<br />▸ Timeboxed and followed by a meet-after</div>"^^rdf:HTML ;
+  skos:prefLabel "PO Sync"@en ;
+.
 esdm_begrip:PageBlob
   a skos:Concept ;
   dc:source "https://docs.microsoft.com/en-us/learn/modules/connect-an-app-to-azure-storage/2-explore-azure-storage"^^xsd:anyURI ;
@@ -5257,6 +5293,12 @@ esdm_begrip:ScrumMaster
 </ul>"""^^rdf:HTML ;
   skos:prefLabel "Scrum Master"@nl ;
 .
+esdm_begrip:ScrumOfScrums
+  a skos:Concept ;
+  skos:broader esdm_begrip:ARTSync ;
+  skos:definition "<div lang=\"en\">Visibility into progress and impediments<br />▸ Facilitated by RTE<br />▸ Participants: Scrum Masters, other select<br />team members, SMEs if necessary<br />▸ Weekly or more frequently, 30&ndash;60 minutes<br />▸ Timeboxed and followed by a meet-after</div>"^^rdf:HTML ;
+  skos:prefLabel "Scrum of scrums"@en ;
+.
 esdm_begrip:Search
   a skos:Concept ;
   skos:prefLabel "Search"@nl ;
@@ -5969,6 +6011,14 @@ esdm_begrip:Transactie
 </ul></div>"""^^rdf:HTML ;
   skos:prefLabel "Transactie"@nl ;
   skos:related esdm_begrip:OnlineTransactionProcessing ;
+.
+esdm_begrip:TransactionCost
+  a skos:Concept ;
+  dc:source "https://innolution.com/resources/glossary/transaction-cost"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:definition "<div lang=\"en\">The fixed (overhead cost) and variable costs of executing (doing the work required to realize) the items in a batch of work. One of the two costs in determining the economic&nbsp;<a href=\"https://innolution.com/resources/glossary/batch-size/\">batch size</a>&nbsp;in a U-curve optimization. In manufacturing, transaction cost is the cost of sending a batch to the next process.&nbsp;Contrast with&nbsp;<a href=\"https://innolution.com/resources/glossary/holding-cost/\" target=\"_blank\" rel=\"noopener\"><em>holding cost</em></a>. See also&nbsp;<a href=\"https://innolution.com/resources/glossary/u-curve-optimization/\" target=\"_blank\" rel=\"noopener\"><em>U-curve optimization</em></a>.</div>"^^rdf:HTML ;
+  skos:prefLabel "Transaction Cost"@en ;
+  skos:related esdm_begrip:HoldingCost ;
 .
 esdm_begrip:Transform
   a skos:Concept ;
