@@ -56,6 +56,12 @@ esdm_begrip:API_Management
   skos:related esdm_begrip:API ;
   skos:related esdm_begrip:Interface ;
 .
+esdm_begrip:ARTSync
+  a skos:Concept ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:prefLabel "ART Sync"@en ;
+  skos:related esdm_begrip:AgileReleaseTrain ;
+.
 esdm_begrip:AVG
   a skos:Concept ;
   dc:source "https://autoriteitpersoonsgegevens.nl/nl/over-privacy/wetten/algemene-verordening-gegevensbescherming-avg"^^xsd:anyURI ;
@@ -161,8 +167,78 @@ esdm_begrip:Afnemer
 .
 esdm_begrip:Agile
   a skos:Concept ;
-  skos:broader esdm_begrip:WerkwijzenProcessen ;
+  dc:source "http://agilemanifesto.org/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:definition """<div lang=\"en\">The Agile Manifesto principles<br /><br />
+<div>
+<ol lang=\"en\">
+<li lang=\"en\">Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.</li>
+<li lang=\"en\">Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage.</li>
+<li lang=\"en\">Deliver working software frequently, from a couple of weeks to a couple of months, with a preference for the shorter timescale.</li>
+<li lang=\"en\">Business people and developers must work together daily throughout the project.</li>
+<li lang=\"en\">Build projects around motivated individuals. Give them the environment and support they need and trust them to get the job done.</li>
+<li lang=\"en\">The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.</li>
+<li lang=\"en\">Working software is the primary measure of progress.</li>
+<li lang=\"en\">Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.</li>
+<li lang=\"en\">Continuous attention to technical excellence and good design enhances agility.</li>
+<li lang=\"en\">Simplicity&mdash;the art of maximizing the amount of work not done&mdash;is essential.</li>
+<li lang=\"en\">The best architectures, requirements, and designs emerge from selforganizing teams.</li>
+<li lang=\"en\">At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.</li>
+</ol>
+</div>
+</div>"""^^rdf:HTML ;
+  skos:definition """<div lang=\"en\">The Agile Manifesto<br /><br />We are uncovering better ways of developing software by doing it and helping others do it.<br />Through this work we have come to value:<br />
+<ul>
+<li>Individuals and interactions over processes and tools</li>
+<li>Working software over comprehensive documentation</li>
+<li>Customer collaboration over contract negotiation</li>
+<li>Responding to change over following a plan</li>
+</ul>
+<br />That is, while there is value in the items on the right, we value the items on the left more.</div>"""^^rdf:HTML ;
   skos:prefLabel "Agile"@en ;
+.
+esdm_begrip:AgileProductDelivery
+  a skos:Concept ;
+  skos:broader esdm_begrip:BusinessAgilityCoreCompetencies ;
+  skos:definition """<ul lang=\"en\">
+<li>The Customer is the center of your product strategy</li>
+<li>Decouple the release of value from the development cadence</li>
+<li>Continuously explore, integrate, deploy, and release</li>
+</ul>"""^^rdf:HTML ;
+  skos:note """<ul lang=\"en\">
+<li>Customer Centricity and Design Thinking</li>
+<li>Develop on cadence and release on demand</li>
+<li>DevOps and the Continuous Delivery Pipeline</li>
+</ul>"""^^rdf:HTML ;
+  skos:prefLabel "Agile Product Delivery"@en ;
+.
+esdm_begrip:AgileReleaseTrain
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/organizing-agile-teams-and-arts-team-topologies-at-scale/"^^xsd:anyURI ;
+  skos:altLabel "ART"@en ;
+  skos:broader esdm_begrip:Agile ;
+  skos:definition """<div lang=\"en\"><ul lang=\"en\">
+<li lang=\"en\">A virtual organization of 5 &ndash; 12 teams (50 &ndash; 125+ individuals)</li>
+<li lang=\"en\">Synchronized on a common cadence, a Program Increment (PI)</li>
+<li lang=\"en\">Aligned to a common mission via a single Program Backlog</li>
+</ul>
+<strong>Teams on the ART are organized for flow</strong><br />
+<ul>
+<li>Stream-aligned team &ndash; organized around the flow of work and has the ability to deliver value directly to the Customer or end user.</li>
+<li>Complicated subsystem team &ndash; organized around specific subsystems that require deep specialty skills and expertise.</li>
+<li>Platform team &ndash; organized around the development and support of platforms that provide services to other teams.</li>
+<li>Enabling team &ndash; organized to assist other teams with specialized capabilities and help them become proficient in new technologies.</li>
+</ul></div>"""^^rdf:HTML ;
+  skos:prefLabel "Agile Release Train (ART)"@en ;
+  skos:related esdm_begrip:ARTSync ;
+  skos:related esdm_begrip:AgileTeam ;
+  skos:related esdm_begrip:Flow ;
+.
+esdm_begrip:AgileTeam
+  a <http://ordina.nl/esdm#Actor> ;
+  skos:broader esdm_begrip:Agile ;
+  skos:prefLabel "Agile Team"@en ;
+  skos:related esdm_begrip:AgileReleaseTrain ;
 .
 esdm_begrip:AlgemeneBedrijfsinformatie
   a skos:Concept ;
@@ -176,6 +252,18 @@ esdm_begrip:AlgemeneBedrijfsinformatie
 <p>Afhankelijk van jouw propositie, wil je waarschijnlijk&nbsp;<strong>alleen contact zoeken met Bedrijf A of Bedrijf B.</strong></p>
 <p>Soms vind je in bronnen met algemene bedrijfsinformatie ook andere variabelen zoals prestatie (groei, kredietwaardigheid), status en hi&euml;rarchie (juridische status, relaties tussen de ene organisatie en de andere), leeftijd, eigendom en positie (marktaandeel, positie in de sector).</p></div>"""^^rdf:HTML ;
   skos:prefLabel "Algemene bedrijfsinformatie"@nl ;
+.
+esdm_begrip:Alignment
+  a skos:Concept ;
+  skos:broader esdm_begrip:SAFeCoreValues ;
+  skos:definition """<ul lang=\"en\">
+<li>Communicate the mission, vision, and strategy</li>
+<li>Provide briefings and participate in PI Planning</li>
+<li>Participate in backlog review and preparation</li>
+<li>Organize around Value Streams</li>
+<li>Constantly check for understanding</li>
+</ul>"""^^rdf:HTML ;
+  skos:prefLabel "Alignment"@en ;
 .
 esdm_begrip:AllegroGraph
   a skos:Concept ;
@@ -211,6 +299,13 @@ esdm_begrip:Apache
   a skos:Concept ;
   skos:broader esdm_begrip:Webserver ;
   skos:prefLabel "Apache"@nl ;
+.
+esdm_begrip:ApacheCassandra
+  a skos:Concept ;
+  dc:source "https://cassandra.apache.org/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:NoSQL ;
+  skos:definition "<div lang=\"en\">Apache Cassandra is an open source NoSQL distributed database trusted by thousands of companies for scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data.</div>"^^rdf:HTML ;
+  skos:prefLabel "Apache Cassandra"@en ;
 .
 esdm_begrip:ApacheHadoop
   a skos:Concept ;
@@ -327,6 +422,36 @@ esdm_begrip:Applicatieserver
   skos:prefLabel "Applicatieserver"@nl ;
   skos:related esdm_begrip:Middleware ;
 .
+esdm_begrip:ApplicationGateway
+  a skos:Concept ;
+  dc:source "https://docs.microsoft.com/en-us/learn/modules/load-balance-web-traffic-with-application-gateway/2-routing-traffic-with-application-gateway"^^xsd:anyURI ;
+  skos:broader esdm_begrip:AzureNetworking ;
+  skos:definition "Application Gateway manages the requests that client applications can send to a web app. Application Gateway routes traffic to a pool of web servers based on the URL of a request. This is known as application layer routing. The pool of web servers can be Azure virtual machines, Azure virtual machine scale sets, Azure App Service, and even on-premises servers."@en ;
+  skos:prefLabel "Application Gateway"@en ;
+.
+esdm_begrip:ApplyCadence
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/apply-cadence-synchronize-with-cross-domain-planning/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFeLeanAgilePrinciples ;
+  skos:definition "<div lang=\"en\">Solution development is an inherently uncertain process. If it weren&rsquo;t, the solutions would already exist, and there would be no room for the next generation of innovations. This uncertainty conflicts with the need for businesses to manage investments, track progress, and have sufficient confidence in future outcomes to plan and commit to a reasonable course of action. To address this, Agile development functions best in a &lsquo;safety zone&rsquo;, where enough uncertainty provides the freedom to pursue innovation and react to events, while also providing confidence the business needs to operate. The primary means to achieve this balance is through the objective knowledge of the current state. It&rsquo;s just easier when you know where you really are. This knowledge is gained by applying cadence, synchronization, and periodic cross-domain planning. Cadence is a rhythmic pattern of events that provides the steady heartbeat of the development process. It makes routine everything that can be routine, so developers can focus on managing the variable part of solution development.&nbsp;Synchronization allows multiple solution perspectives to be understood, resolved, and integrated at the same time.</div>"^^rdf:HTML ;
+  skos:prefLabel "07. Apply cadence, synchronize with crossdomain planning"@en ;
+  skos:related <http://ordina.nl/esdm/im/begrippen/id/AssumeVariability%3BPreserveOptions> ;
+.
+esdm_begrip:ApplySystemsThinking
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/apply-systems-thinking/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFeLeanAgilePrinciples ;
+  skos:definition """<div lang=\"en\"><strong>Attributes of systems thinking<br /><br /></strong>The Solution and the Enterprise are both affected by the following:<br />
+<ul>
+<li>Optimizing a component does not optimize the system</li>
+<li>For the system to behave well as a system, a higher-level understanding of behavior and architecture is required</li>
+<li>The value of a system passes through its interconnections</li>
+<li>A system can evolve no faster than its slowest integration point<br /><br /></li>
+</ul>
+</div>"""^^rdf:HTML ;
+  skos:definition "<div lang=\"en\">The four foundational bodies of knowledge that inform SAFe are systems thinking, Agile development, Lean product development, and DevOps. Systems thinking takes a holistic approach to solution development, incorporating all aspects of a system and its environment into the design, development, deployment, and maintenance of the system itself.<br /><br />The Solution Is a System SAFe guides the development and deployment of complex technology-based systems. They are represented by the SAFe Solution object, the tangible object that delivers the end user&rsquo;s value and is the subject of each development value stream&mdash;the application, satellite, medical device, or website. When it comes to such tangible systems, Deming&rsquo;s comment that &ldquo;a system must be managed&rdquo; leads to some critical insights: Team members must understand clearly the boundaries of the system, what it is, and how it interacts with the environment and the systems around it. Optimizing a component does not optimize the system. Components can become selfish and hog the resources&mdash;computing power, memory, electrical power, whatever&mdash;that other elements need. For the system to behave well as a system, intended behavior and some higher-level understanding of its architecture (how the components work together to accomplish the aim of the system) must be understood. Intentional design is fundamental to systems thinking. The value of a system passes through its interconnections. Those interfaces&mdash;and the dependencies they create&mdash;are critical to providing ultimate value. Continuous attention to those interfaces and interactions is vital. A system can evolve no faster than its slowest integration point. The faster the full system can be integrated and evaluated, the faster the system knowledge grows.</div>"^^rdf:HTML ;
+  skos:prefLabel "02. Apply systems thinking"@en ;
+.
 esdm_begrip:ArangoDB
   a skos:Concept ;
   skos:broader esdm_begrip:GraphDatabase ;
@@ -341,9 +466,25 @@ esdm_begrip:ArchitecturalEnablers
 """@en ;
   skos:prefLabel "Architectural enablers"@en ;
 .
+esdm_begrip:ArchitecturalRunway
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/architectural-runway/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:definition "<div lang=\"en\">Architectural Runway is existing code,<br />hardware components, marketing branding<br />guidelines, etc., that enable near-term<br />business Features.<br />► Enablers build up the runway<br />► Features consume it<br />► Architectural Runway must be<br />continuously maintained<br />► Use capacity allocation (a percentage of<br />train&rsquo;s overall capacity in a PI) for<br />Enablers that extend the runway</div>"^^rdf:HTML ;
+  skos:definition "<div lang=\"en\">The Architectural Runway consists of the existing code, components, and technical infrastructure needed to implement near-term features without excessive redesign and delay. Architectural Runway supports the continuous flow of value through the Continuous Delivery Pipeline, providing the necessary technical foundation for developing business initiatives and implementing new Features and/or Capabilities. The architectural runway is one of the primary tools used to implement the Framework&rsquo;s Agile Architecture strategy. Since the development of new features and capabilities consumes the architectural runway, a continual investment must be made to extend it by implementing Enablers. Some enablers address shortcomings with the current Solution, such as improving its performance or User Experience. Others provide foundational capabilities that will be used to support future functionality.</div>"^^rdf:HTML ;
+  skos:prefLabel "Architectural Runway"@en ;
+.
 esdm_begrip:Architectuur
   a skos:Concept ;
   skos:prefLabel "Architectuur"@nl ;
+.
+<http://ordina.nl/esdm/im/begrippen/id/AssumeVariability%3BPreserveOptions>
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/assume-variability-preserve-options/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFeLeanAgilePrinciples ;
+  skos:definition "<div lang=\"en\">Solution development is an inherently uncertain process. Technical variability and market variability are present throughout the development process. Innovative new systems have, by definition, never been developed before, so there is no guaranteed path to success. If there were, it wouldn&rsquo;t be innovation. That&rsquo;s why we love this business. To assure forward progress, system developers are inclined to reduce variability as quickly as possible. The more deterministic things are, the better we feel. That&rsquo;s just human nature. It seems that the more we think we know and have already decided, the further along we think we are. And that&rsquo;s true up to a point, but even then variability is a constant presence. Variability is inherently neither bad or good&mdash;it just is what it is. But it&rsquo;s the economics associated with the timing and type of variability that determines outcomes. The goal is to manage variability, and to preserve options, providing the controls and flexibility teams need to build great solutions. This article&nbsp;describes how to manage variability&nbsp;and preserve options with set-based design. For more on managing variability, see Principle #7&mdash;Apply cadence; synchronize with cross-domain planning.</div>"^^rdf:HTML ;
+  skos:prefLabel "03. Assume variability; preserve options"@en ;
+  skos:related esdm_begrip:ApplyCadence ;
 .
 esdm_begrip:Atmail
   a skos:Concept ;
@@ -382,7 +523,7 @@ esdm_begrip:AzCopy
 esdm_begrip:AzureActiveDirectory
   a skos:Concept ;
   dc:source "https://www.varonis.com/blog/azure-active-directory/"^^xsd:anyURI ;
-  skos:broader esdm_begrip:MicrosoftAzure ;
+  skos:broader esdm_begrip:AzureAnalysisServices ;
   skos:definition "<div lang=\"en\">Azure Active Directory (Azure AD) is Microsoft&rsquo;s enterprise cloud-based identity and access management (IAM) solution. Azure AD is the backbone of the Office 365 system, and it can sync with on-premise&nbsp;<a href=\"https://www.varonis.com/blog/what-is-active-directory/\" target=\"_blank\" rel=\"noopener noreferrer\">Active Directory</a>&nbsp;and provide authentication to other cloud-based systems via OAuth.</div>"^^rdf:HTML ;
   skos:prefLabel "Azure Active Directory"@en ;
   skos:related esdm_begrip:ActiveDirectory ;
@@ -718,6 +859,13 @@ esdm_begrip:AzureLinkedService
   skos:related esdm_begrip:AzureIntegrationRuntime ;
   skos:related esdm_begrip:AzureParameter ;
 .
+esdm_begrip:AzureNetworking
+  a skos:Concept ;
+  dc:source "https://k21academy.com/microsoft-azure/az-303/azure-networking/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:MicrosoftAzure ;
+  skos:definition "<div lang=\"en\">Azure Networking is a communication protocol for connecting multiple resources via the Internet. Microsoft provides various services and tools under Azure that make your network strong and easy to manage.&nbsp;</div>"^^rdf:HTML ;
+  skos:prefLabel "Azure Networking"@en ;
+.
 esdm_begrip:AzureParameter
   a skos:Concept ;
   skos:broader esdm_begrip:AzureDataFactory ;
@@ -933,6 +1081,13 @@ esdm_begrip:Base
   skos:broader esdm_begrip:RelationeleDatabase ;
   skos:prefLabel "Base"@nl ;
 .
+esdm_begrip:BaseMilestonesOnObjectiveEvaluationOfWorkingSystems
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/base-milestones-on-objective-evaluation-of-working-systems/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFeLeanAgilePrinciples ;
+  skos:definition "<div lang=\"en\">Developing today&rsquo;s large systems requires substantial resources&mdash;investments that can total millions and even hundreds of millions of dollars. Developers and customers have a mutual <a href=\"https://www.investopedia.com/terms/f/fiduciary.asp\" target=\"_blank\" rel=\"noopener\">fiduciary</a> responsibility to ensure that investments in new Solutions will deliver the necessary economic benefits. Otherwise, what is the reason to proceed? Clearly, stakeholders must collaborate in ways that help ensure the potential to realize the prospective economic benefit throughout the development process, versus engaging in wishful thinking until the end. The industry has generally applied&nbsp;a sequential phase-gated (waterfall) development process to address this challenge, measuring and controlling progress through a series of specific milestones. These phase-gate milestones are not arbitrary. They follow a seemingly logical and sequential process: discovery, requirements, design, development, test, and delivery.</div>"^^rdf:HTML ;
+  skos:prefLabel "05. Base milestones on objective evaluation of working systems"@en ;
+.
 esdm_begrip:BatchLayer
   a skos:Concept ;
   dc:source "https://levelup.gitconnected.com/big-data-lambda-architecture-in-a-nutshell-fd5e04b12acc"^^xsd:anyURI ;
@@ -1038,6 +1193,58 @@ esdm_begrip:BorderGatewayProtocol
 <p>Op&nbsp;<a class=\"mw-redirect\" title=\"Internetknooppunt\" href=\"https://nl.wikipedia.org/wiki/Internetknooppunt\">internetknooppunten</a>&nbsp;zoals de&nbsp;<a title=\"Amsterdam Internet Exchange\" href=\"https://nl.wikipedia.org/wiki/Amsterdam_Internet_Exchange\">AMS-IX</a>&nbsp;of&nbsp;<a title=\"NL-ix\" href=\"https://nl.wikipedia.org/wiki/NL-ix\">NL-ix</a>&nbsp;kunnen internetproviders (nationaal en internationaal) elkaars \"peer\" worden via een zogenaamd \"shared-LAN\".</p></div>"""^^rdf:HTML ;
   skos:prefLabel "Border Gateway Protocol"@nl ;
 .
+<http://ordina.nl/esdm/im/begrippen/id/BuildIncrementallyWithFast%2CIntegratedLearningCycles>
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/build-incrementally-with-fast-integrated-learning-cycles/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFeLeanAgilePrinciples ;
+  skos:definition "<div lang=\"en\">In traditional, phase-gated development, investment costs begin immediately and accumulate until a Solution is delivered. Often, little to no actual value is provided before all of the committed Features are available or the program runs out of time or money. During development, it&rsquo;s difficult to get any meaningful feedback, because the process just isn&rsquo;t designed for it. What&rsquo;s more, the development process itself isn&rsquo;t set up or implemented to allow incremental capabilities to be evaluated by the customer. As a result, the risk remains in the program until the deadline, and even into deployment and after initial use. No wonder the process is error-prone and problematic, often resulting in loss of trust with the customer. Attempting to adjust for this, both parties try even harder to define the requirements and select the best design up-front. They also typically implement even more rigorous phase gates. Each of these remedies, unfortunately, actually compounds the underlying problem. This is a systems-level problem in the development process: it must be addressed systemically.</div>"^^rdf:HTML ;
+  skos:prefLabel "04. Build incrementally with fast, integrated learning cycles"@en ;
+  skos:related esdm_begrip:PhaseGateProcess ;
+.
+esdm_begrip:BuildQualityInToEachIncrementOfTheSolution
+  a skos:Concept ;
+  skos:broader esdm_begrip:ResponsibilitiesOfTheAgileTeam ;
+  skos:prefLabel "Build quality in to each increment of the solution"@en ;
+.
+esdm_begrip:BuiltInQuality
+  a skos:Concept ;
+  skos:broader esdm_begrip:SAFeCoreValues ;
+  skos:definition """<ul lang=\"en\">
+<li>Refuse to accept low-quality work</li>
+<li>Support investments in technical debt reduction</li>
+<li>Ensure UX, architecture, operations, security,</li>
+<li>compliance, and others are part of the flow of work</li>
+</ul>"""^^rdf:HTML ;
+  skos:prefLabel "Built-in Quality"@en ;
+.
+esdm_begrip:BusinessAgility
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/business-agility/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:definition """Every business is a software business now.
+Achieving a state of Business Agility means that the entire organization—not just development—is engaged in continually and proactively delivering innovative business solutions faster than the competition."""@en ;
+  skos:note "<div lang=\"en\">Business Agility requires technical agility and a business-level commitment to product and Value Stream thinking.<br />And it requires that everyone involved in delivering business solutions uses Lean and Agile practices.</div>"^^rdf:HTML ;
+  skos:prefLabel "Business Agility"@en ;
+  skos:related esdm_begrip:OrganizeAroundValue ;
+.
+esdm_begrip:BusinessAgilityAssessment
+  a skos:Concept ;
+  dc:source "https://bit.ly/Community-MeasureAndGrow"^^xsd:anyURI ;
+  dc:source "https://www.scaledagileframework.com/measure-and-grow/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:BusinessAgility ;
+  skos:definition """<div lang=\"en\">Measure and Grow is the way each portfolio evaluates their progress toward Business Agility and determines their next improvement steps:<br />
+<ol>
+<li>Create a high-level summary using the Business Agility assessment</li>
+<li>Go deeper with the Seven Core Competency assessments</li>
+<li>Analyze results and identify opportunities to improve</li>
+</ol></div>"""^^rdf:HTML ;
+  skos:prefLabel "Business Agility Assessment"@en ;
+.
+esdm_begrip:BusinessAgilityCoreCompetencies
+  a skos:Concept ;
+  skos:broader esdm_begrip:BusinessAgility ;
+  skos:prefLabel "Business Agility Core Competencies"@en ;
+.
 esdm_begrip:BusinessAnalytics
   a skos:Concept ;
   dc:source "https://www.exact.com/nl/blog/handel/wat-is-het-verschil-tussen-business-reporting-en-analytics"^^xsd:anyURI ;
@@ -1063,6 +1270,13 @@ Analytics geeft u antwoord op vragen als: Waarom gebeurt dit? Welke kansen mis i
 <p>Met BI kunnen&nbsp;<strong>voorspellende analyses</strong>&nbsp;worden uitgevoerd. Daarmee kan een bedrijf beter inspelen op de toekomstige marktsituatie. Het product van BI, de business insights, komt uiteindelijk terecht bij de directie van een bedrijf. Meestal in de vorm van kant en klare rapporten (reporting) of via overzichtelijke dashboards.</p>
 <p>Business intelligence software wordt de laatste jaren op steeds grotere schaal ge&iuml;ntegreerd in ERP of&nbsp;<a class=\"tooltip-link\" title=\"\" href=\"https://www.ictportal.nl/ict-lexicon/crm-customer-relationship-management\" data-template=\"template_11301\" data-popup-id=\"popup_11301\">CRM-systemen</a>. Grote spelers zoals&nbsp;<a class=\"tooltip-link\" title=\"Business Intelligence (BI)\" href=\"https://www.ictportal.nl/onderwerpen/enterprise-resource-planning/erp-pakketten/microsoft-dynamics-365\" data-template=\"template_14870\" data-popup-id=\"popup_14870\">Microsoft</a>,&nbsp;<a class=\"tooltip-link\" title=\"Oracle ERP\" href=\"https://www.ictportal.nl/onderwerpen/enterprise-resource-planning/erp-pakketten/oracle-erp\" data-template=\"template_2397\" data-popup-id=\"popup_2397\">Oracle</a>&nbsp;en&nbsp;<a class=\"tooltip-link\" title=\"SAP ERP: geschikt systeem voor uw organisatie?\" href=\"https://www.ictportal.nl/onderwerpen/enterprise-resource-planning/erp-pakketten/sap-erp\" data-template=\"template_1352\" data-popup-id=\"popup_1352\">SAP</a>&nbsp;hebben BI-modules in hun ERP-software.&nbsp;<a class=\"tooltip-link\" title=\"\" href=\"https://www.ictportal.nl/onderwerpen/enterprise-resource-planning/erp-pakketten/microsoft-dynamics-365/power-bi\" data-template=\"template_80\" data-popup-id=\"popup_80\">Power BI</a>&nbsp;van Microsoft, OBI en Hyperion van Oracle en Business Objects van SAP.</p></div>"""^^rdf:HTML ;
   skos:prefLabel "Business Intelligence (BI)"@nl ;
+.
+esdm_begrip:BusinessOwner
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/business-owners/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:AgileReleaseTrain ;
+  skos:definition "<div lang=\"en\">Business Owners are a small group of stakeholders who have the primary business and technical responsibility for governance, compliance, and return on investment (ROI) for a Solution developed by an Agile Release Train (ART). They are key stakeholders on the ART who must evaluate fitness for use and actively participate in certain ART events. Business Owners can be identified&nbsp;by asking the following questions: Who is ultimately responsible for business outcomes? Who can steer this ART to develop the right Solution? Who can speak to the technical competence of the solution now and into the near future? Who should participate in planning, help eliminate impediments, and speak on behalf of development, the business, and the customer? Who can approve and defend a set of Program Increment (PI) plans, knowing full well that they will never satisfy everyone? Who can help coordinate the efforts with other departments and organizations within the Enterprise? The answers to these questions will identify the Business Owners, who will play a key role&nbsp;in helping the ART deliver value. Among other duties, they&nbsp;have specific responsibilities during&nbsp;PI Planning, where they participate in mission setting, planning, draft plan reviews, conducting management reviews, and problem-solving. They also assign business value to Team PI Objectives and approve the&nbsp;PI plan. But they don&rsquo;t just disappear after planning. Active and continuous involvement throughout each PI by Business Owners is a determining factor in the success of each train.</div>"^^rdf:HTML ;
+  skos:prefLabel "Business Owner"@en ;
 .
 esdm_begrip:BusinessReporting
   a skos:Concept ;
@@ -1193,6 +1407,23 @@ esdm_begrip:Conductor
   skos:definition "De Conductor bevat naast een servicebus ook een RGBZ zakenmagazijn en functionaliteit voor MijnOverheid Berichtenbox. Hiermee is de Conductor het hart van uw midoffice en/of zaaksysteem. De Conductor helpt u bij het verbeteren van van uw digitale dienstverlening, waarbij 7 * 24 bereikbaarheid van uw gemeentelijk website invulling geeft aan kanaalonafhankelijke dienstverlening en kanaalsturing. De Conductor realiseert prefill van diverse gegevens die over uw burgers, bedrijven en instellingen bekend zijn en benut veilige hulpmiddelen zoals DigiD en eHerkenning. Anderzijds helpt onze oplossing u bij gemeentebreed zicht op alle producten en diensten (ofwel zaken) die u aanbiedt en om grip te houden op de voortgang hiervan. Verder sluit de Conductor aan op landelijke initiatieven zoals: Digikoppeling, e-factureren, LVWOZ, Corv en het Omgevingsloket Online. De Conductor ondersteunt volledig de meergemeente functionaliteit en is zowel lokaal te gebruiken en als SaaS oplossing leverbaar."@nl ;
   skos:prefLabel "Conductor"@nl ;
 .
+esdm_begrip:Configuratiebeheersysteem
+  a skos:Concept ;
+  skos:altLabel "Configuratiebeheersysteem"@nl ;
+  skos:broader esdm_begrip:DataManagementSysteem ;
+  skos:prefLabel "CMS"@nl ;
+.
+esdm_begrip:ConfigurationManagementDatabase
+  a skos:Concept ;
+  dc:source "https://www.motadata.com/nl/blog/what-is-cmdb"^^xsd:anyURI ;
+  skos:altLabel "CMDB"@nl ;
+  skos:broader esdm_begrip:DataManagementSysteem ;
+  skos:definition """<div lang=\"nl\"><p>Kort gezegd is een CMDB een opslagplaats die informatie opslaat over de componenten waaruit uw IT-infrastructuur bestaat. Deze componenten worden vaak CI's (configureerbare items) genoemd. Volgens ITIL is een CI elke asset die moet worden beheerd om IT-services te leveren.</p>
+<p>Doorgaans bevat een CMDB een lijst met CI's, hun kenmerken en onderlinge relaties.</p>
+<p>Een van de kernfuncties van een CMDB is het ondersteunen van servicemanagementprocessen, voornamelijk: incident-, probleem-, verandering-, vrijgave- en activabeheer.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Configuration Management Database"@nl ;
+  skos:related esdm_begrip:ITILProcessen ;
+.
 esdm_begrip:ConnectAndCollect
   a skos:Concept ;
   skos:broader esdm_begrip:AzureDataDrivenWorkflow ;
@@ -1204,6 +1435,21 @@ esdm_begrip:ContainerLinuxEtcd
   skos:broader esdm_begrip:KeyValueDatabase ;
   skos:prefLabel "Container Linux etcd" ;
 .
+esdm_begrip:ContinuousLearningCulture
+  a skos:Concept ;
+  skos:broader esdm_begrip:BusinessAgilityCoreCompetencies ;
+  skos:definition """<ul lang=\"en\">
+<li>Everyone in the organization learns and grows together</li>
+<li>Exploration and creativity are part of the organization's DNA</li>
+<li>Continuously improving Solutions, services, and processes is everyone's<br />responsibility</li>
+</ul>"""^^rdf:HTML ;
+  skos:note """<ul lang=\"en\">
+<li>Learning Organization</li>
+<li>Innovation Culture</li>
+<li>Relentless Improvement</li>
+</ul>"""^^rdf:HTML ;
+  skos:prefLabel "Continuous Learning culture"@en ;
+.
 esdm_begrip:CosmosDB
   a skos:Concept ;
   dc:source "https://en.wikipedia.org/wiki/Cosmos_DB"^^xsd:anyURI ;
@@ -1213,6 +1459,14 @@ esdm_begrip:CosmosDB
   skos:prefLabel "Cosmos DB"@en ;
   skos:related esdm_begrip:ModelAndServe ;
   skos:related esdm_begrip:Publish ;
+.
+esdm_begrip:CostOfDelay
+  a skos:Concept ;
+  skos:broader esdm_begrip:Flow ;
+  skos:definition "<div lang=\"en\">In SAFe, the &lsquo;jobs&rsquo; are the Features, Capabilities, and Epics that live in their respective backlogs. &nbsp;However, since it can be challenging to determine the total cost of delay for things that haven&rsquo;t ever been implemented, SAFe uses a proxy for CoD, which estimates the size of the job relative to other jobs in the backlog. Three primary components contribute to the CoD: User-business value &ndash; What is the relative value to the customer or business? Do our users prefer this over that? What is the revenue impact on our business? Is there a potential penalty or other negative effects if we delay? Time criticality &ndash; How does the user/business value decay over time? Is there a fixed deadline? Will they wait for us or move to another solution? Are there Milestones on the critical path impacted by this? What is the current effect on customer satisfaction? Risk reduction-opportunity enablement value &ndash; What else does this do for our business? Does it reduce the risk of this or a future delivery? Is there value in the information we will receive? Will this feature enable new business opportunities?</div>"^^rdf:HTML ;
+  skos:definition "<div lang=\"en\">In the general case, give preference to jobs with shorter duration and higher CoD, using weighted shortest job first (WSJF):</div>"^^rdf:HTML ;
+  skos:prefLabel "Cost of Delay"@en ;
+  skos:related esdm_begrip:WSJF ;
 .
 esdm_begrip:CouchDB
   a skos:Concept ;
@@ -1231,6 +1485,11 @@ esdm_begrip:CourierMailServer
   a skos:Concept ;
   skos:broader esdm_begrip:Mailserver ;
   skos:prefLabel "Courier Mail Server"@nl ;
+.
+esdm_begrip:CreateAndRefineStoriesAndAcceptanceCriteria
+  a skos:Concept ;
+  skos:broader esdm_begrip:ResponsibilitiesOfTheAgileTeam ;
+  skos:prefLabel "Create and refine Stories and acceptance criteria"@en ;
 .
 esdm_begrip:CrossOriginResourceSharing
   a skos:Concept ;
@@ -1255,6 +1514,22 @@ esdm_begrip:Curation
 <p>Most organizations will have one or very few lead curators who are responsible for moderating data catalog content much as wiki moderators manage content. Lead curators have a high level of responsibility for metadata and catalog quality &ndash; responsibilities that require substantial time commitment.</p></div>"""^^rdf:HTML ;
   skos:prefLabel "Curation"@nl ;
   skos:related esdm_begrip:DataCatalogus ;
+.
+esdm_begrip:CustomerCentricity
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/customer-centricity/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:definition """<div lang=\"en\">Customer centricity is a mindset: Whenever&nbsp;a customer-centric&nbsp;enterprise makes a decision, it deeply considers the effect it will have on its end users.&nbsp;This motivates us to:<br />
+<ul lang=\"en\">
+<li>Focus on the customer &ndash; Customer-centric enterprises use segmentation to align and focus the enterprise on specific, targeted user segments</li>
+<li>Understand the customer&rsquo;s needs Customer-centric enterprises move beyond merely listening to customers who ask for features. Instead, they invest the time to identify underlying and ongoing customer needs</li>
+<li>Think and feel like the customer Customer-centric enterprises try to see the world from their customer&rsquo;s point of view</li>
+<li>Build whole product solutions Customer-centric enterprises design a complete solution for the user&rsquo;s needs, ensuring that the initial and long-term experience of the customer is always ideal and evolving as needed</li>
+<li>Know customer lifetime value Customer-centric enterprises move beyond a transactional mentality and instead focus on creating longer term relationships based on a clear and accurate understanding of how the customer derives value from the solution</li>
+</ul>
+</div>"""^^rdf:HTML ;
+  skos:definition "<div lang=\"en\">Customers are the ultimate beneficiaries of the value of the business solutions created and maintained by the portfolio value streams. Customer centricity is a mindset and a way of doing business that focuses on creating positive experiences for the customer through the full set of products and services that the enterprise offers. Customer-centric businesses generate greater profits, increased employee engagement, and more satisfied customers. Customer-centric governments and nonprofits create the resiliency, sustainability, and alignment needed to fulfill their mission. All customer-centric enterprises deliver whole-product solutions that are designed with a deep understanding of customer needs.</div>"^^rdf:HTML ;
+  skos:prefLabel "Customer Centricity"@en ;
 .
 <http://ordina.nl/esdm/im/begrippen/id/CustomerRelationshipManagement(CRM)>
   a skos:Concept ;
@@ -1669,6 +1944,51 @@ esdm_begrip:Datawarehouse
   skos:related esdm_begrip:LakehouseArchitecture ;
   skos:related esdm_begrip:Reporting ;
 .
+esdm_begrip:DecentralizeDecisionMaking
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/decentralize-decision-making/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFeLeanAgilePrinciples ;
+  skos:definition """<div lang=\"en\">Delivering value in the shortest sustainable lead time requires decentralized decision-making. It is a key tenet of Lean thinking. Any decision that must be escalated to higher levels of authority introduces a delay. Also, escalated decisions can decrease quality due to the lack of local context, plus changes to the facts on which they were based that occur during the waiting period. Conversely, decentralizing decision-making reduces delays, improves product development flow and throughput, and facilitates faster feedback and more innovative solutions. Higher levels of empowerment are an additional, tangible benefit. Centralize Strategic Decisions Of course, not all decisions should be decentralized. Some decisions are strategic, have far-reaching impact, and are outside the scope, knowledge, or responsibilities of the teams. In addition, leaders are still accountable for outcomes. They also have the market knowledge, longer-range perspectives, and understanding of the business and financial landscape necessary to steer the enterprise. Some decisions, then, should be centralized. Generally, they share the following characteristics:<br />
+<ul>
+<li>Infrequent &ndash; Made infrequently, these decisions typically are not urgent, and deeper consideration is appropriate (ex., product strategy, international expansion).</li>
+<li>Long-lasting &ndash; Once made, these decisions are unlikely to change at least in the short term (e.g., commitment to a standard technology platform, commitment to organizational realignment around Value Streams).</li>
+<li>Provide significant economies of scale &ndash; These choices deliver large and broad economic benefits (e.g., a common way of working, standard development languages, standard tooling, offshoring).</li>
+</ul>
+Leadership is charged with making these types of decisions, supported by the input of those&nbsp;stakeholders&nbsp;who are affected by the results.</div>"""^^rdf:HTML ;
+  skos:prefLabel "09. Decentralize decision-making"@en ;
+  skos:related esdm_begrip:Flow ;
+.
+esdm_begrip:DefineBuildTestAndDeployStories
+  a skos:Concept ;
+  skos:broader esdm_begrip:ResponsibilitiesOfTheAgileTeam ;
+  skos:prefLabel "Define build test and deploy Stories"@en ;
+.
+esdm_begrip:DesignThinking
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/design-thinking/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:definition "<div lang=\"en\">Design Thinking is a customer-centric development process that creates desirable products that are profitable and sustainable over their lifecycle. It goes beyond the traditional focus on the features and functions of a proposed product. Instead, it emphasizes understanding the problem to be solved, the context in which the solution will be used, and the evolution of that solution.<br /><br />Traditional waterfall approaches to product development are sequential: requirements are defined; then, solutions are designed, built, and delivered to the market. The focus tends to be on the most apparent problems. Often, success is determined by implementing a solution that meets the requirements instead of the needs of the user, resulting in products and services with unusable or ignored features that frustrate users and fail to meet the business goals of the enterprise. Design thinking (Figure 1) represents a profoundly different approach to product and solution development, in which divergent and convergent techniques are applied to understand a problem, design a solution, and deliver that solution to the market.</div>"^^rdf:HTML ;
+  skos:prefLabel "Design Thinking"@en ;
+.
+esdm_begrip:DevOps
+  a skos:Concept ;
+  skos:broader esdm_begrip:WerkwijzenProcessen ;
+  skos:prefLabel "DevOps"@nl ;
+.
+esdm_begrip:DevelopAndCommitToTeamPIObjectivesAndIterationGoals
+  a skos:Concept ;
+  skos:broader esdm_begrip:ResponsibilitiesOfTheAgileTeam ;
+  skos:prefLabel "Develop and commit to team PI Objectives and Iteration Goals"@en ;
+.
+esdm_begrip:DevelopmentValueStream
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/development-value-streams/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:definition "<div lang=\"en\">Development value streams (DVS) are the sequence of activities needed to convert a business hypothesis into a digitally-enabled Solution. Examples include designing a medical device or geophysical satellite, or developing and deploying a software application, SaaS system, or an e-commerce web site. As described in Principle #10, Organizing around value, the value stream concept is a critical underpinning of Lean thinking and fundamental to SAFe. There are two types of value streams described in SAFe. Operational value streams (OVS) are the sequence of activities needed to deliver a product or service to a customer. Examples include manufacturing a product, fulfilling an order, admitting and treating a medical patient, providing a loan, or delivering a professional service. This article describes development value streams (DVS), the sequence of activities teams use to develop and support the products used by operational value streams. Systems and software developers, product managers, engineers, scientists, and IT practitioners all work in development value streams. That is where they define, build, and deploy the Solutions their Customers consume. These customers may be internal &mdash; people who are part of an Operational Value Stream.&nbsp;Or they may be external customers who directly consume the products and services the enterprise sells and supports.</div>"^^rdf:HTML ;
+  skos:prefLabel "Development Value Stream"@en ;
+  skos:related esdm_begrip:OrganizeAroundValue ;
+  skos:related esdm_begrip:Solution ;
+.
 esdm_begrip:Dienstverlener
   a skos:Concept ;
   skos:prefLabel "Dienstverlener"@nl ;
@@ -1969,6 +2289,7 @@ esdm_begrip:ESDM_Begrippen
   skos:hasTopConcept esdm_begrip:Protocol ;
   skos:hasTopConcept esdm_begrip:Querytaal ;
   skos:hasTopConcept esdm_begrip:Reporting ;
+  skos:hasTopConcept esdm_begrip:SAFe ;
   skos:hasTopConcept esdm_begrip:Schaalbaarheid ;
   skos:hasTopConcept esdm_begrip:Search ;
   skos:hasTopConcept esdm_begrip:SecurityAndAccess ;
@@ -2009,6 +2330,13 @@ esdm_begrip:Elasticsearch
   skos:definition "Elasticsearch is een zoekserver gebaseerd op Lucene. Het biedt een gedistribueerde, multitenant-compatibele full-text zoekmachine met een RESTful webinterface en schemavrije JSON-documenten. Elasticsearch is ontwikkeld in Java en wordt vrijgegeven als open source onder de voorwaarden van de Apache-licentie."@nl ;
   skos:prefLabel "ElasticSearch"@nl ;
   skos:related esdm_begrip:PoolPartyGraphSearchServer ;
+.
+esdm_begrip:EmpathyMap
+  a skos:Concept ;
+  skos:broader esdm_begrip:DesignThinking ;
+  skos:definition "<div lang=\"en\">Customer-centric enterprises use empathy throughout the design process. Broadly speaking, empathetic design dismisses preconceived ideas and uses the customer&rsquo;s perspective to inform solution development. Empathy maps[1] are a design thinking tool that promote customer identification by helping teams develop deep, shared understanding for others (Figure 4). They help teams imagine what a specific persona is thinking, feeling, hearing, and seeing as they use the product. The greater the degree of empathy that a team has for their customer, the more likely the team will be able to design a desirable solution.</div>"^^rdf:HTML ;
+  skos:prefLabel "Empathy map"@en ;
+  skos:related esdm_begrip:Persona ;
 .
 esdm_begrip:EnableU
   a skos:Concept ;
@@ -2084,6 +2412,22 @@ Dezelfde granulariteit die microservices bieden voor toepassingsontwerp, kan wor
   skos:prefLabel "Enterprise Service Bus "@nl ;
   skos:related esdm_begrip:Microservices ;
   skos:related esdm_begrip:ServiceOrientedArchitecture ;
+.
+esdm_begrip:EnterpriseSolutionDelivery
+  a skos:Concept ;
+  skos:broader esdm_begrip:BusinessAgilityCoreCompetencies ;
+  skos:definition """<ul lang=\"en\">
+<li>Apply Lean system engineering practices to build really big systems</li>
+<li>Coordinate and align the full supply chain</li>
+<li>Continue to enhance value after release</li>
+</ul>"""^^rdf:HTML ;
+  skos:note """<ul lang=\"en\">
+<li>Lean System and Solution Engineering</li>
+<li>Coordinate Trains and Suppliers</li>
+<li>Solution Train</li>
+<li>Continually Evolve Live Systems</li>
+</ul>"""^^rdf:HTML ;
+  skos:prefLabel "Enterprise Solution Delivery"@en ;
 .
 <http://ordina.nl/esdm/im/begrippen/id/Equinix–DataHub>
   a skos:Concept ;
@@ -2269,6 +2613,21 @@ esdm_begrip:FTPServer
   skos:broader esdm_begrip:Server ;
   skos:prefLabel "FTP-server"@nl ;
 .
+esdm_begrip:Feature
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/features-and-capabilities/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:definition "<div lang=\"en\">A Feature is a service that fulfills a stakeholder need. Each feature includes a benefit hypothesis and acceptance criteria, and is sized or split as necessary to be delivered by a single Agile Release Train (ART) in a Program Increment (PI). A Capability is a higher-level solution behavior that typically spans multiple ARTs. Capabilities are sized and split into multiple features to facilitate their implementation in a single PI. Features also lend themselves to the Lean UX process model, which includes a definition of the Minimum Marketable Feature (MMF), a benefit hypothesis, and acceptance criteria. The MMF helps limit the scope and investment, enhances agility, and provides fast feedback.&nbsp; Capabilities behave the same way as features. However, they are at a higher level of abstraction and support the definition and development of large Solutions.</div>"^^rdf:HTML ;
+  skos:definition """<div lang=\"en\">Features represent the work for the Agile Release Train<br />
+<ul lang=\"\">
+<li lang=\"en\">The Feature benefit hypothesis justifies development cost and provides business perspective for decision-making</li>
+<li lang=\"en\">Acceptance criteria are typically defined during Program Backlog refinement</li>
+<li lang=\"en\">Reflect functional and<br />nonfunctional requirements</li>
+<li lang=\"en\">Fits in one PI</li>
+</ul></div>"""^^rdf:HTML ;
+  skos:example "<div lang=\"en\">Multi-factor authentication<br />Benefit hypothesis<br />Enhance user security via both password<br />and a device<br />Acceptance criteria<br />1. USB tokens as a first layer<br />2. Password authentication second layer<br />3. Multiple tokens on a single device<br />4. User activity log reflecting both<br />authentication factors</div>"^^rdf:HTML ;
+  skos:prefLabel "Feature"@en ;
+.
 esdm_begrip:FileMaker
   a skos:Concept ;
   skos:broader esdm_begrip:RelationeleDatabase ;
@@ -2279,6 +2638,11 @@ esdm_begrip:Firebird
   skos:broader esdm_begrip:RelationeleDatabase ;
   skos:prefLabel "Firebird"@nl ;
 .
+esdm_begrip:FiveToElevenTeamMembers
+  a skos:Concept ;
+  skos:broader esdm_begrip:ResponsibilitiesOfTheAgileTeam ;
+  skos:prefLabel "Five to eleven team members"@en ;
+.
 esdm_begrip:FlatNamespace
   a skos:Concept ;
   dc:source "https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-data-lake-storage/4-azure-data-lake-and-blob-storage"^^xsd:anyURI ;
@@ -2286,6 +2650,19 @@ esdm_begrip:FlatNamespace
   skos:definition "In Azure Blob storage, you can store large amounts of unstructured (\"object\") data, in a single hierarchy, also known as a flat namespace. You can access this data by using HTTP or HTTPs. Azure Data Lake Storage Gen2 builds on blob storage and optimizes I/O of high-volume data by using hierarchical namespaces that you turned on in the previous exercise."@en ;
   skos:prefLabel "Flat namespace"@en ;
   skos:related esdm_begrip:HierarchicalNamespace ;
+.
+esdm_begrip:Flow
+  a skos:Concept ;
+  skos:broader esdm_begrip:Value ;
+  skos:definition """<ul lang=\"en\">
+<li>Optimize sustainable value delivery</li>
+<li>Build in quality</li>
+<li>Understand, exploit, and manage variability</li>
+<li>Move from projects to products</li>
+</ul>"""^^rdf:HTML ;
+  skos:prefLabel "Flow"@en ;
+  skos:related esdm_begrip:AgileReleaseTrain ;
+  skos:related esdm_begrip:DecentralizeDecisionMaking ;
 .
 esdm_begrip:FoundationDB
   a skos:Concept ;
@@ -2647,6 +3024,14 @@ esdm_begrip:HierarchicalNamespace
   skos:prefLabel "Hierarchical namespace"@en ;
   skos:related esdm_begrip:FlatNamespace ;
 .
+esdm_begrip:HoldingCost
+  a skos:Concept ;
+  dc:source "https://innolution.com/resources/glossary/holding-cost"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:definition "<div lang=\"en\">The cost for delaying feedback and value by holding a batch of work items (by not immediately performing the work).&nbsp;In manufacturing, holding cost is the cost of not sending a batch to the next process.&nbsp;Contrast with&nbsp;<em><a href=\"https://innolution.com/resources/glossary/transaction-cost/\" target=\"_blank\" rel=\"noopener\">transaction&nbsp;cost</a></em>. See also&nbsp;<a href=\"https://innolution.com/resources/glossary/u-curve-optimization/\" target=\"_blank\" rel=\"noopener\"><em>U-curve optimization</em></a>.</div>"^^rdf:HTML ;
+  skos:prefLabel "Holding Cost"@en ;
+  skos:related esdm_begrip:TransactionCost ;
+.
 esdm_begrip:HorizontaalSchalen
   a skos:Concept ;
   skos:broader esdm_begrip:Schaalbaarheid ;
@@ -2789,6 +3174,20 @@ esdm_begrip:ITILProcessen
 
 Het ITIL-framework bestaat uit vijf fasen als onderdeel van de servicelevenscyclus. Elke fase bestaat uit een reeks processen of functies die zijn afgestemd op de IT-organisatiestructuur. Bedrijven passen een aantal van deze processen toe die geschikt zijn voor hun teams. ITIL is daardoor flexibel qua adoptie."""@nl ;
   skos:prefLabel "ITIL Processen"@nl ;
+  skos:related esdm_begrip:ConfigurationManagementDatabase ;
+  skos:related esdm_begrip:ITSM ;
+.
+esdm_begrip:ITSM
+  a skos:Concept ;
+  dc:source "https://www.servicenow.nl/products/itsm/what-is-itsm.html"^^xsd:anyURI ;
+  skos:broader esdm_begrip:WerkwijzenProcessen ;
+  skos:definition """<div lang=\"nl\">ITSM (IT-servicebeheer) staat voor de processen en technologie die gebruikt worden om IT-services te plannen, leveren en ondersteunen.<br /><br />
+<p>IT-servicebeheer (<a href=\"https://www.servicenow.nl/products/itsm.html\">ITSM</a>) richt zich op de behoeften van klanten en op IT-services voor klanten in plaats van op IT-systemen. ITSM legt de nadruk op voortdurende verbetering.</p>
+<p>De hoofdgedachte achter ITSM is de levering van IT-as-a-service. Dit gaat verder dan de traditionele IT-ondersteuning. In plaats daarvan is ITSM veelomvattender. Het beschrijft de processen en tools die IT-teams gebruiken om IT-services van end-to-end te beheren. Daarnaast omvat het alle informatietechnologie&euml;n binnen een organisatie.</p>
+<p>ITSM stemt de doelstellingen van een IT-team af op de bredere doelstellingen van het bedrijf, zodat hun acties de algemene missie ondersteunen.</p>
+</div>"""^^rdf:HTML ;
+  skos:prefLabel "ITSM"@nl ;
+  skos:related esdm_begrip:ITILProcessen ;
 .
 esdm_begrip:Identifier
   a skos:Concept ;
@@ -2878,6 +3277,19 @@ esdm_begrip:Ingres
   a skos:Concept ;
   skos:broader esdm_begrip:RelationeleDatabase ;
   skos:prefLabel "Ingres"@nl ;
+.
+esdm_begrip:Innovation
+  a skos:Concept ;
+  skos:broader esdm_begrip:Value ;
+  skos:definition """<ul lang=\"en\">
+<li>Innovative people</li>
+<li>Provide time and space for innovation</li>
+<li>Go see</li>
+<li>Experimentation and feedback</li>
+<li>Innovation riptides</li>
+<li>Pivot without mercy or guilt</li>
+</ul>"""^^rdf:HTML ;
+  skos:prefLabel "Innovation"@en ;
 .
 esdm_begrip:Integratievoorziening
   a skos:Concept ;
@@ -2983,6 +3395,29 @@ esdm_begrip:JeevesERP
   skos:broader <http://ordina.nl/esdm/im/begrippen/id/EnterpriseResourcePlanning(ERP)> ;
   skos:definition "De kern van het Jeeves bedrijfssysteem bestaat uit zeven verschillende toepassingsgebieden, die worden versterkt met krachtige functionaliteit voor multi-company en groepen. Daarnaast is de ERP-oplossing eenvoudig uit te breiden met slimme add-on functionaliteit en diverse integraties. Elk toepassingsgebied bevat rijke en diepgaande functionaliteit: het resultaat van 20 jaar productontwikkeling.  "@nl ;
   skos:prefLabel "Jeeves ERP"@en ;
+.
+esdm_begrip:JobSequencing
+  a skos:Concept ;
+  skos:broader esdm_begrip:Flow ;
+  skos:definition """<div lang=\"en\"><strong>Prioritize Features for optimal ROI</strong><br />In a flow system, job sequencing is the key to improving economic outcomes.<br /><br />To prioritize based on Lean economics, we need to know two things:<br />
+<ul>
+<li>The cost of delay (CoD) in delivering value</li>
+<li>What is the cost to implement the valuable thing?</li>
+</ul></div>"""^^rdf:HTML ;
+  skos:prefLabel "Job sequencing"@en ;
+.
+esdm_begrip:JourneyMap
+  a skos:Concept ;
+  skos:broader esdm_begrip:DesignThinking ;
+  skos:definition "<div lang=\"en\">A customer journey map illustrates the experience as a user engages with a company&rsquo;s Operational Value Stream, products, and services. As shown in Figure 5, journey maps are powerful design thinking tools for operational value streams. They allow teams to identify ways in which the specific deliverables of one or more Development Value Streams can be improved to create a better end-to-end experience.</div>"^^rdf:HTML ;
+  skos:prefLabel "Journey Map"@en ;
+.
+esdm_begrip:Kanban
+  a skos:Concept ;
+  dc:source "https://agilescrumgroup.nl/wat-is-kanban-methode/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:WerkwijzenProcessen ;
+  skos:definition "<div lang=\"nl\">Kanban is een methode om kenniswerk-diensten (processen) te defini&euml;ren, managen, en verbeteren. Denk bijvoorbeeld aan een dienst als klachtafhandeling, softwaredevelopment, of contentproductie voor een website. De kracht van Kanban zit &lsquo;m vooral in het onzichtbare (kenniswerk) zichtbaar maken, en in de kunst om niet alles tegelijk op te pakken.</div>"^^rdf:HTML ;
+  skos:prefLabel "Kanban"@nl ;
 .
 esdm_begrip:Kantoorsoftware
   a skos:Concept ;
@@ -3121,10 +3556,66 @@ Data Sources. Data can be obtained from a variety of sources, which can then be 
   skos:related esdm_begrip:EventDrivenArchitecture ;
   skos:related esdm_begrip:KappaArchitecture ;
 .
+esdm_begrip:Leadership
+  a skos:Concept ;
+  skos:broader esdm_begrip:SAFeHouseOfLean ;
+  skos:definition """<ul lang=\"en\">
+<li>Lead by example</li>
+<li>Adopt a growth mindset</li>
+<li>Exemplify the values and principles of Lean-Agile and SAFe</li>
+<li>Develop people</li>
+<li>Lead the change</li>
+<li>Foster psychological safety</li>
+</ul>"""^^rdf:HTML ;
+  skos:prefLabel "Leadership"@en ;
+.
 esdm_begrip:Lean
   a skos:Concept ;
   skos:broader esdm_begrip:WerkwijzenProcessen ;
   skos:prefLabel "Lean"@en ;
+.
+esdm_begrip:LeanAgileLeadership
+  a skos:Concept ;
+  skos:broader esdm_begrip:BusinessAgilityCoreCompetencies ;
+  skos:definition """<ul lang=\"en\">
+<li>Inspire others by modeling desired behaviors</li>
+<li>Align mindset, words, and actions to Lean-Agile values and principles</li>
+<li>Actively lead the change and guide others to the new way of working</li>
+</ul>"""^^rdf:HTML ;
+  skos:note """<ul lang=\"en\">
+<li>Leading by Example</li>
+<li>Mindset &amp; Principles</li>
+<li>Leading Change</li>
+</ul>"""^^rdf:HTML ;
+  skos:prefLabel "Lean-Agile Leadership"@en ;
+.
+esdm_begrip:LeanPortfolioManagement
+  a skos:Concept ;
+  skos:broader esdm_begrip:BusinessAgilityCoreCompetencies ;
+  skos:definition """<ul lang=\"en\">
+<li>Align strategy, funding, and execution</li>
+<li>Optimize operations across the portfolio</li>
+<li>Lightweight governance empowers decentralized decision-making</li>
+</ul>"""^^rdf:HTML ;
+  skos:note """<ul lang=\"en\">
+<li>Strategy &amp; Investment Funding</li>
+<li>Lean Governance</li>
+<li>Agile Portfolio Operations</li>
+</ul>"""^^rdf:HTML ;
+  skos:prefLabel "Lean Portfolio Management"@en ;
+.
+esdm_begrip:LeanThinking
+  a skos:Concept ;
+  skos:broader esdm_begrip:SAFeHouseOfLean ;
+  skos:definition """<ul lang=\"en\">
+<li>Precisely specify value by product</li>
+<li>Identify the Value</li>
+<li>Stream for each product</li>
+<li>Make value flow without interruptions</li>
+<li>Let the Customer pull value from the producer</li>
+<li>Pursue perfection</li>
+</ul>"""^^rdf:HTML ;
+  skos:prefLabel "Lean thinking"@en ;
 .
 esdm_begrip:LevelDB
   a skos:Concept ;
@@ -3865,6 +4356,13 @@ esdm_begrip:OpensourceServer
   skos:broader esdm_begrip:Server ;
   skos:prefLabel "Opensource-server"@nl ;
 .
+esdm_begrip:OperationalValueStream
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/operational-value-streams/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:definition "<div lang=\"en\">Operational value streams (OVS) are the sequence of activities needed to deliver a product or service to a customer. Examples include manufacturing a product, fulfilling an order, admitting and treating a medical patient, providing a loan, or delivering a professional service. Most employees work in operational value streams that serve the customer directly, where they may: Market the enterprise&rsquo;s products and services Sell and process orders Manufacture products Provide support and deliver related services Addressing the customer&rsquo;s needs with the solutions they have helps keep the business profitable and healthy. That is the subject of this article. However, most SAFe&rsquo;s guidance focuses on helping the systems and software developers, product managers, engineers, scientists, IT practitioners, and others who work in development value streams. &nbsp;That is the subject of the companion to this article: Development Value Streams (DVS). That is where the essential activities of defining, implementing, and supporting innovative, digital data-enabled solutions occur. However, the customers they serve live either in the company or at the end of the operational value stream. Thus, an understanding of the enterprise&rsquo;s operational value streams is integral to effective solution design and implementation. Understanding them means knowing your customer, a critical aspect of Customer Centricity and Design Thinking. As described in the Development Value Stream&nbsp;article and&nbsp;Principle 10, Organizing around value, the value stream concept is a critical underpinning of Lean thinking and fundamental to SAFe. Development value streams are the primary organizational model in SAFe. A SAFe portfolio is comprised of them, each dedicated to building and supporting a set of solutions. Value streams are the most fundamental construct of Lean thinking and are foundational to SAFe. Each value stream represents the sequence of steps an enterprise uses to deliver value to its customer. Each highlights efficiencies and inefficiencies, delays, rework, and bottlenecks. They also illustrate the impact that flow, or the lack of it, has on the people who actually do all the work. Identifying, visualizing, and optimizing value streams is the primary method a Lean enterprise employs to shorten time to market while improving the timeliness, quality, and value of its products and services. Understanding value streams are the key to unlocking true Business Agility.</div>"^^rdf:HTML ;
+  skos:prefLabel "Operational Value Stream"@en ;
+.
 esdm_begrip:Oracle
   a skos:Concept ;
   skos:broader esdm_begrip:RelationeleDatabase ;
@@ -3923,6 +4421,30 @@ esdm_begrip:OracleRDFGraph
   skos:definition "De Oracle Service Bus zorgt voor integratie in SOA landschappen en is te combineren met de Oracle SOA Suite en API Management."@nl ;
   skos:prefLabel "Oracle – Service Bus"@nl ;
 .
+esdm_begrip:OrganizationalAgility
+  a skos:Concept ;
+  skos:broader esdm_begrip:BusinessAgilityCoreCompetencies ;
+  skos:definition """<ul lang=\"en\">
+<li>Create an enterprise-wide, Lean-Agile mindset</li>
+<li>Map and continuously improve business processes</li>
+<li>Respond quickly to opportunities and threats</li>
+</ul>"""^^rdf:HTML ;
+  skos:note """<ul lang=\"en\">
+<li>Lean-thinking People and Agile Teams</li>
+<li>Lean Business Operations</li>
+<li>Strategy Agility</li>
+</ul>"""^^rdf:HTML ;
+  skos:prefLabel "Organizational Agility"@en ;
+.
+esdm_begrip:OrganizeAroundValue
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/organize-around-value/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFeLeanAgilePrinciples ;
+  skos:definition "<div lang=\"en\">As described in the Business Agility article, successful enterprises don&rsquo;t start out as large and cumbersome. Typically, they begin as a network of people cooperating to address customer needs. Structure and formality are unnecessary. People just naturally do whatever needs to be done. Focusing on the customer is natural, too, because without that, Darwinism takes hold and business failure is quick and catastrophic. But as the enterprise grows and experiences success, it builds the organizational hierarchy needed to provide the time-tested management structures that will support operations, HR, finance, governance, and all the other corporate responsibilities of a functioning enterprise. Over time, however, the work of the hierarchy overtakes the work of the entrepreneurial network. The result can be a seemingly decreasing ability to deliver the right products to the right customer at the right time. And success is no longer assured.</div>"^^rdf:HTML ;
+  skos:prefLabel "10. Organize around value"@en ;
+  skos:related esdm_begrip:BusinessAgility ;
+  skos:related esdm_begrip:DevelopmentValueStream ;
+.
 esdm_begrip:OrientDB
   a skos:Concept ;
   skos:broader esdm_begrip:GraphDatabase ;
@@ -3947,6 +4469,12 @@ esdm_begrip:POSIX
   skos:related esdm_begrip:AccessControlList ;
   skos:related esdm_begrip:Unix ;
 .
+esdm_begrip:POSync
+  a skos:Concept ;
+  skos:broader esdm_begrip:ARTSync ;
+  skos:definition "<div lang=\"en\">▸ Visibility into progress, scope, and priority<br />adjustments<br />▸ Facilitated by RTE or PM<br />▸ Participants: PM, POs, other stakeholders,<br />and SMEs as necessary<br />▸ Weekly or more frequently, 30&ndash;60 minutes<br />▸ Timeboxed and followed by a meet-after</div>"^^rdf:HTML ;
+  skos:prefLabel "PO Sync"@en ;
+.
 esdm_begrip:PageBlob
   a skos:Concept ;
   dc:source "https://docs.microsoft.com/en-us/learn/modules/connect-an-app-to-azure-storage/2-explore-azure-storage"^^xsd:anyURI ;
@@ -3964,6 +4492,18 @@ esdm_begrip:Paradox
   skos:broader esdm_begrip:RelationeleDatabase ;
   skos:prefLabel "Paradox"@nl ;
 .
+esdm_begrip:Persona
+  a skos:Concept ;
+  dc:source "https://www.wrike.com/agile-guide/faq/what-are-agile-personas/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:DesignThinking ;
+  skos:definition """<div lang=\"en\">Personas are fictional characters that<br />represent the different people who might<br />use your product. Personas:<br />
+<ul lang=\"\">
+<li lang=\"en\">Convey the problems they&rsquo;re facing in<br />context and key triggers for using the<br />product</li>
+<li lang=\"en\">Capture rich, concise information that<br />inspires great products without<br />unnecessary details</li>
+</ul></div>"""^^rdf:HTML ;
+  skos:prefLabel "Persona"@nl ;
+  skos:related esdm_begrip:EmpathyMap ;
+.
 esdm_begrip:Personeelsinformatiesysteem
   a skos:Concept ;
   dc:source "https://nl.wikipedia.org/wiki/Personeelsinformatiesysteem"^^xsd:anyURI ;
@@ -3973,6 +4513,14 @@ esdm_begrip:Personeelsinformatiesysteem
 Doel
 In het personeelsinformatiesysteem worden gegevens van de medewerkers van een onderneming bijgehouden. De volledige salarisadministratie kan worden gevoerd in een personeelsinformatiesysteem, maar ook beoordelingsgegevens, autorisatiegegevens, tekenbevoegdheden, opleidingsgegevens, digitale pasfoto, functiegegevens (functiebenaming, functieniveau, afdeling), enzovoorts. Ook kan een personeelsinformatiesysteem gebruikt worden als basis voor het organogram van de onderneming."""@nl ;
   skos:prefLabel "Personeelsinformatiesysteem"@nl ;
+.
+esdm_begrip:PhaseGateProcess
+  a skos:Concept ;
+  dc:source "https://www.wrike.com/blog/phase-gate-process-project-management/#What-is-phase-gate"^^xsd:anyURI ;
+  skos:broader esdm_begrip:WerkwijzenProcessen ;
+  skos:definition "<div lang=\"en\">The phase gate process is a technique that is used to guide a project from conception to launch. It requires a review of each project stage before moving on to the next. In the phase gate review process, specific criteria must be met in order to determine the success of a phase and the ongoing viability of a project. A decision will then be made by the project manager to either move forward, make modifications before advancing, or end the project.&nbsp;</div>"^^rdf:HTML ;
+  skos:prefLabel "Phase Gate Process"@en ;
+  skos:related <http://ordina.nl/esdm/im/begrippen/id/BuildIncrementallyWithFast%2CIntegratedLearningCycles> ;
 .
 esdm_begrip:PlatformAsAService
   a skos:Concept ;
@@ -4339,6 +4887,41 @@ esdm_begrip:Probleembeheer
   skos:definition "Product data management wordt ook wel afgekort tot PDM, een drieletterige afkorting in de stijl van ERP (enterprise resource planning), CRM (customer relationship management), en hrm (humanresourcesmanagement). Deze term wordt in bedrijfssoftware gebezigd waar het beheer van artikelgegevens centraal staat."@nl ;
   skos:prefLabel "Product data management (PDM)"@nl ;
 .
+esdm_begrip:ProductManagement
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/product-management/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:AgileReleaseTrain ;
+  skos:definition "<div lang=\"en\">Product Management is responsible for defining and supporting the building of desirable, feasible, viable, and sustainable products that meet customer needs over the product-market lifecycle. To do this, they collaborate with a wide range of people to identify and define customer needs, understand the Solution Context, and develop the Program Vision, Roadmap,&nbsp;and Features required to meet these needs. Then, they support the Agile Release Trains (ARTs) in delivering value through the Program Kanban&nbsp;and Continuous Delivery Pipeline. This article describes the roles that Product Management play in SAFe. The role scales in relation to the complexity of a solution: some solutions may only need a single Product Manager while others will need a team.</div>"^^rdf:HTML ;
+  skos:prefLabel "Product Management"@en ;
+.
+esdm_begrip:ProductOwner
+  a skos:Concept ;
+  skos:broader esdm_begrip:AgileTeam ;
+  skos:definition """<ul lang=\"en\">
+<li>Contributes to the Vision and Roadmap</li>
+<li>Acts as the Customer for team questions</li>
+<li>Creates, clearly communicates and accepts Stories</li>
+<li>Prioritizes the Team Backlog</li>
+</ul>"""^^rdf:HTML ;
+  skos:prefLabel "Product Owner"@en ;
+.
+esdm_begrip:ProgramBacklog
+  a skos:Concept ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:definition "<div lang=\"en\">The Program Backlog is the holding area for upcoming Features that will address user needs and deliver business benefits for a single Agile Release Train (ART).</div>"^^rdf:HTML ;
+  skos:prefLabel "Program Backlog"@en ;
+  skos:related esdm_begrip:StoryMap ;
+.
+esdm_begrip:ProgramExecution
+  a skos:Concept ;
+  skos:broader esdm_begrip:SAFeCoreValues ;
+  skos:definition """<ul lang=\"en\">
+<li>Participate as an active Business Owner</li>
+<li>Celebrate high quality and predictably delivered PIs</li>
+<li>Aggressively remove impediments and demotivators</li>
+</ul>"""^^rdf:HTML ;
+  skos:prefLabel "Program Execution"@en ;
+.
 esdm_begrip:Programmeertaal
   a skos:Concept ;
   skos:prefLabel "Programmeertaal"@nl ;
@@ -4489,6 +5072,25 @@ esdm_begrip:RelationeleDatabase
   skos:prefLabel "Relationele database"@nl ;
   skos:related esdm_begrip:GestructureerdeData ;
 .
+esdm_begrip:ReleaseTrainEngineer
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/release-train-engineer/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:AgileReleaseTrain ;
+  skos:definition "<div lang=\"en\">The Release Train Engineer (RTE) is a servant leader and coach for the Agile Release Train (ART). The RTE&rsquo;s major responsibilities are to facilitate the ART events and processes and assist the teams in delivering value. RTEs communicate with stakeholders, escalate impediments, help manage risk, and drive relentless improvement. Although Agile Release Trains (ARTs) are composed of self-organizing and self-managing teams, trains don&rsquo;t drive or steer themselves on autopilot. That responsibility falls to the RTE, who operate most effectively as servant leaders. They have a solid grasp of how to scale Lean and Agile practices and understand the unique opportunities and challenges associated with facilitating and continuously aligning a large development program.</div>"^^rdf:HTML ;
+  skos:prefLabel "Release Train Engineer"@en ;
+.
+esdm_begrip:RelentlessImprovement
+  a skos:Concept ;
+  skos:broader esdm_begrip:Value ;
+  skos:definition """<ul lang=\"en\">
+<li>A constant sense of danger</li>
+<li>Optimize the whole</li>
+<li>Problem-solving culture</li>
+<li>Base improvements on facts</li>
+<li>Reflect at key Milestones</li>
+</ul>"""^^rdf:HTML ;
+  skos:prefLabel "Relentless improvement"@en ;
+.
 esdm_begrip:Reporting
   a skos:Concept ;
   dc:source "https://www.exact.com/nl/blog/handel/wat-is-het-verschil-tussen-business-reporting-en-analytics"^^xsd:anyURI ;
@@ -4497,6 +5099,23 @@ esdm_begrip:Reporting
   skos:prefLabel "Reporting"@nl ;
   skos:related esdm_begrip:Analytics ;
   skos:related esdm_begrip:Datawarehouse ;
+.
+esdm_begrip:RespectForPeopleAndCulture
+  a skos:Concept ;
+  skos:broader esdm_begrip:Value ;
+  skos:definition """<ul lang=\"en\">
+<li>Generative culture</li>
+<li>People do all the work</li>
+<li>Your Customer is whoever consumes your work</li>
+<li>Build long-term partnerships based on trust</li>
+<li>To change the culture, you have to change the organization</li>
+</ul>"""^^rdf:HTML ;
+  skos:prefLabel "Respect for people and culture"@en ;
+.
+esdm_begrip:ResponsibilitiesOfTheAgileTeam
+  a skos:Concept ;
+  skos:broader esdm_begrip:AgileTeam ;
+  skos:prefLabel "Responsibilities of the Agile Team"@en ;
 .
 esdm_begrip:RethinkDB
   a skos:Concept ;
@@ -4550,10 +5169,44 @@ esdm_begrip:SAFe
   a skos:Concept ;
   dc:source "https://agilescrumgroup.nl/scaled-agile-framework/"^^xsd:anyURI ;
   dc:source "https://www.scaledagileframework.com/"^^xsd:anyURI ;
+  dc:source "https://www.scaledagileframework.com/safe-for-lean-enterprises/"^^xsd:anyURI ;
   skos:altLabel "Scaled Agile Framework"@en ;
   skos:broader esdm_begrip:WerkwijzenProcessen ;
   skos:definition "<div lang=\"en\">SAFe combineert principes van&nbsp;<a href=\"https://agilescrumgroup.nl/misvattingen-lean-scrum/\">Lean</a>&nbsp;en&nbsp;<a href=\"https://agilescrumgroup.nl/wat-is-agile/\">Agile</a>. Het doel is om ook grote organisaties in staat te stellen snel en flexibel klantwaarde te leveren. Er zitten een aantal Agile frameworks verwerkt zoals&nbsp;<a href=\"https://agilescrumgroup.nl/wat-is-scrum-animatieserie/\">Scrum</a>,&nbsp;<a href=\"https://agilescrumgroup.nl/wat-is-kanban-methode/\">Kanban</a>, DevOps en&nbsp;<a href=\"https://agilescrumgroup.nl/lean-startup-methode/\">Lean Startup</a>. Daarnaast introduceert SAFe verschillende nieuwe rollen en events. Het doel van deze nieuwe rollen en events is vooral een belangrijke mate van afstemming tussen betrokkenen. SAFe is mede populair omdat het met herkenbare organisatorische lagen werkt. Per laag zijn bepaalde verantwoordelijkheden verdeeld ten behoeve van afstemming, governance en de alignment.</div>"^^rdf:HTML ;
   skos:prefLabel "SAFe"@en ;
+.
+esdm_begrip:SAFeConfigurations
+  a skos:Concept ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:prefLabel "SAFe configurations"@en ;
+.
+esdm_begrip:SAFeCoreValues
+  a skos:Concept ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:prefLabel "SAFe core values"@en ;
+.
+esdm_begrip:SAFeHouseOfLean
+  a skos:Concept ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:prefLabel "SAFe House of Lean"@en ;
+.
+esdm_begrip:SAFeLeanAgilePrinciples
+  a skos:Concept ;
+  skos:broader esdm_begrip:Agile ;
+  skos:definition """<ol lang=\"en\">
+<li lang=\"en\">Take an economic view</li>
+<li lang=\"en\">Apply systems thinking</li>
+<li lang=\"en\">Assume variability; preserve options</li>
+<li lang=\"en\">Build incrementally with fast, integrated learning cycles</li>
+<li lang=\"en\">Base milestones on objective evaluation of working systems</li>
+<li lang=\"en\">Visualize and limit WIP, reduce batch sizes, and manage queue lengths</li>
+<li lang=\"en\">Apply cadence, synchronize with cross-domain planning</li>
+<li lang=\"en\">Unlock the intrinsic motivation of knowledge workers</li>
+<li lang=\"en\">Decentralize decision-making</li>
+<li lang=\"en\">Organize around value</li>
+</ol>"""^^rdf:HTML ;
+  skos:note "<div lang=\"en\"><strong>Why focus on the principles?</strong><br /><br />A common disease that afflicts management the world over is the impression that &ldquo;Our<br />problems are different.\" They are different to be sure, but the principles that will help to<br />improve the quality of products and services are universal in nature.<br />&mdash;W. Edwards Deming<br />► A Lean-Agile transformation will deliver substantial benefits<br />► However, it is a significant change, and every implementation is different<br />► Leaders should understand why the practices work; it&rsquo;s part of 'knowing what it is<br />they must do&rsquo;<br />► If a practice needs to change, understanding the principles will assure the change<br />moves the Enterprise in the right direction</div>"^^rdf:HTML ;
+  skos:prefLabel "SAFe Lean-Agile Principles"@en ;
 .
 esdm_begrip:SAPDataWarehouseCloud
   a skos:Concept ;
@@ -4598,20 +5251,25 @@ esdm_begrip:SafeEnablers
   skos:definition "<div lang=\"en\">Enablers bring visibility to all the work necessary to support efficient development and delivery of future business requirements. Primarily, enablers are used for exploration, evolving the architecture,&nbsp;improving infrastructure and compliance activities. Since enablers reflect real work they cannot remain invisible. Instead, they&rsquo;re treated like all other value-added development activities&mdash;subject to estimating, visibility and tracking, Work in Process (WIP) limits, feedback, and presentation of results.</div>"^^rdf:HTML ;
   skos:prefLabel "Safe Enablers"@en ;
 .
-esdm_begrip:SafeEssential
+esdm_begrip:SafeEssentialConfiguration
   a skos:Concept ;
-  skos:broader esdm_begrip:SAFe ;
-  skos:prefLabel "Safe Essential"@en ;
+  skos:broader esdm_begrip:SAFeConfigurations ;
+  skos:prefLabel "Safe Essential Configuration"@en ;
 .
-esdm_begrip:SafeLargeSolution
+esdm_begrip:SafeFullConfiguration
   a skos:Concept ;
-  skos:broader esdm_begrip:SAFe ;
-  skos:prefLabel "Safe Large Solution"@en ;
+  skos:broader esdm_begrip:SAFeConfigurations ;
+  skos:prefLabel "Safe Full Configuration"@en ;
 .
-esdm_begrip:SafePortfolio
+esdm_begrip:SafeLargeSolutionConfiguration
   a skos:Concept ;
-  skos:broader esdm_begrip:SAFe ;
-  skos:prefLabel "Safe Portfolio"@en ;
+  skos:broader esdm_begrip:SAFeConfigurations ;
+  skos:prefLabel "Safe Large Solution Configuration"@en ;
+.
+esdm_begrip:SafePortfolioConfiguration
+  a skos:Concept ;
+  skos:broader esdm_begrip:SAFeConfigurations ;
+  skos:prefLabel "Safe Portfolio Configuration"@en ;
 .
 esdm_begrip:Schaalbaarheid
   a skos:Concept ;
@@ -4623,6 +5281,23 @@ esdm_begrip:Scrum
   a skos:Concept ;
   skos:broader esdm_begrip:WerkwijzenProcessen ;
   skos:prefLabel "Scrum"@en ;
+.
+esdm_begrip:ScrumMaster
+  a skos:Concept ;
+  skos:broader esdm_begrip:AgileTeam ;
+  skos:definition """<ul lang=\"en\">
+<li>Coaches the Agile Team in selfmanagement</li>
+<li>Helps the team focus on creating increments of value each Iteration</li>
+<li>Facilitates the removal of impediments to the team&rsquo;s progress</li>
+<li>Ensures that all team events take place, are productive and kept within the timebox</li>
+</ul>"""^^rdf:HTML ;
+  skos:prefLabel "Scrum Master"@nl ;
+.
+esdm_begrip:ScrumOfScrums
+  a skos:Concept ;
+  skos:broader esdm_begrip:ARTSync ;
+  skos:definition "<div lang=\"en\">Visibility into progress and impediments<br />▸ Facilitated by RTE<br />▸ Participants: Scrum Masters, other select<br />team members, SMEs if necessary<br />▸ Weekly or more frequently, 30&ndash;60 minutes<br />▸ Timeboxed and followed by a meet-after</div>"^^rdf:HTML ;
+  skos:prefLabel "Scrum of scrums"@en ;
 .
 esdm_begrip:Search
   a skos:Concept ;
@@ -4875,10 +5550,26 @@ Computerprogramma's zijn auteursrechtelijk beschermd. De precieze wettelijke reg
   skos:prefLabel "Softwarelicentie"@nl ;
   skos:related esdm_begrip:Software ;
 .
+esdm_begrip:Solution
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/solution/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:definition "<div lang=\"en\">Each development value stream develops one or more Solutions, which are products, services, or systems delivered to the customer, whether internal or external to the Enterprise. All the words, pages, roles, activities, and artifacts in SAFe exist for only one purpose: to help Agile teams continuously deliver solutions that provide value to their customer. In turn, that enables customers to achieve their goals, which is the pinnacle of applying Design Thinking tools with a Customer-centric mindset. However, even when teams and trains apply SAFe guidance and operate effectively within their disciplines, the value isn&rsquo;t guaranteed. After all, customers do not buy&nbsp;Capabilities&nbsp;or&nbsp;Features. Rather, they buy whole product solutions that deliver desired outcomes. For that reason, a solution is one of the central concepts in SAFe and requires taking a systems view regarding value delivery.</div>"^^rdf:HTML ;
+  skos:prefLabel "Solution"@en ;
+  skos:related esdm_begrip:DevelopmentValueStream ;
+  skos:related esdm_begrip:Value ;
+.
 esdm_begrip:SolutionArchitectuur
   a skos:Concept ;
   skos:broader esdm_begrip:Architectuur ;
   skos:prefLabel "Solution Architectuur"@nl ;
+.
+esdm_begrip:SolutionContext
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/solution-context/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Solution ;
+  skos:definition "<div lang=\"en\">Solution Context identifies critical aspects of the operational environment for a Solution. It provides an essential understanding of requirements, usage, installation, operation, and support of the solution itself. Solution context heavily influences opportunities and constraints for releasing on demand. Understanding Solution context is crucial to value delivery. It impacts development priorities,&nbsp;Solution Intent, Capabilities,&nbsp;Features, and&nbsp;Nonfunctional Requirements (NFRs). It provides opportunities, limits, and constraints for the&nbsp;Continuous Delivery Pipeline and other solution-level Release on Demand activities. The solution context is often driven by factors outside the control of the organization that develops the solution. The level of coupling between the solution and its context generally represents an architectural and business challenge, that of finding the right balance between flexibility and tightly coupled interaction with the environment&mdash;interactions that often cross internal,&nbsp;Supplier, and Customer organizational boundaries. Product and Solution Management seek to influence the solution context in ways that benefit both the customer and the enterprise.</div>"^^rdf:HTML ;
+  skos:prefLabel "Solution Context"@en ;
 .
 esdm_begrip:Sparksee
   a skos:Concept ;
@@ -4897,6 +5588,32 @@ esdm_begrip:SpeedLayer
 <li>Fault tolenrance: if a machine crashes, a real-time view should continue to function normally.</li>
 </ul></div>"""^^rdf:HTML ;
   skos:prefLabel "Speed layer"@en ;
+.
+esdm_begrip:Sprint
+  a skos:Concept ;
+  skos:broader esdm_begrip:Scrum ;
+  skos:prefLabel "Sprint"@en ;
+.
+esdm_begrip:SprintBacklog
+  a skos:Concept ;
+  dc:source "https://www.scrum.org/resources/what-is-a-sprint-backlog"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Sprint ;
+  skos:definition """<div lang=\"en\"><p>As described in the&nbsp;<a href=\"https://www.scrumguides.org/\" target=\"_blank\" rel=\"noopener\">Scrum Guide</a>, the Sprint Backlog is composed of the Sprint Goal (why), the set of Product Backlog items selected for the Sprint (what), as well as an actionable plan for delivering the Increment (how).</p>
+<p>The Sprint Backlog is a plan by and for the Developers. It is a highly visible, real-time picture of the work that the Developers plan to accomplish during the Sprint in order to achieve the Sprint Goal. Consequently, the Sprint Backlog is updated throughout the Sprint as more is learned. It should have enough detail that they can inspect their progress in the Daily Scrum.</p>
+<h3>Commitment: Sprint Goal</h3>
+<p>The Sprint Goal is the single objective for the Sprint. Although the Sprint Goal is a commitment by the Developers, it provides flexibility in terms of the exact work needed to achieve it. The Sprint Goal also creates coherence and focus, encouraging the Scrum Team to work together rather than on separate initiatives.</p>
+<p>The Sprint Goal is created during the Sprint Planning event and then added to the Sprint Backlog. As the&nbsp;<a title=\"What is a Developer in Scrum?\" href=\"https://www.scrum.org/resources/what-is-a-scrum-developer\" data-entity-substitution=\"canonical\" data-entity-type=\"node\" data-entity-uuid=\"04e40bea-2ade-4ade-8057-c6cb922c86c2\">Developers</a>&nbsp;work during the Sprint, they keep the Sprint Goal in mind. If the work turns out to be different than they expected, they collaborate with the Product Owner to negotiate the scope of the Sprint Backlog within the Sprint without affecting the Sprint Goal.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Sprint Backlog"@en ;
+  skos:related esdm_begrip:SprintGoal ;
+.
+esdm_begrip:SprintGoal
+  a skos:Concept ;
+  dc:source "https://www.scrum.org/resources/what-is-a-sprint-backlog"^^xsd:anyURI ;
+  skos:broader esdm_begrip:Sprint ;
+  skos:definition """<div lang=\"en\"><p>The Sprint Goal is the single objective for the Sprint. Although the Sprint Goal is a commitment by the Developers, it provides flexibility in terms of the exact work needed to achieve it. The Sprint Goal also creates coherence and focus, encouraging the Scrum Team to work together rather than on separate initiatives.</p>
+<p>The Sprint Goal is created during the Sprint Planning event and then added to the Sprint Backlog. As the&nbsp;<a title=\"What is a Developer in Scrum?\" href=\"https://www.scrum.org/resources/what-is-a-scrum-developer\" data-entity-substitution=\"canonical\" data-entity-type=\"node\" data-entity-uuid=\"04e40bea-2ade-4ade-8057-c6cb922c86c2\">Developers</a>&nbsp;work during the Sprint, they keep the Sprint Goal in mind. If the work turns out to be different than they expected, they collaborate with the Product Owner to negotiate the scope of the Sprint Backlog within the Sprint without affecting the Sprint Goal.</p></div>"""^^rdf:HTML ;
+  skos:prefLabel "Sprint Goal"@en ;
+  skos:related esdm_begrip:SprintBacklog ;
 .
 esdm_begrip:SqrrlEnterprise
   a skos:Concept ;
@@ -4991,6 +5708,13 @@ esdm_begrip:Store
   skos:definition "The store phase identifies where the ingested data should be placed"@en ;
   skos:prefLabel "Store"@en ;
   skos:related esdm_begrip:AzureDataLakeStorage ;
+.
+esdm_begrip:StoryMap
+  a skos:Concept ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:definition "<div lang=\"en\">Features are implemented through one or more Stories. There are two types of stories in SAFe: User Stories are the primary means of expressing needed functionality. They can be written in a role format or a persona format: Role: As a&nbsp;I want&nbsp;so that&nbsp;Persona: Frank wants to&nbsp;so that Frank gets&nbsp;Enabler Stories capture system, architecture, or infrastructure requirements, such as building improvements to support the continuous delivery pipeline. The Team Backlog contains user and enabler Stories that originate from the Program Backlog, as well as stories that arise from the team&rsquo;s local context. Like all backlogs, the Team Backlog is prioritized, and stories are implemented in priority order. Features that capture a workflow present a unique challenge to Agile teams: A workflow is a sequence of steps that must be completed to accomplish a higher-level user goal. The linear order of a backlog can make it hard for Agile Teams to understand the relationships between the steps. Frequently a given step can be improved, and teams must also balance completeness (all of the steps must be supported) before improving a specific set of steps. Potential conflicts arise when the divergent phase of developing a solution envisions improvement opportunities, while the convergent phase of design thinking focuses on what&rsquo;s essential for the next release. Solutions contain both large and small workflows. Consider the small workflow of a businessperson importing a credit card statement into an expense reporting system for processing. The user must: Download the credit statement from the bank Upload the credit card statement into the expense reporting system Match transactions from the credit card statement with expense receipts stored in the expense reporting system Remove any non-reimbursable transactions As described earlier, each of these stories can be captured in a workflow. Moreover, each can be improved over time: We could, for example, imagine a direct connection between the bank and the expense reporting system, or an automated AI agent that managed the task of matching transactions. Features that represent a workflow are captured through story maps [3], which organize a sequence of stories according to the tasks a user needs to accomplish their goal (Figure 7).</div>"^^rdf:HTML ;
+  skos:prefLabel "Story Map"@en ;
+  skos:related esdm_begrip:ProgramBacklog ;
 .
 esdm_begrip:StreamAnalyticsQueryLanguage
   a skos:Concept ;
@@ -5123,6 +5847,20 @@ esdm_begrip:Systeemsoftware
   skos:prefLabel "Systeemsoftware"@nl ;
   skos:related esdm_begrip:Besturingssysteem ;
 .
+esdm_begrip:SystemArchitectEngineering
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/system-architect-engineering/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:AgileReleaseTrain ;
+  skos:definition "<div lang=\"en\">System Architect/Engineering is responsible for defining and communicating a shared technical and architectural vision for an Agile Release Train (ART) to help ensure the system or Solution under development is fit for its intended purpose. System Architects describe the Solution Context and Solution Intent, analyze technical trade-offs, determine the primary components and subsystems, identify the interfaces and collaborations between them, define Nonfunctional Requirements (NFRs), guide Enablers through the Program and Solution Kanban systems, and work with Product Management, Solution Management, customers, and Suppliers to help ensure fitness for purpose. They play a critical role in aligning teams on the Agile Release Train (ART) and Solution Train to a shared technical direction and partner with those teams in elaborating the Solution, validating technology assumptions, evaluating implementation alternatives, and creating the Continuous Delivery Pipeline. In ARTs that are not part of a Solution Train, System Architects also perform many of the activities of Solution Architect/Engineers (Solution AE). This article describes the roles that System Architect/Engineering play in SAFe. While the roles are similar in most respects, they manage different levels of concern.&nbsp; In some cases, there is more than one System Architect for an ART, thus these roles can be realized by an individual or a small team of people (see the Agile Architecture article for more information).</div>"^^rdf:HTML ;
+  skos:prefLabel "System Architect / Engineering"@en ;
+.
+esdm_begrip:SystemTeam
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/system-team/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:AgileReleaseTrain ;
+  skos:definition "<div lang=\"en\">The System Team is a specialized Agile Team that assists in building and supporting the Agile development environment, typically including development and maintenance of the toolchain that supports the Continuous Delivery Pipeline. The System Team may also support the integration of assets from Agile teams, perform end-to-end Solution testing where necessary, and assists with deployment and Release on Demand. In SAFe, Agile teams&nbsp;are not stand-alone units. Instead, they are part of the Agile Release Train (ART), responsible collectively for delivering larger system and Solution value. Built-in Quality practices typically require additional infrastructure work to build, integrate, deploy, and release solution assets more frequently and continuously across multiple stages of the pipeline. To support this, one or more specialized System Teams are often formed. As an &lsquo;enabling&rsquo; type of Agile Team, they help build the environments and assist with system and solution integration. They accelerate team velocities by performing some of the slower, end-to-end and Nonfunctional Requirements (NFR) tests. And they help demo the solution as it evolves. Over time, System Teams are sometimes eliminated from an ART as the Agile teams take on these responsibilities. In larger solutions, it&rsquo;s more likely that specialty expertise remains with one or more System Teams, where centralizing certain people, skills, and technical assets deliver the best economic value.</div>"^^rdf:HTML ;
+  skos:prefLabel "System Team"@en ;
+.
 esdm_begrip:TCP_IP
   a skos:Concept ;
   dc:source "https://nl.wikipedia.org/wiki/TCP/IP"^^xsd:anyURI ;
@@ -5137,6 +5875,32 @@ esdm_begrip:TCP_IP
   skos:definition "TIBCO biedt als onderdeel van haar ActiveMatrix software architectuur een ESB die geschikt is voor SOA landschappen. "@nl ;
   skos:prefLabel "TIBCO – ActiveMatrix Service Bus"@nl ;
 .
+esdm_begrip:TOGAF
+  a skos:Concept ;
+  skos:broader esdm_begrip:WerkwijzenProcessen ;
+  skos:prefLabel "TOGAF"@en ;
+.
+esdm_begrip:TakeAnEconomicView
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/take-an-economic-view/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFeLeanAgilePrinciples ;
+  skos:definition "<div lang=\"en\">Realizing the goal of Lean&mdash;which means achieving the shortest sustainable lead time with the best quality and value&mdash;requires understanding the economics of a mission. Without that, even a technically competent system may cost too much to develop, take too long to deliver, or incur exorbitant manufacturing or operating costs. That&rsquo;s why the entire chain of leadership, management, and knowledge workers must understand the economic impact of the choices they&rsquo;re making. Traditionally, the budgets of their activities were known only to the decision-makers who understood the business, marketplace, and customer finances. This meant that a worker&rsquo;s everyday decisions were made without this information or escalated to those who had it. That resulted in delays, inefficiencies and a lack of empowerment by the people closest to the work. Therefore, SAFe&rsquo;s first Lean-Agile Principle is to take an economic view. It is Principle #1 for a reason. Economics should inform and drive decisions at all levels, from Portfolio to Agile Teams. While many factors can contribute to failed solutions, poor economics is one of the most common.</div>"^^rdf:HTML ;
+  skos:definition """<ul lang=\"en\">
+<li lang=\"en\">Agile economics: Deliver early and often</li>
+<li lang=\"en\">Deliver value incrementally</li>
+<li lang=\"en\">Early delivery has higher value</li>
+<li lang=\"en\">Solution economic trade-offs
+<ul>
+<li lang=\"en\">Sequence jobs for maximum benefit</li>
+<li lang=\"en\">Do not consider money already spent</li>
+<li lang=\"en\">Make economic choices continuously</li>
+<li lang=\"en\">Empower local decision making</li>
+<li lang=\"en\">If you only quantify one thing, quantify the cost of delay</li>
+</ul>
+</li>
+</ul>"""^^rdf:HTML ;
+  skos:prefLabel "01. Take an economic view"@en ;
+.
 <http://ordina.nl/esdm/im/begrippen/id/Talend–Collect%26Transform>
   a skos:Concept ;
   dc:source "https://www.talend.com/products/integrate-data/"^^xsd:anyURI ;
@@ -5148,6 +5912,21 @@ esdm_begrip:Tarantool
   a skos:Concept ;
   skos:broader esdm_begrip:KeyValueDatabase ;
   skos:prefLabel "Tarantool" ;
+.
+esdm_begrip:TeamAndTechnicalAgility
+  a skos:Concept ;
+  skos:broader esdm_begrip:BusinessAgilityCoreCompetencies ;
+  skos:definition """<ul lang=\"\">
+<li>High-performing, cross-functional Agile Teams</li>
+<li>Teams of business and technical teams build Solutions</li>
+<li>Quality business Solutions delight Customers</li>
+</ul>"""^^rdf:HTML ;
+  skos:note """<ul lang=\"\">
+<li>Agile Teams</li>
+<li>Teams of Agile Teams</li>
+<li>Built-in Quality</li>
+</ul>"""^^rdf:HTML ;
+  skos:prefLabel "Team And Technical Agility"@en ;
 .
 esdm_begrip:TechnologischeBedrijfsinformatie
   a skos:Concept ;
@@ -5233,6 +6012,14 @@ esdm_begrip:Transactie
   skos:prefLabel "Transactie"@nl ;
   skos:related esdm_begrip:OnlineTransactionProcessing ;
 .
+esdm_begrip:TransactionCost
+  a skos:Concept ;
+  dc:source "https://innolution.com/resources/glossary/transaction-cost"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:definition "<div lang=\"en\">The fixed (overhead cost) and variable costs of executing (doing the work required to realize) the items in a batch of work. One of the two costs in determining the economic&nbsp;<a href=\"https://innolution.com/resources/glossary/batch-size/\">batch size</a>&nbsp;in a U-curve optimization. In manufacturing, transaction cost is the cost of sending a batch to the next process.&nbsp;Contrast with&nbsp;<a href=\"https://innolution.com/resources/glossary/holding-cost/\" target=\"_blank\" rel=\"noopener\"><em>holding cost</em></a>. See also&nbsp;<a href=\"https://innolution.com/resources/glossary/u-curve-optimization/\" target=\"_blank\" rel=\"noopener\"><em>U-curve optimization</em></a>.</div>"^^rdf:HTML ;
+  skos:prefLabel "Transaction Cost"@en ;
+  skos:related esdm_begrip:HoldingCost ;
+.
 esdm_begrip:Transform
   a skos:Concept ;
   dc:source "https://docs.microsoft.com/en-us/learn/modules/data-integration-azure-data-factory/3-describe-data-integration-patterns"^^xsd:anyURI ;
@@ -5260,6 +6047,17 @@ Het gebruik van de proxyserver is verplicht.
 Gebruikers hoeven niet te weten dat ze via een proxyserver surfen.
 Wanneer een webaanvraag gestuurd wordt, zal de router dit doorsturen naar de proxyserver die de aanvraag verder zal afhandelen. Professionele routers hebben ondersteuning voor transparante proxyservers. Dit is ook mogelijk via een Linux-router."""@nl ;
   skos:prefLabel "Transparante proxyserver"@nl ;
+.
+esdm_begrip:Transparency
+  a skos:Concept ;
+  skos:broader esdm_begrip:SAFeCoreValues ;
+  skos:definition """<ul lang=\"en\">
+<li>Visualize all relevant work</li>
+<li>Take ownership and responsibility for errors</li>
+<li>Admit your own mistakes</li>
+<li>Support others who acknowledge and learn from their mistakes&mdash;never punish the messenger</li>
+</ul>"""^^rdf:HTML ;
+  skos:prefLabel "Transparency"@en ;
 .
 esdm_begrip:TransportLayerSecurity
   a skos:Concept ;
@@ -5290,6 +6088,24 @@ esdm_begrip:Unix
 <p>Hoewel Unix vaak geassocieerd wordt met een&nbsp;<a title=\"Command-line-interface\" href=\"https://nl.wikipedia.org/wiki/Command-line-interface\">opdrachtregelinterface</a>, zijn&nbsp;<a title=\"Grafische gebruikersomgeving\" href=\"https://nl.wikipedia.org/wiki/Grafische_gebruikersomgeving\">grafische gebruikersomgevingen</a>&nbsp;op Unix al sinds begin&nbsp;<a title=\"1980-1989\" href=\"https://nl.wikipedia.org/wiki/1980-1989\">jaren 80</a>&nbsp;beschikbaar. Ook&nbsp;<a title=\"MacOS\" href=\"https://nl.wikipedia.org/wiki/MacOS\">macOS</a>, het besturingssysteem van&nbsp;<a title=\"Apple Inc.\" href=\"https://nl.wikipedia.org/wiki/Apple_Inc.\">Apple</a>, is \"onder de motorkap\" Unix (meer specifiek&nbsp;<a title=\"Berkeley Software Distribution\" href=\"https://nl.wikipedia.org/wiki/Berkeley_Software_Distribution\">BSD</a>-gebaseerd). Dat geldt ook voor&nbsp;<a title=\"IOS (Apple)\" href=\"https://nl.wikipedia.org/wiki/IOS_(Apple)\">iOS</a>, het besturingsysteem van de&nbsp;<a title=\"IPad\" href=\"https://nl.wikipedia.org/wiki/IPad\">iPad</a>&nbsp;en de&nbsp;<a title=\"IPhone\" href=\"https://nl.wikipedia.org/wiki/IPhone\">iPhone</a>.&nbsp;<a title=\"Android (besturingssysteem)\" href=\"https://nl.wikipedia.org/wiki/Android_(besturingssysteem)\">Android</a>, het besturingssysteem van&nbsp;<a class=\"mw-redirect\" title=\"Google Inc.\" href=\"https://nl.wikipedia.org/wiki/Google_Inc.\">Google</a>&nbsp;voor mobiele apparaten, zoals&nbsp;<a title=\"Smartphone\" href=\"https://nl.wikipedia.org/wiki/Smartphone\">smartphones</a>&nbsp;en&nbsp;<a title=\"Tabletcomputer\" href=\"https://nl.wikipedia.org/wiki/Tabletcomputer\">tablets</a>, is gebaseerd op&nbsp;<a title=\"Linux\" href=\"https://nl.wikipedia.org/wiki/Linux\">Linux</a>, dat ook veel eigenschappen van Unix heeft.</p></div>"""^^rdf:HTML ;
   skos:prefLabel "Unix"@nl ;
   skos:related esdm_begrip:POSIX ;
+.
+esdm_begrip:UnlockTheIntrinsicMotivationOfKnowledgeWorkers
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/unlock-the-intrinsic-motivation-of-knowledge-workers/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFeLeanAgilePrinciples ;
+  skos:definition "<div lang=\"en\">Lean-Agile Leaders accept a relatively new, game-changing truth: the &lsquo;management of knowledge workers&rsquo; is an oxymoron. As Peter Drucker points out, &ldquo;knowledge workers are individuals who know more about the work that they perform than their bosses [2].&rdquo; In that context, how can any manager seriously attempt to oversee or even coordinate the technical activities of people who are infinitely more capable than they are of defining the tasks necessary to accomplish their mission? Indeed, they&nbsp;cannot. What&nbsp;managers can do instead is&nbsp;unlock the intrinsic motivation of knowledge workers. Some guidelines are provided in the following sections. Leverage the Systems View Before delving into additional motivational constructs, we note a significant insight: the Lean-Agile principles of SAFe are themselves a system, too. Moreover, the elements of this system collaborate to create a new and empowering management paradigm. With SAFe, knowledge workers are now able to: Communicate across functional boundaries Make decisions based on an understanding of the economics Receive fast feedback about the efficacy of their solution Participate in continuous, incremental learning and mastery Participate in a more productive and fulfilling solution development process &mdash;one of the most powerful motivations of all Understand the Role of Compensation &ldquo;Many organizations still operate from assumptions about human potential and individual performance that are outdated, rooted more in folklore than in science. They continue to pursue practices such as short-term incentive plans and pay-for-performance schemes in the face of mounting evidence that such measures usually don&rsquo;t work and often do harm.&rdquo;</div>"^^rdf:HTML ;
+  skos:prefLabel "08. Unlock the intrinsic motivation of knowledge workers"@en ;
+.
+esdm_begrip:Value
+  a skos:Concept ;
+  skos:broader esdm_begrip:SAFeHouseOfLean ;
+  skos:definition """<div lang=\"en\">Achieve the shortest sustainable lead time with:<br />
+<ul>
+<li>The best quality and value to people and society</li>
+<li>High morale, safety, and Customer delight</li>
+</ul></div>"""^^rdf:HTML ;
+  skos:prefLabel "Value"@en ;
+  skos:related esdm_begrip:Solution ;
 .
 esdm_begrip:Venti
   a skos:Concept ;
@@ -5362,11 +6178,31 @@ esdm_begrip:Virtuoso
   skos:prefLabel "Virtuoso"@nl ;
   skos:related esdm_begrip:PoolPartyGraphSearchServer ;
 .
+esdm_begrip:Vision
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/vision/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFe ;
+  skos:definition """<div lang=\"en\">The Vision is a description of the future state of the product<br />
+<ul>
+<li>How will our product solve our Customer's problems?</li>
+<li>What Features does it have?</li>
+<li>How will it differentiate us?</li>
+<li>What nonfunctional requirements does it deliver?</li>
+</ul></div>"""^^rdf:HTML ;
+  skos:prefLabel "Vision"@en ;
+.
 esdm_begrip:VisualStudio
   a skos:Concept ;
   skos:broader esdm_begrip:MicrosoftAzure ;
   skos:prefLabel "Visual Studio"@en ;
   skos:related esdm_begrip:DataIngestion ;
+.
+esdm_begrip:VisualizeAndLimitWIP
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/visualize-and-limit-wip-reduce-batch-sizes-and-manage-queue-lengths/"^^xsd:anyURI ;
+  skos:broader esdm_begrip:SAFeLeanAgilePrinciples ;
+  skos:definition "<div lang=\"en\">To achieve the shortest sustainable lead time, Lean enterprises strive for a state of continuous flow, which allows them to move new system features quickly from &lsquo;concept to cash&rsquo;. Accomplishing flow requires eliminating the traditional start-stop-start project initiation and development process, along with the incumbent phase gates that hinder flow (see&nbsp;Principle #5&nbsp;and Lean Budgets). Three primary keys to achieving flow are: Visualize and limit work in process (WIP) Reduce the batch sizes of work items Manage queue lengths Visualize and Limit WIP Overloading teams and programs with more work than can be reasonably accomplished is a common and pernicious problem. Having too much WIP confuses priorities, causes frequent context switching, and increases overhead. It overloads people, scatters focus on immediate tasks, reduces productivity and throughput, and increases wait times for new functionality. Like a highway at rush hour, there is simply no upside to having more work in a system than the system can handle. The first step to correct the problem is to make the current WIP visible to all stakeholders. A Kanban board is a simple way of doing that.</div>"^^rdf:HTML ;
+  skos:prefLabel "06. Visualize and limit WIP, reduce batch sizes, and manage queue lengths"@en ;
 .
 esdm_begrip:VoortdurendeServiceverbetering
   a skos:Concept ;
@@ -5383,6 +6219,15 @@ esdm_begrip:W3C
   skos:definition "<div lang=\"en\">The World Wide Web Consortium (W3C) is an international community where&nbsp;<a href=\"https://www.w3.org/Consortium/Member/List\">Member organizations</a>, a full-time&nbsp;<a href=\"https://www.w3.org/People/\">staff</a>, and the public work together to develop&nbsp;<a href=\"https://www.w3.org/standards/\">Web standards</a>. Led by Web inventor and Director&nbsp;<a href=\"https://www.w3.org/People/Berners-Lee/\">Tim Berners-Lee</a>&nbsp;and CEO&nbsp;<a href=\"https://www.w3.org/People/Jeff/\">Jeffrey Jaffe</a>, W3C's mission is to lead the Web to its full potential.&nbsp;<a href=\"https://www.w3.org/Consortium/contact\">Contact W3C</a>&nbsp;for more information.</div>"^^rdf:HTML ;
   skos:prefLabel "W3C"@en ;
   skos:related esdm_begrip:Webstandaard ;
+.
+esdm_begrip:WSJF
+  a skos:Concept ;
+  dc:source "https://www.scaledagileframework.com/wsjf/"^^xsd:anyURI ;
+  skos:altLabel "Weighted Shortest Job First"@en ;
+  skos:broader esdm_begrip:Flow ;
+  skos:definition "<div lang=\"en\">Weighted Shortest Job First (WSJF) is a prioritization model used to sequence jobs (eg., Features, Capabilities, and Epics) to produce maximum economic benefit. In SAFe, WSJF is estimated as the Cost of Delay (CoD) divided by job size. In a flow-based system, updating priorities continuously provides the best economic outcomes. In such a flow context, it is job sequencing, rather than theoretical, individual job return on investment, that produces the best result. To that end, SAFe applies WSJF to prioritize backlogs by calculating the relative Cost of Delay (CoD) and job size (a proxy for the duration). Backlog priorities are continuously updated based on relative user and business value, time factors, risk reduction and opportunity enablement, and relative job size. WSJF also conveniently and automatically ignores sunk costs, a fundamental principle of Lean economics.</div>"^^rdf:HTML ;
+  skos:prefLabel "WSJF"@en ;
+  skos:related esdm_begrip:CostOfDelay ;
 .
 esdm_begrip:WebDesignAndApplications
   a skos:Concept ;

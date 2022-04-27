@@ -1,4 +1,5 @@
 # baseURI: http://ordina.nl/esdm-implementatie
+# imports: http://datashapes.org/schema
 # imports: http://ordina.nl/esdm
 # imports: http://purl.org/dc/elements/1.1/
 # imports: http://purl.org/dc/terms/
@@ -18,6 +19,8 @@
 <http://ordina.nl/esdm-implementatie>
   a owl:Ontology ;
   graphql:publicClass esdm_i:IndexedPredicate ;
+  rdfs:label "Ordina ESDM Implementatie Ontologie"@nl ;
+  owl:imports <http://datashapes.org/schema> ;
   owl:imports <http://ordina.nl/esdm> ;
   owl:imports <http://purl.org/dc/elements/1.1/> ;
   owl:imports <http://purl.org/dc/terms/> ;
@@ -26,10 +29,6 @@
   sh:declare [
       a sh:PrefixDeclaration ;
       sh:namespace "http://www.w3.org/2004/02/skos/core#"^^xsd:anyURI ;
-      sh:prefix "skos" ;
-    ] ;
-  sh:declare [
-      sh:namespace "http://www.w3.org/2004/02/skos/core#" ;
       sh:prefix "skos" ;
     ] ;
 .
@@ -103,6 +102,9 @@ esdm_i:indexedProperty
   sh:maxCount 1 ;
   sh:name "preferred label"@en ;
   sh:nodeKind sh:Literal ;
+.
+<http://topbraid.org/corpus#Document>
+  rdfs:subClassOf <http://schema.org/CreativeWork> ;
 .
 skos:Concept-source
   graphql:name "source" ;

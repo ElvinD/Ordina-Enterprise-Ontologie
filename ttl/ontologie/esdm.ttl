@@ -15,9 +15,10 @@
 @prefix begrippen: <http://ordina.nl/esdm/im/begrippen/id/> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix esdm: <http://ordina.nl/esdm#> .
 @prefix evnprojects: <http://evn.topbraidlive.org/evnprojects#> .
+@prefix graphql: <http://datashapes.org/graphql#> .
 @prefix medewerkers: <http://ordina.nl/esdm/im/medewerkers/id/> .
 @prefix ovrh: <http://ordina.nl/esdm/im/overheidsinstellingen/id/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -33,11 +34,18 @@ evnprojects:Taxonomy
 .
 <http://ordina.nl/esdm>
   a owl:Ontology ;
+  graphql:publicClass esdm:Antwoord ;
+  graphql:publicClass esdm:Gebeurtenis ;
+  graphql:publicClass esdm:Idee ;
+  graphql:publicClass esdm:Interview ;
+  graphql:publicClass esdm:Medewerker ;
+  graphql:publicClass esdm:Topic ;
+  graphql:publicClass esdm:Vraag ;
   rdfs:label "Ontologie ESDM Ordina"@nl ;
   owl:imports <http://datashapes.org/graphql> ;
   owl:imports <http://ordina.nl/esdm-implementatie> ;
   owl:imports dc: ;
-  owl:imports dcterms: ;
+  owl:imports dct: ;
   owl:imports <http://topbraid.org/corpus> ;
   owl:imports <http://topbraid.org/schema/schema-single-range> ;
   owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
@@ -64,12 +72,241 @@ esdm:Agentschap
   rdfs:subClassOf <http://schema.org/GovernmentOrganization> ;
   skos:prefLabel "Agentschap"@nl ;
 .
+esdm:Antwoord
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Antwoord"@nl ;
+  rdfs:subClassOf skos:Concept ;
+  sh:property esdm:Antwoord-Perspectief ;
+  sh:property esdm:Antwoord-geinterviewde ;
+  sh:property esdm:Antwoord-ist ;
+  sh:property esdm:Antwoord-meeEens ;
+  sh:property esdm:Antwoord-ontwikkelen ;
+  sh:property esdm:Antwoord-prefLabel ;
+  sh:property esdm:Antwoord-soll ;
+  sh:property esdm:Antwoord-vraag ;
+.
+esdm:Antwoord-Perspectief
+  a sh:PropertyShape ;
+  sh:path dct:subject ;
+  sh:class esdm:Topic ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:name "Perspectief"@nl ;
+  sh:order "7"^^xsd:decimal ;
+  sh:values [
+      sh:path (
+          esdm:vraag
+          dct:subject
+        ) ;
+    ] ;
+.
+esdm:Antwoord-geinterviewde
+  a sh:PropertyShape ;
+  sh:path esdm:geinterviewde ;
+  sh:class esdm:Medewerker ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Geinterviewde"@nl ;
+  sh:order "0"^^xsd:decimal ;
+  sh:values [
+      sh:path (
+          skos:broader
+          [
+            sh:inversePath skos:hasTopConcept ;
+          ]
+          esdm:geinterviewde
+        ) ;
+    ] ;
+.
+esdm:Antwoord-ist
+  a sh:PropertyShape ;
+  sh:path esdm:ist ;
+  sh:datatype xsd:integer ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:in (
+      1
+      2
+      3
+      4
+      5
+      6
+      7
+    ) ;
+  sh:maxCount 1 ;
+  sh:name "IST"@nl ;
+  sh:order "5"^^xsd:decimal ;
+.
+esdm:Antwoord-meeEens
+  a sh:PropertyShape ;
+  sh:path esdm:meeEens ;
+  sh:class esdm:AntwoordEnumeratie ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:in (
+      esdm:AntwoordVolledig
+      esdm:AntwoordGemiddeld
+      esdm:AntwoordNvt
+    ) ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Mee eens"@nl ;
+  sh:order "4"^^xsd:decimal ;
+.
+esdm:Antwoord-ontwikkelen
+  a sh:PropertyShape ;
+  sh:path esdm:ontwikkelen ;
+  sh:class esdm:AntwoordEnumeratie ;
+  sh:defaultValue esdm:AntwoordNee ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:in (
+      esdm:AntwoordJa
+      esdm:AntwoordNee
+    ) ;
+  sh:maxCount 1 ;
+  sh:name "Ontwikkelen"@nl ;
+.
+esdm:Antwoord-prefLabel
+  a sh:PropertyShape ;
+  sh:path skos:prefLabel ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:minCount 1 ;
+  sh:name "Label"@nl ;
+  sh:order "0"^^xsd:decimal ;
+  sh:values [
+      sh:path (
+          esdm:geinterviewde
+          <http://schema.org/givenName>
+        ) ;
+    ] ;
+.
+esdm:Antwoord-soll
+  a sh:PropertyShape ;
+  sh:path esdm:soll ;
+  sh:datatype xsd:integer ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:in (
+      1
+      2
+      3
+      4
+      5
+      6
+      7
+    ) ;
+  sh:maxCount 1 ;
+  sh:name "SOLL"@nl ;
+  sh:order "6"^^xsd:decimal ;
+.
+esdm:Antwoord-vraag
+  a sh:PropertyShape ;
+  sh:path esdm:vraag ;
+  sh:class esdm:Vraag ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Vraag"@nl ;
+  sh:order "1"^^xsd:decimal ;
+.
+esdm:AntwoordEnumeratie
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "AntwoordEnumeratie"@nl ;
+  rdfs:subClassOf skos:Concept ;
+  sh:property esdm:AntwoordEnumeratie-waarde ;
+.
+esdm:AntwoordEnumeratie-waarde
+  a sh:PropertyShape ;
+  sh:path esdm:waarde ;
+  sh:datatype xsd:integer ;
+  sh:description "Machineleesbare waarde, integer waarbij Ja = 0, Nee = 1 bijvoorbeeld. Dit is niet hetzelfde als de waarde die het voor een individu kan betekenen." ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:name "Waarde"@nl ;
+.
+esdm:AntwoordGemiddeld
+  a esdm:AntwoordEnumeratie ;
+  esdm:waarde 1 ;
+  skos:prefLabel "Gemiddeld"@nl ;
+  skos:topConceptOf esdm:AntwoordWaardes ;
+.
+esdm:AntwoordJa
+  a esdm:AntwoordEnumeratie ;
+  esdm:waarde 0 ;
+  skos:prefLabel "Ja"@nl ;
+  skos:topConceptOf esdm:AntwoordWaardes ;
+.
+esdm:AntwoordNee
+  a esdm:AntwoordEnumeratie ;
+  esdm:waarde 1 ;
+  skos:prefLabel "Nee"@nl ;
+  skos:topConceptOf esdm:AntwoordWaardes ;
+.
+esdm:AntwoordNvt
+  a esdm:AntwoordEnumeratie ;
+  esdm:waarde 2 ;
+  skos:prefLabel "Niet / nvt"@nl ;
+  skos:topConceptOf esdm:AntwoordWaardes ;
+.
+esdm:AntwoordVolledig
+  a esdm:AntwoordEnumeratie ;
+  esdm:waarde 0 ;
+  skos:prefLabel "Volledig"@nl ;
+  skos:topConceptOf esdm:AntwoordWaardes ;
+.
+esdm:AntwoordWaardes
+  a skos:ConceptScheme ;
+  rdfs:label "Antwoord waardes"@nl ;
+  skos:hasTopConcept esdm:AntwoordGemiddeld ;
+  skos:hasTopConcept esdm:AntwoordJa ;
+  skos:hasTopConcept esdm:AntwoordNee ;
+  skos:hasTopConcept esdm:AntwoordNvt ;
+  skos:hasTopConcept esdm:AntwoordVolledig ;
+.
+esdm:AntwoordenPropertyGroup
+  a sh:PropertyGroup ;
+  rdfs:label "Antwoorden"@nl ;
+  sh:order "-1"^^xsd:decimal ;
+.
 esdm:Bedrijf
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:label "Bedrijf"@nl ;
   rdfs:subClassOf <http://schema.org/Corporation> ;
   skos:prefLabel "Bedrijf"@nl ;
+.
+esdm:BelangrijkeOnderwerpenPropertyGroup
+  a sh:PropertyGroup ;
+  rdfs:label "Belangrijke onderwerpen"@nl ;
+  sh:order -4.1 ;
+.
+esdm:Beroep
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Beroep"@nl ;
+  rdfs:subClassOf skos:Concept ;
+  sh:property esdm:Beroep-uitgeoefendDoor ;
+.
+esdm:Beroep-uitgeoefendDoor
+  a sh:PropertyShape ;
+  sh:path esdm:uitgeoefendDoor ;
+  sh:class esdm:Medewerker ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:name "Uitgeoefend door"@nl ;
+  sh:order "0"^^xsd:decimal ;
+  sh:values [
+      sh:path [
+          sh:inversePath esdm:beroep ;
+        ] ;
+    ] ;
+.
+esdm:DatajourneyPropertyGroup
+  a sh:PropertyGroup ;
+  rdfs:label "Datajourney"@nl ;
+  sh:order "-2"^^xsd:decimal ;
+.
+esdm:Dienst
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Dienst"@nl ;
+  rdfs:subClassOf skos:Concept ;
 .
 esdm:Dossier
   a owl:Class ;
@@ -92,7 +329,7 @@ esdm:Dossier-stakeholder
 .
 esdm:Dossier-subject
   a sh:PropertyShape ;
-  sh:path dcterms:subject ;
+  sh:path dct:subject ;
   sh:class skos:Concept ;
   sh:group esdm:ZaakPropertyGroup ;
   sh:name "Onderwerp" ;
@@ -185,7 +422,7 @@ esdm:Gebeurtenis
 .
 esdm:Gebeurtenis-coverage
   a sh:PropertyShape ;
-  sh:path dcterms:coverage ;
+  sh:path dct:coverage ;
   sh:class <http://schema.org/Place> ;
   sh:group esdm:ZaakPropertyGroup ;
   sh:maxCount 1 ;
@@ -194,7 +431,7 @@ esdm:Gebeurtenis-coverage
 .
 esdm:Gebeurtenis-date
   a sh:PropertyShape ;
-  sh:path dcterms:date ;
+  sh:path dct:date ;
   sh:datatype xsd:dateTime ;
   sh:group esdm:ZaakPropertyGroup ;
   sh:maxCount 1 ;
@@ -209,14 +446,211 @@ esdm:Gebeurtenis-volgende
   sh:name "Volgende gebeurtenis" ;
   sh:nodeKind sh:IRI ;
 .
+esdm:Idee
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Idee"@nl ;
+  rdfs:subClassOf skos:Concept ;
+  sh:property esdm:Idee-Onderwerp ;
+  sh:property esdm:Idee-eigenaar ;
+  sh:property esdm:Idee-thema ;
+.
+esdm:Idee-Onderwerp
+  a sh:PropertyShape ;
+  sh:path dct:subject ;
+  sh:class esdm:Topic ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:name "Perspectief"@nl ;
+  sh:values [
+      sh:filterShape [
+          sh:property [
+              sh:path rdf:type ;
+              sh:hasValue esdm:Antwoord ;
+            ] ;
+        ] ;
+      sh:minus sh:this ;
+      sh:nodes [
+          sh:path (
+              skos:broader
+              skos:broader
+              [
+                sh:inversePath skos:broader ;
+              ]
+              esdm:vraag
+              dct:subject
+            ) ;
+        ] ;
+    ] ;
+.
+esdm:Idee-eigenaar
+  a sh:PropertyShape ;
+  sh:path esdm:eigenaar ;
+  sh:class esdm:Medewerker ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:name "Eigenaar"@nl ;
+  sh:values [
+      sh:path (
+          skos:broader
+          skos:broader
+          [
+            sh:inversePath skos:hasTopConcept ;
+          ]
+          esdm:geinterviewde
+        ) ;
+    ] ;
+.
+esdm:Idee-thema
+  a sh:PropertyShape ;
+  sh:path esdm:thema ;
+  sh:class esdm:Thema ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:name "Thema"@nl ;
+  sh:order "2"^^xsd:decimal ;
+.
+esdm:Interview
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Interview"@nl ;
+  rdfs:subClassOf skos:ConceptScheme ;
+  sh:property esdm:Interview-antwoord ;
+  sh:property esdm:Interview-antwoordenTabel ;
+  sh:property esdm:Interview-date ;
+  sh:property esdm:Interview-geinterviewde ;
+  sh:property esdm:Interview-idee ;
+  sh:property esdm:Interview-topic ;
+.
+esdm:Interview-antwoord
+  a sh:PropertyShape ;
+  sh:path esdm:antwoord ;
+  sh:class esdm:Antwoord ;
+  sh:group esdm:AntwoordenPropertyGroup ;
+  sh:name "Antwoorden"@nl ;
+  sh:order "4"^^xsd:decimal ;
+.
+esdm:Interview-antwoordenTabel
+  a sh:PropertyShape ;
+  sh:path esdm:antwoordenTabel ;
+  dash:viewer dash:ValueTableViewer ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:name "Antwoorden tabel"@nl ;
+  sh:node esdm:InterviewAntwoordShape ;
+  sh:order "4"^^xsd:decimal ;
+  sh:values [
+      sh:path esdm:antwoord ;
+    ] ;
+.
+esdm:Interview-date
+  a sh:PropertyShape ;
+  sh:path dct:date ;
+  sh:datatype xsd:date ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Datum"@nl ;
+  sh:order "1"^^xsd:decimal ;
+.
+esdm:Interview-geinterviewde
+  a sh:PropertyShape ;
+  sh:path esdm:geinterviewde ;
+  sh:class esdm:Medewerker ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:minCount 1 ;
+  sh:name "Geïnterviewde"@nl ;
+.
+esdm:Interview-idee
+  a sh:PropertyShape ;
+  sh:path esdm:idee ;
+  sh:class esdm:Idee ;
+  sh:group esdm:ResultatenIdeeenPropertyGroup ;
+  sh:name "Idee"@nl ;
+  sh:order "0"^^xsd:decimal ;
+.
+esdm:Interview-topic
+  a sh:PropertyShape ;
+  sh:path esdm:topic ;
+  sh:class esdm:Topic ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:minCount 1 ;
+  sh:name "Perspectief"@nl ;
+.
+esdm:InterviewAntwoordShape
+  a sh:NodeShape ;
+  rdfs:label "Interview antwoord shape"@nl ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path esdm:meeEens ;
+      sh:class esdm:AntwoordEnumeratie ;
+      sh:name "Mee eens?" ;
+      sh:order "2"^^xsd:decimal ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path esdm:ontwikkelen ;
+      sh:datatype xsd:string ;
+      sh:name "Ontwikkelen?" ;
+      sh:order "3"^^xsd:decimal ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path esdm:vraag ;
+      sh:datatype xsd:string ;
+      sh:name "Vraag" ;
+      sh:order "1"^^xsd:decimal ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dct:subject ;
+      sh:name "Perspectief" ;
+      sh:order "0"^^xsd:decimal ;
+    ] ;
+.
+esdm:InterviewsPropertyGroup
+  a sh:PropertyGroup ;
+  rdfs:label "Interviews"@nl ;
+  sh:order "-5"^^xsd:decimal ;
+.
+esdm:KandidaatMedewerker
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Kandidaat Medewerker"@nl ;
+  rdfs:subClassOf esdm:Medewerker ;
+  skos:prefLabel "Kandidaat Medewerker"@nl ;
+.
+esdm:KandidatenPropertyGroup
+  a sh:PropertyGroup ;
+  rdfs:label "Kandidaten"@nl ;
+  sh:order "-4"^^xsd:decimal ;
+.
+esdm:Label
+  a owl:DatatypeProperty ;
+  rdfs:label "Label"@nl ;
+.
 esdm:Medewerker
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:label "Medewerker"@nl ;
   rdfs:subClassOf <http://schema.org/Person> ;
+  rdfs:subClassOf skos:Concept ;
+  owl:equivalentClass esdm:Medewerker ;
   skos:prefLabel "Medewerker"@nl ;
+  sh:property esdm:Medewerker-beroep ;
   sh:property esdm:Medewerker-cv ;
+  sh:property esdm:Medewerker-email ;
+  sh:property esdm:Medewerker-familyName ;
   sh:property esdm:Medewerker-functie ;
+  sh:property esdm:Medewerker-givenName ;
+  sh:property esdm:Medewerker-jobTitle ;
+  sh:property esdm:Medewerker-label ;
+  sh:property esdm:Medewerker-rapporteertAan ;
+.
+esdm:Medewerker-beroep
+  a sh:PropertyShape ;
+  sh:path esdm:beroep ;
+  sh:class esdm:Beroep ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:minCount 0 ;
+  sh:name "Beroep"@nl ;
+  sh:order -1 ;
 .
 esdm:Medewerker-cv
   a sh:PropertyShape ;
@@ -227,6 +661,24 @@ esdm:Medewerker-cv
   sh:name "CV" ;
   sh:nodeKind sh:IRI ;
 .
+esdm:Medewerker-email
+  a sh:PropertyShape ;
+  sh:path <http://schema.org/email> ;
+  sh:datatype xsd:string ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:minCount 1 ;
+  sh:name "Emailadres" ;
+  sh:order "3"^^xsd:decimal ;
+.
+esdm:Medewerker-familyName
+  a sh:PropertyShape ;
+  sh:path <http://schema.org/familyName> ;
+  sh:datatype xsd:string ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Achternaam" ;
+  sh:order "-5"^^xsd:decimal ;
+.
 esdm:Medewerker-functie
   a sh:PropertyShape ;
   sh:path esdm:functie ;
@@ -235,12 +687,239 @@ esdm:Medewerker-functie
   sh:name "Functie" ;
   sh:nodeKind sh:IRI ;
 .
+esdm:Medewerker-givenName
+  a sh:PropertyShape ;
+  sh:path <http://schema.org/givenName> ;
+  sh:datatype xsd:string ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Voornaam" ;
+  sh:order "-6"^^xsd:decimal ;
+.
+esdm:Medewerker-jobTitle
+  a sh:PropertyShape ;
+  sh:path <http://schema.org/jobTitle> ;
+  sh:datatype xsd:string ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Beroepsnaam" ;
+  sh:order "0"^^xsd:decimal ;
+.
+esdm:Medewerker-label
+  a sh:PropertyShape ;
+  sh:path rdfs:label ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:name "Label"@nl ;
+  sh:or dash:StringOrLangString ;
+  sh:order "13"^^xsd:decimal ;
+.
+esdm:Medewerker-rapporteertAan
+  a sh:PropertyShape ;
+  sh:path esdm:rapporteertAan ;
+  sh:class esdm:Medewerker ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:name "Rapporteert aan"@nl ;
+.
+esdm:MedewerkerOrdina
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Medewerker Ordina"@nl ;
+  rdfs:subClassOf esdm:Medewerker ;
+  owl:disjointWith esdm:MedewerkerRWS ;
+.
+esdm:MedewerkerRWS
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Medewerker Rijkswaterstaat"@nl ;
+  rdfs:subClassOf esdm:Medewerker ;
+  owl:disjointWith esdm:MedewerkerOrdina ;
+  sh:not [
+      rdfs:label "Instance of Medewerker Ordina" ;
+      sh:class esdm:MedewerkerOrdina ;
+    ] ;
+.
+esdm:MedewerkerView
+  a sh:NodeShape ;
+  dash:applicableToClass esdm:Medewerker ;
+  dash:defaultViewForRole dash:all ;
+  rdfs:label "Medewerker-view"@nl ;
+  sh:node esdm:Medewerker ;
+.
 esdm:Ministerie
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:label "Ministerie"@nl ;
   rdfs:subClassOf <http://schema.org/GovernmentOrganization> ;
   skos:prefLabel "Ministerie"@nl ;
+.
+esdm:Organization-comment
+  a sh:PropertyShape ;
+  sh:path rdfs:comment ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:name "Opmerking"@nl ;
+  sh:or dash:HTMLOrStringOrLangString ;
+  sh:order "7"^^xsd:decimal ;
+.
+esdm:Organization-department
+  a sh:PropertyShape ;
+  sh:path <http://schema.org/department> ;
+  sh:class <http://schema.org/Organization> ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:name "Afdeling"@nl ;
+  sh:order "5"^^xsd:decimal ;
+.
+esdm:Organization-dienst
+  a sh:PropertyShape ;
+  sh:path esdm:dienst ;
+  sh:class esdm:Dienst ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:name "Dienst"@nl ;
+  sh:order "6"^^xsd:decimal ;
+.
+esdm:Resultaten
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Resultaten"@nl ;
+  rdfs:subClassOf skos:ConceptScheme ;
+  sh:property esdm:Resultaten-geinterviewde ;
+  sh:property esdm:Resultaten-hoeveelheidThemas ;
+  sh:property esdm:Resultaten-idee ;
+  sh:property esdm:Resultaten-interview ;
+  sh:property esdm:Resultaten-perspectievenHogePrio ;
+  sh:property esdm:Resultaten-thema ;
+.
+esdm:Resultaten-geinterviewde
+  a sh:PropertyShape ;
+  sh:path esdm:geinterviewde ;
+  dash:viewer dash:DetailsViewer ;
+  sh:class esdm:Medewerker ;
+  sh:group esdm:KandidatenPropertyGroup ;
+  sh:name "Kandidaat"@nl ;
+  sh:order "0"^^xsd:decimal ;
+  sh:values [
+      sh:path (
+          esdm:interview
+          esdm:geinterviewde
+        ) ;
+    ] ;
+.
+esdm:Resultaten-hoeveelheidThemas
+  a sh:PropertyShape ;
+  sh:path esdm:hoeveelheidThemas ;
+  sh:datatype xsd:integer ;
+  sh:group esdm:ResultatenThemasPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Hoeveelheid thema's"@nl ;
+  sh:order "-1"^^xsd:decimal ;
+  sh:values [
+      sh:count [
+          sh:path esdm:themas ;
+        ] ;
+    ] ;
+.
+esdm:Resultaten-idee
+  a sh:PropertyShape ;
+  sh:path esdm:idee ;
+  sh:class esdm:Idee ;
+  sh:group esdm:ResultatenIdeeenPropertyGroup ;
+  sh:name "Alle ideeën"@nl ;
+  sh:order "0"^^xsd:decimal ;
+  sh:values [
+      sh:select """
+				SELECT ?idee
+				WHERE {
+					?idee <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ordina.nl/esdm#Idee>
+				}""" ;
+    ] ;
+.
+esdm:Resultaten-interview
+  a sh:PropertyShape ;
+  sh:path esdm:interview ;
+  sh:class esdm:Interview ;
+  sh:group esdm:InterviewsPropertyGroup ;
+  sh:minCount 1 ;
+  sh:name "Interview"@nl ;
+  sh:order "0"^^xsd:decimal ;
+.
+esdm:Resultaten-perspectievenHogePrio
+  a sh:PropertyShape ;
+  sh:path esdm:perspectievenHogePrio ;
+  dash:viewer dash:ValueTableViewer ;
+  sh:group esdm:BelangrijkeOnderwerpenPropertyGroup ;
+  sh:name "Perspectieven met hoge prioriteit"@nl ;
+  sh:node esdm:ResultatenPerspectiefPrioShape ;
+  sh:order "0"^^xsd:decimal ;
+  sh:values [
+      sh:filterShape [
+          sh:property [
+              sh:path esdm:meeEens ;
+              sh:hasValue esdm:AntwoordVolledig ;
+            ] ;
+        ] ;
+      sh:nodes [
+          sh:path (
+              esdm:interview
+              esdm:antwoord
+            ) ;
+        ] ;
+    ] ;
+.
+esdm:Resultaten-thema
+  a sh:PropertyShape ;
+  sh:path esdm:themas ;
+  sh:class esdm:Thema ;
+  sh:group esdm:ResultatenThemasPropertyGroup ;
+  sh:name "Thema's"@nl ;
+  sh:order "0"^^xsd:decimal ;
+  sh:values [
+      sh:select """
+				SELECT ?thema
+				WHERE {
+					?thema <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://ordina.nl/esdm#Thema>
+				}""" ;
+    ] ;
+.
+esdm:ResultatenIdeeenPropertyGroup
+  a sh:PropertyGroup ;
+  rdfs:label "Ideeën"@nl ;
+  sh:order -0.5 ;
+.
+esdm:ResultatenPerspectiefPrioShape
+  a sh:NodeShape ;
+  rdfs:label "Resultaten perspectief prio shape"@nl ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path esdm:geinterviewde ;
+      sh:class esdm:MedewerkerRWS ;
+      sh:name "Geïnterviewde?" ;
+      sh:order "3"^^xsd:decimal ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path esdm:meeEens ;
+      sh:class esdm:AntwoordEnumeratie ;
+      sh:name "Mee eens?" ;
+      sh:order "2"^^xsd:decimal ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path esdm:vraag ;
+      sh:datatype xsd:string ;
+      sh:name "Vraag" ;
+      sh:order "1"^^xsd:decimal ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dct:subject ;
+      sh:name "Perspectief" ;
+      sh:order "0"^^xsd:decimal ;
+    ] ;
+.
+esdm:ResultatenThemasPropertyGroup
+  a sh:PropertyGroup ;
+  rdfs:label "Thema's"@nl ;
+  sh:order -1.5 ;
 .
 esdm:Rol
   a owl:Class ;
@@ -290,6 +969,30 @@ esdm:Telefoongesprek
   rdfs:subClassOf esdm:Gebeurtenis ;
   skos:prefLabel "Telefoongesprek"@nl ;
 .
+esdm:Thema
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "<div lang=\"nl\">Een thema is een topic overstijgend onderwerp die we gebruiken om ideeen te bundelen.</div>"^^rdf:HTML ;
+  rdfs:label "Thema"@nl ;
+  rdfs:subClassOf skos:Concept ;
+  sh:property esdm:Thema-idee ;
+  sh:property esdm:Thema-topic ;
+.
+esdm:Thema-idee
+  a sh:PropertyShape ;
+  sh:path esdm:idee ;
+  sh:class esdm:Idee ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:name "Ideeën"@nl ;
+  sh:order "1"^^xsd:decimal ;
+.
+esdm:Thema-topic
+  a sh:PropertyShape ;
+  sh:path esdm:topic ;
+  sh:class esdm:Topic ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:name "Perspectief"@nl ;
+.
 esdm:Tijdlijn
   a owl:Class ;
   a sh:NodeShape ;
@@ -305,6 +1008,89 @@ esdm:Tijdlijn-gebeurtenis
   sh:group esdm:ZaakPropertyGroup ;
   sh:name "Gebeurtenis" ;
   sh:nodeKind sh:IRI ;
+.
+esdm:Topic
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Perspectief"@nl ;
+  rdfs:subClassOf skos:Concept ;
+  sh:property esdm:Topic-thema ;
+  sh:property esdm:Topic-vraag ;
+.
+esdm:Topic-thema
+  a sh:PropertyShape ;
+  sh:path esdm:thema ;
+  sh:class esdm:Thema ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:name "Thema(s)"@nl ;
+  sh:order "1"^^xsd:decimal ;
+  sh:values [
+      sh:prefixes [
+          sh:declare [
+              sh:namespace "http://ordina.nl/esdm#"^^xsd:anyURI ;
+              sh:prefix "esdm" ;
+            ] ;
+          sh:declare [
+              sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI ;
+              sh:prefix "rdf" ;
+            ] ;
+        ] ;
+      sh:select """
+				SELECT ?thema
+				WHERE {
+					?thema esdm:topic ?this ;
+					rdf:type esdm:Thema .	
+				}""" ;
+    ] ;
+.
+esdm:Topic-vraag
+  a sh:PropertyShape ;
+  sh:path esdm:vraag ;
+  sh:class esdm:Vraag ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:name "Vraag"@nl ;
+.
+esdm:Vraag
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Vraag"@nl ;
+  rdfs:subClassOf skos:Concept ;
+  sh:property esdm:Vraag-Onderwerp ;
+  sh:property esdm:Vraag-antwoord ;
+.
+esdm:Vraag-Onderwerp
+  a sh:PropertyShape ;
+  sh:path dct:subject ;
+  sh:class skos:Concept ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:name "Onderwerp" ;
+.
+esdm:Vraag-antwoord
+  a sh:PropertyShape ;
+  sh:path esdm:antwoord ;
+  sh:class esdm:Antwoord ;
+  sh:defaultValue [
+      sh:prefixes [
+          sh:declare [
+              sh:namespace "http://ordina.nl/esdm#"^^xsd:anyURI ;
+              sh:prefix "esdm" ;
+            ] ;
+          sh:declare [
+              sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI ;
+              sh:prefix "rdf" ;
+            ] ;
+        ] ;
+      sh:select """
+				SELECT ?antwoord
+				WHERE {
+					?antwoord esdm:vraag ?this ;
+rdf:type esdm:Antwoord .
+					
+				}""" ;
+    ] ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:name "Antwoord(en)"@nl ;
+  sh:order "1"^^xsd:decimal ;
 .
 esdm:Zaak
   a owl:Class ;
@@ -344,7 +1130,7 @@ esdm:Zaak-stakeholder
 .
 esdm:Zaak-subject
   a sh:PropertyShape ;
-  sh:path dcterms:subject ;
+  sh:path dct:subject ;
   sh:class skos:Concept ;
   sh:group esdm:ZaakPropertyGroup ;
   sh:minCount 1 ;
@@ -379,7 +1165,16 @@ esdm:agentschap
 .
 esdm:antwoord
   a owl:ObjectProperty ;
+  rdfs:label "Antwoord"@nl ;
   rdfs:label "antwoord"@nl ;
+.
+esdm:antwoordenTabel
+  a owl:ObjectProperty ;
+  rdfs:label "Antwoorden tabel"@nl ;
+.
+esdm:belangrijk
+  a owl:ObjectProperty ;
+  rdfs:label "Belangrijk"@nl ;
 .
 esdm:beller
   a owl:ObjectProperty ;
@@ -393,10 +1188,18 @@ esdm:cv
   rdfs:range <http://topbraid.org/corpus#Document> ;
   skos:prefLabel "CV"@nl ;
 .
+esdm:dienst
+  a owl:ObjectProperty ;
+  rdfs:label "Dienst"@nl ;
+.
 esdm:dossier
   a owl:ObjectProperty ;
   rdfs:label "dossier"@nl ;
   rdfs:range esdm:Dossier ;
+.
+esdm:eigenaar
+  a owl:ObjectProperty ;
+  rdfs:label "Eigenaar"@nl ;
 .
 esdm:functie
   a owl:ObjectProperty ;
@@ -415,16 +1218,60 @@ esdm:gebeurtenis
   rdfs:label "gebeurtenis"@nl ;
   rdfs:range esdm:Gebeurtenis ;
 .
+esdm:geinterviewde
+  a owl:ObjectProperty ;
+  rdfs:label "Geïnterviewde"@nl ;
+.
+esdm:gemiddeld
+  a owl:DatatypeProperty ;
+  rdfs:label "Gemiddeld"@nl ;
+.
+esdm:hoeveelheidThemas
+  a owl:DatatypeProperty ;
+  rdfs:label "Hoeveelheid thema's"@nl ;
+.
+esdm:idee
+  a owl:ObjectProperty ;
+  rdfs:label "Ideeën"@nl ;
+.
+esdm:interview
+  a owl:ObjectProperty ;
+  rdfs:label "Interview"@nl ;
+.
+esdm:ist
+  a owl:DatatypeProperty ;
+  rdfs:label "IST"@nl ;
+.
 esdm:medewerker
   a rdf:Property ;
   rdfs:label "Medewerker"@nl ;
   rdfs:range esdm:Actor ;
   skos:prefLabel "Medewerker"@nl ;
 .
+esdm:meeEens
+  a owl:ObjectProperty ;
+  rdfs:label "Mee eens"@nl ;
+.
+esdm:niet_nvt
+  a owl:DatatypeProperty ;
+  rdfs:label "Niet / nvt"@nl ;
+.
 esdm:ontvanger
   a owl:ObjectProperty ;
   rdfs:label "ontvanger"@nl ;
   rdfs:range esdm:Actor ;
+.
+esdm:ontwikkelen
+  a owl:DatatypeProperty ;
+  rdfs:label "Ontwikkelen"@nl ;
+.
+esdm:perspectievenHogePrio
+  a owl:ObjectProperty ;
+  rdfs:label "Perspectieven met hoge prioriteit"@nl ;
+.
+esdm:rapporteertAan
+  a owl:ObjectProperty ;
+  rdfs:label "Rapporteert aan"@nl ;
 .
 esdm:resource
   a owl:ObjectProperty ;
@@ -433,15 +1280,40 @@ esdm:resource
   rdfs:range rdfs:Resource ;
   skos:prefLabel "Resource"@en ;
 .
+esdm:soll
+  a owl:DatatypeProperty ;
+  rdfs:label "SOLL"@nl ;
+.
+esdm:staat
+  a owl:ObjectProperty ;
+  rdfs:label "Huidige staat"@nl ;
+.
 esdm:stakeholder
   a owl:ObjectProperty ;
   rdfs:label "stakeholder"@nl ;
   rdfs:range esdm:Stakeholder ;
 .
+esdm:thema
+  a owl:ObjectProperty ;
+  rdfs:label "Thema"@nl ;
+.
+esdm:themas
+  a owl:ObjectProperty ;
+  rdfs:label "Thema's"@nl ;
+  rdfs:subPropertyOf skos:hasTopConcept ;
+.
 esdm:tijdlijn
   a owl:ObjectProperty ;
   rdfs:label "tijdlijn"@nl ;
   rdfs:range esdm:Tijdlijn ;
+.
+esdm:topic
+  a owl:ObjectProperty ;
+  rdfs:label "Topic"@nl ;
+.
+esdm:uitgeoefendDoor
+  a owl:ObjectProperty ;
+  rdfs:label "Uitgeoefend door"@nl ;
 .
 esdm:value
   a rdf:Property ;
@@ -451,6 +1323,19 @@ esdm:value
 esdm:volgende
   a owl:ObjectProperty ;
   rdfs:label "volgende"@nl ;
+.
+esdm:volledig
+  a owl:DatatypeProperty ;
+  rdfs:label "Volledig"@nl ;
+.
+esdm:vraag
+  a owl:ObjectProperty ;
+  rdfs:label "Vraag"@nl ;
+.
+esdm:waarde
+  a owl:DatatypeProperty ;
+  rdfs:comment "Machineleesbare waarde, integer waarbij Ja = 0, Nee = 1 bijvoorbeeld" ;
+  rdfs:label "Waarde"@nl ;
 .
 esdm:zaak
   a owl:ObjectProperty ;
@@ -501,7 +1386,7 @@ owl:Thing
 .
 owl:Thing-subject
   a sh:PropertyShape ;
-  sh:path dcterms:subject ;
+  sh:path dct:subject ;
   sh:class skos:Concept ;
   sh:group esdm:ESDM_Gegevens ;
   sh:name "Grondslag" ;
@@ -529,7 +1414,7 @@ skos:Concept-source
 .
 skos:Concept-source_uri
   a sh:PropertyShape ;
-  sh:path dcterms:source ;
+  sh:path dct:source ;
   sh:class <http://topbraid.org/corpus#Document> ;
   sh:group esdm:ESDM_Gegevens ;
   sh:name "Interne bron" ;
