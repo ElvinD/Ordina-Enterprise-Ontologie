@@ -16,6 +16,7 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix esdm: <http://ordina.nl/esdm#> .
 @prefix evnprojects: <http://evn.topbraidlive.org/evnprojects#> .
 @prefix graphql: <http://datashapes.org/graphql#> .
@@ -26,8 +27,14 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tosh: <http://topbraid.org/tosh#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<http://edg.topbraid.solutions/model/Aspect>
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:subClassOf skos:Concept ;
+.
 evnprojects:Taxonomy
   a sh:NodeShape ;
   sh:property esdm:Taxonomy-creator ;
@@ -45,7 +52,7 @@ evnprojects:Taxonomy
   owl:imports <http://datashapes.org/graphql> ;
   owl:imports <http://ordina.nl/esdm-implementatie> ;
   owl:imports dc: ;
-  owl:imports dct: ;
+  owl:imports dcterms: ;
   owl:imports <http://topbraid.org/corpus> ;
   owl:imports <http://topbraid.org/schema/schema-single-range> ;
   owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
@@ -65,12 +72,38 @@ esdm:Actor
   rdfs:subClassOf skos:Concept ;
   skos:prefLabel "Actor"@nl ;
 .
+esdm:Address
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Ordina Address"@en ;
+  rdfs:subClassOf <http://schema.org/PostalAddress> ;
+  rdfs:subClassOf skos:Concept ;
+  skos:prefLabel "Ordina Address"@en ;
+.
 esdm:Agentschap
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:label "Agentschap"@nl ;
   rdfs:subClassOf <http://schema.org/GovernmentOrganization> ;
   skos:prefLabel "Agentschap"@nl ;
+.
+esdm:AnalyticsApplication
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Ordina Analytics Application"@nl ;
+  rdfs:subClassOf <http://edg.topbraid.solutions/model/System> ;
+  rdfs:subClassOf <http://schema.org/SoftwareApplication> ;
+  rdfs:subClassOf skos:Concept ;
+  skos:prefLabel "Ordina Analytics Application"@nl ;
+  sh:property esdm:AnalyticsApplication-kpi ;
+.
+esdm:AnalyticsApplication-kpi
+  a sh:PropertyShape ;
+  sh:path esdm:kpi ;
+  sh:class esdm:KPI ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "KPI" ;
+  sh:nodeKind sh:IRI ;
 .
 esdm:Antwoord
   a owl:Class ;
@@ -88,7 +121,7 @@ esdm:Antwoord
 .
 esdm:Antwoord-Perspectief
   a sh:PropertyShape ;
-  sh:path dct:subject ;
+  sh:path dcterms:subject ;
   sh:class esdm:Topic ;
   sh:group esdm:DatajourneyPropertyGroup ;
   sh:name "Perspectief"@nl ;
@@ -96,7 +129,7 @@ esdm:Antwoord-Perspectief
   sh:values [
       sh:path (
           esdm:vraag
-          dct:subject
+          dcterms:subject
         ) ;
     ] ;
 .
@@ -297,16 +330,509 @@ esdm:Beroep-uitgeoefendDoor
         ] ;
     ] ;
 .
+esdm:BusinessAsset
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "A type of asset that is exclusively used and governed by the business user community. Its instance assets, and all instances instantiating its subtypes, pertain to the business organization. Business assets typically include business concepts like Business Term, Business Process, Line of Business, etc. that help to build the semantics of any organization with insufficient details to build an actual business application."@en ;
+  rdfs:label "Ordina Business Asset"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  skos:prefLabel "Ordina Business Asset"@en ;
+.
+esdm:BusinessDimension
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "A set of reference information that categorizes and describes a Business Term in such a way that it provides context and meaningful answers to business questions. Examples: Business Process, Line of Business, Region, Business Capability"@en ;
+  rdfs:label "Ordina Business Dimension"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  skos:prefLabel "Ordina Business Dimension"@en ;
+  sh:property esdm:BusinessDimension-associates ;
+  sh:property esdm:BusinessDimension-groups ;
+  sh:property esdm:BusinessDimension-impactedBy ;
+  sh:property esdm:BusinessDimension-informedBy ;
+  sh:property esdm:BusinessDimension-related ;
+.
+esdm:BusinessDimension-associates
+  a sh:PropertyShape ;
+  sh:path esdm:associates ;
+  sh:class esdm:BusinessTerm ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Associates business term" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:BusinessDimension-groups
+  a sh:PropertyShape ;
+  sh:path esdm:groups ;
+  sh:class esdm:BusinessAsset ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Groups business asset" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:BusinessDimension-impactedBy
+  a sh:PropertyShape ;
+  sh:path esdm:impactedBy ;
+  sh:class esdm:Issue ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Impacted by issue" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:BusinessDimension-informedBy
+  a sh:PropertyShape ;
+  sh:path esdm:informedBy ;
+  sh:class esdm:BusinessObjective ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Informed by business objective" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:BusinessDimension-related
+  a sh:PropertyShape ;
+  sh:path esdm:related ;
+  sh:class esdm:SubjectArea ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Relates to subject area" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:BusinessFlowCondition
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Ordina Business Flow Condition"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  skos:prefLabel "Ordina Business Flow Condition"@en ;
+.
+esdm:BusinessObjective
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "Classification representing a stated, measurable target to achieve business goals that infrequently changes."@en ;
+  rdfs:label "Ordina Business Objective"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  skos:prefLabel "Ordina Business Objective"@en ;
+  sh:property esdm:BusinessObjective-informedBy ;
+  sh:property esdm:BusinessObjective-informedBy_KPI ;
+  sh:property esdm:BusinessObjective-owner ;
+.
+esdm:BusinessObjective-informedBy
+  a sh:PropertyShape ;
+  sh:path esdm:informedBy ;
+  sh:class esdm:BusinessQuestion ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Informed by business question" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:BusinessObjective-informedBy_KPI
+  a sh:PropertyShape ;
+  sh:path esdm:informedBy ;
+  sh:class esdm:KPI ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Informed by KPI" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:BusinessObjective-owner
+  a sh:PropertyShape ;
+  sh:path esdm:owner ;
+  sh:class esdm:Employee ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Owner" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:BusinessQuestion
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Ordina Business Question"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  skos:prefLabel "Ordina Business Question"@en ;
+.
+esdm:BusinessTerm
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Ordina Business Term"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  skos:prefLabel "Ordina Business Term"@en ;
+  sh:property esdm:BusinessTerm-related ;
+  sh:property esdm:BusinessTerm-sourceSystem ;
+.
+esdm:BusinessTerm-related
+  a sh:PropertyShape ;
+  sh:path esdm:related ;
+  sh:class esdm:SubjectArea ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Is related to subject area" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:BusinessTerm-sourceSystem
+  a sh:PropertyShape ;
+  sh:path esdm:sourceSystem ;
+  sh:class esdm:TechnologyAsset ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Source system" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:CMRDocument-accessNumber
+  a sh:PropertyShape ;
+  sh:path esdm:accessNumber ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Access number" ;
+.
+esdm:CMRDocument-cartonsAmount
+  a sh:PropertyShape ;
+  sh:path esdm:cartonsAmount ;
+  sh:datatype xsd:integer ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Total cartons" ;
+.
+esdm:CMRDocument-cartonsWeightAmount
+  a sh:PropertyShape ;
+  sh:path esdm:cartonsWeightAmount ;
+  sh:datatype xsd:decimal ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Total cartons weight" ;
+.
+esdm:CMRDocument-cubicMeters
+  a sh:PropertyShape ;
+  sh:path esdm:cubicMeters ;
+  sh:datatype xsd:decimal ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Total cubic meters (M3)" ;
+.
+esdm:CMRDocument-directDropFlag
+  a sh:PropertyShape ;
+  sh:path esdm:directDropFlag ;
+  sh:datatype xsd:boolean ;
+  sh:maxCount 1 ;
+  sh:name "Directdrop flag" ;
+.
+esdm:CMRDocument-packList
+  a sh:PropertyShape ;
+  sh:path esdm:packList ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Packlist" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:CMRDocument-packlistAmount
+  a sh:PropertyShape ;
+  sh:path esdm:packlistAmount ;
+  sh:datatype xsd:integer ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Total packlists" ;
+.
+esdm:CMRDocument-seal
+  a sh:PropertyShape ;
+  sh:path esdm:seal ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Seal" ;
+.
+esdm:CMRDocument-shippingPoint
+  a sh:PropertyShape ;
+  sh:path esdm:shippingPoint ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Shipping point" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:CMRDocument-trailer
+  a sh:PropertyShape ;
+  sh:path esdm:trailer ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Trailer" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Carrier-hub
+  a sh:PropertyShape ;
+  sh:path esdm:hub ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Hub" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Carrier-hubCode
+  a sh:PropertyShape ;
+  sh:path esdm:hubCode ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Hub code" ;
+.
+esdm:Carton-carrierId
+  a sh:PropertyShape ;
+  sh:path esdm:carrierId ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Carrier carton ID" ;
+.
+esdm:Carton-cartonType
+  a sh:PropertyShape ;
+  sh:path esdm:cartonType ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Carton type" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Carton-cmr
+  a sh:PropertyShape ;
+  sh:path esdm:cmr ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "CMR Document" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Carton-cubicMeters
+  a sh:PropertyShape ;
+  sh:path esdm:cubicMeters ;
+  sh:datatype xsd:decimal ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Cubic meters (M3)" ;
+.
+esdm:Carton-id
+  a sh:PropertyShape ;
+  sh:path esdm:id ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Ordina carton ID" ;
+.
+esdm:Carton-item
+  a sh:PropertyShape ;
+  sh:path esdm:item ;
+  sh:class esdm:Item ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Item" ;
+  sh:nodeKind sh:IRI ;
+  sh:values [
+      sh:path (
+          sh:inversePath
+          esdm:containedIn
+        ) ;
+    ] ;
+.
+esdm:Carton-number
+  a sh:PropertyShape ;
+  sh:path esdm:number ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Carton number" ;
+.
+esdm:Carton-packList
+  a sh:PropertyShape ;
+  sh:path esdm:packList ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Packlist" ;
+  sh:nodeKind sh:IRI ;
+  sh:values [
+      sh:path (
+          sh:inversePath
+          esdm:carton
+        ) ;
+    ] ;
+.
+esdm:Carton-unitsAmount
+  a sh:PropertyShape ;
+  sh:path esdm:unitsAmount ;
+  sh:datatype xsd:integer ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Amount of units" ;
+.
+esdm:Carton-weight
+  a sh:PropertyShape ;
+  sh:path esdm:weight ;
+  sh:datatype xsd:decimal ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Weight (KG)" ;
+.
+esdm:City
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Ordina City"@en ;
+  rdfs:subClassOf skos:Concept ;
+  owl:equivalentClass <http://schema.org/City> ;
+  skos:prefLabel "Ordina City"@en ;
+.
+esdm:Column
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Ordina Column"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  skos:prefLabel "Ordina Column"@en ;
+.
+esdm:Community
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Ordina Community"@en ;
+  rdfs:subClassOf skos:Concept ;
+  skos:prefLabel "Ordina Community"@en ;
+.
+esdm:Country
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Country"@en ;
+  rdfs:subClassOf skos:Concept ;
+  owl:equivalentClass <http://schema.org/Country> ;
+  skos:prefLabel "Ordina Country"@en ;
+.
+esdm:Customer
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Ordina Customer"@en ;
+  rdfs:subClassOf skos:Concept ;
+  skos:prefLabel "Ordina Customer"@en ;
+  sh:property esdm:Customer-number ;
+.
+esdm:Customer-number
+  a sh:PropertyShape ;
+  sh:path esdm:number ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Customer number" ;
+.
+esdm:DataAsset
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Ordina Data Asset"@en ;
+  rdfs:subClassOf skos:Concept ;
+  skos:prefLabel "Ordina Data Asset"@en ;
+  sh:property esdm:DataAsset-classification ;
+  sh:property esdm:DataAsset-community ;
+  sh:property esdm:DataAsset-domain ;
+  sh:property esdm:DataAsset-tag ;
+.
+esdm:DataAsset-classification
+  a sh:PropertyShape ;
+  sh:path esdm:classification ;
+  sh:class esdm:DataClassification ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Classification" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:DataAsset-community
+  a sh:PropertyShape ;
+  sh:path esdm:community ;
+  sh:class esdm:Community ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Community" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:DataAsset-domain
+  a sh:PropertyShape ;
+  sh:path esdm:domain ;
+  sh:class esdm:Domain ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Domain" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:DataAsset-tag
+  a sh:PropertyShape ;
+  sh:path esdm:tag ;
+  sh:class esdm:Tag ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Tag" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:DataClassification
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "Ordina utilizes risk-based categories for the purpose of determining who is allowed to access the information and what security precautions must be taken to protect it against unauthorized access. Because there are so many different types of data across Ordina and its systems that have varying degrees of sensitivity, Corporate Information Security created the Data Classification Calculator to quickly and easily help employees identify the sensitivity of their data and understand the requirements to protect it."@nl ;
+  rdfs:label "Data Classification"@en ;
+  rdfs:subClassOf skos:Concept ;
+  skos:prefLabel "Ordina Data Classification"@en ;
+.
 esdm:DatajourneyPropertyGroup
   a sh:PropertyGroup ;
   rdfs:label "Datajourney"@nl ;
   sh:order "-2"^^xsd:decimal ;
+.
+esdm:DeliveryDocument-item
+  a sh:PropertyShape ;
+  sh:path esdm:item ;
+  sh:class esdm:Item ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:minCount 1 ;
+  sh:name "Contains item" ;
+  sh:nodeKind sh:IRI ;
+  sh:values [
+      sh:path (
+          sh:inversePath
+          esdm:deliveryDocument
+        ) ;
+    ] ;
+.
+esdm:DeliveryDocument-number
+  a sh:PropertyShape ;
+  sh:path esdm:number ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Number" ;
 .
 esdm:Dienst
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:label "Dienst"@nl ;
   rdfs:subClassOf skos:Concept ;
+.
+esdm:Document
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Document"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  skos:prefLabel "Ordina Document"@en ;
+  sh:property esdm:Document-date ;
+  sh:property esdm:Document-date_UTC ;
+.
+esdm:Document-date
+  a sh:PropertyShape ;
+  sh:path esdm:date ;
+  sh:datatype xsd:dateTime ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Date on document" ;
+.
+esdm:Document-date_UTC
+  a sh:PropertyShape ;
+  sh:path esdm:date_UTC ;
+  sh:datatype xsd:dateTime ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Date on document (UTC)" ;
+.
+esdm:Domain
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Domain"@en ;
+  rdfs:subClassOf skos:Concept ;
+  skos:prefLabel "Ordina Domain"@en ;
+  sh:property esdm:Domain-domainType ;
+.
+esdm:Domain-domainType
+  a sh:PropertyShape ;
+  sh:path esdm:domainType ;
+  sh:class esdm:DomainType ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Domain type" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:DomainType
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Domain type"@en ;
+  rdfs:subClassOf skos:Concept ;
+  skos:prefLabel "Ordina Domain type"@en ;
 .
 esdm:Dossier
   a owl:Class ;
@@ -329,7 +855,7 @@ esdm:Dossier-stakeholder
 .
 esdm:Dossier-subject
   a sh:PropertyShape ;
-  sh:path dct:subject ;
+  sh:path dcterms:subject ;
   sh:class skos:Concept ;
   sh:group esdm:ZaakPropertyGroup ;
   sh:name "Onderwerp" ;
@@ -409,6 +935,57 @@ esdm:Emailuitwisseling-volgende
   sh:name "Volgende" ;
   sh:nodeKind sh:IRI ;
 .
+esdm:Employee
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Ordina Employee"@en ;
+  rdfs:subClassOf <http://edg.topbraid.solutions/model/Person> ;
+  rdfs:subClassOf skos:Concept ;
+  skos:prefLabel "Ordina Employee"@en ;
+  sh:property esdm:Employee-persona ;
+.
+esdm:Employee-persona
+  a sh:PropertyShape ;
+  sh:path esdm:persona ;
+  sh:class esdm:Persona ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Persona" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Event
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Event"@en ;
+  rdfs:subClassOf skos:Concept ;
+  skos:prefLabel "Ordina Event"@en ;
+.
+esdm:EventCode
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Ordina Event Code"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  rdfs:subClassOf <http://schema.org/Enumeration> ;
+  skos:prefLabel "Ordina Event Code"@en ;
+  sh:property esdm:EventCode-definition ;
+  sh:property esdm:EventCode-notation ;
+.
+esdm:EventCode-definition
+  a sh:PropertyShape ;
+  sh:path skos:definition ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:minCount 1 ;
+  sh:name "Definition" ;
+.
+esdm:EventCode-notation
+  a sh:PropertyShape ;
+  sh:path skos:notation ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Notation" ;
+.
 esdm:Gebeurtenis
   a owl:Class ;
   a sh:NodeShape ;
@@ -422,7 +999,7 @@ esdm:Gebeurtenis
 .
 esdm:Gebeurtenis-coverage
   a sh:PropertyShape ;
-  sh:path dct:coverage ;
+  sh:path dcterms:coverage ;
   sh:class <http://schema.org/Place> ;
   sh:group esdm:ZaakPropertyGroup ;
   sh:maxCount 1 ;
@@ -431,7 +1008,7 @@ esdm:Gebeurtenis-coverage
 .
 esdm:Gebeurtenis-date
   a sh:PropertyShape ;
-  sh:path dct:date ;
+  sh:path dcterms:date ;
   sh:datatype xsd:dateTime ;
   sh:group esdm:ZaakPropertyGroup ;
   sh:maxCount 1 ;
@@ -446,6 +1023,13 @@ esdm:Gebeurtenis-volgende
   sh:name "Volgende gebeurtenis" ;
   sh:nodeKind sh:IRI ;
 .
+esdm:Goal
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Goal"@en ;
+  rdfs:subClassOf esdm:KeyDataElement ;
+  skos:prefLabel "Doelstelling"@nl ;
+.
 esdm:Idee
   a owl:Class ;
   a sh:NodeShape ;
@@ -457,7 +1041,7 @@ esdm:Idee
 .
 esdm:Idee-Onderwerp
   a sh:PropertyShape ;
-  sh:path dct:subject ;
+  sh:path dcterms:subject ;
   sh:class esdm:Topic ;
   sh:group esdm:DatajourneyPropertyGroup ;
   sh:name "Perspectief"@nl ;
@@ -477,7 +1061,7 @@ esdm:Idee-Onderwerp
                 sh:inversePath skos:broader ;
               ]
               esdm:vraag
-              dct:subject
+              dcterms:subject
             ) ;
         ] ;
     ] ;
@@ -541,7 +1125,7 @@ esdm:Interview-antwoordenTabel
 .
 esdm:Interview-date
   a sh:PropertyShape ;
-  sh:path dct:date ;
+  sh:path dcterms:date ;
   sh:datatype xsd:date ;
   sh:group esdm:DatajourneyPropertyGroup ;
   sh:maxCount 1 ;
@@ -599,7 +1183,7 @@ esdm:InterviewAntwoordShape
     ] ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path dct:subject ;
+      sh:path dcterms:subject ;
       sh:name "Perspectief" ;
       sh:order "0"^^xsd:decimal ;
     ] ;
@@ -608,6 +1192,115 @@ esdm:InterviewsPropertyGroup
   a sh:PropertyGroup ;
   rdfs:label "Interviews"@nl ;
   sh:order "-5"^^xsd:decimal ;
+.
+esdm:Issue
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Ordina Issue"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  skos:prefLabel "Ordina Issue"@en ;
+.
+esdm:Item
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Ordina Item"@en ;
+  rdfs:subClassOf skos:Concept ;
+  skos:prefLabel "Ordina Item"@en ;
+  sh:property esdm:Item-code ;
+  sh:property esdm:Item-containedIn ;
+  sh:property esdm:Item-country ;
+  sh:property esdm:Item-customerProductOrderNumber ;
+  sh:property esdm:Item-deliveryDocument ;
+  sh:property esdm:Item-purchaseOrder ;
+  sh:property esdm:Item-shipmentOrder ;
+  sh:property esdm:Item-size ;
+.
+esdm:Item-code
+  a sh:PropertyShape ;
+  sh:path esdm:code ;
+  sh:class esdm:ProductCode ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Product code" ;
+.
+esdm:Item-containedIn
+  a sh:PropertyShape ;
+  sh:path esdm:containedIn ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Contained in carton" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Item-country
+  a sh:PropertyShape ;
+  sh:path esdm:country ;
+  sh:class esdm:Country ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Country of origin" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Item-customerProductOrderNumber
+  a sh:PropertyShape ;
+  sh:path esdm:customerProductOrderNumber ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Customer productorder number" ;
+.
+esdm:Item-deliveryDocument
+  a sh:PropertyShape ;
+  sh:path esdm:deliveryDocument ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Delivery document" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Item-purchaseOrder
+  a sh:PropertyShape ;
+  sh:path esdm:purchaseOrder ;
+  sh:class esdm:PurchaseOrder ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Purchase order" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Item-shipmentOrder
+  a sh:PropertyShape ;
+  sh:path esdm:shipmentOrder ;
+  sh:class esdm:ShipmentOrder ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Shipment order" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Item-size
+  a sh:PropertyShape ;
+  sh:path esdm:size ;
+  sh:class esdm:ProductSize ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Product size" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:KPI
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "The strategic shared metrics used to evaluate Ordina business objectives across functions and geographies. KPIs must enable a specific action or decision for a specific audience."@nl ;
+  rdfs:label "Key Performance Indicator"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  owl:equivalentClass <http://edg.topbraid.solutions/model/KeyPerformanceIndicator> ;
+  skos:prefLabel "Ordina Key Performance Indicator"@en ;
+  sh:property esdm:KPI-measuredBy ;
+.
+esdm:KPI-measuredBy
+  a sh:PropertyShape ;
+  sh:path esdm:measuredBy ;
+  sh:class esdm:KeyDataElement ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Measured by" ;
+  sh:nodeKind sh:IRI ;
 .
 esdm:KandidaatMedewerker
   a owl:Class ;
@@ -620,6 +1313,67 @@ esdm:KandidatenPropertyGroup
   a sh:PropertyGroup ;
   rdfs:label "Kandidaten"@nl ;
   sh:order "-4"^^xsd:decimal ;
+.
+esdm:KeyDataElement
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "A critical business term sourcing physical data elements (eg. column). A KDE relates to a Metric or KPI."@en ;
+  rdfs:label "Key Data Element"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  skos:prefLabel "Ordina Key Data Element"@en ;
+  sh:property esdm:KeyDataElement-determinedBy ;
+  sh:property esdm:KeyDataElement-getsValueFrom ;
+  sh:property esdm:KeyDataElement-measures ;
+  sh:property esdm:KeyDataElement-related ;
+  sh:property esdm:KeyDataElement-representsColumn ;
+.
+esdm:KeyDataElement-determinedBy
+  a sh:PropertyShape ;
+  sh:path esdm:determinedBy ;
+  sh:class esdm:BusinessFlowCondition ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Determined by business flow condition" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:KeyDataElement-domain
+  a sh:PropertyShape ;
+  sh:path esdm:domain ;
+  sh:class esdm:Domain ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Domain" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:KeyDataElement-getsValueFrom
+  a sh:PropertyShape ;
+  sh:path esdm:getsValueFrom ;
+  sh:class esdm:View ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Gets value from" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:KeyDataElement-measures
+  a sh:PropertyShape ;
+  sh:path esdm:measures ;
+  sh:class esdm:KPI ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Measures" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:KeyDataElement-related
+  a sh:PropertyShape ;
+  sh:path esdm:related ;
+  sh:class esdm:SubjectArea ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Relates to subject area" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:KeyDataElement-representsColumn
+  a sh:PropertyShape ;
+  sh:path esdm:representsColumn ;
+  sh:class esdm:Column ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Represents column" ;
+  sh:nodeKind sh:IRI ;
 .
 esdm:Label
   a owl:DatatypeProperty ;
@@ -746,12 +1500,26 @@ esdm:MedewerkerView
   rdfs:label "Medewerker-view"@nl ;
   sh:node esdm:Medewerker ;
 .
+esdm:Metric
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "An asset type on which calculations (e.g. percentage, sum, count, average, minimum, maximum) can be made."@en ;
+  rdfs:label "Metric"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  owl:equivalentClass <http://edg.topbraid.solutions/model/Metric> ;
+  skos:prefLabel "Ordina Metric"@en ;
+.
 esdm:Ministerie
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:label "Ministerie"@nl ;
   rdfs:subClassOf <http://schema.org/GovernmentOrganization> ;
   skos:prefLabel "Ministerie"@nl ;
+.
+esdm:OrdinaPropertyGroup
+  a sh:PropertyGroup ;
+  rdfs:label "Ordina properties"@en ;
+  skos:prefLabel "Ordina properties"@en ;
 .
 esdm:Organization-comment
   a sh:PropertyShape ;
@@ -776,6 +1544,89 @@ esdm:Organization-dienst
   sh:group esdm:DatajourneyPropertyGroup ;
   sh:name "Dienst"@nl ;
   sh:order "6"^^xsd:decimal ;
+.
+esdm:Persona
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Persona"@en ;
+  rdfs:subClassOf <http://edg.topbraid.solutions/model/JobTitle> ;
+  rdfs:subClassOf skos:Concept ;
+  skos:prefLabel "Ordina Persona"@en ;
+  sh:property esdm:Persona-requires ;
+  sh:property esdm:Persona-responsibility ;
+  sh:property esdm:Persona-role ;
+.
+esdm:Persona-requires
+  a sh:PropertyShape ;
+  sh:path esdm:requires ;
+  sh:class <http://edg.topbraid.solutions/model/EnterpriseAsset> ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Needs" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Persona-responsibility
+  a sh:PropertyShape ;
+  sh:path esdm:responsibility ;
+  sh:class <http://edg.topbraid.solutions/model/EnterpriseAsset> ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Responsible for" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Persona-role
+  a sh:PropertyShape ;
+  sh:path esdm:role ;
+  sh:class <http://edg.topbraid.solutions/model/JobTitle> ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Role" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:ProductCode
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Product code"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  rdfs:subClassOf <http://schema.org/Enumeration> ;
+  skos:prefLabel "Ordina Product code"@en ;
+.
+esdm:ProductSize
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Product size"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  rdfs:subClassOf <http://schema.org/Enumeration> ;
+  skos:prefLabel "Ordina Product size"@en ;
+.
+esdm:PurchaseOrder
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Purchase Order"@en ;
+  rdfs:subClassOf esdm:Document ;
+  skos:prefLabel "Ordina Purchase Order"@en ;
+  sh:property esdm:PurchaseOrder-item ;
+  sh:property esdm:PurchaseOrder-number ;
+.
+esdm:PurchaseOrder-item
+  a sh:PropertyShape ;
+  sh:path esdm:item ;
+  sh:class esdm:Item ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Item" ;
+  sh:nodeKind sh:IRI ;
+  sh:values [
+      sh:path (
+          sh:inversePath
+          esdm:purchaseOrder
+        ) ;
+    ] ;
+.
+esdm:PurchaseOrder-number
+  a sh:PropertyShape ;
+  sh:path esdm:number ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Purchase order number" ;
 .
 esdm:Resultaten
   a owl:Class ;
@@ -911,7 +1762,7 @@ esdm:ResultatenPerspectiefPrioShape
     ] ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path dct:subject ;
+      sh:path dcterms:subject ;
       sh:name "Perspectief" ;
       sh:order "0"^^xsd:decimal ;
     ] ;
@@ -949,6 +1800,46 @@ esdm:Rol-medewerker
         ) ;
     ] ;
 .
+esdm:RoutineLane-carrier
+  a sh:PropertyShape ;
+  sh:path esdm:carrier ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:minCount 1 ;
+  sh:name "Carrier" ;
+.
+esdm:RoutingLane-hub
+  a sh:PropertyShape ;
+  sh:path esdm:hub ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:minCount 1 ;
+  sh:name "Hub" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:ShipmentOrder
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Shipment Order"@en ;
+  rdfs:subClassOf esdm:Document ;
+  skos:prefLabel "Ordina Shipment Order"@en ;
+.
+esdm:ShippingPoint-address
+  a sh:PropertyShape ;
+  sh:path esdm:address ;
+  sh:class esdm:Address ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Address" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:ShippingPoint-id
+  a sh:PropertyShape ;
+  sh:path esdm:id ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "ID" ;
+.
 esdm:Stakeholder
   a owl:Class ;
   a sh:NodeShape ;
@@ -956,11 +1847,57 @@ esdm:Stakeholder
   rdfs:subClassOf esdm:Actor ;
   skos:prefLabel "Stakeholder"@nl ;
 .
+esdm:Store
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Ordina Store"@en ;
+  rdfs:subClassOf <http://schema.org/Store> ;
+  rdfs:subClassOf skos:Concept ;
+  skos:prefLabel "Ordina Store"@en ;
+  sh:property esdm:Store-number ;
+.
+esdm:Store-number
+  a sh:PropertyShape ;
+  sh:path esdm:number ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Store number" ;
+.
+esdm:SubjectArea
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Subject Area"@nl ;
+  rdfs:subClassOf skos:Concept ;
+  skos:prefLabel "Ordina Subject Area"@nl ;
+.
+esdm:Table
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Table"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  skos:prefLabel "Ordina Table"@en ;
+.
+esdm:Tag
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Tag"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  skos:prefLabel "Ordina Tag"@en ;
+.
 esdm:Taxonomy-creator
   a sh:PropertyShape ;
   sh:path dc:creator ;
   sh:datatype xsd:anyURI ;
   sh:name "Auteur" ;
+.
+esdm:TechnologyAsset
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Technology Asset"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  skos:prefLabel "Ordina Technology Asset"@en ;
 .
 esdm:Telefoongesprek
   a owl:Class ;
@@ -1050,6 +1987,239 @@ esdm:Topic-vraag
   sh:group esdm:DatajourneyPropertyGroup ;
   sh:name "Vraag"@nl ;
 .
+esdm:TrackTrace-event
+  a sh:PropertyShape ;
+  sh:path esdm:event ;
+  sh:class esdm:TrackTraceEvent ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Track & Trace event" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:TrackTraceEvent
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Track & Trace Event"@en ;
+  rdfs:subClassOf esdm:Event ;
+  skos:prefLabel "Ordina Track & Trace Event"@en ;
+  sh:property esdm:TrackTraceEvent-carrier ;
+  sh:property esdm:TrackTraceEvent-carrierCode ;
+  sh:property esdm:TrackTraceEvent-carrier_edd ;
+  sh:property esdm:TrackTraceEvent-carrier_edd_UTC ;
+  sh:property esdm:TrackTraceEvent-carton ;
+  sh:property esdm:TrackTraceEvent-code ;
+  sh:property esdm:TrackTraceEvent-country ;
+  sh:property esdm:TrackTraceEvent-date ;
+  sh:property esdm:TrackTraceEvent-date_UTC ;
+  sh:property esdm:TrackTraceEvent-description ;
+  sh:property esdm:TrackTraceEvent-descriptionFromCarrier ;
+  sh:property esdm:TrackTraceEvent-globalCode ;
+  sh:property esdm:TrackTraceEvent-id ;
+  sh:property esdm:TrackTraceEvent-lattitude ;
+  sh:property esdm:TrackTraceEvent-localTimezoneCode ;
+  sh:property esdm:TrackTraceEvent-longtitude ;
+  sh:property esdm:TrackTraceEvent-reportedDate ;
+  sh:property esdm:TrackTraceEvent-reportedDate_UTC ;
+  sh:property esdm:TrackTraceEvent-trackedTarget ;
+.
+esdm:TrackTraceEvent-carrier
+  a sh:PropertyShape ;
+  sh:path esdm:carrier ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Carrier" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:TrackTraceEvent-carrierCode
+  a sh:PropertyShape ;
+  sh:path esdm:carrierCode ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Carrier code" ;
+.
+esdm:TrackTraceEvent-carrier_edd
+  a sh:PropertyShape ;
+  sh:path esdm:carrier_edd ;
+  sh:datatype xsd:dateTime ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Carrier EDD" ;
+.
+esdm:TrackTraceEvent-carrier_edd_UTC
+  a sh:PropertyShape ;
+  sh:path esdm:carrier_edd_UTC ;
+  sh:datatype xsd:dateTime ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:minCount 1 ;
+  sh:name "Carrier EDD (UTC)" ;
+.
+esdm:TrackTraceEvent-carton
+  a sh:PropertyShape ;
+  sh:path esdm:carton ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Carton" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:TrackTraceEvent-code
+  a sh:PropertyShape ;
+  sh:path esdm:code ;
+  sh:class esdm:EventCode ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Ordina event code" ;
+.
+esdm:TrackTraceEvent-country
+  a sh:PropertyShape ;
+  sh:path esdm:country ;
+  sh:class esdm:Country ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Country" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:TrackTraceEvent-date
+  a sh:PropertyShape ;
+  sh:path esdm:date ;
+  sh:datatype xsd:dateTime ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Datetime" ;
+.
+esdm:TrackTraceEvent-date_UTC
+  a sh:PropertyShape ;
+  sh:path esdm:date_UTC ;
+  sh:datatype xsd:dateTime ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Datetime UTC" ;
+.
+esdm:TrackTraceEvent-description
+  a sh:PropertyShape ;
+  sh:path dc:description ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Ordina event description" ;
+.
+esdm:TrackTraceEvent-descriptionFromCarrier
+  a sh:PropertyShape ;
+  sh:path esdm:descriptionFromCarrier ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Description from carrier" ;
+.
+esdm:TrackTraceEvent-globalCode
+  a sh:PropertyShape ;
+  sh:path esdm:globalCode ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Global event code" ;
+.
+esdm:TrackTraceEvent-id
+  a sh:PropertyShape ;
+  sh:path esdm:id ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Transaction ID" ;
+.
+esdm:TrackTraceEvent-lattitude
+  a sh:PropertyShape ;
+  sh:path esdm:lattitude ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Lattitude (degrees)" ;
+.
+esdm:TrackTraceEvent-localTimezoneCode
+  a sh:PropertyShape ;
+  sh:path esdm:localTimezoneCode ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Local timezone code" ;
+.
+esdm:TrackTraceEvent-longtitude
+  a sh:PropertyShape ;
+  sh:path esdm:longtitude ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Longtitude (degrees)" ;
+.
+esdm:TrackTraceEvent-packList
+  a sh:PropertyShape ;
+  sh:path esdm:packList ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Packlist" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:TrackTraceEvent-reportedDate
+  a sh:PropertyShape ;
+  sh:path esdm:reportedDate ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Reported date" ;
+.
+esdm:TrackTraceEvent-reportedDate_UTC
+  a sh:PropertyShape ;
+  sh:path esdm:reportedDate_UTC ;
+  sh:datatype xsd:dateTime ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Reported date (UTC)" ;
+.
+esdm:TrackTraceEvent-trackedTarget
+  a sh:PropertyShape ;
+  sh:path esdm:trackedTarget ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Tracked target" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Trailer-carrier
+  a sh:PropertyShape ;
+  sh:path esdm:carrier ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Carrier" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:Trailer-licensePlateNumber
+  a sh:PropertyShape ;
+  sh:path esdm:licensePlateNumber ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "License plate number" ;
+.
+esdm:Trailer-number
+  a sh:PropertyShape ;
+  sh:path esdm:number ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "Number" ;
+.
+esdm:Trailer-referenceNumber
+  a sh:PropertyShape ;
+  sh:path esdm:referenceNumber ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Reference number" ;
+.
+esdm:View
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "View"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  skos:prefLabel "Ordina View"@en ;
+.
 esdm:Vraag
   a owl:Class ;
   a sh:NodeShape ;
@@ -1060,7 +2230,7 @@ esdm:Vraag
 .
 esdm:Vraag-Onderwerp
   a sh:PropertyShape ;
-  sh:path dct:subject ;
+  sh:path dcterms:subject ;
   sh:class skos:Concept ;
   sh:group esdm:DatajourneyPropertyGroup ;
   sh:name "Onderwerp" ;
@@ -1130,7 +2300,7 @@ esdm:Zaak-stakeholder
 .
 esdm:Zaak-subject
   a sh:PropertyShape ;
-  sh:path dct:subject ;
+  sh:path dcterms:subject ;
   sh:class skos:Concept ;
   sh:group esdm:ZaakPropertyGroup ;
   sh:minCount 1 ;
@@ -1150,6 +2320,18 @@ esdm:ZaakPropertyGroup
   a sh:PropertyGroup ;
   rdfs:label "Zaakgegevens"@nl ;
   skos:prefLabel "Zaakgegevens"@nl ;
+.
+esdm:accessNumber
+  a owl:DatatypeProperty ;
+  rdfs:label "Access number"@en ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Access number"@en ;
+.
+esdm:address
+  a owl:FunctionalProperty ;
+  rdfs:label "Address"@en ;
+  rdfs:range esdm:Address ;
+  skos:prefLabel "Address"@en ;
 .
 esdm:afzender
   a owl:ObjectProperty ;
@@ -1172,6 +2354,11 @@ esdm:antwoordenTabel
   a owl:ObjectProperty ;
   rdfs:label "Antwoorden tabel"@nl ;
 .
+esdm:associates
+  a owl:ObjectProperty ;
+  rdfs:label "Associates"@en ;
+  skos:prefLabel "Associates"@en ;
+.
 esdm:belangrijk
   a owl:ObjectProperty ;
   rdfs:label "Belangrijk"@nl ;
@@ -1182,24 +2369,225 @@ esdm:beller
   rdfs:label "beller"@nl ;
   rdfs:range <http://schema.org/Person> ;
 .
+esdm:carrier
+  a owl:ObjectProperty ;
+  rdfs:label "Carrier"@en ;
+  skos:prefLabel "Carrier"@en ;
+.
+esdm:carrierCode
+  a owl:DatatypeProperty ;
+  rdfs:label "Carrier code"@en ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Carrier code"@en ;
+.
+esdm:carrierId
+  a owl:DatatypeProperty ;
+  rdfs:label "Carrier ID"@en ;
+  skos:prefLabel "Carrier ID"@en ;
+.
+esdm:carrier_edd
+  a owl:DatatypeProperty ;
+  rdfs:label "Estimated delivery date from carrier"@en ;
+  rdfs:range xsd:dateTime ;
+  skos:prefLabel "Estimated delivery date from carrier"@en ;
+.
+esdm:carrier_edd_UTC
+  a owl:DatatypeProperty ;
+  rdfs:label "Estimated delivery date from carrier (UTC)"@en ;
+  rdfs:range xsd:dateTime ;
+  skos:prefLabel "Estimated delivery date from carrier (UTC)"@en ;
+.
+esdm:carton
+  a owl:ObjectProperty ;
+  rdfs:label "Carton"@en ;
+  skos:prefLabel "Carton"@en ;
+.
+esdm:cartonType
+  a owl:ObjectProperty ;
+  rdfs:label "Carton type"@en ;
+  skos:prefLabel "Carton type"@en ;
+.
+esdm:cartonsAmount
+  a owl:DatatypeProperty ;
+  rdfs:label "Cartons amount"@en ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "Cartons amount"@en ;
+.
+esdm:cartonsWeightAmount
+  a owl:DatatypeProperty ;
+  rdfs:label "Cartons weight amount"@en ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "Cartons weight amount"@en ;
+.
+esdm:city
+  a owl:ObjectProperty ;
+  rdfs:label "city"@en ;
+  rdfs:range esdm:City ;
+  skos:prefLabel "city"@en ;
+.
+esdm:classification
+  a owl:ObjectProperty ;
+  rdfs:domain esdm:DataAsset ;
+  rdfs:label "Classification"@nl ;
+  rdfs:range esdm:DataClassification ;
+  skos:prefLabel "Classification"@nl ;
+.
+esdm:cmr
+  a owl:ObjectProperty ;
+  rdfs:label "CMR"@en ;
+  skos:prefLabel "CMR"@en ;
+.
+esdm:code
+  a owl:DatatypeProperty ;
+  rdfs:label "Code"@en ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Code"@en ;
+.
+esdm:community
+  a owl:ObjectProperty ;
+  rdfs:label "Community"@en ;
+  rdfs:range esdm:Community ;
+  skos:prefLabel "Community"@en ;
+.
+esdm:containedIn
+  a owl:ObjectProperty ;
+  rdfs:domain esdm:Item ;
+  rdfs:label "Contained in"@en ;
+  skos:prefLabel "Contained in"@en ;
+.
+esdm:country
+  a owl:ObjectProperty ;
+  rdfs:label "Country"@en ;
+  rdfs:range esdm:Country ;
+  skos:prefLabel "Country"@en ;
+.
+esdm:cubicMeters
+  a owl:DatatypeProperty ;
+  rdfs:label "Cubic meters"@en ;
+  rdfs:range xsd:decimal ;
+  skos:prefLabel "Cubic meters"@en ;
+.
+esdm:customer
+  a owl:ObjectProperty ;
+  rdfs:label "Customer"@en ;
+  rdfs:range esdm:Customer ;
+  skos:prefLabel "Customer"@en ;
+.
+esdm:customerProductOrderNumber
+  a owl:DatatypeProperty ;
+  rdfs:label "Customer product order number"@en ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Customer product order number"@en ;
+.
+esdm:cutoffDate
+  a owl:DatatypeProperty ;
+  rdfs:label "Cutoff Date"@en ;
+  rdfs:range xsd:dateTime ;
+  skos:prefLabel "Cutoff Date"@en ;
+.
 esdm:cv
   a owl:ObjectProperty ;
   rdfs:label "CV"@nl ;
   rdfs:range <http://topbraid.org/corpus#Document> ;
   skos:prefLabel "CV"@nl ;
 .
+esdm:date
+  a owl:DatatypeProperty ;
+  rdfs:label "Date"@en ;
+  rdfs:range xsd:dateTime ;
+  skos:prefLabel "Date"@en ;
+.
+esdm:date_UTC
+  a owl:DatatypeProperty ;
+  rdfs:label "Date (UTC)"@en ;
+  rdfs:range xsd:dateTime ;
+  skos:prefLabel "Date (UTC)"@en ;
+.
+esdm:deliveryDocument
+  a owl:ObjectProperty ;
+  rdfs:label "Delivery document"@en ;
+  skos:prefLabel "Delivery document"@en ;
+.
+esdm:descriptionFromCarrier
+  a owl:DatatypeProperty ;
+  rdfs:label "Description from carrier"@en ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Description from carrier"@en ;
+.
+esdm:determinedBy
+  a owl:ObjectProperty ;
+  rdfs:domain esdm:KeyDataElement ;
+  rdfs:label "Determined by"@nl ;
+  rdfs:range esdm:BusinessFlowCondition ;
+  skos:prefLabel "Determined by"@nl ;
+.
 esdm:dienst
   a owl:ObjectProperty ;
   rdfs:label "Dienst"@nl ;
+.
+esdm:directDropFlag
+  a owl:DatatypeProperty ;
+  rdfs:label "Directdrop flag"@en ;
+  rdfs:range xsd:boolean ;
+  skos:prefLabel "Directdrop flag"@en ;
+.
+esdm:domain
+  a owl:ObjectProperty ;
+  rdfs:label "Domain"@en ;
+  rdfs:range esdm:Domain ;
+  skos:prefLabel "Domain"@en ;
+.
+esdm:domainType
+  a owl:ObjectProperty ;
+  rdfs:domain esdm:Domain ;
+  rdfs:label "Domain type"@en ;
+  rdfs:range esdm:DomainType ;
+  skos:prefLabel "Domain type"@en ;
 .
 esdm:dossier
   a owl:ObjectProperty ;
   rdfs:label "dossier"@nl ;
   rdfs:range esdm:Dossier ;
 .
+esdm:edd
+  a owl:DatatypeProperty ;
+  rdfs:label "Estimated delivery date"@en ;
+  rdfs:range xsd:dateTime ;
+  skos:prefLabel "Estimated delivery date"@en ;
+.
+esdm:eddFrom_UTC
+  a owl:DatatypeProperty ;
+  rdfs:label "Estimated Delivery Date from (UTC)"@en ;
+  rdfs:range xsd:dateTime ;
+  skos:prefLabel "Estimated Delivery Date from (UTC)"@en ;
+.
+esdm:eddTo_UTC
+  a owl:DatatypeProperty ;
+  rdfs:label "Estimated Delivery Date to (UTC)"@en ;
+  rdfs:range xsd:dateTime ;
+  skos:prefLabel "Estimated Delivery Date to (UTC)"@en ;
+.
+esdm:edd_UTC
+  a owl:DatatypeProperty ;
+  rdfs:label "Estimated delivery date (UTC)"@en ;
+  rdfs:range xsd:dateTime ;
+  skos:prefLabel "Estimated delivery date (UTC)"@en ;
+.
 esdm:eigenaar
   a owl:ObjectProperty ;
   rdfs:label "Eigenaar"@nl ;
+.
+esdm:event
+  a owl:ObjectProperty ;
+  rdfs:label "Event"@en ;
+  rdfs:range esdm:Event ;
+  skos:prefLabel "Event"@en ;
+.
+esdm:fdd
+  a owl:DatatypeProperty ;
+  rdfs:label "Final delivery date"@en ;
+  rdfs:range xsd:dateTime ;
+  skos:prefLabel "Final delivery date"@en ;
 .
 esdm:functie
   a owl:ObjectProperty ;
@@ -1226,13 +2614,66 @@ esdm:gemiddeld
   a owl:DatatypeProperty ;
   rdfs:label "Gemiddeld"@nl ;
 .
+esdm:getsValueFrom
+  a owl:ObjectProperty ;
+  rdfs:label "Gets value from"@en ;
+  skos:prefLabel "Gets value from"@en ;
+.
+esdm:globalCode
+  a owl:DatatypeProperty ;
+  rdfs:label "Global code"@en ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Global code"@en ;
+.
+esdm:groupedBy
+  a owl:ObjectProperty ;
+  rdfs:label "Grouped by"@en ;
+  skos:prefLabel "Grouped by"@en ;
+.
+esdm:groups
+  a owl:ObjectProperty ;
+  rdfs:label "Groups"@en ;
+  skos:prefLabel "Groups"@en ;
+.
 esdm:hoeveelheidThemas
   a owl:DatatypeProperty ;
   rdfs:label "Hoeveelheid thema's"@nl ;
 .
+esdm:hub
+  a owl:ObjectProperty ;
+  rdfs:label "Hub"@en ;
+  skos:prefLabel "Hub"@en ;
+.
+esdm:hubCode
+  a owl:DatatypeProperty ;
+  rdfs:label "Hub code"@en ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Hub code"@en ;
+.
+esdm:id
+  a owl:DatatypeProperty ;
+  rdfs:label "ID"@en ;
+  skos:prefLabel "ID"@en ;
+.
 esdm:idee
   a owl:ObjectProperty ;
   rdfs:label "Ideeën"@nl ;
+.
+
+esdm:impactedBy
+  a owl:ObjectProperty ;
+  rdfs:label "Impacted by"@en ;
+  skos:prefLabel "Impacted by"@en ;
+.
+esdm:informedBy
+  a owl:ObjectProperty ;
+  rdfs:label "Informed by"@en ;
+  skos:prefLabel "Informed by"@en ;
+.
+esdm:instruction
+  a owl:DatatypeProperty ;
+  rdfs:label "Instruction"@en ;
+  skos:prefLabel "Instruction"@en ;
 .
 esdm:interview
   a owl:ObjectProperty ;
@@ -1241,6 +2682,56 @@ esdm:interview
 esdm:ist
   a owl:DatatypeProperty ;
   rdfs:label "IST"@nl ;
+.
+esdm:item
+  a owl:ObjectProperty ;
+  rdfs:label "Item"@en ;
+  rdfs:range esdm:Item ;
+  skos:prefLabel "Item"@en ;
+.
+esdm:kpi
+  a owl:ObjectProperty ;
+  rdfs:label "KPI"@nl ;
+  rdfs:range esdm:KPI ;
+  skos:prefLabel "Key Performance Indicator"@en ;
+.
+esdm:lattitude
+  a owl:DatatypeProperty ;
+  rdfs:label "Lattitude"@en ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Lattitude"@en ;
+.
+esdm:licensePlateNumber
+  a owl:DatatypeProperty ;
+  rdfs:label "License plate number"@en ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "License plate number"@en ;
+.
+esdm:localTimezoneCode
+  a owl:DatatypeProperty ;
+  rdfs:label "Local timezone code"@en ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Local timezone code"@en ;
+.
+esdm:longtitude
+  a owl:DatatypeProperty ;
+  rdfs:label "Longtitude"@en ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Longtitude"@en ;
+.
+esdm:measuredBy
+  a owl:ObjectProperty ;
+  rdfs:domain esdm:KPI ;
+  rdfs:label "Measured by"@en ;
+  rdfs:range esdm:KeyDataElement ;
+  skos:prefLabel "Measured by"@en ;
+.
+esdm:measures
+  a owl:ObjectProperty ;
+  rdfs:domain esdm:KeyDataElement ;
+  rdfs:label "Measures"@en ;
+  rdfs:range esdm:KPI ;
+  skos:prefLabel "Measures"@en ;
 .
 esdm:medewerker
   a rdf:Property ;
@@ -1256,6 +2747,12 @@ esdm:niet_nvt
   a owl:DatatypeProperty ;
   rdfs:label "Niet / nvt"@nl ;
 .
+esdm:number
+  a owl:DatatypeProperty ;
+  rdfs:label "Number"@en ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Number"@en ;
+.
 esdm:ontvanger
   a owl:ObjectProperty ;
   rdfs:label "ontvanger"@nl ;
@@ -1265,13 +2762,96 @@ esdm:ontwikkelen
   a owl:DatatypeProperty ;
   rdfs:label "Ontwikkelen"@nl ;
 .
+esdm:owner
+  a owl:ObjectProperty ;
+  rdfs:label "Owner"@en ;
+  rdfs:range esdm:Employee ;
+  skos:prefLabel "Owner"@en ;
+.
+esdm:packList
+  a owl:ObjectProperty ;
+  rdfs:label "Packlist"@en ;
+  skos:prefLabel "Packlist"@en ;
+.
+esdm:packlistAmount
+  a owl:DatatypeProperty ;
+  rdfs:label "Packlist amount"@en ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "Packlist amount"@en ;
+.
+esdm:persona
+  a owl:ObjectProperty ;
+  rdfs:label "Persona"@en ;
+  rdfs:range esdm:Persona ;
+  skos:prefLabel "Persona"@en ;
+.
 esdm:perspectievenHogePrio
   a owl:ObjectProperty ;
   rdfs:label "Perspectieven met hoge prioriteit"@nl ;
 .
+esdm:plannedGoodsIssued_UTC
+  a owl:DatatypeProperty ;
+  rdfs:label "Planned Goods Issues (UTC)"@en ;
+  rdfs:range xsd:dateTime ;
+  skos:prefLabel "Planned Goods Issues (UTC)"@en ;
+.
+esdm:processingUnitQuantity
+  a owl:DatatypeProperty ;
+  rdfs:label "Processing unit quantity"@en ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "Processing unit quantity"@en ;
+.
+esdm:purchaseOrder
+  a owl:ObjectProperty ;
+  rdfs:label "Purchase Order"@en ;
+  rdfs:range esdm:PurchaseOrder ;
+  skos:prefLabel "Purchase Order"@en ;
+.
 esdm:rapporteertAan
   a owl:ObjectProperty ;
   rdfs:label "Rapporteert aan"@nl ;
+.
+esdm:referenceNumber
+  a owl:DatatypeProperty ;
+  rdfs:label "Reference number"@en ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Reference number"@en ;
+.
+esdm:related
+  a owl:ObjectProperty ;
+  rdfs:label "Related"@nl ;
+  skos:prefLabel "Related"@nl ;
+.
+esdm:reportedDate
+  a owl:DatatypeProperty ;
+  rdfs:label "Reported date"@en ;
+  rdfs:range xsd:dateTime ;
+  skos:prefLabel "Reported date"@en ;
+.
+esdm:reportedDate_UTC
+  a owl:DatatypeProperty ;
+  rdfs:label "Reported date (UTC)"@en ;
+  rdfs:range xsd:dateTime ;
+  skos:prefLabel "Reported date (UTC)"@en ;
+.
+esdm:represents
+  a owl:ObjectProperty ;
+  rdfs:label "Represents"@en ;
+  skos:prefLabel "Represents"@en ;
+.
+esdm:representsColumn
+  a owl:ObjectProperty ;
+  rdfs:domain esdm:KeyDataElement ;
+  rdfs:label "Represents column"@en ;
+  rdfs:range esdm:Column ;
+  rdfs:subPropertyOf esdm:represents ;
+  skos:prefLabel "Represents column"@en ;
+.
+esdm:requires
+  a owl:ObjectProperty ;
+  rdfs:label "Requires"@en ;
+  rdfs:range <http://edg.topbraid.solutions/model/EnterpriseAsset> ;
+  skos:prefLabel "Requires"@nl ;
 .
 esdm:resource
   a owl:ObjectProperty ;
@@ -1280,9 +2860,54 @@ esdm:resource
   rdfs:range rdfs:Resource ;
   skos:prefLabel "Resource"@en ;
 .
+esdm:responsibility
+  a owl:ObjectProperty ;
+  rdfs:label "Has repsonsibility"@en ;
+  rdfs:range <http://edg.topbraid.solutions/model/EnterpriseAsset> ;
+  skos:prefLabel "Has repsonsibility"@nl ;
+.
+esdm:role
+  a owl:ObjectProperty ;
+  rdfs:label "Role"@en ;
+  rdfs:range <http://edg.topbraid.solutions/model/JobTitle> ;
+  skos:prefLabel "Role"@en ;
+.
+esdm:routingLane
+  a owl:ObjectProperty ;
+  rdfs:label "Routing lane"@en ;
+  skos:prefLabel "Routing lane"@en ;
+.
+esdm:seal
+  a owl:DatatypeProperty ;
+  rdfs:label "Seal"@en ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Seal"@en ;
+.
+esdm:shipmentOrder
+  a owl:ObjectProperty ;
+  rdfs:label "Shipment Order"@en ;
+  rdfs:range esdm:PurchaseOrder ;
+  skos:prefLabel "Shipment Order"@en ;
+.
+esdm:shippingPoint
+  a owl:ObjectProperty ;
+  rdfs:label "Shipping point"@en ;
+  skos:prefLabel "Shipping point"@en ;
+.
+esdm:size
+  a owl:ObjectProperty ;
+  rdfs:label "Size"@en ;
+  rdfs:range esdm:ProductSize ;
+  skos:prefLabel "Size"@en ;
+.
 esdm:soll
   a owl:DatatypeProperty ;
   rdfs:label "SOLL"@nl ;
+.
+esdm:sourceSystem
+  a owl:ObjectProperty ;
+  rdfs:label "Source system"@en ;
+  skos:prefLabel "Source system"@en ;
 .
 esdm:staat
   a owl:ObjectProperty ;
@@ -1292,6 +2917,17 @@ esdm:stakeholder
   a owl:ObjectProperty ;
   rdfs:label "stakeholder"@nl ;
   rdfs:range esdm:Stakeholder ;
+.
+esdm:status
+  a rdf:Property ;
+  rdfs:label "Status"@en ;
+  skos:prefLabel "Status"@en ;
+.
+esdm:tag
+  a owl:ObjectProperty ;
+  rdfs:label "Tag"@en ;
+  rdfs:range esdm:Tag ;
+  skos:prefLabel "Tag"@en ;
 .
 esdm:thema
   a owl:ObjectProperty ;
@@ -1311,9 +2947,39 @@ esdm:topic
   a owl:ObjectProperty ;
   rdfs:label "Topic"@nl ;
 .
+esdm:trackTrace
+  a owl:ObjectProperty ;
+  rdfs:label "Track & Trace data"@en ;
+  skos:prefLabel "Track & Trace data"@en ;
+.
+esdm:trackTraceEvent
+  a owl:ObjectProperty ;
+  rdfs:label "Track & Trace Event"@en ;
+  rdfs:range esdm:TrackTraceEvent ;
+  rdfs:subPropertyOf esdm:event ;
+  skos:prefLabel "Track & Trace Event"@en ;
+.
+esdm:trackedTarget
+  a owl:ObjectProperty ;
+  rdfs:domain esdm:TrackTraceEvent ;
+  rdfs:label "Tracked target"@en ;
+  skos:prefLabel "Tracket target"@en ;
+.
+esdm:trailer
+  a owl:ObjectProperty ;
+  rdfs:label "Trailer"@en ;
+  skos:prefLabel "Trailer"@en ;
+.
 esdm:uitgeoefendDoor
   a owl:ObjectProperty ;
   rdfs:label "Uitgeoefend door"@nl ;
+.
+esdm:unitsAmount
+  a owl:DatatypeProperty ;
+  rdfs:label "Units amount"@en ;
+  rdfs:range xsd:decimal ;
+  skos:prefLabel "Units amount"@en ;
+  sh:group esdm:OrdinaPropertyGroup ;
 .
 esdm:value
   a rdf:Property ;
@@ -1336,6 +3002,13 @@ esdm:waarde
   a owl:DatatypeProperty ;
   rdfs:comment "Machineleesbare waarde, integer waarbij Ja = 0, Nee = 1 bijvoorbeeld" ;
   rdfs:label "Waarde"@nl ;
+.
+esdm:weight
+  a owl:DatatypeProperty ;
+  rdfs:label "Weight"@en ;
+  rdfs:range xsd:decimal ;
+  skos:prefLabel "Weight"@en ;
+  sh:group esdm:OrdinaPropertyGroup ;
 .
 esdm:zaak
   a owl:ObjectProperty ;
@@ -1380,13 +3053,41 @@ ovrh:Rijkswaterstaat
   a sh:NodeShape ;
   rdfs:subClassOf esdm:Stakeholder ;
 .
+<http://topbraid.org/corpus#Document>
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Goal"@en ;
+  rdfs:subClassOf <http://schema.org/CreativeWork> ;
+  skos:prefLabel "Key Performance Indicator"@en ;
+.
+rdf:Property
+  sh:property rdf:Property-subject ;
+.
+rdf:Property-subject
+  a sh:PropertyShape ;
+  sh:path dcterms:subject ;
+  sh:class skos:Concept ;
+  sh:name "Bedrijfsterm" ;
+  sh:nodeKind sh:IRI ;
+.
+owl:Class
+  sh:property owl:Class-subject ;
+.
+owl:Class-subject
+  a sh:PropertyShape ;
+  sh:path dcterms:subject ;
+  sh:class skos:Concept ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Bedrijfsterm" ;
+  sh:nodeKind sh:IRI ;
+.
 owl:Thing
   a sh:NodeShape ;
   sh:property owl:Thing-subject ;
 .
 owl:Thing-subject
   a sh:PropertyShape ;
-  sh:path dct:subject ;
+  sh:path dcterms:subject ;
   sh:class skos:Concept ;
   sh:group esdm:ESDM_Gegevens ;
   sh:name "Grondslag" ;
@@ -1394,9 +3095,21 @@ owl:Thing-subject
 .
 skos:Concept
   a sh:NodeShape ;
+  sh:property skos:Concept-id ;
   sh:property skos:Concept-related ;
+  sh:property skos:Concept-softtype ;
   sh:property skos:Concept-source ;
   sh:property skos:Concept-source_uri ;
+  sh:property skos:Concept-status ;
+.
+skos:Concept-id
+  a sh:PropertyShape ;
+  sh:path esdm:id ;
+  sh:datatype xsd:string ;
+  sh:description "Ordina technical ID (UUID)" ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "ID" ;
 .
 skos:Concept-related
   a sh:PropertyShape ;
@@ -1404,6 +3117,13 @@ skos:Concept-related
   sh:class skos:Concept ;
   sh:group esdm:ESDM_Gegevens ;
   sh:name "Gerelateerd" ;
+.
+skos:Concept-softtype
+  a sh:PropertyShape ;
+  sh:path dc:type ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Soft type" ;
 .
 skos:Concept-source
   a sh:PropertyShape ;
@@ -1414,13 +3134,32 @@ skos:Concept-source
 .
 skos:Concept-source_uri
   a sh:PropertyShape ;
-  sh:path dct:source ;
+  sh:path dcterms:source ;
   sh:class <http://topbraid.org/corpus#Document> ;
   sh:group esdm:ESDM_Gegevens ;
   sh:name "Interne bron" ;
   sh:nodeKind sh:IRI ;
 .
+skos:Concept-status
+  a sh:PropertyShape ;
+  sh:path esdm:status ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:maxCount 1 ;
+  sh:name "Status" ;
+.
 skos:ConceptScheme
   a owl:Class ;
   a sh:NodeShape ;
+.
+sh:PropertyShape
+  sh:property sh:PropertyShape-subject ;
+.
+sh:PropertyShape-subject
+  a sh:PropertyShape ;
+  sh:path dcterms:subject ;
+  sh:class skos:Concept ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Businessterm" ;
+  sh:nodeKind sh:IRI ;
 .
