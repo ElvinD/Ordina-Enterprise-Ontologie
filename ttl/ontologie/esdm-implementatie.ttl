@@ -4,6 +4,7 @@
 # imports: http://purl.org/dc/elements/1.1/
 # imports: http://purl.org/dc/terms/
 # imports: http://www.w3.org/2004/02/skos/core
+# imports: http://xmlns.com/foaf/0.1/
 # prefix: esdm_i
 
 @prefix esdm: <http://ordina.nl/esdm#> .
@@ -25,6 +26,7 @@
   owl:imports <http://purl.org/dc/elements/1.1/> ;
   owl:imports <http://purl.org/dc/terms/> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports <http://xmlns.com/foaf/0.1/> ;
   owl:versionInfo "Created with TopBraid Composer" ;
   sh:declare [
       a sh:PrefixDeclaration ;
@@ -106,6 +108,16 @@ esdm_i:indexedProperty
 <http://topbraid.org/corpus#Document>
   rdfs:subClassOf <http://schema.org/CreativeWork> ;
 .
+skos:Concept
+  sh:property skos:Concept-depiction ;
+.
+skos:Concept-depiction
+  a sh:PropertyShape ;
+  sh:path <http://xmlns.com/foaf/0.1/depiction> ;
+  sh:datatype xsd:anyURI ;
+  sh:group esdm:ESDM_Gegevens ;
+  sh:name "Afbeelding" ;
+.
 skos:Concept-source
   graphql:name "source" ;
 .
@@ -135,4 +147,7 @@ skos:ConceptScheme-indexedPredicae
   sh:class esdm_i:IndexedPredicate ;
   sh:group esdm:ESDM_Gegevens ;
   sh:name "Indexedproperty" ;
+.
+<http://xmlns.com/foaf/0.1/Image>
+  rdfs:subClassOf skos:Concept ;
 .

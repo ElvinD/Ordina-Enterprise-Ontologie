@@ -1,6 +1,5 @@
 # baseURI: http://ordina.nl/esdm
 # imports: http://datashapes.org/graphql
-# imports: http://ordina.nl/esdm-implementatie
 # imports: http://purl.org/dc/elements/1.1/
 # imports: http://purl.org/dc/terms/
 # imports: http://topbraid.org/corpus
@@ -12,11 +11,11 @@
 
 @prefix : <http://ordina.nl/esdm#> .
 @prefix bedrijven: <http://ordina.nl/esdm/im/bedrijven/id/> .
-@prefix begrippen: <http://ordina.nl/esdm/im/begrippen/id/> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix edg: <http://edg.topbraid.solutions/model/> .
 @prefix esdm: <http://ordina.nl/esdm#> .
 @prefix evnprojects: <http://evn.topbraidlive.org/evnprojects#> .
 @prefix graphql: <http://datashapes.org/graphql#> .
@@ -30,7 +29,7 @@
 @prefix tosh: <http://topbraid.org/tosh#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://edg.topbraid.solutions/model/Aspect>
+edg:Aspect
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:subClassOf skos:Concept ;
@@ -50,7 +49,6 @@ evnprojects:Taxonomy
   graphql:publicClass esdm:Vraag ;
   rdfs:label "Ontologie ESDM Ordina"@nl ;
   owl:imports <http://datashapes.org/graphql> ;
-  owl:imports <http://ordina.nl/esdm-implementatie> ;
   owl:imports dc: ;
   owl:imports dcterms: ;
   owl:imports <http://topbraid.org/corpus> ;
@@ -91,7 +89,7 @@ esdm:AnalyticsApplication
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:label "Ordina Analytics Application"@nl ;
-  rdfs:subClassOf <http://edg.topbraid.solutions/model/System> ;
+  rdfs:subClassOf edg:System ;
   rdfs:subClassOf <http://schema.org/SoftwareApplication> ;
   rdfs:subClassOf skos:Concept ;
   skos:prefLabel "Ordina Analytics Application"@nl ;
@@ -123,15 +121,15 @@ esdm:Antwoord-Perspectief
   a sh:PropertyShape ;
   sh:path dcterms:subject ;
   sh:class esdm:Topic ;
-  sh:group esdm:DatajourneyPropertyGroup ;
-  sh:name "Perspectief"@nl ;
-  sh:order "7"^^xsd:decimal ;
-  sh:values [
+  sh:defaultValue [
       sh:path (
           esdm:vraag
           dcterms:subject
         ) ;
     ] ;
+  sh:group esdm:DatajourneyPropertyGroup ;
+  sh:name "Perspectief"@nl ;
+  sh:order "7"^^xsd:decimal ;
 .
 esdm:Antwoord-geinterviewde
   a sh:PropertyShape ;
@@ -404,10 +402,11 @@ esdm:BusinessObjective
   rdfs:comment "Classification representing a stated, measurable target to achieve business goals that infrequently changes."@en ;
   rdfs:label "Ordina Business Objective"@en ;
   rdfs:subClassOf esdm:DataAsset ;
-  skos:prefLabel "Ordina Business Objective"@en ;
+  skos:prefLabel "Zakelijk doel"@nl ;
   sh:property esdm:BusinessObjective-informedBy ;
   sh:property esdm:BusinessObjective-informedBy_KPI ;
   sh:property esdm:BusinessObjective-owner ;
+  sh:property esdm:BusinessObjective-process ;
 .
 esdm:BusinessObjective-informedBy
   a sh:PropertyShape ;
@@ -432,6 +431,46 @@ esdm:BusinessObjective-owner
   sh:group esdm:OrdinaPropertyGroup ;
   sh:name "Owner" ;
   sh:nodeKind sh:IRI ;
+.
+esdm:BusinessObjective-process
+  a sh:PropertyShape ;
+  sh:path esdm:process ;
+  sh:class esdm:BusinessProcess ;
+  sh:group esdm:ESDM_Gegevens ;
+  sh:name "Proces" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:BusinessProcess
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Business Process"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  skos:prefLabel "Zakelijk Proces"@nl ;
+  sh:property esdm:BusinessProcess-process ;
+  sh:property esdm:BusinessProcess-step ;
+.
+esdm:BusinessProcess-process
+  a sh:PropertyShape ;
+  sh:path esdm:process ;
+  sh:class esdm:BusinessProcess ;
+  sh:group esdm:ESDM_Gegevens ;
+  sh:name "Subproces" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:BusinessProcess-step
+  a sh:PropertyShape ;
+  sh:path esdm:step ;
+  sh:class esdm:BusinessProcessStep ;
+  sh:group esdm:ESDM_Gegevens ;
+  sh:name "Step" ;
+  sh:nodeKind sh:IRI ;
+.
+esdm:BusinessProcessStep
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Business Process Step"@en ;
+  rdfs:subClassOf esdm:DataAsset ;
+  skos:prefLabel "Zakelijk Stap in Proces"@nl ;
 .
 esdm:BusinessQuestion
   a owl:Class ;
@@ -465,123 +504,12 @@ esdm:BusinessTerm-sourceSystem
   sh:name "Source system" ;
   sh:nodeKind sh:IRI ;
 .
-esdm:CMRDocument-accessNumber
-  a sh:PropertyShape ;
-  sh:path esdm:accessNumber ;
-  sh:datatype xsd:string ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:name "Access number" ;
-.
-esdm:CMRDocument-cartonsAmount
-  a sh:PropertyShape ;
-  sh:path esdm:cartonsAmount ;
-  sh:datatype xsd:integer ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:minCount 1 ;
-  sh:name "Total cartons" ;
-.
-esdm:CMRDocument-cartonsWeightAmount
-  a sh:PropertyShape ;
-  sh:path esdm:cartonsWeightAmount ;
-  sh:datatype xsd:decimal ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:minCount 1 ;
-  sh:name "Total cartons weight" ;
-.
-esdm:CMRDocument-cubicMeters
-  a sh:PropertyShape ;
-  sh:path esdm:cubicMeters ;
-  sh:datatype xsd:decimal ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:name "Total cubic meters (M3)" ;
-.
 esdm:CMRDocument-directDropFlag
   a sh:PropertyShape ;
   sh:path esdm:directDropFlag ;
   sh:datatype xsd:boolean ;
   sh:maxCount 1 ;
   sh:name "Directdrop flag" ;
-.
-esdm:CMRDocument-packList
-  a sh:PropertyShape ;
-  sh:path esdm:packList ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:name "Packlist" ;
-  sh:nodeKind sh:IRI ;
-.
-esdm:CMRDocument-packlistAmount
-  a sh:PropertyShape ;
-  sh:path esdm:packlistAmount ;
-  sh:datatype xsd:integer ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:minCount 1 ;
-  sh:name "Total packlists" ;
-.
-esdm:CMRDocument-seal
-  a sh:PropertyShape ;
-  sh:path esdm:seal ;
-  sh:datatype xsd:string ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:name "Seal" ;
-.
-esdm:CMRDocument-shippingPoint
-  a sh:PropertyShape ;
-  sh:path esdm:shippingPoint ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:minCount 1 ;
-  sh:name "Shipping point" ;
-  sh:nodeKind sh:IRI ;
-.
-esdm:CMRDocument-trailer
-  a sh:PropertyShape ;
-  sh:path esdm:trailer ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:name "Trailer" ;
-  sh:nodeKind sh:IRI ;
-.
-esdm:Carrier-hub
-  a sh:PropertyShape ;
-  sh:path esdm:hub ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:name "Hub" ;
-  sh:nodeKind sh:IRI ;
-.
-esdm:Carrier-hubCode
-  a sh:PropertyShape ;
-  sh:path esdm:hubCode ;
-  sh:datatype xsd:string ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:name "Hub code" ;
-.
-esdm:Carton-carrierId
-  a sh:PropertyShape ;
-  sh:path esdm:carrierId ;
-  sh:datatype xsd:string ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:name "Carrier carton ID" ;
-.
-esdm:Carton-cartonType
-  a sh:PropertyShape ;
-  sh:path esdm:cartonType ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:minCount 1 ;
-  sh:name "Carton type" ;
-  sh:nodeKind sh:IRI ;
-.
-esdm:Carton-cmr
-  a sh:PropertyShape ;
-  sh:path esdm:cmr ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:name "CMR Document" ;
-  sh:nodeKind sh:IRI ;
 .
 esdm:Carton-cubicMeters
   a sh:PropertyShape ;
@@ -599,58 +527,6 @@ esdm:Carton-id
   sh:maxCount 1 ;
   sh:minCount 1 ;
   sh:name "Ordina carton ID" ;
-.
-esdm:Carton-item
-  a sh:PropertyShape ;
-  sh:path esdm:item ;
-  sh:class esdm:Item ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:name "Item" ;
-  sh:nodeKind sh:IRI ;
-  sh:values [
-      sh:path (
-          sh:inversePath
-          esdm:containedIn
-        ) ;
-    ] ;
-.
-esdm:Carton-number
-  a sh:PropertyShape ;
-  sh:path esdm:number ;
-  sh:datatype xsd:string ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:minCount 1 ;
-  sh:name "Carton number" ;
-.
-esdm:Carton-packList
-  a sh:PropertyShape ;
-  sh:path esdm:packList ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:name "Packlist" ;
-  sh:nodeKind sh:IRI ;
-  sh:values [
-      sh:path (
-          sh:inversePath
-          esdm:carton
-        ) ;
-    ] ;
-.
-esdm:Carton-unitsAmount
-  a sh:PropertyShape ;
-  sh:path esdm:unitsAmount ;
-  sh:datatype xsd:integer ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:name "Amount of units" ;
-.
-esdm:Carton-weight
-  a sh:PropertyShape ;
-  sh:path esdm:weight ;
-  sh:datatype xsd:decimal ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:name "Weight (KG)" ;
 .
 esdm:City
   a owl:Class ;
@@ -688,16 +564,6 @@ esdm:Customer
   rdfs:label "Ordina Customer"@en ;
   rdfs:subClassOf skos:Concept ;
   skos:prefLabel "Ordina Customer"@en ;
-  sh:property esdm:Customer-number ;
-.
-esdm:Customer-number
-  a sh:PropertyShape ;
-  sh:path esdm:number ;
-  sh:datatype xsd:string ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:minCount 1 ;
-  sh:name "Customer number" ;
 .
 esdm:DataAsset
   a owl:Class ;
@@ -755,21 +621,6 @@ esdm:DatajourneyPropertyGroup
   a sh:PropertyGroup ;
   rdfs:label "Datajourney"@nl ;
   sh:order "-2"^^xsd:decimal ;
-.
-esdm:DeliveryDocument-item
-  a sh:PropertyShape ;
-  sh:path esdm:item ;
-  sh:class esdm:Item ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:minCount 1 ;
-  sh:name "Contains item" ;
-  sh:nodeKind sh:IRI ;
-  sh:values [
-      sh:path (
-          sh:inversePath
-          esdm:deliveryDocument
-        ) ;
-    ] ;
 .
 esdm:DeliveryDocument-number
   a sh:PropertyShape ;
@@ -939,7 +790,7 @@ esdm:Employee
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:label "Ordina Employee"@en ;
-  rdfs:subClassOf <http://edg.topbraid.solutions/model/Person> ;
+  rdfs:subClassOf edg:Person ;
   rdfs:subClassOf skos:Concept ;
   skos:prefLabel "Ordina Employee"@en ;
   sh:property esdm:Employee-persona ;
@@ -1029,6 +880,14 @@ esdm:Goal
   rdfs:label "Goal"@en ;
   rdfs:subClassOf esdm:KeyDataElement ;
   skos:prefLabel "Doelstelling"@nl ;
+  sh:property esdm:Goal-desiredBenefit ;
+.
+esdm:Goal-desiredBenefit
+  a sh:PropertyShape ;
+  sh:path esdm:desiredBenefit ;
+  sh:datatype xsd:string ;
+  sh:group esdm:OrdinaPropertyGroup ;
+  sh:name "Desired benefit" ;
 .
 esdm:Idee
   a owl:Class ;
@@ -1206,32 +1065,8 @@ esdm:Item
   rdfs:label "Ordina Item"@en ;
   rdfs:subClassOf skos:Concept ;
   skos:prefLabel "Ordina Item"@en ;
-  sh:property esdm:Item-code ;
-  sh:property esdm:Item-containedIn ;
   sh:property esdm:Item-country ;
-  sh:property esdm:Item-customerProductOrderNumber ;
-  sh:property esdm:Item-deliveryDocument ;
-  sh:property esdm:Item-purchaseOrder ;
-  sh:property esdm:Item-shipmentOrder ;
   sh:property esdm:Item-size ;
-.
-esdm:Item-code
-  a sh:PropertyShape ;
-  sh:path esdm:code ;
-  sh:class esdm:ProductCode ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:minCount 1 ;
-  sh:name "Product code" ;
-.
-esdm:Item-containedIn
-  a sh:PropertyShape ;
-  sh:path esdm:containedIn ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:minCount 1 ;
-  sh:name "Contained in carton" ;
-  sh:nodeKind sh:IRI ;
 .
 esdm:Item-country
   a sh:PropertyShape ;
@@ -1240,39 +1075,6 @@ esdm:Item-country
   sh:group esdm:OrdinaPropertyGroup ;
   sh:maxCount 1 ;
   sh:name "Country of origin" ;
-  sh:nodeKind sh:IRI ;
-.
-esdm:Item-customerProductOrderNumber
-  a sh:PropertyShape ;
-  sh:path esdm:customerProductOrderNumber ;
-  sh:datatype xsd:string ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:name "Customer productorder number" ;
-.
-esdm:Item-deliveryDocument
-  a sh:PropertyShape ;
-  sh:path esdm:deliveryDocument ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:name "Delivery document" ;
-  sh:nodeKind sh:IRI ;
-.
-esdm:Item-purchaseOrder
-  a sh:PropertyShape ;
-  sh:path esdm:purchaseOrder ;
-  sh:class esdm:PurchaseOrder ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:minCount 1 ;
-  sh:name "Purchase order" ;
-  sh:nodeKind sh:IRI ;
-.
-esdm:Item-shipmentOrder
-  a sh:PropertyShape ;
-  sh:path esdm:shipmentOrder ;
-  sh:class esdm:ShipmentOrder ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:name "Shipment order" ;
   sh:nodeKind sh:IRI ;
 .
 esdm:Item-size
@@ -1290,7 +1092,7 @@ esdm:KPI
   rdfs:comment "The strategic shared metrics used to evaluate Ordina business objectives across functions and geographies. KPIs must enable a specific action or decision for a specific audience."@nl ;
   rdfs:label "Key Performance Indicator"@en ;
   rdfs:subClassOf esdm:DataAsset ;
-  owl:equivalentClass <http://edg.topbraid.solutions/model/KeyPerformanceIndicator> ;
+  owl:equivalentClass edg:KeyPerformanceIndicator ;
   skos:prefLabel "Ordina Key Performance Indicator"@en ;
   sh:property esdm:KPI-measuredBy ;
 .
@@ -1506,7 +1308,7 @@ esdm:Metric
   rdfs:comment "An asset type on which calculations (e.g. percentage, sum, count, average, minimum, maximum) can be made."@en ;
   rdfs:label "Metric"@en ;
   rdfs:subClassOf esdm:DataAsset ;
-  owl:equivalentClass <http://edg.topbraid.solutions/model/Metric> ;
+  owl:equivalentClass edg:Metric ;
   skos:prefLabel "Ordina Metric"@en ;
 .
 esdm:Ministerie
@@ -1549,7 +1351,7 @@ esdm:Persona
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:label "Persona"@en ;
-  rdfs:subClassOf <http://edg.topbraid.solutions/model/JobTitle> ;
+  rdfs:subClassOf edg:JobTitle ;
   rdfs:subClassOf skos:Concept ;
   skos:prefLabel "Ordina Persona"@en ;
   sh:property esdm:Persona-requires ;
@@ -1559,7 +1361,7 @@ esdm:Persona
 esdm:Persona-requires
   a sh:PropertyShape ;
   sh:path esdm:requires ;
-  sh:class <http://edg.topbraid.solutions/model/EnterpriseAsset> ;
+  sh:class edg:EnterpriseAsset ;
   sh:group esdm:OrdinaPropertyGroup ;
   sh:name "Needs" ;
   sh:nodeKind sh:IRI ;
@@ -1567,7 +1369,7 @@ esdm:Persona-requires
 esdm:Persona-responsibility
   a sh:PropertyShape ;
   sh:path esdm:responsibility ;
-  sh:class <http://edg.topbraid.solutions/model/EnterpriseAsset> ;
+  sh:class edg:EnterpriseAsset ;
   sh:group esdm:OrdinaPropertyGroup ;
   sh:name "Responsible for" ;
   sh:nodeKind sh:IRI ;
@@ -1575,7 +1377,7 @@ esdm:Persona-responsibility
 esdm:Persona-role
   a sh:PropertyShape ;
   sh:path esdm:role ;
-  sh:class <http://edg.topbraid.solutions/model/JobTitle> ;
+  sh:class edg:JobTitle ;
   sh:group esdm:OrdinaPropertyGroup ;
   sh:name "Role" ;
   sh:nodeKind sh:IRI ;
@@ -1602,31 +1404,6 @@ esdm:PurchaseOrder
   rdfs:label "Purchase Order"@en ;
   rdfs:subClassOf esdm:Document ;
   skos:prefLabel "Ordina Purchase Order"@en ;
-  sh:property esdm:PurchaseOrder-item ;
-  sh:property esdm:PurchaseOrder-number ;
-.
-esdm:PurchaseOrder-item
-  a sh:PropertyShape ;
-  sh:path esdm:item ;
-  sh:class esdm:Item ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:name "Item" ;
-  sh:nodeKind sh:IRI ;
-  sh:values [
-      sh:path (
-          sh:inversePath
-          esdm:purchaseOrder
-        ) ;
-    ] ;
-.
-esdm:PurchaseOrder-number
-  a sh:PropertyShape ;
-  sh:path esdm:number ;
-  sh:datatype xsd:string ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:minCount 1 ;
-  sh:name "Purchase order number" ;
 .
 esdm:Resultaten
   a owl:Class ;
@@ -1800,45 +1577,12 @@ esdm:Rol-medewerker
         ) ;
     ] ;
 .
-esdm:RoutineLane-carrier
-  a sh:PropertyShape ;
-  sh:path esdm:carrier ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:minCount 1 ;
-  sh:name "Carrier" ;
-.
-esdm:RoutingLane-hub
-  a sh:PropertyShape ;
-  sh:path esdm:hub ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:minCount 1 ;
-  sh:name "Hub" ;
-  sh:nodeKind sh:IRI ;
-.
 esdm:ShipmentOrder
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:label "Shipment Order"@en ;
   rdfs:subClassOf esdm:Document ;
   skos:prefLabel "Ordina Shipment Order"@en ;
-.
-esdm:ShippingPoint-address
-  a sh:PropertyShape ;
-  sh:path esdm:address ;
-  sh:class esdm:Address ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:name "Address" ;
-  sh:nodeKind sh:IRI ;
-.
-esdm:ShippingPoint-id
-  a sh:PropertyShape ;
-  sh:path esdm:id ;
-  sh:datatype xsd:string ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:minCount 1 ;
-  sh:name "ID" ;
 .
 esdm:Stakeholder
   a owl:Class ;
@@ -1854,16 +1598,6 @@ esdm:Store
   rdfs:subClassOf <http://schema.org/Store> ;
   rdfs:subClassOf skos:Concept ;
   skos:prefLabel "Ordina Store"@en ;
-  sh:property esdm:Store-number ;
-.
-esdm:Store-number
-  a sh:PropertyShape ;
-  sh:path esdm:number ;
-  sh:datatype xsd:string ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:minCount 1 ;
-  sh:name "Store number" ;
 .
 esdm:SubjectArea
   a owl:Class ;
@@ -2181,13 +1915,6 @@ esdm:TrackTraceEvent-trackedTarget
   sh:name "Tracked target" ;
   sh:nodeKind sh:IRI ;
 .
-esdm:Trailer-carrier
-  a sh:PropertyShape ;
-  sh:path esdm:carrier ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:name "Carrier" ;
-  sh:nodeKind sh:IRI ;
-.
 esdm:Trailer-licensePlateNumber
   a sh:PropertyShape ;
   sh:path esdm:licensePlateNumber ;
@@ -2196,22 +1923,6 @@ esdm:Trailer-licensePlateNumber
   sh:maxCount 1 ;
   sh:minCount 1 ;
   sh:name "License plate number" ;
-.
-esdm:Trailer-number
-  a sh:PropertyShape ;
-  sh:path esdm:number ;
-  sh:datatype xsd:string ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:maxCount 1 ;
-  sh:minCount 1 ;
-  sh:name "Number" ;
-.
-esdm:Trailer-referenceNumber
-  a sh:PropertyShape ;
-  sh:path esdm:referenceNumber ;
-  sh:datatype xsd:string ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:name "Reference number" ;
 .
 esdm:View
   a owl:Class ;
@@ -2253,7 +1964,7 @@ esdm:Vraag-antwoord
       sh:select """
 				SELECT ?antwoord
 				WHERE {
-					?antwoord esdm:vraag ?this ;
+					?antwoord <http://ordina.nl/esdm#vraag> ?this ;
 rdf:type esdm:Antwoord .
 					
 				}""" ;
@@ -2514,6 +2225,12 @@ esdm:descriptionFromCarrier
   rdfs:range xsd:string ;
   skos:prefLabel "Description from carrier"@en ;
 .
+esdm:desiredBenefit
+  a rdf:Property ;
+  rdfs:label "Desired benefit"@en ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Key Performance Indicator"@en ;
+.
 esdm:determinedBy
   a owl:ObjectProperty ;
   rdfs:domain esdm:KeyDataElement ;
@@ -2659,7 +2376,6 @@ esdm:idee
   a owl:ObjectProperty ;
   rdfs:label "Ideeën"@nl ;
 .
-
 esdm:impactedBy
   a owl:ObjectProperty ;
   rdfs:label "Impacted by"@en ;
@@ -2795,6 +2511,11 @@ esdm:plannedGoodsIssued_UTC
   rdfs:range xsd:dateTime ;
   skos:prefLabel "Planned Goods Issues (UTC)"@en ;
 .
+esdm:process
+  a owl:ObjectProperty ;
+  rdfs:label "Process"@en ;
+  skos:prefLabel "Proces"@nl ;
+.
 esdm:processingUnitQuantity
   a owl:DatatypeProperty ;
   rdfs:label "Processing unit quantity"@en ;
@@ -2850,7 +2571,7 @@ esdm:representsColumn
 esdm:requires
   a owl:ObjectProperty ;
   rdfs:label "Requires"@en ;
-  rdfs:range <http://edg.topbraid.solutions/model/EnterpriseAsset> ;
+  rdfs:range edg:EnterpriseAsset ;
   skos:prefLabel "Requires"@nl ;
 .
 esdm:resource
@@ -2863,13 +2584,13 @@ esdm:resource
 esdm:responsibility
   a owl:ObjectProperty ;
   rdfs:label "Has repsonsibility"@en ;
-  rdfs:range <http://edg.topbraid.solutions/model/EnterpriseAsset> ;
+  rdfs:range edg:EnterpriseAsset ;
   skos:prefLabel "Has repsonsibility"@nl ;
 .
 esdm:role
   a owl:ObjectProperty ;
   rdfs:label "Role"@en ;
-  rdfs:range <http://edg.topbraid.solutions/model/JobTitle> ;
+  rdfs:range edg:JobTitle ;
   skos:prefLabel "Role"@en ;
 .
 esdm:routingLane
@@ -2922,6 +2643,11 @@ esdm:status
   a rdf:Property ;
   rdfs:label "Status"@en ;
   skos:prefLabel "Status"@en ;
+.
+esdm:step
+  a owl:ObjectProperty ;
+  rdfs:label "Step"@en ;
+  skos:prefLabel "Stap"@nl ;
 .
 esdm:tag
   a owl:ObjectProperty ;
@@ -3070,17 +2796,6 @@ rdf:Property-subject
   sh:name "Bedrijfsterm" ;
   sh:nodeKind sh:IRI ;
 .
-owl:Class
-  sh:property owl:Class-subject ;
-.
-owl:Class-subject
-  a sh:PropertyShape ;
-  sh:path dcterms:subject ;
-  sh:class skos:Concept ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:name "Bedrijfsterm" ;
-  sh:nodeKind sh:IRI ;
-.
 owl:Thing
   a sh:NodeShape ;
   sh:property owl:Thing-subject ;
@@ -3147,19 +2862,4 @@ skos:Concept-status
   sh:group esdm:OrdinaPropertyGroup ;
   sh:maxCount 1 ;
   sh:name "Status" ;
-.
-skos:ConceptScheme
-  a owl:Class ;
-  a sh:NodeShape ;
-.
-sh:PropertyShape
-  sh:property sh:PropertyShape-subject ;
-.
-sh:PropertyShape-subject
-  a sh:PropertyShape ;
-  sh:path dcterms:subject ;
-  sh:class skos:Concept ;
-  sh:group esdm:OrdinaPropertyGroup ;
-  sh:name "Businessterm" ;
-  sh:nodeKind sh:IRI ;
 .
