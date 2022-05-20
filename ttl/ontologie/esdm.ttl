@@ -2248,6 +2248,11 @@ esdm:directDropFlag
   rdfs:range xsd:boolean ;
   skos:prefLabel "Directdrop flag"@en ;
 .
+esdm:document
+  a owl:ObjectProperty ;
+  rdfs:label "Document"@en ;
+  skos:prefLabel "Document"@nl ;
+.
 esdm:domain
   a owl:ObjectProperty ;
   rdfs:label "Domain"@en ;

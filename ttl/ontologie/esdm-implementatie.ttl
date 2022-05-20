@@ -7,6 +7,7 @@
 # imports: http://xmlns.com/foaf/0.1/
 # prefix: esdm_i
 
+@prefix corpus: <http://topbraid.org/corpus#> .
 @prefix esdm: <http://ordina.nl/esdm#> .
 @prefix esdm_i: <http://ordina.nl/esdm-implementatie#> .
 @prefix graphql: <http://datashapes.org/graphql#> .
@@ -105,18 +106,19 @@ esdm_i:indexedProperty
   sh:name "preferred label"@en ;
   sh:nodeKind sh:Literal ;
 .
-<http://topbraid.org/corpus#Document>
+corpus:Document
   rdfs:subClassOf <http://schema.org/CreativeWork> ;
 .
 skos:Concept
-  sh:property skos:Concept-depiction ;
+  sh:property skos:Concept-document ;
 .
-skos:Concept-depiction
+skos:Concept-document
   a sh:PropertyShape ;
-  sh:path <http://xmlns.com/foaf/0.1/depiction> ;
-  sh:datatype xsd:anyURI ;
+  sh:path esdm:document ;
+  sh:class corpus:Document ;
   sh:group esdm:ESDM_Gegevens ;
-  sh:name "Afbeelding" ;
+  sh:name "Document of afbeelding" ;
+  sh:nodeKind sh:IRI ;
 .
 skos:Concept-source
   graphql:name "source" ;
